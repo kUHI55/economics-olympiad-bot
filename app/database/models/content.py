@@ -33,6 +33,7 @@ class Source(CreatedAtMixin, Base):
     __tablename__ = "sources"
 
     id: Mapped[int] = mapped_column(primary_key=True)
+    external_id: Mapped[str | None] = mapped_column(String(255), unique=True, index=True)
     created_by_id: Mapped[int] = mapped_column(
         ForeignKey("users.id", ondelete="RESTRICT"), index=True
     )
@@ -56,6 +57,7 @@ class KnowledgeElement(CreatedAtMixin, Base):
     __tablename__ = "knowledge_elements"
 
     id: Mapped[int] = mapped_column(primary_key=True)
+    external_id: Mapped[str | None] = mapped_column(String(255), unique=True, index=True)
     source_id: Mapped[int] = mapped_column(
         ForeignKey("sources.id", ondelete="RESTRICT"), index=True
     )
@@ -77,6 +79,9 @@ class KnowledgeElement(CreatedAtMixin, Base):
     notation: Mapped[dict[str, str] | None] = mapped_column(JSON)
     economic_meaning: Mapped[str | None] = mapped_column(Text)
     source_excerpt: Mapped[str] = mapped_column(Text)
+    is_active: Mapped[bool] = mapped_column(
+        Boolean, default=True, server_default="true", nullable=False
+    )
 
     source: Mapped[Source] = relationship(back_populates="knowledge_elements")
     questions: Mapped[list["Question"]] = relationship(back_populates="knowledge_element")
@@ -86,6 +91,7 @@ class Question(CreatedAtMixin, Base):
     __tablename__ = "questions"
 
     id: Mapped[int] = mapped_column(primary_key=True)
+    external_id: Mapped[str | None] = mapped_column(String(255), unique=True, index=True)
     knowledge_element_id: Mapped[int] = mapped_column(
         ForeignKey("knowledge_elements.id", ondelete="CASCADE"), index=True
     )
@@ -114,6 +120,7 @@ class QuestionOption(Base):
     __tablename__ = "question_options"
 
     id: Mapped[int] = mapped_column(primary_key=True)
+    external_id: Mapped[str | None] = mapped_column(String(255), unique=True, index=True)
     question_id: Mapped[int] = mapped_column(
         ForeignKey("questions.id", ondelete="CASCADE"), index=True
     )

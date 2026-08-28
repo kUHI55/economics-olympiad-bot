@@ -24,7 +24,7 @@ include = ["app*"]
 exclude = ["migrations*", "tests*"]
 
 [project.optional-dependencies]
-dev = ["pytest>=8.0,<9.0", "pytest-asyncio>=1.0,<2.0", "ruff>=0.12,<1.0"]
+dev = ["aiosqlite>=0.20,<1.0", "pytest>=8.0,<9.0", "pytest-asyncio>=1.0,<2.0", "ruff>=0.12,<1.0"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

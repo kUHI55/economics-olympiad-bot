@@ -31,12 +31,38 @@ class KnowledgeItem(TheoryFileModel):
     source: SourceReference
 
 
-class KnowledgeDocument(TheoryFileModel):
+class TaxonomyDocument(TheoryFileModel):
     schema_version: Literal[1] = 1
     section: str = Field(pattern=ID_PATTERN, min_length=2, max_length=64)
+    section_title: str | None = Field(default=None, min_length=1, max_length=255)
     topic: str = Field(pattern=ID_PATTERN, min_length=2, max_length=64)
+    topic_title: str | None = Field(default=None, min_length=1, max_length=255)
     subtopic: str | None = Field(default=None, pattern=ID_PATTERN, max_length=64)
+    subtopic_title: str | None = Field(default=None, min_length=1, max_length=255)
     is_demo: bool = False
+
+    @model_validator(mode="after")
+    def subtopic_title_requires_subtopic(self) -> "TaxonomyDocument":
+        if self.subtopic is None and self.subtopic_title is not None:
+            raise ValueError("subtopic_title requires subtopic")
+        return self
+
+    @property
+    def section_name(self) -> str:
+        return self.section_title or self.section
+
+    @property
+    def topic_name(self) -> str:
+        return self.topic_title or self.topic
+
+    @property
+    def subtopic_name(self) -> str | None:
+        if self.subtopic is None:
+            return None
+        return self.subtopic_title or self.subtopic
+
+
+class KnowledgeDocument(TaxonomyDocument):
     knowledge: list[KnowledgeItem] = Field(min_length=1)
 
     @model_validator(mode="after")
@@ -83,12 +109,7 @@ class QuestionItem(TheoryFileModel):
         return self
 
 
-class QuestionDocument(TheoryFileModel):
-    schema_version: Literal[1] = 1
-    section: str = Field(pattern=ID_PATTERN, min_length=2, max_length=64)
-    topic: str = Field(pattern=ID_PATTERN, min_length=2, max_length=64)
-    subtopic: str | None = Field(default=None, pattern=ID_PATTERN, max_length=64)
-    is_demo: bool = False
+class QuestionDocument(TaxonomyDocument):
     questions: list[QuestionItem] = Field(min_length=1)
 
     @model_validator(mode="after")

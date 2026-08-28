@@ -8,6 +8,7 @@ class Section(CreatedAtMixin, Base):
     __tablename__ = "sections"
 
     id: Mapped[int] = mapped_column(primary_key=True)
+    external_id: Mapped[str | None] = mapped_column(String(255), unique=True, index=True)
     name: Mapped[str] = mapped_column(String(255), unique=True)
     sort_order: Mapped[int] = mapped_column(Integer, default=0, nullable=False)
 
@@ -21,6 +22,7 @@ class Topic(CreatedAtMixin, Base):
     __table_args__ = (UniqueConstraint("section_id", "name"),)
 
     id: Mapped[int] = mapped_column(primary_key=True)
+    external_id: Mapped[str | None] = mapped_column(String(255), unique=True, index=True)
     section_id: Mapped[int] = mapped_column(
         ForeignKey("sections.id", ondelete="CASCADE"), index=True
     )
@@ -38,6 +40,7 @@ class Subtopic(CreatedAtMixin, Base):
     __table_args__ = (UniqueConstraint("topic_id", "name"),)
 
     id: Mapped[int] = mapped_column(primary_key=True)
+    external_id: Mapped[str | None] = mapped_column(String(255), unique=True, index=True)
     topic_id: Mapped[int] = mapped_column(ForeignKey("topics.id", ondelete="CASCADE"), index=True)
     name: Mapped[str] = mapped_column(String(255))
     sort_order: Mapped[int] = mapped_column(Integer, default=0, nullable=False)

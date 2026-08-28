@@ -6,7 +6,7 @@ from pathlib import Path
 
 from pydantic import ValidationError
 
-from app.theory_data.models import KnowledgeDocument, QuestionDocument
+from app.theory_data.models import KnowledgeDocument, QuestionDocument, SourceReference
 
 
 class TheoryValidationError(ValueError):
@@ -25,6 +25,19 @@ class TheoryValidationReport:
     demo_directories: int
 
 
+@dataclass(frozen=True)
+class TheoryTopicDirectory:
+    directory: Path
+    knowledge: KnowledgeDocument
+    questions: QuestionDocument
+
+
+@dataclass(frozen=True)
+class TheoryRepository:
+    topics: tuple[TheoryTopicDirectory, ...]
+    report: TheoryValidationReport
+
+
 def _read_document(path: Path, model: type[KnowledgeDocument] | type[QuestionDocument]):
     try:
         payload = json.loads(path.read_text(encoding="utf-8"))
@@ -36,8 +49,8 @@ def _read_document(path: Path, model: type[KnowledgeDocument] | type[QuestionDoc
         raise TheoryValidationError([f"{path}: {error['msg']}" for error in exc.errors()]) from exc
 
 
-def validate_theory_repository(root: Path) -> TheoryValidationReport:
-    """Validate paired files without importing or mutating the database."""
+def load_theory_repository(root: Path) -> TheoryRepository:
+    """Load and validate all theory files before any database mutation begins."""
     if not root.is_dir():
         raise TheoryValidationError([f"Theory root does not exist: {root}"])
 
@@ -49,6 +62,8 @@ def validate_theory_repository(root: Path) -> TheoryValidationReport:
     demo_directories = 0
     known_ids: set[str] = set()
     question_ids: set[str] = set()
+    source_references: dict[str, SourceReference] = {}
+    topics: list[TheoryTopicDirectory] = []
 
     for directory in sorted(directories):
         knowledge_path = directory / "knowledge.json"
@@ -63,8 +78,25 @@ def validate_theory_repository(root: Path) -> TheoryValidationReport:
             errors.extend(exc.errors)
             continue
 
-        taxonomy = (knowledge.section, knowledge.topic, knowledge.subtopic, knowledge.is_demo)
-        if taxonomy != (questions.section, questions.topic, questions.subtopic, questions.is_demo):
+        taxonomy = (
+            knowledge.section,
+            knowledge.section_name,
+            knowledge.topic,
+            knowledge.topic_name,
+            knowledge.subtopic,
+            knowledge.subtopic_name,
+            knowledge.is_demo,
+        )
+        question_taxonomy = (
+            questions.section,
+            questions.section_name,
+            questions.topic,
+            questions.topic_name,
+            questions.subtopic,
+            questions.subtopic_name,
+            questions.is_demo,
+        )
+        if taxonomy != question_taxonomy:
             errors.append(f"{directory}: knowledge.json and questions.json have different taxonomy")
             continue
         if knowledge.is_demo:
@@ -88,14 +120,33 @@ def validate_theory_repository(root: Path) -> TheoryValidationReport:
                 errors.append(f"{questions_path}: duplicate question ID: {question.id}")
             question_ids.add(question.id)
 
+        for source in [
+            *(item.source for item in knowledge.knowledge),
+            *(item.source for item in questions.questions),
+        ]:
+            previous = source_references.setdefault(source.id, source)
+            if previous != source:
+                errors.append(f"{directory}: source ID {source.id} has conflicting metadata")
+
         total_knowledge += len(knowledge.knowledge)
         total_questions += len(questions.questions)
+        topics.append(
+            TheoryTopicDirectory(directory=directory, knowledge=knowledge, questions=questions)
+        )
 
     if errors:
         raise TheoryValidationError(errors)
-    return TheoryValidationReport(
-        topic_directories=len(directories),
-        knowledge_elements=total_knowledge,
-        questions=total_questions,
-        demo_directories=demo_directories,
+    return TheoryRepository(
+        topics=tuple(topics),
+        report=TheoryValidationReport(
+            topic_directories=len(directories),
+            knowledge_elements=total_knowledge,
+            questions=total_questions,
+            demo_directories=demo_directories,
+        ),
     )
+
+
+def validate_theory_repository(root: Path) -> TheoryValidationReport:
+    """Validate paired files without importing or mutating the database."""
+    return load_theory_repository(root).report
