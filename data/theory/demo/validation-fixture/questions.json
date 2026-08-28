@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "section": "demo",
+  "topic": "validation-fixture",
+  "subtopic": "example",
+  "is_demo": true,
+  "questions": [
+    {
+      "id": "demo.validation-fixture.sample-term-check",
+      "knowledge_id": "demo.validation-fixture.sample-term",
+      "type": "multiple_choice",
+      "difficulty": 1,
+      "question": "Для чего нужен этот служебный элемент?",
+      "options": [
+        {"id": "A", "text": "Для решения олимпиадной задачи"},
+        {"id": "B", "text": "Для проверки формата файлов"}
+      ],
+      "correct_answer": "B",
+      "reference_answer": "Для проверки формата файлов.",
+      "key_points": ["проверка формата"],
+      "explanation": "Это демонстрационный, а не учебный вопрос.",
+      "source": {
+        "id": "demo.validation-fixture.source",
+        "name": "Демонстрационный файл архитектуры",
+        "source_type": "markdown",
+        "source_date": "2026-08-28",
+        "excerpt": "Этот каталог проверяет структуру и валидатор файловой теории."
+      },
+      "source_excerpt": "Этот каталог проверяет структуру и валидатор файловой теории."
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "section": "demo",
+  "topic": "validation-fixture",
+  "subtopic": "example",
+  "is_demo": true,
+  "knowledge": [
+    {
+      "id": "demo.validation-fixture.sample-term",
+      "title": "Тестовый термин",
+      "type": "term",
+      "definitions": {},
+      "explanation": "Служебный элемент для проверки файлового формата; это не учебная теория.",
+      "source": {
+        "id": "demo.validation-fixture.source",
+        "name": "Демонстрационный файл архитектуры",
+        "source_type": "markdown",
+        "source_date": "2026-08-28",
+        "excerpt": "Этот каталог проверяет структуру и валидатор файловой теории."
+      }
+    }
+  ]
+}
