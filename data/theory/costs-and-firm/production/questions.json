@@ -1,0 +1,161 @@
+{
+  "schema_version": 1,
+  "section": "costs-and-firm",
+  "section_title": "Издержки и фирма",
+  "topic": "production",
+  "topic_title": "Производство",
+  "questions": [
+    {
+      "id": "costs-and-firm.production.factors-and-production-function.formula",
+      "knowledge_id": "costs-and-firm.production.factors-and-production-function",
+      "type": "formula",
+      "difficulty": 1,
+      "question": "Как в отчёте записана производственная функция?",
+      "reference_answer": "Q=f(K,L).",
+      "key_points": [
+        "Q=f(K,L)"
+      ],
+      "explanation": "Ответ следует из исследовательского отчёта.",
+      "source": {
+        "id": "context.costs-and-firm.production",
+        "name": "Исследовательский контекст, присланный пользователем",
+        "source_type": "text",
+        "excerpt": "Производство: факторы производства; труд L; капитал K; сырьё; производственная функция Q=f(K,L); построение производственной функции из технологических ограничений; TP; AP/APL; MP/MPL/MPK; производительность; связь APL и AVC; отдача от масштаба; различие отдачи от масштаба и эффекта масштаба."
+      },
+      "source_excerpt": "Производство: факторы производства; труд L; капитал K; сырьё; производственная функция Q=f(K,L); построение производственной функции из технологических ограничений; TP; AP/APL; MP/MPL/MPK; производительность; связь APL и AVC; отдача от масштаба; различие отдачи от масштаба и эффекта масштаба."
+    },
+    {
+      "id": "costs-and-firm.production.factors-and-production-function.factors",
+      "knowledge_id": "costs-and-firm.production.factors-and-production-function",
+      "type": "understanding",
+      "difficulty": 1,
+      "question": "Какие факторы названы вместе с производственной функцией?",
+      "reference_answer": "Труд L, капитал K и сырьё.",
+      "key_points": [
+        "труд L",
+        "капитал K",
+        "сырьё"
+      ],
+      "explanation": "Ответ следует из исследовательского отчёта.",
+      "source": {
+        "id": "context.costs-and-firm.production",
+        "name": "Исследовательский контекст, присланный пользователем",
+        "source_type": "text",
+        "excerpt": "Производство: факторы производства; труд L; капитал K; сырьё; производственная функция Q=f(K,L); построение производственной функции из технологических ограничений; TP; AP/APL; MP/MPL/MPK; производительность; связь APL и AVC; отдача от масштаба; различие отдачи от масштаба и эффекта масштаба."
+      },
+      "source_excerpt": "Производство: факторы производства; труд L; капитал K; сырьё; производственная функция Q=f(K,L); построение производственной функции из технологических ограничений; TP; AP/APL; MP/MPL/MPK; производительность; связь APL и AVC; отдача от масштаба; различие отдачи от масштаба и эффекта масштаба."
+    },
+    {
+      "id": "costs-and-firm.production.technology-to-function.method",
+      "knowledge_id": "costs-and-firm.production.technology-to-function",
+      "type": "causal_relationship",
+      "difficulty": 2,
+      "question": "Из чего отчёт предлагает строить производственную функцию?",
+      "reference_answer": "Из технологических ограничений.",
+      "key_points": [
+        "технологические ограничения"
+      ],
+      "explanation": "Ответ следует из исследовательского отчёта.",
+      "source": {
+        "id": "context.costs-and-firm.production",
+        "name": "Исследовательский контекст, присланный пользователем",
+        "source_type": "text",
+        "excerpt": "Производство: факторы производства; труд L; капитал K; сырьё; производственная функция Q=f(K,L); построение производственной функции из технологических ограничений; TP; AP/APL; MP/MPL/MPK; производительность; связь APL и AVC; отдача от масштаба; различие отдачи от масштаба и эффекта масштаба."
+      },
+      "source_excerpt": "Производство: факторы производства; труд L; капитал K; сырьё; производственная функция Q=f(K,L); построение производственной функции из технологических ограничений; TP; AP/APL; MP/MPL/MPK; производительность; связь APL и AVC; отдача от масштаба; различие отдачи от масштаба и эффекта масштаба."
+    },
+    {
+      "id": "costs-and-firm.production.total-average-and-marginal-product.terms",
+      "knowledge_id": "costs-and-firm.production.total-average-and-marginal-product",
+      "type": "notation",
+      "difficulty": 1,
+      "question": "Какие обозначения продукта перечислены в отчёте?",
+      "reference_answer": "TP; AP/APL; MP/MPL/MPK.",
+      "key_points": [
+        "TP",
+        "AP/APL",
+        "MP/MPL/MPK"
+      ],
+      "explanation": "Ответ следует из исследовательского отчёта.",
+      "source": {
+        "id": "context.costs-and-firm.production",
+        "name": "Исследовательский контекст, присланный пользователем",
+        "source_type": "text",
+        "excerpt": "Производство: факторы производства; труд L; капитал K; сырьё; производственная функция Q=f(K,L); построение производственной функции из технологических ограничений; TP; AP/APL; MP/MPL/MPK; производительность; связь APL и AVC; отдача от масштаба; различие отдачи от масштаба и эффекта масштаба."
+      },
+      "source_excerpt": "Производство: факторы производства; труд L; капитал K; сырьё; производственная функция Q=f(K,L); построение производственной функции из технологических ограничений; TP; AP/APL; MP/MPL/MPK; производительность; связь APL и AVC; отдача от масштаба; различие отдачи от масштаба и эффекта масштаба."
+    },
+    {
+      "id": "costs-and-firm.production.total-average-and-marginal-product.choice",
+      "knowledge_id": "costs-and-firm.production.total-average-and-marginal-product",
+      "type": "multiple_choice",
+      "difficulty": 2,
+      "question": "Какая группа обозначений приведена в блоке производства?",
+      "reference_answer": "TP; AP/APL; MP/MPL/MPK.",
+      "key_points": [
+        "TP",
+        "AP/APL",
+        "MP/MPL/MPK"
+      ],
+      "explanation": "Ответ следует из исследовательского отчёта.",
+      "source": {
+        "id": "context.costs-and-firm.production",
+        "name": "Исследовательский контекст, присланный пользователем",
+        "source_type": "text",
+        "excerpt": "Производство: факторы производства; труд L; капитал K; сырьё; производственная функция Q=f(K,L); построение производственной функции из технологических ограничений; TP; AP/APL; MP/MPL/MPK; производительность; связь APL и AVC; отдача от масштаба; различие отдачи от масштаба и эффекта масштаба."
+      },
+      "source_excerpt": "Производство: факторы производства; труд L; капитал K; сырьё; производственная функция Q=f(K,L); построение производственной функции из технологических ограничений; TP; AP/APL; MP/MPL/MPK; производительность; связь APL и AVC; отдача от масштаба; различие отдачи от масштаба и эффекта масштаба.",
+      "options": [
+        {
+          "id": "A",
+          "text": "TP; AP/APL; MP/MPL/MPK"
+        },
+        {
+          "id": "B",
+          "text": "FC; VC; TC"
+        }
+      ],
+      "correct_answer": "A"
+    },
+    {
+      "id": "costs-and-firm.production.productivity-and-avc.connection",
+      "knowledge_id": "costs-and-firm.production.productivity-and-avc",
+      "type": "causal_relationship",
+      "difficulty": 2,
+      "question": "Какие величины отчёт связывает в одном пункте?",
+      "reference_answer": "APL и AVC.",
+      "key_points": [
+        "APL",
+        "AVC"
+      ],
+      "explanation": "Ответ следует из исследовательского отчёта.",
+      "source": {
+        "id": "context.costs-and-firm.production",
+        "name": "Исследовательский контекст, присланный пользователем",
+        "source_type": "text",
+        "excerpt": "Производство: факторы производства; труд L; капитал K; сырьё; производственная функция Q=f(K,L); построение производственной функции из технологических ограничений; TP; AP/APL; MP/MPL/MPK; производительность; связь APL и AVC; отдача от масштаба; различие отдачи от масштаба и эффекта масштаба."
+      },
+      "source_excerpt": "Производство: факторы производства; труд L; капитал K; сырьё; производственная функция Q=f(K,L); построение производственной функции из технологических ограничений; TP; AP/APL; MP/MPL/MPK; производительность; связь APL и AVC; отдача от масштаба; различие отдачи от масштаба и эффекта масштаба."
+    },
+    {
+      "id": "costs-and-firm.production.returns-versus-scale-effect.comparison",
+      "knowledge_id": "costs-and-firm.production.returns-versus-scale-effect",
+      "type": "comparison",
+      "difficulty": 2,
+      "question": "Какие два явления требуется различать?",
+      "reference_answer": "Отдачу от масштаба и эффект масштаба.",
+      "key_points": [
+        "отдача от масштаба",
+        "эффект масштаба"
+      ],
+      "explanation": "Ответ следует из исследовательского отчёта.",
+      "source": {
+        "id": "context.costs-and-firm.production",
+        "name": "Исследовательский контекст, присланный пользователем",
+        "source_type": "text",
+        "excerpt": "Производство: факторы производства; труд L; капитал K; сырьё; производственная функция Q=f(K,L); построение производственной функции из технологических ограничений; TP; AP/APL; MP/MPL/MPK; производительность; связь APL и AVC; отдача от масштаба; различие отдачи от масштаба и эффекта масштаба."
+      },
+      "source_excerpt": "Производство: факторы производства; труд L; капитал K; сырьё; производственная функция Q=f(K,L); построение производственной функции из технологических ограничений; TP; AP/APL; MP/MPL/MPK; производительность; связь APL и AVC; отдача от масштаба; различие отдачи от масштаба и эффекта масштаба."
+    }
+  ]
+}

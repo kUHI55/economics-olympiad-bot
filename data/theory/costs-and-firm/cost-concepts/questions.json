@@ -1,0 +1,181 @@
+{
+  "schema_version": 1,
+  "section": "costs-and-firm",
+  "section_title": "Издержки и фирма",
+  "topic": "cost-concepts",
+  "topic_title": "Понятия издержек",
+  "questions": [
+    {
+      "id": "costs-and-firm.cost-concepts.explicit-and-accounting-costs.terms",
+      "knowledge_id": "costs-and-firm.cost-concepts.explicit-and-accounting-costs",
+      "type": "definition",
+      "difficulty": 1,
+      "question": "Какие два вида издержек названы в этом элементе?",
+      "reference_answer": "Явные и бухгалтерские издержки.",
+      "key_points": [
+        "явные",
+        "бухгалтерские"
+      ],
+      "explanation": "Ответ следует из исследовательского отчёта.",
+      "source": {
+        "id": "context.costs-and-firm.cost-concepts",
+        "name": "Исследовательский контекст, присланный пользователем",
+        "source_type": "text",
+        "excerpt": "Издержки: явные; бухгалтерские; неявные; издержки упущенных возможностей; экономические издержки; FC; VC; TC; AC; AFC; AVC; MC; дискретный MC; связи между средними и предельными издержками."
+      },
+      "source_excerpt": "Издержки: явные; бухгалтерские; неявные; издержки упущенных возможностей; экономические издержки; FC; VC; TC; AC; AFC; AVC; MC; дискретный MC; связи между средними и предельными издержками."
+    },
+    {
+      "id": "costs-and-firm.cost-concepts.implicit-and-opportunity-costs.terms",
+      "knowledge_id": "costs-and-firm.cost-concepts.implicit-and-opportunity-costs",
+      "type": "definition",
+      "difficulty": 1,
+      "question": "Что перечислено вместе с неявными издержками?",
+      "reference_answer": "Издержки упущенных возможностей.",
+      "key_points": [
+        "неявные",
+        "издержки упущенных возможностей"
+      ],
+      "explanation": "Ответ следует из исследовательского отчёта.",
+      "source": {
+        "id": "context.costs-and-firm.cost-concepts",
+        "name": "Исследовательский контекст, присланный пользователем",
+        "source_type": "text",
+        "excerpt": "Издержки: явные; бухгалтерские; неявные; издержки упущенных возможностей; экономические издержки; FC; VC; TC; AC; AFC; AVC; MC; дискретный MC; связи между средними и предельными издержками."
+      },
+      "source_excerpt": "Издержки: явные; бухгалтерские; неявные; издержки упущенных возможностей; экономические издержки; FC; VC; TC; AC; AFC; AVC; MC; дискретный MC; связи между средними и предельными издержками."
+    },
+    {
+      "id": "costs-and-firm.cost-concepts.economic-costs.term",
+      "knowledge_id": "costs-and-firm.cost-concepts.economic-costs",
+      "type": "definition",
+      "difficulty": 1,
+      "question": "Какой вид издержек выделен отдельно от явных, бухгалтерских и неявных?",
+      "reference_answer": "Экономические издержки.",
+      "key_points": [
+        "экономические издержки"
+      ],
+      "explanation": "Ответ следует из исследовательского отчёта.",
+      "source": {
+        "id": "context.costs-and-firm.cost-concepts",
+        "name": "Исследовательский контекст, присланный пользователем",
+        "source_type": "text",
+        "excerpt": "Издержки: явные; бухгалтерские; неявные; издержки упущенных возможностей; экономические издержки; FC; VC; TC; AC; AFC; AVC; MC; дискретный MC; связи между средними и предельными издержками."
+      },
+      "source_excerpt": "Издержки: явные; бухгалтерские; неявные; издержки упущенных возможностей; экономические издержки; FC; VC; TC; AC; AFC; AVC; MC; дискретный MC; связи между средними и предельными издержками."
+    },
+    {
+      "id": "costs-and-firm.cost-concepts.fixed-variable-total-costs.terms",
+      "knowledge_id": "costs-and-firm.cost-concepts.fixed-variable-total-costs",
+      "type": "notation",
+      "difficulty": 1,
+      "question": "Какие обозначения издержек перечислены как FC, VC и TC?",
+      "reference_answer": "FC, VC и TC.",
+      "key_points": [
+        "FC",
+        "VC",
+        "TC"
+      ],
+      "explanation": "Ответ следует из исследовательского отчёта.",
+      "source": {
+        "id": "context.costs-and-firm.cost-concepts",
+        "name": "Исследовательский контекст, присланный пользователем",
+        "source_type": "text",
+        "excerpt": "Издержки: явные; бухгалтерские; неявные; издержки упущенных возможностей; экономические издержки; FC; VC; TC; AC; AFC; AVC; MC; дискретный MC; связи между средними и предельными издержками."
+      },
+      "source_excerpt": "Издержки: явные; бухгалтерские; неявные; издержки упущенных возможностей; экономические издержки; FC; VC; TC; AC; AFC; AVC; MC; дискретный MC; связи между средними и предельными издержками."
+    },
+    {
+      "id": "costs-and-firm.cost-concepts.average-costs.terms",
+      "knowledge_id": "costs-and-firm.cost-concepts.average-costs",
+      "type": "notation",
+      "difficulty": 1,
+      "question": "Какие средние издержки перечислены в отчёте?",
+      "reference_answer": "AC, AFC и AVC.",
+      "key_points": [
+        "AC",
+        "AFC",
+        "AVC"
+      ],
+      "explanation": "Ответ следует из исследовательского отчёта.",
+      "source": {
+        "id": "context.costs-and-firm.cost-concepts",
+        "name": "Исследовательский контекст, присланный пользователем",
+        "source_type": "text",
+        "excerpt": "Издержки: явные; бухгалтерские; неявные; издержки упущенных возможностей; экономические издержки; FC; VC; TC; AC; AFC; AVC; MC; дискретный MC; связи между средними и предельными издержками."
+      },
+      "source_excerpt": "Издержки: явные; бухгалтерские; неявные; издержки упущенных возможностей; экономические издержки; FC; VC; TC; AC; AFC; AVC; MC; дискретный MC; связи между средними и предельными издержками."
+    },
+    {
+      "id": "costs-and-firm.cost-concepts.marginal-and-discrete-cost.terms",
+      "knowledge_id": "costs-and-firm.cost-concepts.marginal-and-discrete-cost",
+      "type": "notation",
+      "difficulty": 1,
+      "question": "Какой вариант MC назван отдельно в отчёте?",
+      "reference_answer": "Дискретный MC.",
+      "key_points": [
+        "дискретный MC"
+      ],
+      "explanation": "Ответ следует из исследовательского отчёта.",
+      "source": {
+        "id": "context.costs-and-firm.cost-concepts",
+        "name": "Исследовательский контекст, присланный пользователем",
+        "source_type": "text",
+        "excerpt": "Издержки: явные; бухгалтерские; неявные; издержки упущенных возможностей; экономические издержки; FC; VC; TC; AC; AFC; AVC; MC; дискретный MC; связи между средними и предельными издержками."
+      },
+      "source_excerpt": "Издержки: явные; бухгалтерские; неявные; издержки упущенных возможностей; экономические издержки; FC; VC; TC; AC; AFC; AVC; MC; дискретный MC; связи между средними и предельными издержками."
+    },
+    {
+      "id": "costs-and-firm.cost-concepts.marginal-and-discrete-cost.connection",
+      "knowledge_id": "costs-and-firm.cost-concepts.marginal-and-discrete-cost",
+      "type": "causal_relationship",
+      "difficulty": 2,
+      "question": "Между какими видами издержек отчёт указывает связи?",
+      "reference_answer": "Между средними и предельными издержками.",
+      "key_points": [
+        "средние",
+        "предельные"
+      ],
+      "explanation": "Ответ следует из исследовательского отчёта.",
+      "source": {
+        "id": "context.costs-and-firm.cost-concepts",
+        "name": "Исследовательский контекст, присланный пользователем",
+        "source_type": "text",
+        "excerpt": "Издержки: явные; бухгалтерские; неявные; издержки упущенных возможностей; экономические издержки; FC; VC; TC; AC; AFC; AVC; MC; дискретный MC; связи между средними и предельными издержками."
+      },
+      "source_excerpt": "Издержки: явные; бухгалтерские; неявные; издержки упущенных возможностей; экономические издержки; FC; VC; TC; AC; AFC; AVC; MC; дискретный MC; связи между средними и предельными издержками."
+    },
+    {
+      "id": "costs-and-firm.cost-concepts.average-costs.choice",
+      "knowledge_id": "costs-and-firm.cost-concepts.average-costs",
+      "type": "multiple_choice",
+      "difficulty": 2,
+      "question": "Какая тройка обозначений относится к средним издержкам в отчёте?",
+      "reference_answer": "AC, AFC и AVC.",
+      "key_points": [
+        "AC",
+        "AFC",
+        "AVC"
+      ],
+      "explanation": "Ответ следует из исследовательского отчёта.",
+      "source": {
+        "id": "context.costs-and-firm.cost-concepts",
+        "name": "Исследовательский контекст, присланный пользователем",
+        "source_type": "text",
+        "excerpt": "Издержки: явные; бухгалтерские; неявные; издержки упущенных возможностей; экономические издержки; FC; VC; TC; AC; AFC; AVC; MC; дискретный MC; связи между средними и предельными издержками."
+      },
+      "source_excerpt": "Издержки: явные; бухгалтерские; неявные; издержки упущенных возможностей; экономические издержки; FC; VC; TC; AC; AFC; AVC; MC; дискретный MC; связи между средними и предельными издержками.",
+      "options": [
+        {
+          "id": "A",
+          "text": "AC, AFC, AVC"
+        },
+        {
+          "id": "B",
+          "text": "FC, VC, TC"
+        }
+      ],
+      "correct_answer": "A"
+    }
+  ]
+}

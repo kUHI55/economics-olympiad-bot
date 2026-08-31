@@ -1,0 +1,115 @@
+{
+  "schema_version": 1,
+  "section": "costs-and-firm",
+  "section_title": "Издержки и фирма",
+  "topic": "short-run-long-run",
+  "topic_title": "Краткосрочный и долгосрочный периоды",
+  "questions": [
+    {
+      "id": "costs-and-firm.short-run-long-run.periods-and-factors.periods",
+      "knowledge_id": "costs-and-firm.short-run-long-run.periods-and-factors",
+      "type": "comparison",
+      "difficulty": 1,
+      "question": "Какие периоды перечислены в отчёте?",
+      "reference_answer": "Краткосрочный и долгосрочный периоды.",
+      "key_points": [
+        "краткосрочный",
+        "долгосрочный"
+      ],
+      "explanation": "Ответ следует из исследовательского отчёта.",
+      "source": {
+        "id": "context.costs-and-firm.short-run-long-run",
+        "name": "Исследовательский контекст, присланный пользователем",
+        "source_type": "text",
+        "excerpt": "SR / LR: краткосрочный период; долгосрочный период; фиксированные и переменные факторы; SR TC; LR TC; SR AC; LR AC; сравнение SR/LR; условия присутствия фирмы. SR: P >= AVC_min. LR: P >= AC_min."
+      },
+      "source_excerpt": "SR / LR: краткосрочный период; долгосрочный период; фиксированные и переменные факторы; SR TC; LR TC; SR AC; LR AC; сравнение SR/LR; условия присутствия фирмы. SR: P >= AVC_min. LR: P >= AC_min."
+    },
+    {
+      "id": "costs-and-firm.short-run-long-run.periods-and-factors.factors",
+      "knowledge_id": "costs-and-firm.short-run-long-run.periods-and-factors",
+      "type": "understanding",
+      "difficulty": 1,
+      "question": "Какие факторы названы при сравнении SR и LR?",
+      "reference_answer": "Фиксированные и переменные факторы.",
+      "key_points": [
+        "фиксированные",
+        "переменные"
+      ],
+      "explanation": "Ответ следует из исследовательского отчёта.",
+      "source": {
+        "id": "context.costs-and-firm.short-run-long-run",
+        "name": "Исследовательский контекст, присланный пользователем",
+        "source_type": "text",
+        "excerpt": "SR / LR: краткосрочный период; долгосрочный период; фиксированные и переменные факторы; SR TC; LR TC; SR AC; LR AC; сравнение SR/LR; условия присутствия фирмы. SR: P >= AVC_min. LR: P >= AC_min."
+      },
+      "source_excerpt": "SR / LR: краткосрочный период; долгосрочный период; фиксированные и переменные факторы; SR TC; LR TC; SR AC; LR AC; сравнение SR/LR; условия присутствия фирмы. SR: P >= AVC_min. LR: P >= AC_min."
+    },
+    {
+      "id": "costs-and-firm.short-run-long-run.cost-functions-and-comparison.costs",
+      "knowledge_id": "costs-and-firm.short-run-long-run.cost-functions-and-comparison",
+      "type": "comparison",
+      "difficulty": 2,
+      "question": "Какие функции издержек и средних издержек перечислены для SR и LR?",
+      "reference_answer": "SR TC, LR TC, SR AC и LR AC.",
+      "key_points": [
+        "SR TC",
+        "LR TC",
+        "SR AC",
+        "LR AC"
+      ],
+      "explanation": "Ответ следует из исследовательского отчёта.",
+      "source": {
+        "id": "context.costs-and-firm.short-run-long-run",
+        "name": "Исследовательский контекст, присланный пользователем",
+        "source_type": "text",
+        "excerpt": "SR / LR: краткосрочный период; долгосрочный период; фиксированные и переменные факторы; SR TC; LR TC; SR AC; LR AC; сравнение SR/LR; условия присутствия фирмы. SR: P >= AVC_min. LR: P >= AC_min."
+      },
+      "source_excerpt": "SR / LR: краткосрочный период; долгосрочный период; фиксированные и переменные факторы; SR TC; LR TC; SR AC; LR AC; сравнение SR/LR; условия присутствия фирмы. SR: P >= AVC_min. LR: P >= AC_min."
+    },
+    {
+      "id": "costs-and-firm.short-run-long-run.presence-conditions.formula",
+      "knowledge_id": "costs-and-firm.short-run-long-run.presence-conditions",
+      "type": "formula",
+      "difficulty": 2,
+      "question": "Как сформулированы условия присутствия фирмы в SR и LR?",
+      "reference_answer": "SR: P >= AVC_min; LR: P >= AC_min.",
+      "key_points": [
+        "SR",
+        "AVC_min",
+        "LR",
+        "AC_min"
+      ],
+      "explanation": "Ответ следует из исследовательского отчёта.",
+      "source": {
+        "id": "context.costs-and-firm.short-run-long-run",
+        "name": "Исследовательский контекст, присланный пользователем",
+        "source_type": "text",
+        "excerpt": "SR / LR: краткосрочный период; долгосрочный период; фиксированные и переменные факторы; SR TC; LR TC; SR AC; LR AC; сравнение SR/LR; условия присутствия фирмы. SR: P >= AVC_min. LR: P >= AC_min."
+      },
+      "source_excerpt": "SR / LR: краткосрочный период; долгосрочный период; фиксированные и переменные факторы; SR TC; LR TC; SR AC; LR AC; сравнение SR/LR; условия присутствия фирмы. SR: P >= AVC_min. LR: P >= AC_min."
+    },
+    {
+      "id": "costs-and-firm.short-run-long-run.presence-conditions.comparison",
+      "knowledge_id": "costs-and-firm.short-run-long-run.presence-conditions",
+      "type": "comparison",
+      "difficulty": 2,
+      "question": "Какая минимальная величина относится к SR, а какая — к LR?",
+      "reference_answer": "В SR — AVC_min, в LR — AC_min.",
+      "key_points": [
+        "SR",
+        "AVC_min",
+        "LR",
+        "AC_min"
+      ],
+      "explanation": "Ответ следует из исследовательского отчёта.",
+      "source": {
+        "id": "context.costs-and-firm.short-run-long-run",
+        "name": "Исследовательский контекст, присланный пользователем",
+        "source_type": "text",
+        "excerpt": "SR / LR: краткосрочный период; долгосрочный период; фиксированные и переменные факторы; SR TC; LR TC; SR AC; LR AC; сравнение SR/LR; условия присутствия фирмы. SR: P >= AVC_min. LR: P >= AC_min."
+      },
+      "source_excerpt": "SR / LR: краткосрочный период; долгосрочный период; фиксированные и переменные факторы; SR TC; LR TC; SR AC; LR AC; сравнение SR/LR; условия присутствия фирмы. SR: P >= AVC_min. LR: P >= AC_min."
+    }
+  ]
+}

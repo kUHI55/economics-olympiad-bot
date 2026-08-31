@@ -12,7 +12,16 @@ DEMO_ROOT = PROJECT_ROOT / "data" / "theory"
 
 class TheoryDataValidatorTests(unittest.TestCase):
     def test_validates_demo_topic(self) -> None:
-        report = validate_theory_repository(DEMO_ROOT)
+        with tempfile.TemporaryDirectory() as temporary_directory:
+            root = Path(temporary_directory) / "theory"
+            fixture_directory = root / "demo" / "validation-fixture"
+            fixture_directory.mkdir(parents=True)
+            for name in ("knowledge.json", "questions.json"):
+                shutil.copy(
+                    DEMO_ROOT / "demo" / "validation-fixture" / name, fixture_directory / name
+                )
+            report = validate_theory_repository(root)
+
         self.assertEqual(report.topic_directories, 1)
         self.assertEqual(report.knowledge_elements, 1)
         self.assertEqual(report.questions, 1)

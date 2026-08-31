@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "section": "costs-and-firm",
+  "section_title": "Издержки и фирма",
+  "topic": "applications",
+  "topic_title": "Применения",
+  "questions": [
+    {
+      "id": "costs-and-firm.applications.labor-market.formula",
+      "knowledge_id": "costs-and-firm.applications.labor-market",
+      "type": "notation",
+      "difficulty": 2,
+      "question": "Через какие обозначения отчёт связывает аппарат фирмы с рынком труда?",
+      "reference_answer": "Через MRPL/MCL.",
+      "key_points": [
+        "MRPL/MCL"
+      ],
+      "explanation": "Ответ следует из исследовательского отчёта.",
+      "source": {
+        "id": "context.costs-and-firm.applications",
+        "name": "Исследовательский контекст, присланный пользователем",
+        "source_type": "text",
+        "excerpt": "Применения: рынок труда через MRPL/MCL; монополия как продолжение аппарата фирмы — только в объёме, прямо подтверждённом исследовательским отчётом."
+      },
+      "source_excerpt": "Применения: рынок труда через MRPL/MCL; монополия как продолжение аппарата фирмы — только в объёме, прямо подтверждённом исследовательским отчётом."
+    },
+    {
+      "id": "costs-and-firm.applications.monopoly-extension.scope",
+      "knowledge_id": "costs-and-firm.applications.monopoly-extension",
+      "type": "understanding",
+      "difficulty": 2,
+      "question": "Какое ограничение на включение монополии установлено в отчёте?",
+      "reference_answer": "Только как продолжение аппарата фирмы и в прямо подтверждённом объёме.",
+      "key_points": [
+        "продолжение аппарата фирмы",
+        "подтверждённый объём"
+      ],
+      "explanation": "Ответ следует из исследовательского отчёта.",
+      "source": {
+        "id": "context.costs-and-firm.applications",
+        "name": "Исследовательский контекст, присланный пользователем",
+        "source_type": "text",
+        "excerpt": "Применения: рынок труда через MRPL/MCL; монополия как продолжение аппарата фирмы — только в объёме, прямо подтверждённом исследовательским отчётом."
+      },
+      "source_excerpt": "Применения: рынок труда через MRPL/MCL; монополия как продолжение аппарата фирмы — только в объёме, прямо подтверждённом исследовательским отчётом."
+    },
+    {
+      "id": "costs-and-firm.applications.monopoly-extension.boundary",
+      "knowledge_id": "costs-and-firm.applications.monopoly-extension",
+      "type": "common_mistake",
+      "difficulty": 3,
+      "question": "Можно ли дополнять этот блок самостоятельной теорией монополии?",
+      "reference_answer": "Нет, только объём, прямо подтверждённый отчётом.",
+      "key_points": [
+        "прямо подтверждённый объём"
+      ],
+      "explanation": "Ответ следует из исследовательского отчёта.",
+      "source": {
+        "id": "context.costs-and-firm.applications",
+        "name": "Исследовательский контекст, присланный пользователем",
+        "source_type": "text",
+        "excerpt": "Применения: рынок труда через MRPL/MCL; монополия как продолжение аппарата фирмы — только в объёме, прямо подтверждённом исследовательским отчётом."
+      },
+      "source_excerpt": "Применения: рынок труда через MRPL/MCL; монополия как продолжение аппарата фирмы — только в объёме, прямо подтверждённом исследовательским отчётом."
+    }
+  ]
+}
