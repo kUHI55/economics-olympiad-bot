@@ -1,6 +1,6 @@
 const state = {
   data: null,
-  progress: { available: false, themes: {} },
+  progress: { available: false, answer_mode: "local", themes: {} },
   view: "topics",
   themeId: null,
   themePane: "theory",
@@ -176,7 +176,8 @@ function renderThemeTheoryContent(theme) {
 function renderThemeQuiz(theme) {
   const questions = theme.subtopics.flatMap((subtopic) => subtopic.questions);
   const constructions = questions.filter((question) => question.category === "construction").length;
-  return `<div class="section-head"><div><p class="eyebrow">ТРЕНИРОВКА</p><h2>Закрепи тему</h2></div><p>Смешивай теорию и конструкции или выбери отдельный формат.</p></div><div class="quiz-card"><div class="quiz-controls"><label for="theme-quiz-kind">Режим</label><select id="theme-quiz-kind"><option value="all">Смешанный квиз</option><option value="theory">Теория и формулы</option><option value="construction" ${constructions ? "" : "disabled"}>Конструкции задач (${constructions})</option></select></div><div class="quiz-controls"><label for="theme-quiz-count">Вопросов</label><select id="theme-quiz-count"><option>5</option><option selected>10</option><option>20</option></select></div><button class="button primary" data-action="start-theme-quiz">Начать тренировку</button><p class="progress-note">Попытки сохраняются в общий прогресс и расписание повторения.</p></div>`;
+  const progressNote = state.progress.answer_mode === "local" ? "Проверка работает локально; без PostgreSQL прогресс не сохраняется." : "Попытки сохраняются в общий прогресс и расписание повторения.";
+  return `<div class="section-head"><div><p class="eyebrow">ТРЕНИРОВКА</p><h2>Закрепи тему</h2></div><p>Смешивай теорию и конструкции или выбери отдельный формат.</p></div><div class="quiz-card"><div class="quiz-controls"><label for="theme-quiz-kind">Режим</label><select id="theme-quiz-kind"><option value="all">Смешанный квиз</option><option value="theory">Теория и формулы</option><option value="construction" ${constructions ? "" : "disabled"}>Конструкции задач (${constructions})</option></select></div><div class="quiz-controls"><label for="theme-quiz-count">Вопросов</label><select id="theme-quiz-count"><option>5</option><option selected>10</option><option>20</option></select></div><button class="button primary" data-action="start-theme-quiz">Начать тренировку</button><p class="progress-note">${progressNote}</p></div>`;
 }
 
 function renderQuizLanding() {
@@ -189,8 +190,8 @@ function renderQuizQuestion() {
   const question = state.questions[state.questionIndex];
   const options = question.options.length ? `<div>${question.options.map((option, index) => `<label class="quiz-option"><input type="radio" name="answer" value="${index}" ${state.answered ? "disabled" : ""}><span>${escapeHtml(option.text)}</span></label>`).join("")}</div>` : `<textarea class="answer" name="answer" placeholder="Запиши ответ своими словами или формулой" ${state.answered ? "disabled" : ""}></textarea>`;
   const result = state.lastResult;
-  const feedback = result ? `<div class="feedback ${result.verdict === "incorrect" ? "error" : ""}"><strong>${result.verdict === "correct" ? "Верно!" : result.verdict === "partial" ? "Частично верно" : result.verdict === "uncertain" ? "Ответ сохранён, нужна проверка" : "Неверно — разберём ответ"}</strong><p>${escapeHtml(result.short_explanation || "")}</p><p><strong>Правильный ответ:</strong> ${escapeHtml(result.reference_answer)}</p><p>${escapeHtml(result.explanation)}</p><p class="source">Основание: ${escapeHtml(result.source_excerpt)}</p><button class="text-button" data-action="open-answer-theory">Открыть связанный раздел теории →</button></div>` : "";
-  return `<div class="quiz-card active-quiz"><p class="eyebrow">${escapeHtml(question.theme_title)} · ${escapeHtml(question.subtopic_title)}</p><span class="quiz-progress">ВОПРОС ${state.questionIndex + 1} / ${state.questions.length} · СЛОЖНОСТЬ ${question.difficulty}/5</span><p class="quiz-question">${escapeHtml(question.question)}</p><form id="answer-form">${options}<div class="quiz-actions"><button class="button primary" type="submit" ${state.answered ? "disabled" : ""}>Проверить ответ</button>${state.answered ? `<button class="button" type="button" data-action="next-question">${state.questionIndex + 1 === state.questions.length ? "Завершить" : "Следующий вопрос"}</button>` : ""}</div></form>${feedback}</div>`;
+  const feedback = result ? `<div class="feedback ${result.verdict === "incorrect" ? "error" : ""}"><strong>${result.verdict === "correct" ? "Верно!" : result.verdict === "partial" ? "Частично верно" : result.verdict === "uncertain" ? "Не удалось надёжно оценить автоматически" : "Неверно — разберём ответ"}</strong><p>${escapeHtml(result.short_explanation || "")}</p><p><strong>Правильный ответ:</strong> ${escapeHtml(result.reference_answer)}</p><p>${escapeHtml(result.explanation)}</p><p class="source">Основание: ${escapeHtml(result.source_excerpt)}</p>${result.progress_saved === false ? '<p class="progress-note">Проверка работает локально; прогресс не сохраняется без PostgreSQL.</p>' : ""}<button class="text-button" data-action="open-answer-theory">Открыть связанный раздел теории →</button></div>` : "";
+  return `<div class="quiz-card active-quiz"><p class="eyebrow">${escapeHtml(question.theme_title)} · ${escapeHtml(question.subtopic_title)}</p><span class="quiz-progress">ВОПРОС ${state.questionIndex + 1} / ${state.questions.length} · СЛОЖНОСТЬ ${question.difficulty}/5</span><p class="quiz-question">${escapeHtml(question.question)}</p><form id="answer-form">${options}<div class="quiz-actions"><button class="button primary" type="submit" ${state.answered ? "disabled" : ""}>Проверить ответ</button>${state.answered ? `<button class="button" type="button" data-action="next-question">${state.questionIndex + 1 === state.questions.length ? "Завершить" : "Следующий вопрос"}</button>` : ""}</div></form>${state.quizError ? `<div class="feedback error">${escapeHtml(state.quizError)}</div>` : ""}${feedback}</div>`;
 }
 
 function render() {
@@ -208,10 +209,11 @@ function render() {
 }
 
 function showError(error) { content.innerHTML = `<div class="feedback error">${escapeHtml(error.message)}</div>`; }
+function showQuizError(message) { state.quizError = message; render(); }
 function setTheme(id) { state.themeId = id; state.subtopicId = null; state.themePane = "theory"; state.view = "theme"; render(); window.scrollTo({ top: 0, behavior: "smooth" }); }
 function beginQuiz(questions) {
   state.questions = [...questions].sort(() => Math.random() - 0.5);
-  state.questionIndex = 0; state.answered = false; state.lastResult = null; state.view = "quizzes"; render();
+  state.questionIndex = 0; state.answered = false; state.lastResult = null; state.quizError = null; state.view = "quizzes"; render();
 }
 function bindActions() {
   content.querySelectorAll("[data-theme]").forEach((card) => card.addEventListener("click", () => setTheme(card.dataset.theme)));
@@ -240,7 +242,7 @@ function bindActions() {
       beginQuiz(questions.slice(0, count));
     }
     else if (action === "next-question") {
-      state.questionIndex += 1; state.answered = false; state.lastResult = null;
+      state.questionIndex += 1; state.answered = false; state.lastResult = null; state.quizError = null;
       if (state.questionIndex >= state.questions.length) { state.questions = []; state.view = "quizzes"; }
       render();
     }
@@ -261,17 +263,22 @@ async function submitAnswer(event) {
   const selected = document.querySelector('input[name="answer"]:checked');
   const freeText = document.querySelector('textarea[name="answer"]');
   const answer = selected ? selected.value : freeText?.value.trim();
-  if (answer === undefined || answer === "") { showError(new Error("Сначала выбери вариант или введи ответ.")); return; }
-  if (state.password === null) state.password = window.prompt("Пароль сайта (WEB_PASSWORD):");
-  if (state.password === null) return;
+  if (answer === undefined || answer === "") { showQuizError("Сначала выбери вариант или введи ответ."); return; }
+  const localMode = state.progress.answer_mode === "local";
+  if (!localMode && state.password === null) state.password = window.prompt("Пароль сайта (WEB_PASSWORD):");
+  if (!localMode && state.password === null) return;
   try {
-    const credential = btoa(String.fromCodePoint(...new TextEncoder().encode(`website:${state.password}`)));
-    const response = await fetch("/api/answer", { method: "POST", headers: { "Content-Type": "application/json", Authorization: `Basic ${credential}` }, body: JSON.stringify({ question_id: question.id, answer }) });
+    const headers = { "Content-Type": "application/json" };
+    if (!localMode) {
+      const credential = btoa(String.fromCodePoint(...new TextEncoder().encode(`website:${state.password}`)));
+      headers.Authorization = `Basic ${credential}`;
+    }
+    const response = await fetch("/api/answer", { method: "POST", headers, body: JSON.stringify({ question_id: question.id, answer }) });
     const result = await response.json();
     if (!response.ok) { if (response.status === 401) state.password = null; throw new Error(result.error || "Проверка не удалась."); }
-    state.answered = true; state.lastResult = result; render();
-    state.progress = await fetch("/api/progress").then((reply) => reply.json()).catch(() => state.progress);
-  } catch (error) { showError(error); }
+    state.answered = true; state.lastResult = result; state.quizError = null; render();
+    if (result.progress_saved !== false) state.progress = await fetch("/api/progress").then((reply) => reply.json()).catch(() => state.progress);
+  } catch (error) { showQuizError(error.message || "Проверка не удалась."); }
 }
 
 async function loadReviewQuestions() {
@@ -294,6 +301,10 @@ Promise.all([
   fetch("/api/progress").then((response) => response.json()).catch(() => ({ available: false, themes: {} })),
 ]).then(([data, progress]) => {
   state.data = data; state.progress = progress;
+  const storageStatus = document.querySelector("#progress-storage-status");
+  if (storageStatus) storageStatus.textContent = progress.answer_mode === "local"
+    ? "Проверка доступна локально; без PostgreSQL прогресс не сохраняется."
+    : "При доступной PostgreSQL попытки сохраняются в прогресс.";
   if (!state.data.themes.length) throw new Error("В библиотеке пока нет учебных тем.");
   render();
 }).catch(showError);

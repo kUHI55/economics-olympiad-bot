@@ -12,6 +12,8 @@ from pathlib import Path
 from typing import Any
 from urllib.parse import unquote
 
+from pydantic import ValidationError
+from pydantic_settings.exceptions import SettingsError
 from sqlalchemy import func, select
 from sqlalchemy.ext.asyncio import async_sessionmaker, create_async_engine
 from sqlalchemy.orm import selectinload
@@ -27,6 +29,8 @@ from app.services.llm.client import UnavailableLlmClient
 from app.services.llm.openai_client import OpenAiLlmClient
 from app.services.progress.service import ProgressService
 from app.services.quiz.evaluator import AnswerEvaluationService
+from app.theory_data.validator import load_theory_repository
+from app.web.answer_checker import check_local_answer
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 THEORY_ROOT = PROJECT_ROOT / "data" / "theory"
@@ -68,9 +72,14 @@ class TheoryWebApplication:
             if method == "GET" and path.startswith("/api/documents/"):
                 return self._document_response(path, start_response)
             if method == "POST" and path == "/api/answer":
-                self._require_web_password(environ)
                 body = self._read_json_body(environ)
-                result = asyncio.run(self._save_answer(body))
+                settings = self._database_settings()
+                if settings is None:
+                    self._require_local_request(environ)
+                    result = self._check_answer_from_files(body)
+                else:
+                    self._require_web_password(environ)
+                    result = asyncio.run(self._save_answer(body))
                 return self._json_response(start_response, HTTPStatus.OK, result)
             return self._json_response(start_response, HTTPStatus.NOT_FOUND, {"error": "Страница не найдена."})
         except WebRequestError as error:
@@ -202,8 +211,10 @@ class TheoryWebApplication:
         return "Материалы темы и тренировки по её подразделам."
 
     async def _progress_payload(self) -> dict[str, Any]:
+        settings = self._database_settings()
+        if settings is None:
+            return {"available": False, "answer_mode": "local", "themes": {}}
         try:
-            settings = get_settings()
             engine = create_async_engine(settings.database_url, pool_pre_ping=True)
             factory = async_sessionmaker(engine, expire_on_commit=False)
             try:
@@ -231,6 +242,7 @@ class TheoryWebApplication:
                     rows = (await session.execute(query)).all()
                     return {
                         "available": True,
+                        "answer_mode": "database",
                         "themes": {
                             (external_id or "").removeprefix("section:"): {
                                 "percent": round(float(average or 0) * 100),
@@ -243,7 +255,7 @@ class TheoryWebApplication:
             finally:
                 await engine.dispose()
         except Exception:
-            return {"available": False, "themes": {}}
+            return {"available": False, "answer_mode": "database", "themes": {}}
 
     async def _review_question_ids(self) -> dict[str, Any]:
         settings = get_settings()
@@ -330,6 +342,46 @@ class TheoryWebApplication:
         if not isinstance(value, dict):
             raise WebRequestError(HTTPStatus.BAD_REQUEST, "Ожидался объект запроса.")
         return value
+
+    @staticmethod
+    def _database_settings():
+        try:
+            settings = get_settings()
+        except (ValidationError, SettingsError):
+            return None
+        return settings if settings.database_url.strip() else None
+
+    @staticmethod
+    def _require_local_request(environ: dict[str, Any]) -> None:
+        if environ.get("REMOTE_ADDR") not in {"127.0.0.1", "::1"}:
+            raise WebRequestError(
+                HTTPStatus.FORBIDDEN,
+                "Локальная проверка доступна только с этого компьютера.",
+            )
+
+    def _check_answer_from_files(self, body: dict[str, Any]) -> dict[str, object]:
+        question_id = body.get("question_id")
+        answer = body.get("answer")
+        if not isinstance(question_id, str) or not isinstance(answer, str) or len(answer) > 2000:
+            raise WebRequestError(HTTPStatus.BAD_REQUEST, "Проверьте идентификатор вопроса и ответ.")
+
+        repository = load_theory_repository(self.theory_root)
+        question = next(
+            (
+                item
+                for topic in repository.topics
+                if not topic.knowledge.is_demo
+                for item in topic.questions.questions
+                if item.id == question_id
+            ),
+            None,
+        )
+        if question is None:
+            raise WebRequestError(HTTPStatus.NOT_FOUND, "Вопрос не найден в активных материалах.")
+        try:
+            return check_local_answer(question, answer)
+        except ValueError as error:
+            raise WebRequestError(HTTPStatus.BAD_REQUEST, str(error)) from error
 
     @staticmethod
     def _require_web_password(environ: dict[str, Any]) -> None:
@@ -429,6 +481,7 @@ class TheoryWebApplication:
                     "source_excerpt": question.source_excerpt,
                     "knowledge_id": question.knowledge_element.external_id,
                     "theme_id": question.knowledge_element.external_id.split(".", 1)[0],
+                    "progress_saved": True,
                 }
         finally:
             if isinstance(llm, OpenAiLlmClient):

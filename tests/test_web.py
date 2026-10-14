@@ -1,3 +1,4 @@
+import asyncio
 import base64
 import io
 import json
@@ -109,7 +110,10 @@ class TheoryWebRouteTests(unittest.TestCase):
 
     def test_answer_submission_requires_site_password(self) -> None:
         body = json.dumps({"question_id": "math.test", "answer": "a"}).encode()
-        with patch.dict("os.environ", {"WEB_PASSWORD": "correct-horse"}):
+        with (
+            patch.object(self.application, "_database_settings", return_value=SimpleNamespace(database_url="postgresql://configured")),
+            patch.dict("os.environ", {"WEB_PASSWORD": "correct-horse"}),
+        ):
             result = request(
                 self.application,
                 "/api/answer",
@@ -123,6 +127,106 @@ class TheoryWebRouteTests(unittest.TestCase):
 
         self.assertTrue(result["status"].startswith("401"))
         self.assertIn("WWW-Authenticate", result["headers"])
+
+    def test_local_answer_route_checks_json_without_password_or_database(self) -> None:
+        repository = web_module.load_theory_repository(THEORY_ROOT)
+        question = next(
+            item
+            for topic in repository.topics
+            for item in topic.questions.questions
+            if item.type.value == "multiple_choice"
+        )
+        correct_index = next(
+            index for index, option in enumerate(question.options)
+            if option.id == question.correct_answer
+        )
+        body = json.dumps({"question_id": question.id, "answer": str(correct_index)}).encode()
+        with patch.object(self.application, "_database_settings", return_value=None):
+            result = request(
+                self.application,
+                "/api/answer",
+                method="POST",
+                body=body,
+                headers={"CONTENT_TYPE": "application/json", "REMOTE_ADDR": "127.0.0.1"},
+            )
+        payload = json.loads(result["body"])
+        self.assertTrue(result["status"].startswith("200"))
+        self.assertEqual(payload["verdict"], "correct")
+        self.assertEqual(payload["reference_answer"], question.reference_answer)
+        self.assertEqual(payload["explanation"], question.explanation)
+        self.assertFalse(payload["progress_saved"])
+
+    def test_local_answer_route_rejects_non_loopback_clients(self) -> None:
+        with patch.object(self.application, "_database_settings", return_value=None):
+            result = request(
+                self.application,
+                "/api/answer",
+                method="POST",
+                body=json.dumps({"question_id": "unknown", "answer": "x"}).encode(),
+                headers={"CONTENT_TYPE": "application/json", "REMOTE_ADDR": "192.0.2.10"},
+            )
+        self.assertTrue(result["status"].startswith("403"))
+
+    def test_progress_endpoint_reports_file_backed_local_mode(self) -> None:
+        with patch.object(self.application, "_database_settings", return_value=None):
+            result = asyncio.run(self.application._progress_payload())
+        self.assertEqual(result["answer_mode"], "local")
+        self.assertFalse(result["available"])
+
+
+class LocalAnswerCheckerTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls) -> None:
+        repository = web_module.load_theory_repository(THEORY_ROOT)
+        cls.questions = [
+            question
+            for topic in repository.topics
+            for question in topic.questions.questions
+        ]
+
+    def test_supported_multiple_choice_formula_and_free_response_types(self) -> None:
+        from app.web.answer_checker import check_local_answer
+
+        multiple_choice = next(q for q in self.questions if q.type.value == "multiple_choice")
+        correct_index = next(i for i, option in enumerate(multiple_choice.options) if option.id == multiple_choice.correct_answer)
+        result = check_local_answer(multiple_choice, str(correct_index))
+        self.assertEqual(result["verdict"], "correct")
+
+        formula = next(q for q in self.questions if q.type.value == "formula")
+        exact_formula = check_local_answer(formula, formula.reference_answer)
+        self.assertEqual(exact_formula["verdict"], "correct")
+        self.assertFalse(exact_formula["progress_saved"])
+
+        free_response = next(q for q in self.questions if q.type.value != "multiple_choice")
+        uncertain = check_local_answer(free_response, "ответ своими словами, требующий проверки")
+        self.assertEqual(uncertain["verdict"], "uncertain")
+        self.assertIsNone(uncertain["score"])
+
+    def test_unsupported_formula_is_not_marked_incorrect(self) -> None:
+        from app.web.answer_checker import check_local_answer
+
+        formula = next(q for q in self.questions if q.type.value == "formula")
+        result = check_local_answer(formula, "sqrt(x) + ln(y)")
+        self.assertEqual(result["verdict"], "uncertain")
+
+    def test_each_present_question_type_accepts_its_exact_reference(self) -> None:
+        from app.web.answer_checker import check_local_answer
+
+        questions_by_type = {}
+        for question in self.questions:
+            questions_by_type.setdefault(question.type, question)
+        self.assertIn("multiple_choice", {kind.value for kind in questions_by_type})
+        self.assertIn("formula", {kind.value for kind in questions_by_type})
+        for question_type, question in questions_by_type.items():
+            if question_type.value == "multiple_choice":
+                answer = str(next(
+                    index for index, option in enumerate(question.options)
+                    if option.id == question.correct_answer
+                ))
+            else:
+                answer = question.reference_answer
+            with self.subTest(question_type=question_type.value):
+                self.assertEqual(check_local_answer(question, answer)["verdict"], "correct")
 
 
 class WebsiteProgressPersistenceTests(unittest.IsolatedAsyncioTestCase):
