@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "section": "utility-and-consumer",
+  "section_title": "Полезность и потребитель",
+  "topic": "income-price-and-elasticities",
+  "topic_title": "Доход, цены и эластичности",
+  "knowledge": [
+    {
+      "id": "utility-and-consumer.income-price-and-elasticities.engel-and-income-elasticity",
+      "title": "Кривая Энгеля и доходная эластичность",
+      "type": "formula",
+      "definitions": {},
+      "explanation": "Доходная эластичность показывает относительную реакцию спроса x на изменение дохода I.",
+      "source": {
+        "id": "utility-docx.engel-and-income-elasticity",
+        "name": "Полезность и потребитель: полный конспект пользователя (DOCX)",
+        "source_type": "docx",
+        "excerpt": "Eᵢˣ=(∂x/∂I)(I/x)"
+      },
+      "formula": "Eᵢˣ=(∂x/∂I)(I/x)"
+    },
+    {
+      "id": "utility-and-consumer.income-price-and-elasticities.own-cross-elasticity",
+      "title": "Собственная и перекрёстная эластичности",
+      "type": "formula",
+      "definitions": {},
+      "explanation": "Собственная ценовая эластичность относится к цене самого товара, перекрёстная — к цене другого товара.",
+      "source": {
+        "id": "utility-docx.own-cross-elasticity",
+        "name": "Полезность и потребитель: полный конспект пользователя (DOCX)",
+        "source_type": "docx",
+        "excerpt": "Eₚₓˣ=(∂x/∂pₓ)(pₓ/x); Eₚᵧˣ=(∂x/∂pᵧ)(pᵧ/x)"
+      },
+      "formula": "Eₚₓˣ=(∂x/∂pₓ)(pₓ/x); Eₚᵧˣ=(∂x/∂pᵧ)(pᵧ/x)"
+    },
+    {
+      "id": "utility-and-consumer.income-price-and-elasticities.normal-inferior-goods",
+      "title": "Виды товаров и реакция спроса",
+      "type": "causal_relationship",
+      "definitions": {},
+      "explanation": "Тип товара по реакции на доход и реакцию на собственную цену следует определять по соответствующей функции спроса, а не по одному названию товара.",
+      "source": {
+        "id": "utility-docx.normal-inferior-goods",
+        "name": "Полезность и потребитель: полный конспект пользователя (DOCX)",
+        "source_type": "docx",
+        "excerpt": "Доход, цены, эластичности и виды товаров"
+      }
+    }
+  ]
+}

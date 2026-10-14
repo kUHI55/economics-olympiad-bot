@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "section": "utility-and-consumer",
+  "section_title": "Полезность и потребитель",
+  "topic": "intertemporal-choice",
+  "topic_title": "Межвременной выбор и инвестиции",
+  "questions": [
+    {
+      "id": "utility-and-consumer.intertemporal-choice.intertemporal-budget.recall",
+      "knowledge_id": "utility-and-consumer.intertemporal-choice.intertemporal-budget",
+      "type": "formula",
+      "difficulty": 2,
+      "question": "Как записано межвременное бюджетное ограничение при единой ставке?",
+      "reference_answer": "c₁+c₂/(1+r)=s₁+s₂/(1+r).",
+      "key_points": [
+        "c₁+c₂/(1+r)=s₁+s₂/(1+r)."
+      ],
+      "explanation": "Условие единой ставки сохранено в формуле.",
+      "source": {
+        "id": "utility-docx.intertemporal-budget",
+        "name": "Полезность и потребитель: полный конспект пользователя (DOCX)",
+        "source_type": "docx",
+        "excerpt": "c₁+c₂/(1+r)=s₁+s₂/(1+r), если ставка едина"
+      },
+      "source_excerpt": "c₁+c₂/(1+r)=s₁+s₂/(1+r), если ставка едина"
+    },
+    {
+      "id": "utility-and-consumer.intertemporal-choice.interest-rate-change.recall",
+      "knowledge_id": "utility-and-consumer.intertemporal-choice.interest-rate-change",
+      "type": "understanding",
+      "difficulty": 2,
+      "question": "Какие эффекты рассматриваются при росте депозитной ставки?",
+      "reference_answer": "Эффект дохода и эффект замещения.",
+      "key_points": [
+        "Эффект дохода и эффект замещения."
+      ],
+      "explanation": "Оба эффекта перечислены в названии и разборе подраздела.",
+      "source": {
+        "id": "utility-docx.interest-rate-change",
+        "name": "Полезность и потребитель: полный конспект пользователя (DOCX)",
+        "source_type": "docx",
+        "excerpt": "Рост депозитной ставки: эффект дохода и замещения"
+      },
+      "source_excerpt": "Рост депозитной ставки: эффект дохода и замещения"
+    },
+    {
+      "id": "utility-and-consumer.intertemporal-choice.investment-project.recall",
+      "knowledge_id": "utility-and-consumer.intertemporal-choice.investment-project",
+      "type": "formula",
+      "difficulty": 2,
+      "question": "Какое внутреннее условие дано для однопериодного инвестиционного проекта?",
+      "reference_answer": "R′(X)=1+r.",
+      "key_points": [
+        "R′(X)=1+r."
+      ],
+      "explanation": "Формула приведена в формульном листе.",
+      "source": {
+        "id": "utility-docx.investment-project",
+        "name": "Полезность и потребитель: полный конспект пользователя (DOCX)",
+        "source_type": "docx",
+        "excerpt": "Инвестиционный проект: R′(X)=1+r"
+      },
+      "source_excerpt": "Инвестиционный проект: R′(X)=1+r"
+    },
+    {
+      "id": "utility-and-consumer.intertemporal-choice.piecewise-interest.recall",
+      "knowledge_id": "utility-and-consumer.intertemporal-choice.piecewise-interest",
+      "type": "understanding",
+      "difficulty": 2,
+      "question": "Почему при разных ставках по займу и депозиту нужно рассматривать случаи?",
+      "reference_answer": "Потому что бюджетная граница зависит от того, заёмщик потребитель или вкладчик.",
+      "key_points": [
+        "Потому что межвременное бюджетное ограничение является кусочным."
+      ],
+      "explanation": "В конспекте есть отдельный раздел о кусочных ставках и таблица случаев.",
+      "source": {
+        "id": "utility-docx.piecewise-interest",
+        "name": "Полезность и потребитель: полный конспект пользователя (DOCX)",
+        "source_type": "docx",
+        "excerpt": "Кусочные процентные ставки"
+      },
+      "source_excerpt": "Кусочные процентные ставки"
+    }
+  ]
+}

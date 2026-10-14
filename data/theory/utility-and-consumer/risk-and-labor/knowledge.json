@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "section": "utility-and-consumer",
+  "section_title": "Полезность и потребитель",
+  "topic": "risk-and-labor",
+  "topic_title": "Риск и предложение труда",
+  "knowledge": [
+    {
+      "id": "utility-and-consumer.risk-and-labor.expected-utility",
+      "title": "Ожидаемая полезность",
+      "type": "formula",
+      "definitions": {},
+      "explanation": "Для лотереи ожидаемая полезность равна сумме вероятностей исходов, умноженных на полезность соответствующего богатства; certainty equivalent определяется из U(CE)=E[U].",
+      "source": {
+        "id": "utility-docx.expected-utility",
+        "name": "Полезность и потребитель: полный конспект пользователя (DOCX)",
+        "source_type": "docx",
+        "excerpt": "E[U]=ΣpᵢU(Wᵢ); CE из U(CE)=E[U]"
+      },
+      "formula": "E[U]=ΣpᵢU(Wᵢ); U(CE)=E[U]; премия=E[W]−CE"
+    },
+    {
+      "id": "utility-and-consumer.risk-and-labor.risk-premium",
+      "title": "Эквивалент уверенности и премия за риск",
+      "type": "definition",
+      "definitions": {},
+      "explanation": "Премия за риск в конспекте записана как E[W]−CE.",
+      "source": {
+        "id": "utility-docx.risk-premium",
+        "name": "Полезность и потребитель: полный конспект пользователя (DOCX)",
+        "source_type": "docx",
+        "excerpt": "Премия за риск: E[W]−CE"
+      },
+      "formula": "E[W]−CE"
+    },
+    {
+      "id": "utility-and-consumer.risk-and-labor.labor-leisure",
+      "title": "Выбор между трудом и отдыхом",
+      "type": "formula",
+      "definitions": {},
+      "explanation": "В модели труда и отдыха L+l=T, C=wL; для внутреннего оптимума приведено условие MU_l/MU_C=w.",
+      "source": {
+        "id": "utility-docx.labor-leisure",
+        "name": "Полезность и потребитель: полный конспект пользователя (DOCX)",
+        "source_type": "docx",
+        "excerpt": "L+l=T; C=wL; MU_l/MU_C=w"
+      },
+      "formula": "L+l=T; C=wL; MU_l/MU_C=w"
+    },
+    {
+      "id": "utility-and-consumer.risk-and-labor.work-saturation",
+      "title": "Консультации и насыщение заработком",
+      "type": "common_mistake",
+      "definitions": {},
+      "explanation": "Для моделей консультаций и насыщения заработком необходимо учитывать ограничения времени и участок, на котором рассматривается полезность заработка.",
+      "source": {
+        "id": "utility-docx.work-saturation",
+        "name": "Полезность и потребитель: полный конспект пользователя (DOCX)",
+        "source_type": "docx",
+        "excerpt": "Платные консультации / выгорание; насыщение по заработку"
+      }
+    }
+  ]
+}

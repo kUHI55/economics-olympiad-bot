@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "section": "utility-and-consumer",
+  "section_title": "Полезность и потребитель",
+  "topic": "risk-and-labor",
+  "topic_title": "Риск и предложение труда",
+  "questions": [
+    {
+      "id": "utility-and-consumer.risk-and-labor.expected-utility.recall",
+      "knowledge_id": "utility-and-consumer.risk-and-labor.expected-utility",
+      "type": "formula",
+      "difficulty": 2,
+      "question": "В каком порядке найти ожидаемую полезность и certainty equivalent?",
+      "reference_answer": "Сначала ΣpᵢU(Wᵢ), затем решить U(CE)=E[U].",
+      "key_points": [
+        "Вычислить ΣpᵢU(Wᵢ), затем решить U(CE)=E[U]."
+      ],
+      "explanation": "Определения и порядок следуют формулам риск-раздела.",
+      "source": {
+        "id": "utility-docx.expected-utility",
+        "name": "Полезность и потребитель: полный конспект пользователя (DOCX)",
+        "source_type": "docx",
+        "excerpt": "E[U]=ΣpᵢU(Wᵢ); CE из U(CE)=E[U]"
+      },
+      "source_excerpt": "E[U]=ΣpᵢU(Wᵢ); CE из U(CE)=E[U]"
+    },
+    {
+      "id": "utility-and-consumer.risk-and-labor.risk-premium.recall",
+      "knowledge_id": "utility-and-consumer.risk-and-labor.risk-premium",
+      "type": "understanding",
+      "difficulty": 2,
+      "question": "Как записана премия за риск?",
+      "reference_answer": "E[W]−CE.",
+      "key_points": [
+        "E[W]−CE."
+      ],
+      "explanation": "Формула приведена в разделе риска.",
+      "source": {
+        "id": "utility-docx.risk-premium",
+        "name": "Полезность и потребитель: полный конспект пользователя (DOCX)",
+        "source_type": "docx",
+        "excerpt": "Премия за риск: E[W]−CE"
+      },
+      "source_excerpt": "Премия за риск: E[W]−CE"
+    },
+    {
+      "id": "utility-and-consumer.risk-and-labor.labor-leisure.recall",
+      "knowledge_id": "utility-and-consumer.risk-and-labor.labor-leisure",
+      "type": "formula",
+      "difficulty": 2,
+      "question": "Каковы бюджетные связи и внутреннее условие в модели труда и отдыха?",
+      "reference_answer": "L+l=T; C=wL; MU_l/MU_C=w.",
+      "key_points": [
+        "L+l=T, C=wL, MU_l/MU_C=w."
+      ],
+      "explanation": "Все три записи приведены в формульном листе.",
+      "source": {
+        "id": "utility-docx.labor-leisure",
+        "name": "Полезность и потребитель: полный конспект пользователя (DOCX)",
+        "source_type": "docx",
+        "excerpt": "L+l=T; C=wL; MU_l/MU_C=w"
+      },
+      "source_excerpt": "L+l=T; C=wL; MU_l/MU_C=w"
+    },
+    {
+      "id": "utility-and-consumer.risk-and-labor.work-saturation.recall",
+      "knowledge_id": "utility-and-consumer.risk-and-labor.work-saturation",
+      "type": "understanding",
+      "difficulty": 2,
+      "question": "Что нужно явно учитывать в задачах о платных консультациях и выгорании?",
+      "reference_answer": "Ограничение времени и возможность насыщения заработком.",
+      "key_points": [
+        "Ограничение времени и насыщение полезности заработком."
+      ],
+      "explanation": "Эти специальные модели выделены в подразделах раздела о труде.",
+      "source": {
+        "id": "utility-docx.work-saturation",
+        "name": "Полезность и потребитель: полный конспект пользователя (DOCX)",
+        "source_type": "docx",
+        "excerpt": "Платные консультации / выгорание; насыщение по заработку"
+      },
+      "source_excerpt": "Платные консультации / выгорание; насыщение по заработку"
+    }
+  ]
+}

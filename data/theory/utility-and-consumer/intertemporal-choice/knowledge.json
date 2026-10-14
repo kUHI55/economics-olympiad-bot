@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "section": "utility-and-consumer",
+  "section_title": "Полезность и потребитель",
+  "topic": "intertemporal-choice",
+  "topic_title": "Межвременной выбор и инвестиции",
+  "knowledge": [
+    {
+      "id": "utility-and-consumer.intertemporal-choice.intertemporal-budget",
+      "title": "Межвременной бюджет",
+      "type": "formula",
+      "definitions": {},
+      "explanation": "При единой ставке в конспекте дано межвременное бюджетное равенство c₁+c₂/(1+r)=s₁+s₂/(1+r).",
+      "source": {
+        "id": "utility-docx.intertemporal-budget",
+        "name": "Полезность и потребитель: полный конспект пользователя (DOCX)",
+        "source_type": "docx",
+        "excerpt": "c₁+c₂/(1+r)=s₁+s₂/(1+r), если ставка едина"
+      },
+      "formula": "c₁+c₂/(1+r)=s₁+s₂/(1+r)"
+    },
+    {
+      "id": "utility-and-consumer.intertemporal-choice.interest-rate-change",
+      "title": "Рост депозитной ставки",
+      "type": "causal_relationship",
+      "definitions": {},
+      "explanation": "Рост депозитной ставки разбирается через эффект замещения и эффект дохода; направление итогового изменения потребления нельзя объявить без такого анализа.",
+      "source": {
+        "id": "utility-docx.interest-rate-change",
+        "name": "Полезность и потребитель: полный конспект пользователя (DOCX)",
+        "source_type": "docx",
+        "excerpt": "Рост депозитной ставки: эффект дохода и замещения"
+      }
+    },
+    {
+      "id": "utility-and-consumer.intertemporal-choice.investment-project",
+      "title": "Инвестиционный проект",
+      "type": "formula",
+      "definitions": {},
+      "explanation": "Для внутреннего оптимума однопериодной доходности конспект приводит условие R′(X)=1+r.",
+      "source": {
+        "id": "utility-docx.investment-project",
+        "name": "Полезность и потребитель: полный конспект пользователя (DOCX)",
+        "source_type": "docx",
+        "excerpt": "Инвестиционный проект: R′(X)=1+r"
+      },
+      "formula": "R′(X)=1+r"
+    },
+    {
+      "id": "utility-and-consumer.intertemporal-choice.piecewise-interest",
+      "title": "Кусочные процентные ставки",
+      "type": "common_mistake",
+      "definitions": {},
+      "explanation": "Если ставки по займу и депозиту различаются, межвременной бюджет кусочный; нужно проверять пороговые случаи, а не подставлять одну ставку во все диапазоны.",
+      "source": {
+        "id": "utility-docx.piecewise-interest",
+        "name": "Полезность и потребитель: полный конспект пользователя (DOCX)",
+        "source_type": "docx",
+        "excerpt": "Кусочные процентные ставки"
+      }
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "section": "utility-and-consumer",
+  "section_title": "Полезность и потребитель",
+  "topic": "foundations-and-preferences",
+  "topic_title": "Обозначения и предпочтения",
+  "knowledge": [
+    {
+      "id": "utility-and-consumer.foundations-and-preferences.consumer-model",
+      "title": "Базовая модель потребителя",
+      "type": "definition",
+      "definitions": {},
+      "explanation": "Потребитель выбирает корзину товаров с учётом цен, дохода и дополнительных ограничений.",
+      "source": {
+        "id": "utility-docx.consumer-model",
+        "name": "Полезность и потребитель: полный конспект пользователя (DOCX)",
+        "source_type": "docx",
+        "excerpt": "Потребитель выбирает корзину товаров с учётом цен, дохода и дополнительных ограничений."
+      }
+    },
+    {
+      "id": "utility-and-consumer.foundations-and-preferences.utility-representation",
+      "title": "Функция полезности и предпочтения",
+      "type": "definition",
+      "definitions": {},
+      "explanation": "Функция полезности представляет предпочтения потребителя; численное значение полезности само по себе не следует трактовать как измерение счастья.",
+      "source": {
+        "id": "utility-docx.utility-representation",
+        "name": "Полезность и потребитель: полный конспект пользователя (DOCX)",
+        "source_type": "docx",
+        "excerpt": "Функция полезности представляет предпочтения потребителя"
+      }
+    },
+    {
+      "id": "utility-and-consumer.foundations-and-preferences.indifference-curves",
+      "title": "Кривые безразличия",
+      "type": "graphical_concept",
+      "definitions": {},
+      "explanation": "На кривой безразличия полезность постоянна; её наклон связывает предельные полезности товаров.",
+      "source": {
+        "id": "utility-docx.indifference-curves",
+        "name": "Полезность и потребитель: полный конспект пользователя (DOCX)",
+        "source_type": "docx",
+        "excerpt": "На кривой безразличия полезность постоянна"
+      },
+      "formula": "dy/dx = −MUₓ/MUᵧ"
+    },
+    {
+      "id": "utility-and-consumer.foundations-and-preferences.budget-set",
+      "title": "Бюджетное множество",
+      "type": "formula",
+      "definitions": {},
+      "explanation": "Бюджетное множество задаётся неравенством pₓx+pᵧy≤I; наклон бюджетной линии равен −pₓ/pᵧ.",
+      "source": {
+        "id": "utility-docx.budget-set",
+        "name": "Полезность и потребитель: полный конспект пользователя (DOCX)",
+        "source_type": "docx",
+        "excerpt": "pₓx+pᵧy≤I; наклон бюджета −pₓ/pᵧ"
+      },
+      "formula": "pₓx + pᵧy ≤ I; наклон −pₓ/pᵧ"
+    }
+  ]
+}

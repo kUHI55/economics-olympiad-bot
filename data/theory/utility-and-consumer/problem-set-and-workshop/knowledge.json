@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "section": "utility-and-consumer",
+  "section_title": "Полезность и потребитель",
+  "topic": "problem-set-and-workshop",
+  "topic_title": "Задачник, семинар и консультация",
+  "knowledge": [
+    {
+      "id": "utility-and-consumer.problem-set-and-workshop.problem-map",
+      "title": "Карта 24 задач задачника",
+      "type": "mechanism",
+      "definitions": {},
+      "explanation": "Конспект содержит матрицу всех 24 задач задачника и сопоставляет задачи с используемыми конструкциями.",
+      "source": {
+        "id": "utility-docx.problem-map",
+        "name": "Полезность и потребитель: полный конспект пользователя (DOCX)",
+        "source_type": "docx",
+        "excerpt": "Карта всех 24 задач задачника"
+      }
+    },
+    {
+      "id": "utility-and-consumer.problem-set-and-workshop.task10-piecewise",
+      "title": "Задача 10: кусочная предельная полезность",
+      "type": "example",
+      "definitions": {},
+      "explanation": "Для задачи 10 конспект сохраняет точные кусочные решения по четырём системам предельной полезности и порогам дохода.",
+      "source": {
+        "id": "utility-docx.task10-piecewise",
+        "name": "Полезность и потребитель: полный конспект пользователя (DOCX)",
+        "source_type": "docx",
+        "excerpt": "Задача 10: точные кусочные решения по четырём системам предельной полезности"
+      }
+    },
+    {
+      "id": "utility-and-consumer.problem-set-and-workshop.task16-four-goods",
+      "title": "Задача 16: четыре товара",
+      "type": "example",
+      "definitions": {},
+      "explanation": "Задача 16 рассматривает восемь функций полезности для четырёх товаров A, B, C, D; внутреннее условие не всегда гарантирует глобальный максимум.",
+      "source": {
+        "id": "utility-docx.task16-four-goods",
+        "name": "Полезность и потребитель: полный конспект пользователя (DOCX)",
+        "source_type": "docx",
+        "excerpt": "Задача 16: четыре товара A, B, C, D; восемь функций"
+      }
+    },
+    {
+      "id": "utility-and-consumer.problem-set-and-workshop.source-discrepancies",
+      "title": "Неоднозначности и расхождения источников",
+      "type": "common_mistake",
+      "definitions": {},
+      "explanation": "Для задачи 3(д) исходная функция отмечена как требующая сверки по оригинальному скану; расхождение для задачи 13(г) в конспекте явно сохранено.",
+      "source": {
+        "id": "utility-docx.source-discrepancies",
+        "name": "Полезность и потребитель: полный конспект пользователя (DOCX)",
+        "source_type": "docx",
+        "excerpt": "В задаче 3(д) формула требует проверки по исходному скану; расхождение задачи 13(г) не маскируется"
+      }
+    },
+    {
+      "id": "utility-and-consumer.problem-set-and-workshop.seminar-models",
+      "title": "Разобранные семинарские модели",
+      "type": "example",
+      "definitions": {},
+      "explanation": "Сводный конспект сохраняет модели с несколькими ограничениями, диетическую задачу, целочисленные корзины, комплекты и обмен между потребителями.",
+      "source": {
+        "id": "utility-docx.seminar-models",
+        "name": "Полезность и потребитель: полный конспект пользователя (DOCX)",
+        "source_type": "docx",
+        "excerpt": "Множественные ограничения; диетическая задача; целочисленная корзина; комплекты; обмен между двумя потребителями"
+      }
+    }
+  ]
+}

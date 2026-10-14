@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "section": "utility-and-consumer",
+  "section_title": "Полезность и потребитель",
+  "topic": "income-price-and-elasticities",
+  "topic_title": "Доход, цены и эластичности",
+  "questions": [
+    {
+      "id": "utility-and-consumer.income-price-and-elasticities.engel-and-income-elasticity.recall",
+      "knowledge_id": "utility-and-consumer.income-price-and-elasticities.engel-and-income-elasticity",
+      "type": "formula",
+      "difficulty": 2,
+      "question": "Как записана доходная эластичность спроса на x?",
+      "reference_answer": "Eᵢˣ=(∂x/∂I)(I/x).",
+      "key_points": [
+        "Eᵢˣ=(∂x/∂I)(I/x)."
+      ],
+      "explanation": "Запись дана в формульном листе.",
+      "source": {
+        "id": "utility-docx.engel-and-income-elasticity",
+        "name": "Полезность и потребитель: полный конспект пользователя (DOCX)",
+        "source_type": "docx",
+        "excerpt": "Eᵢˣ=(∂x/∂I)(I/x)"
+      },
+      "source_excerpt": "Eᵢˣ=(∂x/∂I)(I/x)"
+    },
+    {
+      "id": "utility-and-consumer.income-price-and-elasticities.own-cross-elasticity.recall",
+      "knowledge_id": "utility-and-consumer.income-price-and-elasticities.own-cross-elasticity",
+      "type": "formula",
+      "difficulty": 2,
+      "question": "Как различить собственную и перекрёстную эластичность спроса на x?",
+      "reference_answer": "По цене, по которой берётся производная: pₓ или pᵧ.",
+      "key_points": [
+        "В собственной производная берётся по pₓ, в перекрёстной — по pᵧ."
+      ],
+      "explanation": "Обе формулы приведены в формульном листе.",
+      "source": {
+        "id": "utility-docx.own-cross-elasticity",
+        "name": "Полезность и потребитель: полный конспект пользователя (DOCX)",
+        "source_type": "docx",
+        "excerpt": "Eₚₓˣ=(∂x/∂pₓ)(pₓ/x); Eₚᵧˣ=(∂x/∂pᵧ)(pᵧ/x)"
+      },
+      "source_excerpt": "Eₚₓˣ=(∂x/∂pₓ)(pₓ/x); Eₚᵧˣ=(∂x/∂pᵧ)(pᵧ/x)"
+    },
+    {
+      "id": "utility-and-consumer.income-price-and-elasticities.normal-inferior-goods.recall",
+      "knowledge_id": "utility-and-consumer.income-price-and-elasticities.normal-inferior-goods",
+      "type": "understanding",
+      "difficulty": 2,
+      "question": "На что опирается классификация товара по реакции спроса?",
+      "reference_answer": "На реакцию функции спроса на доход или цену.",
+      "key_points": [
+        "На соответствующее изменение спроса при изменении дохода или цены."
+      ],
+      "explanation": "Раздел связывает виды товаров с эластичностями и изменениями параметров.",
+      "source": {
+        "id": "utility-docx.normal-inferior-goods",
+        "name": "Полезность и потребитель: полный конспект пользователя (DOCX)",
+        "source_type": "docx",
+        "excerpt": "Доход, цены, эластичности и виды товаров"
+      },
+      "source_excerpt": "Доход, цены, эластичности и виды товаров"
+    }
+  ]
+}

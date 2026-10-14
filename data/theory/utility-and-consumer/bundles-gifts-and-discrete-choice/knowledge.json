@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "section": "utility-and-consumer",
+  "section_title": "Полезность и потребитель",
+  "topic": "bundles-gifts-and-discrete-choice",
+  "topic_title": "Комплекты, подарки и дискретный выбор",
+  "knowledge": [
+    {
+      "id": "utility-and-consumer.bundles-gifts-and-discrete-choice.topic-overview",
+      "title": "Состав полного конспекта",
+      "type": "definition",
+      "definitions": {},
+      "explanation": "Полный конспект объединяет теорию, формулы, алгоритмы, типы задач, решения и ловушки.",
+      "source": {
+        "id": "utility-docx.topic-overview",
+        "name": "Полезность и потребитель: полный конспект пользователя (DOCX)",
+        "source_type": "docx",
+        "excerpt": "Теория • формулы • алгоритмы • типы задач • решения • ловушки"
+      }
+    },
+    {
+      "id": "utility-and-consumer.bundles-gifts-and-discrete-choice.bundles",
+      "title": "Покупка комплектов",
+      "type": "mechanism",
+      "definitions": {},
+      "explanation": "При предложении комплектов нужно сравнить цену полного комплекта с ценами товаров по отдельности и учитывать, что наборы могут быть неделимыми.",
+      "source": {
+        "id": "utility-docx.bundles",
+        "name": "Полезность и потребитель: полный конспект пользователя (DOCX)",
+        "source_type": "docx",
+        "excerpt": "Комплекты"
+      }
+    },
+    {
+      "id": "utility-and-consumer.bundles-gifts-and-discrete-choice.gifts-and-promotions",
+      "title": "Подарки и акции",
+      "type": "mechanism",
+      "definitions": {},
+      "explanation": "В задаче с подарком нужно различать количество оплаченных и полученных единиц и применять функции итоговых количеств из условия.",
+      "source": {
+        "id": "utility-docx.gifts-and-promotions",
+        "name": "Полезность и потребитель: полный конспект пользователя (DOCX)",
+        "source_type": "docx",
+        "excerpt": "Подарки и акции"
+      }
+    },
+    {
+      "id": "utility-and-consumer.bundles-gifts-and-discrete-choice.integer-bundles",
+      "title": "Целочисленные корзины",
+      "type": "common_mistake",
+      "definitions": {},
+      "explanation": "Для дискретного выбора конспект предписывает перебрать допустимые целые корзины; бюджет не обязательно активен.",
+      "source": {
+        "id": "utility-docx.integer-bundles",
+        "name": "Полезность и потребитель: полный конспект пользователя (DOCX)",
+        "source_type": "docx",
+        "excerpt": "Дискретная задача: перебрать допустимые целые наборы/кандидаты; бюджет не обязательно активен"
+      }
+    },
+    {
+      "id": "utility-and-consumer.bundles-gifts-and-discrete-choice.saturation",
+      "title": "Насыщение",
+      "type": "common_mistake",
+      "definitions": {},
+      "explanation": "При точке насыщения дальнейшее увеличение потребления может не повышать полезность; её нужно учитывать как кандидата при поиске оптимума.",
+      "source": {
+        "id": "utility-docx.saturation",
+        "name": "Полезность и потребитель: полный конспект пользователя (DOCX)",
+        "source_type": "docx",
+        "excerpt": "Точка насыщения"
+      }
+    }
+  ]
+}

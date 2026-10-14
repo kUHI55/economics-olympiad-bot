@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "section": "utility-and-consumer",
+  "section_title": "Полезность и потребитель",
+  "topic": "price-effects-and-endowments",
+  "topic_title": "Эффекты цены и первоначальный запас",
+  "knowledge": [
+    {
+      "id": "utility-and-consumer.price-effects-and-endowments.substitution-income-effects",
+      "title": "Эффекты замещения и дохода",
+      "type": "comparison",
+      "definitions": {},
+      "explanation": "Общая реакция спроса на изменение цены разбирается через эффект замещения и эффект дохода.",
+      "source": {
+        "id": "utility-docx.substitution-income-effects",
+        "name": "Полезность и потребитель: полный конспект пользователя (DOCX)",
+        "source_type": "docx",
+        "excerpt": "Эффект замещения, эффект дохода"
+      }
+    },
+    {
+      "id": "utility-and-consumer.price-effects-and-endowments.hicks-slutsky",
+      "title": "Компенсации Хикса и Слуцкого",
+      "type": "formula",
+      "definitions": {},
+      "explanation": "В конспекте приведено разложение Слуцкого: ∂xᵢ/∂pⱼ=∂hᵢ/∂pⱼ−xⱼ∂xᵢ/∂I; варианты компенсации Хикса и Слуцкого не следует смешивать.",
+      "source": {
+        "id": "utility-docx.hicks-slutsky",
+        "name": "Полезность и потребитель: полный конспект пользователя (DOCX)",
+        "source_type": "docx",
+        "excerpt": "Слуцкий: ∂xᵢ/∂pⱼ=∂hᵢ/∂pⱼ−xⱼ∂xᵢ/∂I"
+      },
+      "formula": "∂xᵢ/∂pⱼ=∂hᵢ/∂pⱼ−xⱼ∂xᵢ/∂I"
+    },
+    {
+      "id": "utility-and-consumer.price-effects-and-endowments.giffen-veblen",
+      "title": "Товары Гиффена и эффект Веблена",
+      "type": "comparison",
+      "definitions": {},
+      "explanation": "Раздел отдельно рассматривает эффект замещения, эффект дохода, Гиффена и первоначальный запас; эти явления нельзя сводить к одному механизму.",
+      "source": {
+        "id": "utility-docx.giffen-veblen",
+        "name": "Полезность и потребитель: полный конспект пользователя (DOCX)",
+        "source_type": "docx",
+        "excerpt": "Гиффен и первоначальный запас"
+      }
+    },
+    {
+      "id": "utility-and-consumer.price-effects-and-endowments.endowment",
+      "title": "Выбор при первоначальном запасе",
+      "type": "mechanism",
+      "definitions": {},
+      "explanation": "При первоначальном запасе изменение относительных цен меняет стоимость исходной корзины; анализ должен учитывать возможность торговли относительно запаса.",
+      "source": {
+        "id": "utility-docx.endowment",
+        "name": "Полезность и потребитель: полный конспект пользователя (DOCX)",
+        "source_type": "docx",
+        "excerpt": "Первоначальный запас и торговля"
+      }
+    }
+  ]
+}

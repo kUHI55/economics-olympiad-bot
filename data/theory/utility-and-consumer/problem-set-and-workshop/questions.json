@@ -1,0 +1,119 @@
+{
+  "schema_version": 1,
+  "section": "utility-and-consumer",
+  "section_title": "Полезность и потребитель",
+  "topic": "problem-set-and-workshop",
+  "topic_title": "Задачник, семинар и консультация",
+  "questions": [
+    {
+      "id": "utility-and-consumer.problem-set-and-workshop.problem-map.recall",
+      "knowledge_id": "utility-and-consumer.problem-set-and-workshop.problem-map",
+      "type": "multiple_choice",
+      "difficulty": 2,
+      "question": "Сколько задач включает карта задачника в конспекте?",
+      "options": [
+        {
+          "id": "choice-1",
+          "text": "24 задачи"
+        },
+        {
+          "id": "choice-2",
+          "text": "17 задач"
+        },
+        {
+          "id": "choice-3",
+          "text": "10 задач"
+        }
+      ],
+      "correct_answer": "choice-1",
+      "reference_answer": "24.",
+      "key_points": [
+        "24 задачи."
+      ],
+      "explanation": "Количество явно указано в заголовке раздела и таблице.",
+      "source": {
+        "id": "utility-docx.problem-map",
+        "name": "Полезность и потребитель: полный конспект пользователя (DOCX)",
+        "source_type": "docx",
+        "excerpt": "Карта всех 24 задач задачника"
+      },
+      "source_excerpt": "Карта всех 24 задач задачника"
+    },
+    {
+      "id": "utility-and-consumer.problem-set-and-workshop.task10-piecewise.recall",
+      "knowledge_id": "utility-and-consumer.problem-set-and-workshop.task10-piecewise",
+      "type": "understanding",
+      "difficulty": 2,
+      "question": "Сколько систем предельной полезности разобрано для задачи 10?",
+      "reference_answer": "Четыре.",
+      "key_points": [
+        "Четыре."
+      ],
+      "explanation": "Это прямо указано в заголовке таблицы задачи 10.",
+      "source": {
+        "id": "utility-docx.task10-piecewise",
+        "name": "Полезность и потребитель: полный конспект пользователя (DOCX)",
+        "source_type": "docx",
+        "excerpt": "Задача 10: точные кусочные решения по четырём системам предельной полезности"
+      },
+      "source_excerpt": "Задача 10: точные кусочные решения по четырём системам предельной полезности"
+    },
+    {
+      "id": "utility-and-consumer.problem-set-and-workshop.task16-four-goods.recall",
+      "knowledge_id": "utility-and-consumer.problem-set-and-workshop.task16-four-goods",
+      "type": "understanding",
+      "difficulty": 2,
+      "question": "Сколько функций разбирается в задаче 16 для четырёх товаров?",
+      "reference_answer": "Восемь.",
+      "key_points": [
+        "Восемь."
+      ],
+      "explanation": "Количество указано в конспекте; там отдельно отмечена необходимость проверить глобальность.",
+      "source": {
+        "id": "utility-docx.task16-four-goods",
+        "name": "Полезность и потребитель: полный конспект пользователя (DOCX)",
+        "source_type": "docx",
+        "excerpt": "Задача 16: четыре товара A, B, C, D; восемь функций"
+      },
+      "source_excerpt": "Задача 16: четыре товара A, B, C, D; восемь функций"
+    },
+    {
+      "id": "utility-and-consumer.problem-set-and-workshop.source-discrepancies.recall",
+      "knowledge_id": "utility-and-consumer.problem-set-and-workshop.source-discrepancies",
+      "type": "understanding",
+      "difficulty": 2,
+      "question": "Как конспект предлагает обращаться с неразборчивой формулой задачи 3(д)?",
+      "reference_answer": "Сверить с оригинальным сканом и не восстанавливать формулу догадкой.",
+      "key_points": [
+        "Сверить с оригинальным сканом; не угадывать формулу."
+      ],
+      "explanation": "В конспекте недостаточность исходного скана отмечена явно.",
+      "source": {
+        "id": "utility-docx.source-discrepancies",
+        "name": "Полезность и потребитель: полный конспект пользователя (DOCX)",
+        "source_type": "docx",
+        "excerpt": "В задаче 3(д) формула требует проверки по исходному скану; расхождение задачи 13(г) не маскируется"
+      },
+      "source_excerpt": "В задаче 3(д) формула требует проверки по исходному скану; расхождение задачи 13(г) не маскируется"
+    },
+    {
+      "id": "utility-and-consumer.problem-set-and-workshop.seminar-models.recall",
+      "knowledge_id": "utility-and-consumer.problem-set-and-workshop.seminar-models",
+      "type": "understanding",
+      "difficulty": 2,
+      "question": "Назовите две модели, включённые в сводный разбор семинара.",
+      "reference_answer": "Например, диетическая задача и обмен между потребителями.",
+      "key_points": [
+        "Например: диетическая задача и обмен между двумя потребителями."
+      ],
+      "explanation": "Обе модели перечислены среди разобранных материалов.",
+      "source": {
+        "id": "utility-docx.seminar-models",
+        "name": "Полезность и потребитель: полный конспект пользователя (DOCX)",
+        "source_type": "docx",
+        "excerpt": "Множественные ограничения; диетическая задача; целочисленная корзина; комплекты; обмен между двумя потребителями"
+      },
+      "source_excerpt": "Множественные ограничения; диетическая задача; целочисленная корзина; комплекты; обмен между двумя потребителями"
+    }
+  ]
+}

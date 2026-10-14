@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "section": "utility-and-consumer",
+  "section_title": "Полезность и потребитель",
+  "topic": "utility-functions-and-demand",
+  "topic_title": "Функции полезности и спрос",
+  "questions": [
+    {
+      "id": "utility-and-consumer.utility-functions-and-demand.cobb-douglas.recall",
+      "knowledge_id": "utility-and-consumer.utility-functions-and-demand.cobb-douglas",
+      "type": "formula",
+      "difficulty": 2,
+      "question": "Каковы формулы спроса для U=xᵅyᵝ?",
+      "reference_answer": "x*=αI/[(α+β)pₓ]; y*=βI/[(α+β)pᵧ].",
+      "key_points": [
+        "x*=αI/[(α+β)pₓ], y*=βI/[(α+β)pᵧ]."
+      ],
+      "explanation": "Формулы сохранены из формульного листа конспекта.",
+      "source": {
+        "id": "utility-docx.cobb-douglas",
+        "name": "Полезность и потребитель: полный конспект пользователя (DOCX)",
+        "source_type": "docx",
+        "excerpt": "Для Cobb–Douglas U=xᵅyᵝ: x*=αI/[(α+β)pₓ], y*=βI/[(α+β)pᵧ]"
+      },
+      "source_excerpt": "Для Cobb–Douglas U=xᵅyᵝ: x*=αI/[(α+β)pₓ], y*=βI/[(α+β)pᵧ]"
+    },
+    {
+      "id": "utility-and-consumer.utility-functions-and-demand.substitutes-complements.recall",
+      "knowledge_id": "utility-and-consumer.utility-functions-and-demand.substitutes-complements",
+      "type": "understanding",
+      "difficulty": 2,
+      "question": "Чем различается первый шаг для линейной полезности и для U=min(ax,by)?",
+      "reference_answer": "Для линейной сравнивают отдачу на рубль; для min-связи используют ax=by.",
+      "key_points": [
+        "Для линейной сравнить a/pₓ и b/pᵧ; для min-связи установить ax=by."
+      ],
+      "explanation": "Это краткое сопоставление двух форм полезности из конспекта.",
+      "source": {
+        "id": "utility-docx.substitutes-complements",
+        "name": "Полезность и потребитель: полный конспект пользователя (DOCX)",
+        "source_type": "docx",
+        "excerpt": "Линейная U=ax+by: сравнить a/pₓ и b/pᵧ; U=min(ax,by): ax=by"
+      },
+      "source_excerpt": "Линейная U=ax+by: сравнить a/pₓ и b/pᵧ; U=min(ax,by): ax=by"
+    },
+    {
+      "id": "utility-and-consumer.utility-functions-and-demand.convex-and-saturated-utility.recall",
+      "knowledge_id": "utility-and-consumer.utility-functions-and-demand.convex-and-saturated-utility",
+      "type": "understanding",
+      "difficulty": 2,
+      "question": "Почему нельзя считать условие производной достаточным для U=x²+y²?",
+      "reference_answer": "Потому что выпуклость требует проверки граничных кандидатов и сравнения значений полезности.",
+      "key_points": [
+        "Потому что выпуклая полезность может давать максимум на границе; кандидатов нужно сравнить."
+      ],
+      "explanation": "Конспект различает выпуклую полезность и функцию с насыщением.",
+      "source": {
+        "id": "utility-docx.convex-and-saturated-utility",
+        "name": "Полезность и потребитель: полный конспект пользователя (DOCX)",
+        "source_type": "docx",
+        "excerpt": "Выпуклая полезность: U=x²+y²; полезность с насыщением: U=ax−bx²+y"
+      },
+      "source_excerpt": "Выпуклая полезность: U=x²+y²; полезность с насыщением: U=ax−bx²+y"
+    },
+    {
+      "id": "utility-and-consumer.utility-functions-and-demand.demand-derivation.recall",
+      "knowledge_id": "utility-and-consumer.utility-functions-and-demand.demand-derivation",
+      "type": "understanding",
+      "difficulty": 2,
+      "question": "Что представляют собой таблицы задач 3 и 7 в конспекте?",
+      "reference_answer": "Формулы спроса для перечисленных функций полезности.",
+      "key_points": [
+        "Наборы функций спроса для перечисленных в задачнике функций полезности."
+      ],
+      "explanation": "В конспекте есть отдельные таблицы для задач 3 и 7.",
+      "source": {
+        "id": "utility-docx.demand-derivation",
+        "name": "Полезность и потребитель: полный конспект пользователя (DOCX)",
+        "source_type": "docx",
+        "excerpt": "Вывод спроса: универсальная схема и формулы из задачника"
+      },
+      "source_excerpt": "Вывод спроса: универсальная схема и формулы из задачника"
+    },
+    {
+      "id": "utility-and-consumer.utility-functions-and-demand.aggregate-demand.recall",
+      "knowledge_id": "utility-and-consumer.utility-functions-and-demand.aggregate-demand",
+      "type": "formula",
+      "difficulty": 2,
+      "question": "Как получить совокупный спрос из индивидуальных функций?",
+      "reference_answer": "Суммировать индивидуальные количества спроса.",
+      "key_points": [
+        "Сложить индивидуальные количества спроса при данной цене."
+      ],
+      "explanation": "Так сформулирован подраздел о суммировании спроса.",
+      "source": {
+        "id": "utility-docx.aggregate-demand",
+        "name": "Полезность и потребитель: полный конспект пользователя (DOCX)",
+        "source_type": "docx",
+        "excerpt": "Суммирование спроса разных потребителей"
+      },
+      "source_excerpt": "Суммирование спроса разных потребителей"
+    }
+  ]
+}

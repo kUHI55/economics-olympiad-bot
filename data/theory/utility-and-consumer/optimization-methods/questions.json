@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "section": "utility-and-consumer",
+  "section_title": "Полезность и потребитель",
+  "topic": "optimization-methods",
+  "topic_title": "Методы максимизации",
+  "questions": [
+    {
+      "id": "utility-and-consumer.optimization-methods.direct-optimization.recall",
+      "knowledge_id": "utility-and-consumer.optimization-methods.direct-optimization",
+      "type": "understanding",
+      "difficulty": 2,
+      "question": "Что делает метод прямой оптимизации?",
+      "reference_answer": "Подставляет ограничение в полезность и сравнивает допустимые кандидаты.",
+      "key_points": [
+        "Подставляет ограничение в полезность и ищет максимум среди допустимых вариантов."
+      ],
+      "explanation": "Это один из трёх методов максимизации, выделенных в конспекте.",
+      "source": {
+        "id": "utility-docx.direct-optimization",
+        "name": "Полезность и потребитель: полный конспект пользователя (DOCX)",
+        "source_type": "docx",
+        "excerpt": "Метод прямой оптимизации («в лоб»)"
+      },
+      "source_excerpt": "Метод прямой оптимизации («в лоб»)"
+    },
+    {
+      "id": "utility-and-consumer.optimization-methods.marginal-utilities.recall",
+      "knowledge_id": "utility-and-consumer.optimization-methods.marginal-utilities",
+      "type": "formula",
+      "difficulty": 2,
+      "question": "Когда применяют равенство предельных полезностей на рубль?",
+      "reference_answer": "Для гладкого внутреннего оптимума после проверки условий.",
+      "key_points": [
+        "Для гладкого внутреннего оптимума после проверки условий применимости."
+      ],
+      "explanation": "Конспект отдельно предупреждает, что равенство нельзя применять автоматически.",
+      "source": {
+        "id": "utility-docx.marginal-utilities",
+        "name": "Полезность и потребитель: полный конспект пользователя (DOCX)",
+        "source_type": "docx",
+        "excerpt": "внутренний оптимум: MUₓ/pₓ=MUᵧ/pᵧ"
+      },
+      "source_excerpt": "внутренний оптимум: MUₓ/pₓ=MUᵧ/pᵧ"
+    },
+    {
+      "id": "utility-and-consumer.optimization-methods.level-curves.recall",
+      "knowledge_id": "utility-and-consumer.optimization-methods.level-curves",
+      "type": "understanding",
+      "difficulty": 2,
+      "question": "Какие объекты сопоставляются методом линий уровня?",
+      "reference_answer": "Кривая безразличия и бюджетная линия.",
+      "key_points": [
+        "Кривая безразличия и бюджетная линия."
+      ],
+      "explanation": "Оба объекта рассматриваются в разделе о методе линий уровня.",
+      "source": {
+        "id": "utility-docx.level-curves",
+        "name": "Полезность и потребитель: полный конспект пользователя (DOCX)",
+        "source_type": "docx",
+        "excerpt": "Метод линий уровня"
+      },
+      "source_excerpt": "Метод линий уровня"
+    },
+    {
+      "id": "utility-and-consumer.optimization-methods.global-optimum-check.recall",
+      "knowledge_id": "utility-and-consumer.optimization-methods.global-optimum-check",
+      "type": "understanding",
+      "difficulty": 2,
+      "question": "Что обязательно проверить после нахождения внутреннего кандидата?",
+      "reference_answer": "Углы, изломы и другие допустимые кандидаты; затем сравнить полезность.",
+      "key_points": [
+        "Углы, изломы, ограничения, допустимые целые корзины и значения полезности кандидатов."
+      ],
+      "explanation": "Проверка глобальности является отдельным шагом итогового алгоритма.",
+      "source": {
+        "id": "utility-docx.global-optimum-check",
+        "name": "Полезность и потребитель: полный конспект пользователя (DOCX)",
+        "source_type": "docx",
+        "excerpt": "внутреннее условие не гарантирует глобальный максимум"
+      },
+      "source_excerpt": "внутреннее условие не гарантирует глобальный максимум"
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "section": "utility-and-consumer",
+  "section_title": "Полезность и потребитель",
+  "topic": "utility-functions-and-demand",
+  "topic_title": "Функции полезности и спрос",
+  "knowledge": [
+    {
+      "id": "utility-and-consumer.utility-functions-and-demand.cobb-douglas",
+      "title": "Функция Cobb–Douglas",
+      "type": "formula",
+      "definitions": {},
+      "explanation": "Для U=xᵅyᵝ конспект приводит спрос x*=αI/[(α+β)pₓ], y*=βI/[(α+β)pᵧ].",
+      "source": {
+        "id": "utility-docx.cobb-douglas",
+        "name": "Полезность и потребитель: полный конспект пользователя (DOCX)",
+        "source_type": "docx",
+        "excerpt": "Для Cobb–Douglas U=xᵅyᵝ: x*=αI/[(α+β)pₓ], y*=βI/[(α+β)pᵧ]"
+      },
+      "formula": "U=xᵅyᵝ; x*=αI/[(α+β)pₓ], y*=βI/[(α+β)pᵧ]"
+    },
+    {
+      "id": "utility-and-consumer.utility-functions-and-demand.substitutes-complements",
+      "title": "Совершенные субституты и комплементы",
+      "type": "comparison",
+      "definitions": {},
+      "explanation": "Для линейной полезности сравнивают отдачу на рубль; для U=min(ax,by) оптимальная пропорция задаётся равенством ax=by.",
+      "source": {
+        "id": "utility-docx.substitutes-complements",
+        "name": "Полезность и потребитель: полный конспект пользователя (DOCX)",
+        "source_type": "docx",
+        "excerpt": "Линейная U=ax+by: сравнить a/pₓ и b/pᵧ; U=min(ax,by): ax=by"
+      }
+    },
+    {
+      "id": "utility-and-consumer.utility-functions-and-demand.convex-and-saturated-utility",
+      "title": "Выпуклая полезность и насыщение",
+      "type": "common_mistake",
+      "definitions": {},
+      "explanation": "При выпуклой полезности производная не гарантирует максимум; для полезности с насыщением нужно учитывать область, где дополнительный товар перестаёт повышать полезность.",
+      "source": {
+        "id": "utility-docx.convex-and-saturated-utility",
+        "name": "Полезность и потребитель: полный конспект пользователя (DOCX)",
+        "source_type": "docx",
+        "excerpt": "Выпуклая полезность: U=x²+y²; полезность с насыщением: U=ax−bx²+y"
+      }
+    },
+    {
+      "id": "utility-and-consumer.utility-functions-and-demand.demand-derivation",
+      "title": "Вывод функции спроса",
+      "type": "mechanism",
+      "definitions": {},
+      "explanation": "Универсальная схема вывода спроса состоит в решении задачи выбора и записи оптимального количества как функции параметров; конспект отдельно сохраняет таблицы задач 3 и 7.",
+      "source": {
+        "id": "utility-docx.demand-derivation",
+        "name": "Полезность и потребитель: полный конспект пользователя (DOCX)",
+        "source_type": "docx",
+        "excerpt": "Вывод спроса: универсальная схема и формулы из задачника"
+      }
+    },
+    {
+      "id": "utility-and-consumer.utility-functions-and-demand.aggregate-demand",
+      "title": "Суммирование индивидуального спроса",
+      "type": "formula",
+      "definitions": {},
+      "explanation": "Рыночный спрос получают суммированием индивидуальных количеств спроса при одних и тех же параметрах цены.",
+      "source": {
+        "id": "utility-docx.aggregate-demand",
+        "name": "Полезность и потребитель: полный конспект пользователя (DOCX)",
+        "source_type": "docx",
+        "excerpt": "Суммирование спроса разных потребителей"
+      }
+    }
+  ]
+}

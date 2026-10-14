@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "section": "utility-and-consumer",
+  "section_title": "Полезность и потребитель",
+  "topic": "price-effects-and-endowments",
+  "topic_title": "Эффекты цены и первоначальный запас",
+  "questions": [
+    {
+      "id": "utility-and-consumer.price-effects-and-endowments.substitution-income-effects.recall",
+      "knowledge_id": "utility-and-consumer.price-effects-and-endowments.substitution-income-effects",
+      "type": "understanding",
+      "difficulty": 2,
+      "question": "На какие составляющие конспект предлагает разделять реакцию на изменение цены?",
+      "reference_answer": "На эффект замещения и эффект дохода.",
+      "key_points": [
+        "На эффект замещения и эффект дохода."
+      ],
+      "explanation": "Эти две составляющие выделены в заголовке и тексте раздела.",
+      "source": {
+        "id": "utility-docx.substitution-income-effects",
+        "name": "Полезность и потребитель: полный конспект пользователя (DOCX)",
+        "source_type": "docx",
+        "excerpt": "Эффект замещения, эффект дохода"
+      },
+      "source_excerpt": "Эффект замещения, эффект дохода"
+    },
+    {
+      "id": "utility-and-consumer.price-effects-and-endowments.hicks-slutsky.recall",
+      "knowledge_id": "utility-and-consumer.price-effects-and-endowments.hicks-slutsky",
+      "type": "formula",
+      "difficulty": 2,
+      "question": "Какая формула разложения Слуцкого приведена в конспекте?",
+      "reference_answer": "∂xᵢ/∂pⱼ=∂hᵢ/∂pⱼ−xⱼ∂xᵢ/∂I.",
+      "key_points": [
+        "∂xᵢ/∂pⱼ=∂hᵢ/∂pⱼ−xⱼ∂xᵢ/∂I."
+      ],
+      "explanation": "Формула сохранена в формульном листе; h обозначает компенсированный спрос.",
+      "source": {
+        "id": "utility-docx.hicks-slutsky",
+        "name": "Полезность и потребитель: полный конспект пользователя (DOCX)",
+        "source_type": "docx",
+        "excerpt": "Слуцкий: ∂xᵢ/∂pⱼ=∂hᵢ/∂pⱼ−xⱼ∂xᵢ/∂I"
+      },
+      "source_excerpt": "Слуцкий: ∂xᵢ/∂pⱼ=∂hᵢ/∂pⱼ−xⱼ∂xᵢ/∂I"
+    },
+    {
+      "id": "utility-and-consumer.price-effects-and-endowments.giffen-veblen.recall",
+      "knowledge_id": "utility-and-consumer.price-effects-and-endowments.giffen-veblen",
+      "type": "understanding",
+      "difficulty": 2,
+      "question": "Какие эффекты нельзя автоматически считать одним и тем же объяснением реакции спроса?",
+      "reference_answer": "Эффекты замещения и дохода, случай Гиффена и выбор при первоначальном запасе.",
+      "key_points": [
+        "Эффект замещения, эффект дохода, поведение товара Гиффена и выбор при первоначальном запасе."
+      ],
+      "explanation": "Структура раздела рассматривает эти случаи отдельно.",
+      "source": {
+        "id": "utility-docx.giffen-veblen",
+        "name": "Полезность и потребитель: полный конспект пользователя (DOCX)",
+        "source_type": "docx",
+        "excerpt": "Гиффен и первоначальный запас"
+      },
+      "source_excerpt": "Гиффен и первоначальный запас"
+    },
+    {
+      "id": "utility-and-consumer.price-effects-and-endowments.endowment.recall",
+      "knowledge_id": "utility-and-consumer.price-effects-and-endowments.endowment",
+      "type": "understanding",
+      "difficulty": 2,
+      "question": "Что дополнительно учитывают в задаче о первоначальном запасе?",
+      "reference_answer": "Стоимость исходной корзины и возможность торговли.",
+      "key_points": [
+        "Стоимость исходной корзины и возможность обмена относительно запаса."
+      ],
+      "explanation": "Это содержание подраздела о первоначальном запасе и торговле.",
+      "source": {
+        "id": "utility-docx.endowment",
+        "name": "Полезность и потребитель: полный конспект пользователя (DOCX)",
+        "source_type": "docx",
+        "excerpt": "Первоначальный запас и торговля"
+      },
+      "source_excerpt": "Первоначальный запас и торговля"
+    }
+  ]
+}

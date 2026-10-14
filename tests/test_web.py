@@ -62,13 +62,18 @@ class TheoryWebRouteTests(unittest.TestCase):
         self.assertIn("Темы".encode(), request(self.application, "/static/app.js")["body"])
         themes = {theme["id"]: theme for theme in payload["themes"]}
         self.assertEqual(themes["mathematical-base"]["title"], "Математика")
-        self.assertEqual(set(themes), {"mathematical-base"})
+        self.assertEqual(themes["utility-and-consumer"]["title"], "Полезность и потребитель")
+        self.assertEqual(set(themes), {"mathematical-base", "utility-and-consumer"})
         self.assertNotIn("demo", themes)
         self.assertGreaterEqual(themes["mathematical-base"]["construction_count"], 14)
         self.assertEqual(
             sum(len(subtopic["questions"]) for subtopic in themes["mathematical-base"]["subtopics"]),
             58,
         )
+        self.assertEqual(themes["mathematical-base"]["knowledge_count"], 54)
+        self.assertEqual(themes["utility-and-consumer"]["knowledge_count"], 38)
+        self.assertEqual(themes["utility-and-consumer"]["question_count"], 38)
+        self.assertEqual(len(payload["themes"]), 2)
         self.assertTrue(
             all(
                 subtopic["knowledge"] and subtopic["questions"]
@@ -92,6 +97,18 @@ class TheoryWebRouteTests(unittest.TestCase):
             "/api/documents/mathematical-base/problem-constructions.md",
         )
         review = request(self.application, "/api/documents/mathematical-base/review-sheet.md")
+        utility_notes = request(
+            self.application,
+            "/api/documents/utility-and-consumer/study-notes.md",
+        )
+        utility_constructions = request(
+            self.application,
+            "/api/documents/utility-and-consumer/problem-constructions.md",
+        )
+        utility_review = request(
+            self.application,
+            "/api/documents/utility-and-consumer/review-sheet.md",
+        )
 
         self.assertTrue(script["status"].startswith("200"))
         self.assertIn(b"submitAnswer", script["body"])
@@ -99,6 +116,10 @@ class TheoryWebRouteTests(unittest.TestCase):
         self.assertIn("Правильный ответ:".encode(), script["body"])
         self.assertTrue(constructions["status"].startswith("200"))
         self.assertTrue(review["status"].startswith("200"))
+        self.assertTrue(utility_notes["status"].startswith("200"))
+        self.assertIn("Карта всех 24 задач".encode(), utility_notes["body"])
+        self.assertTrue(utility_constructions["status"].startswith("200"))
+        self.assertTrue(utility_review["status"].startswith("200"))
 
     def test_full_user_report_is_served_without_rewriting(self) -> None:
         result = request(self.application, "/api/documents/study-notes.md")
@@ -154,6 +175,44 @@ class TheoryWebRouteTests(unittest.TestCase):
         self.assertEqual(payload["verdict"], "correct")
         self.assertEqual(payload["reference_answer"], question.reference_answer)
         self.assertEqual(payload["explanation"], question.explanation)
+        self.assertFalse(payload["progress_saved"])
+
+    def test_utility_theme_quiz_checks_choice_and_explains_incorrect_answer(self) -> None:
+        question_document = json.loads(
+            (
+                THEORY_ROOT
+                / "utility-and-consumer"
+                / "problem-set-and-workshop"
+                / "questions.json"
+            ).read_text(encoding="utf-8")
+        )
+        question = next(
+            item
+            for item in question_document["questions"]
+            if item["id"].endswith(".problem-map.recall")
+        )
+        wrong_index = next(
+            index
+            for index, option in enumerate(question["options"])
+            if option["id"] != question["correct_answer"]
+        )
+        body = json.dumps(
+            {"question_id": question["id"], "answer": str(wrong_index)}
+        ).encode()
+        with patch.object(self.application, "_database_settings", return_value=None):
+            result = request(
+                self.application,
+                "/api/answer",
+                method="POST",
+                body=body,
+                headers={"CONTENT_TYPE": "application/json", "REMOTE_ADDR": "127.0.0.1"},
+            )
+
+        payload = json.loads(result["body"])
+        self.assertTrue(result["status"].startswith("200"))
+        self.assertEqual(payload["verdict"], "incorrect")
+        self.assertEqual(payload["reference_answer"], question["reference_answer"])
+        self.assertEqual(payload["explanation"], question["explanation"])
         self.assertFalse(payload["progress_saved"])
 
     def test_local_answer_route_rejects_non_loopback_clients(self) -> None:

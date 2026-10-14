@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "section": "utility-and-consumer",
+  "section_title": "Полезность и потребитель",
+  "topic": "foundations-and-preferences",
+  "topic_title": "Обозначения и предпочтения",
+  "questions": [
+    {
+      "id": "utility-and-consumer.foundations-and-preferences.consumer-model.recall",
+      "knowledge_id": "utility-and-consumer.foundations-and-preferences.consumer-model",
+      "type": "understanding",
+      "difficulty": 2,
+      "question": "Что входит в базовую модель потребителя?",
+      "reference_answer": "Корзина товаров, цены, доход и дополнительные ограничения.",
+      "key_points": [
+        "Корзина товаров, цены, доход и дополнительные ограничения."
+      ],
+      "explanation": "Модель включает выбор корзины при заданных ценах, доходе и ограничениях.",
+      "source": {
+        "id": "utility-docx.consumer-model",
+        "name": "Полезность и потребитель: полный конспект пользователя (DOCX)",
+        "source_type": "docx",
+        "excerpt": "Потребитель выбирает корзину товаров с учётом цен, дохода и дополнительных ограничений."
+      },
+      "source_excerpt": "Потребитель выбирает корзину товаров с учётом цен, дохода и дополнительных ограничений."
+    },
+    {
+      "id": "utility-and-consumer.foundations-and-preferences.utility-representation.recall",
+      "knowledge_id": "utility-and-consumer.foundations-and-preferences.utility-representation",
+      "type": "understanding",
+      "difficulty": 2,
+      "question": "Что представляет функция полезности?",
+      "reference_answer": "Предпочтения потребителя.",
+      "key_points": [
+        "Предпочтения потребителя."
+      ],
+      "explanation": "Конспект описывает полезность как представление предпочтений, а не как самостоятельную физическую величину.",
+      "source": {
+        "id": "utility-docx.utility-representation",
+        "name": "Полезность и потребитель: полный конспект пользователя (DOCX)",
+        "source_type": "docx",
+        "excerpt": "Функция полезности представляет предпочтения потребителя"
+      },
+      "source_excerpt": "Функция полезности представляет предпочтения потребителя"
+    },
+    {
+      "id": "utility-and-consumer.foundations-and-preferences.indifference-curves.recall",
+      "knowledge_id": "utility-and-consumer.foundations-and-preferences.indifference-curves",
+      "type": "understanding",
+      "difficulty": 2,
+      "question": "Как интерпретируется кривая безразличия?",
+      "reference_answer": "Множество корзин с одинаковым уровнем полезности.",
+      "key_points": [
+        "Как множество корзин с одинаковым уровнем полезности."
+      ],
+      "explanation": "Определение следует из раздела о кривых безразличия.",
+      "source": {
+        "id": "utility-docx.indifference-curves",
+        "name": "Полезность и потребитель: полный конспект пользователя (DOCX)",
+        "source_type": "docx",
+        "excerpt": "На кривой безразличия полезность постоянна"
+      },
+      "source_excerpt": "На кривой безразличия полезность постоянна"
+    },
+    {
+      "id": "utility-and-consumer.foundations-and-preferences.budget-set.recall",
+      "knowledge_id": "utility-and-consumer.foundations-and-preferences.budget-set",
+      "type": "formula",
+      "difficulty": 2,
+      "question": "Запишите бюджетное ограничение и наклон бюджетной линии.",
+      "reference_answer": "pₓx+pᵧy≤I; наклон равен −pₓ/pᵧ.",
+      "key_points": [
+        "pₓx+pᵧy≤I; наклон равен −pₓ/pᵧ."
+      ],
+      "explanation": "Обе записи приведены в конспекте; знак неравенства сохраняет возможность не расходовать весь доход.",
+      "source": {
+        "id": "utility-docx.budget-set",
+        "name": "Полезность и потребитель: полный конспект пользователя (DOCX)",
+        "source_type": "docx",
+        "excerpt": "pₓx+pᵧy≤I; наклон бюджета −pₓ/pᵧ"
+      },
+      "source_excerpt": "pₓx+pᵧy≤I; наклон бюджета −pₓ/pᵧ"
+    }
+  ]
+}

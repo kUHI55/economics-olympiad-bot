@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "section": "utility-and-consumer",
+  "section_title": "Полезность и потребитель",
+  "topic": "optimization-methods",
+  "topic_title": "Методы максимизации",
+  "knowledge": [
+    {
+      "id": "utility-and-consumer.optimization-methods.direct-optimization",
+      "title": "Прямая оптимизация",
+      "type": "mechanism",
+      "definitions": {},
+      "explanation": "Метод прямой оптимизации подставляет ограничение в полезность и сравнивает допустимые кандидаты.",
+      "source": {
+        "id": "utility-docx.direct-optimization",
+        "name": "Полезность и потребитель: полный конспект пользователя (DOCX)",
+        "source_type": "docx",
+        "excerpt": "Метод прямой оптимизации («в лоб»)"
+      }
+    },
+    {
+      "id": "utility-and-consumer.optimization-methods.marginal-utilities",
+      "title": "Предельные полезности на рубль",
+      "type": "formula",
+      "definitions": {},
+      "explanation": "Равенство предельных полезностей на рубль относится к гладкому внутреннему оптимуму и требует проверки условий применимости.",
+      "source": {
+        "id": "utility-docx.marginal-utilities",
+        "name": "Полезность и потребитель: полный конспект пользователя (DOCX)",
+        "source_type": "docx",
+        "excerpt": "внутренний оптимум: MUₓ/pₓ=MUᵧ/pᵧ"
+      },
+      "formula": "MUₓ/pₓ = MUᵧ/pᵧ"
+    },
+    {
+      "id": "utility-and-consumer.optimization-methods.level-curves",
+      "title": "Метод линий уровня",
+      "type": "graphical_concept",
+      "definitions": {},
+      "explanation": "Метод линий уровня сопоставляет кривую безразличия и бюджетную линию; наклон кривой безразличия равен −MUₓ/MUᵧ.",
+      "source": {
+        "id": "utility-docx.level-curves",
+        "name": "Полезность и потребитель: полный конспект пользователя (DOCX)",
+        "source_type": "docx",
+        "excerpt": "Метод линий уровня"
+      },
+      "formula": "dy/dx = −MUₓ/MUᵧ"
+    },
+    {
+      "id": "utility-and-consumer.optimization-methods.global-optimum-check",
+      "title": "Проверка глобального максимума",
+      "type": "common_mistake",
+      "definitions": {},
+      "explanation": "Найденное внутреннее условие не гарантирует глобальный максимум: нужно проверить углы, изломы, ограничения и допустимые целые корзины.",
+      "source": {
+        "id": "utility-docx.global-optimum-check",
+        "name": "Полезность и потребитель: полный конспект пользователя (DOCX)",
+        "source_type": "docx",
+        "excerpt": "внутреннее условие не гарантирует глобальный максимум"
+      }
+    }
+  ]
+}

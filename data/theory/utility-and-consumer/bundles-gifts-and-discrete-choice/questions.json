@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "section": "utility-and-consumer",
+  "section_title": "Полезность и потребитель",
+  "topic": "bundles-gifts-and-discrete-choice",
+  "topic_title": "Комплекты, подарки и дискретный выбор",
+  "questions": [
+    {
+      "id": "utility-and-consumer.bundles-gifts-and-discrete-choice.topic-overview.recall",
+      "knowledge_id": "utility-and-consumer.bundles-gifts-and-discrete-choice.topic-overview",
+      "type": "understanding",
+      "difficulty": 1,
+      "question": "Какие виды материала объединяет полный конспект?",
+      "reference_answer": "Теория, формулы, алгоритмы, типы задач, решения и ловушки.",
+      "key_points": [
+        "Теория, формулы, алгоритмы, типы задач, решения и ловушки"
+      ],
+      "explanation": "Именно такой состав обозначен в подзаголовке исходного документа.",
+      "source": {
+        "id": "utility-docx.topic-overview",
+        "name": "Полезность и потребитель: полный конспект пользователя (DOCX)",
+        "source_type": "docx",
+        "excerpt": "Теория • формулы • алгоритмы • типы задач • решения • ловушки"
+      },
+      "source_excerpt": "Теория • формулы • алгоритмы • типы задач • решения • ловушки"
+    },
+    {
+      "id": "utility-and-consumer.bundles-gifts-and-discrete-choice.bundles.recall",
+      "knowledge_id": "utility-and-consumer.bundles-gifts-and-discrete-choice.bundles",
+      "type": "understanding",
+      "difficulty": 2,
+      "question": "Что сравнивают в задаче о комплектной цене?",
+      "reference_answer": "Цену комплекта со стоимостью товаров по отдельности.",
+      "key_points": [
+        "Цену полного комплекта и стоимость тех же товаров по отдельности."
+      ],
+      "explanation": "Конспект рассматривает комплекты отдельным типом задачи.",
+      "source": {
+        "id": "utility-docx.bundles",
+        "name": "Полезность и потребитель: полный конспект пользователя (DOCX)",
+        "source_type": "docx",
+        "excerpt": "Комплекты"
+      },
+      "source_excerpt": "Комплекты"
+    },
+    {
+      "id": "utility-and-consumer.bundles-gifts-and-discrete-choice.gifts-and-promotions.recall",
+      "knowledge_id": "utility-and-consumer.bundles-gifts-and-discrete-choice.gifts-and-promotions",
+      "type": "understanding",
+      "difficulty": 2,
+      "question": "Какие количества важно различать в задаче с подарком?",
+      "reference_answer": "Оплаченные товары и товары, полученные с подарком.",
+      "key_points": [
+        "Оплаченные количества и итоговые количества с учётом подарка."
+      ],
+      "explanation": "В конспекте раздельно отмечены оплаченные и итоговые количества.",
+      "source": {
+        "id": "utility-docx.gifts-and-promotions",
+        "name": "Полезность и потребитель: полный конспект пользователя (DOCX)",
+        "source_type": "docx",
+        "excerpt": "Подарки и акции"
+      },
+      "source_excerpt": "Подарки и акции"
+    },
+    {
+      "id": "utility-and-consumer.bundles-gifts-and-discrete-choice.integer-bundles.recall",
+      "knowledge_id": "utility-and-consumer.bundles-gifts-and-discrete-choice.integer-bundles",
+      "type": "understanding",
+      "difficulty": 2,
+      "question": "Как решается дискретная задача о корзине?",
+      "reference_answer": "Перебрать целые допустимые варианты и сравнить полезность.",
+      "key_points": [
+        "Сравнивают допустимые целые наборы; не предполагают автоматически, что весь бюджет расходуется."
+      ],
+      "explanation": "Это прямое правило из формульного листа и общего алгоритма.",
+      "source": {
+        "id": "utility-docx.integer-bundles",
+        "name": "Полезность и потребитель: полный конспект пользователя (DOCX)",
+        "source_type": "docx",
+        "excerpt": "Дискретная задача: перебрать допустимые целые наборы/кандидаты; бюджет не обязательно активен"
+      },
+      "source_excerpt": "Дискретная задача: перебрать допустимые целые наборы/кандидаты; бюджет не обязательно активен"
+    },
+    {
+      "id": "utility-and-consumer.bundles-gifts-and-discrete-choice.saturation.recall",
+      "knowledge_id": "utility-and-consumer.bundles-gifts-and-discrete-choice.saturation",
+      "type": "understanding",
+      "difficulty": 2,
+      "question": "Как следует учитывать точку насыщения при выборе?",
+      "reference_answer": "Проверить точку насыщения и сравнить с другими кандидатами.",
+      "key_points": [
+        "Проверить её как возможный кандидат и не предполагать, что дополнительное потребление всегда лучше."
+      ],
+      "explanation": "Тема насыщения вынесена в отдельный подраздел; алгоритм требует проверки граничных и особых точек.",
+      "source": {
+        "id": "utility-docx.saturation",
+        "name": "Полезность и потребитель: полный конспект пользователя (DOCX)",
+        "source_type": "docx",
+        "excerpt": "Точка насыщения"
+      },
+      "source_excerpt": "Точка насыщения"
+    }
+  ]
+}
