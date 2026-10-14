@@ -1,25 +1,18 @@
 import json
-import shutil
 import tempfile
 import unittest
 from pathlib import Path
 
 from app.theory_data.validator import TheoryValidationError, validate_theory_repository
-
-PROJECT_ROOT = Path(__file__).resolve().parents[1]
-DEMO_ROOT = PROJECT_ROOT / "data" / "theory"
+from tests.theory_fixtures import write_theory_fixture
 
 
 class TheoryDataValidatorTests(unittest.TestCase):
     def test_validates_demo_topic(self) -> None:
         with tempfile.TemporaryDirectory() as temporary_directory:
             root = Path(temporary_directory) / "theory"
-            fixture_directory = root / "demo" / "validation-fixture"
-            fixture_directory.mkdir(parents=True)
-            for name in ("knowledge.json", "questions.json"):
-                shutil.copy(
-                    DEMO_ROOT / "demo" / "validation-fixture" / name, fixture_directory / name
-                )
+            fixture_directory = root / "test-fixture" / "validation-fixture"
+            write_theory_fixture(fixture_directory)
             report = validate_theory_repository(root)
 
         self.assertEqual(report.topic_directories, 1)
@@ -30,15 +23,11 @@ class TheoryDataValidatorTests(unittest.TestCase):
     def test_rejects_question_with_unknown_knowledge_id(self) -> None:
         with tempfile.TemporaryDirectory() as temporary_directory:
             root = Path(temporary_directory) / "theory"
-            fixture_directory = root / "demo" / "validation-fixture"
-            fixture_directory.mkdir(parents=True)
-            for name in ("knowledge.json", "questions.json"):
-                shutil.copy(
-                    DEMO_ROOT / "demo" / "validation-fixture" / name, fixture_directory / name
-                )
+            fixture_directory = root / "test-fixture" / "validation-fixture"
+            write_theory_fixture(fixture_directory)
             questions_path = fixture_directory / "questions.json"
             payload = json.loads(questions_path.read_text(encoding="utf-8"))
-            payload["questions"][0]["knowledge_id"] = "demo.validation-fixture.unknown"
+            payload["questions"][0]["knowledge_id"] = "test-fixture.validation-fixture.unknown"
             questions_path.write_text(json.dumps(payload, ensure_ascii=False), encoding="utf-8")
 
             with self.assertRaisesRegex(TheoryValidationError, "unknown knowledge_id"):
@@ -47,12 +36,8 @@ class TheoryDataValidatorTests(unittest.TestCase):
     def test_rejects_multiple_choice_without_matching_answer(self) -> None:
         with tempfile.TemporaryDirectory() as temporary_directory:
             root = Path(temporary_directory) / "theory"
-            fixture_directory = root / "demo" / "validation-fixture"
-            fixture_directory.mkdir(parents=True)
-            for name in ("knowledge.json", "questions.json"):
-                shutil.copy(
-                    DEMO_ROOT / "demo" / "validation-fixture" / name, fixture_directory / name
-                )
+            fixture_directory = root / "test-fixture" / "validation-fixture"
+            write_theory_fixture(fixture_directory)
             questions_path = fixture_directory / "questions.json"
             payload = json.loads(questions_path.read_text(encoding="utf-8"))
             payload["questions"][0]["correct_answer"] = "Z"

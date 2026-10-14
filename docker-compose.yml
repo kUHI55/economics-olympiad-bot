@@ -9,6 +9,17 @@ services:
     volumes:
       - uploads:/app/uploads
 
+  web:
+    build: .
+    env_file: .env
+    command: ["python", "-m", "app.web", "--host", "0.0.0.0", "--port", "8000"]
+    depends_on:
+      bot:
+        condition: service_started
+    ports:
+      - "127.0.0.1:8000:8000"
+    restart: unless-stopped
+
   postgres:
     image: postgres:16-alpine
     environment:

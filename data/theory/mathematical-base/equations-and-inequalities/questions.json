@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "section": "mathematical-base",
+  "section_title": "Математическая база",
+  "topic": "equations-and-inequalities",
+  "topic_title": "Уравнения и неравенства",
+  "questions": [
+    {
+      "id": "mathematical-base.equations-and-inequalities.verbal-condition-to-equation.check",
+      "knowledge_id": "mathematical-base.equations-and-inequalities.verbal-condition-to-equation",
+      "type": "understanding",
+      "difficulty": 1,
+      "question": "Какой способ работы с условием перечислен в контексте?",
+      "reference_answer": "Составление уравнения из словесного условия.",
+      "key_points": ["уравнение", "словесное условие"],
+      "explanation": "Формулировка взята из контекста.",
+      "source": {
+        "id": "context.equations-and-inequalities",
+        "name": "Исследовательский контекст, присланный пользователем (на основе Учебника Рэма Бахарева и Памятки для олимпиадников)",
+        "source_type": "text",
+        "excerpt": "Составление уравнения из словесного условия; решение уравнений; неравенства; допустимые интервалы; ограничения."
+      },
+      "source_excerpt": "Составление уравнения из словесного условия; решение уравнений; неравенства; допустимые интервалы; ограничения."
+    },
+    {
+      "id": "mathematical-base.equations-and-inequalities.equations-and-inequalities.check",
+      "knowledge_id": "mathematical-base.equations-and-inequalities.equations-and-inequalities",
+      "type": "comparison",
+      "difficulty": 1,
+      "question": "Какие два вида задач перечислены после составления уравнения?",
+      "reference_answer": "Решение уравнений и неравенства.",
+      "key_points": ["решение уравнений", "неравенства"],
+      "explanation": "Ответ следует из последовательности в контексте.",
+      "source": {
+        "id": "context.equations-and-inequalities",
+        "name": "Исследовательский контекст, присланный пользователем (на основе Учебника Рэма Бахарева и Памятки для олимпиадников)",
+        "source_type": "text",
+        "excerpt": "Составление уравнения из словесного условия; решение уравнений; неравенства; допустимые интервалы; ограничения."
+      },
+      "source_excerpt": "Составление уравнения из словесного условия; решение уравнений; неравенства; допустимые интервалы; ограничения."
+    },
+    {
+      "id": "mathematical-base.equations-and-inequalities.allowed-intervals-and-constraints.check",
+      "knowledge_id": "mathematical-base.equations-and-inequalities.allowed-intervals-and-constraints",
+      "type": "understanding",
+      "difficulty": 1,
+      "question": "Что в контексте указано наряду с допустимыми интервалами?",
+      "reference_answer": "Ограничения.",
+      "key_points": ["ограничения"],
+      "explanation": "Ответ прямо указан в контексте.",
+      "source": {
+        "id": "context.equations-and-inequalities",
+        "name": "Исследовательский контекст, присланный пользователем (на основе Учебника Рэма Бахарева и Памятки для олимпиадников)",
+        "source_type": "text",
+        "excerpt": "Составление уравнения из словесного условия; решение уравнений; неравенства; допустимые интервалы; ограничения."
+      },
+      "source_excerpt": "Составление уравнения из словесного условия; решение уравнений; неравенства; допустимые интервалы; ограничения."
+    }
+  ]
+}

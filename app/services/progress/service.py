@@ -47,7 +47,15 @@ class ProgressService:
             )
         )
         if progress is None:
-            progress = Progress(user_id=user_id, knowledge_element_id=question.knowledge_element_id)
+            progress = Progress(
+                user_id=user_id,
+                knowledge_element_id=question.knowledge_element_id,
+                attempts_count=0,
+                correct_count=0,
+                partial_count=0,
+                incorrect_count=0,
+                mastery_score=0.0,
+            )
             self.session.add(progress)
         progress.attempts_count += 1
         if verdict is AttemptVerdict.CORRECT:
@@ -72,6 +80,9 @@ class ProgressService:
                 user_id=user_id,
                 knowledge_element_id=question.knowledge_element_id,
                 next_review=now,
+                success_count=0,
+                failure_count=0,
+                interval_days=0,
             )
             self.session.add(schedule)
         decision = self.review_policy.advance(

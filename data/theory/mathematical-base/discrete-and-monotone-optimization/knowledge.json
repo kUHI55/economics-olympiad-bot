@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "section": "mathematical-base",
+  "section_title": "Математическая база",
+  "topic": "discrete-and-monotone-optimization",
+  "topic_title": "Дискретная оптимизация и монотонные преобразования",
+  "knowledge": [
+    {
+      "id": "mathematical-base.discrete-and-monotone-optimization.discrete-optimization",
+      "title": "Дискретная оптимизация",
+      "type": "mechanism",
+      "definitions": {},
+      "explanation": "Дискретная оптимизация указана в контексте; приведена связка «целочисленная переменная → дискретная производная → дискретный оптимум».",
+      "source": {
+        "id": "context.discrete-and-monotone-optimization",
+        "name": "Исследовательский контекст, присланный пользователем (на основе Учебника Рэма Бахарева и Памятки для олимпиадников)",
+        "source_type": "text",
+        "excerpt": "Дискретная оптимизация; монотонные преобразования. Целочисленная переменная → дискретная производная → дискретный оптимум."
+      }
+    },
+    {
+      "id": "mathematical-base.discrete-and-monotone-optimization.monotone-transformations",
+      "title": "Монотонные преобразования",
+      "type": "term",
+      "definitions": {},
+      "explanation": "Монотонные преобразования перечислены в контексте среди конструкций оптимизации.",
+      "source": {
+        "id": "context.discrete-and-monotone-optimization",
+        "name": "Исследовательский контекст, присланный пользователем (на основе Учебника Рэма Бахарева и Памятки для олимпиадников)",
+        "source_type": "text",
+        "excerpt": "Дискретная оптимизация; монотонные преобразования. Целочисленная переменная → дискретная производная → дискретный оптимум."
+      }
+    }
+  ]
+}

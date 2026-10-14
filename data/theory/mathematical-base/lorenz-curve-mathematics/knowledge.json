@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "section": "mathematical-base",
+  "section_title": "Математическая база",
+  "topic": "lorenz-curve-mathematics",
+  "topic_title": "Кривая Лоренца как математическое применение",
+  "knowledge": [
+    {
+      "id": "mathematical-base.lorenz-curve-mathematics.components",
+      "title": "Доли, координаты, площади, наклон и производная",
+      "type": "graphical_concept",
+      "definitions": {},
+      "explanation": "Для кривой Лоренца в контексте перечислены доли, координаты, площади, наклон и производная; коэффициент Джини указан только в названном объёме.",
+      "source": {
+        "id": "context.lorenz-curve-mathematics",
+        "name": "Исследовательский контекст, присланный пользователем (на основе Учебника Рэма Бахарева и Памятки для олимпиадников)",
+        "source_type": "text",
+        "excerpt": "Доли; координаты; площади; наклон; производная; коэффициент Джини — только в том объёме, в котором он указан в присланном контексте."
+      }
+    }
+  ]
+}

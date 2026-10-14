@@ -15,21 +15,15 @@ from app.database.models.learning import Attempt, Progress
 from app.database.models.user import User
 from app.services.theory.importer import TheoryImporter
 from app.theory_data.validator import TheoryValidationError
-
-PROJECT_ROOT = Path(__file__).resolve().parents[1]
-DEMO_DIRECTORY = PROJECT_ROOT / "data" / "theory" / "demo" / "validation-fixture"
-KNOWLEDGE_ID = "demo.validation-fixture.sample-term"
-QUESTION_ID = "demo.validation-fixture.sample-term-check"
+from tests.theory_fixtures import KNOWLEDGE_ID, QUESTION_ID, write_theory_fixture
 
 
 class TheoryImporterTests(unittest.IsolatedAsyncioTestCase):
     async def asyncSetUp(self) -> None:
         self.temporary_directory = tempfile.TemporaryDirectory()
         self.theory_root = Path(self.temporary_directory.name) / "theory"
-        self.fixture_directory = self.theory_root / "demo" / "validation-fixture"
-        self.fixture_directory.mkdir(parents=True)
-        for name in ("knowledge.json", "questions.json"):
-            shutil.copy(DEMO_DIRECTORY / name, self.fixture_directory / name)
+        self.fixture_directory = self.theory_root / "test-fixture" / "validation-fixture"
+        write_theory_fixture(self.fixture_directory)
 
         self.engine = create_async_engine("sqlite+aiosqlite://")
         async with self.engine.begin() as connection:
@@ -153,7 +147,7 @@ class TheoryImporterTests(unittest.IsolatedAsyncioTestCase):
     async def test_invalid_file_does_not_apply_partial_changes(self) -> None:
         questions_path = self.fixture_directory / "questions.json"
         payload = json.loads(questions_path.read_text(encoding="utf-8"))
-        payload["questions"][0]["knowledge_id"] = "demo.validation-fixture.missing"
+        payload["questions"][0]["knowledge_id"] = "test-fixture.validation-fixture.missing"
         questions_path.write_text(json.dumps(payload, ensure_ascii=False), encoding="utf-8")
 
         with self.assertRaisesRegex(TheoryValidationError, "unknown knowledge_id"):

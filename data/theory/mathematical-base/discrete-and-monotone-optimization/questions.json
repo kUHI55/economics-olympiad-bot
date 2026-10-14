@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "section": "mathematical-base",
+  "section_title": "Математическая база",
+  "topic": "discrete-and-monotone-optimization",
+  "topic_title": "Дискретная оптимизация и монотонные преобразования",
+  "questions": [
+    {
+      "id": "mathematical-base.discrete-and-monotone-optimization.discrete-optimization.context-check",
+      "knowledge_id": "mathematical-base.discrete-and-monotone-optimization.discrete-optimization",
+      "type": "multiple_choice",
+      "difficulty": 1,
+      "question": "Какой вариант соответствует элементу «Дискретная оптимизация» в присланном контексте?",
+      "options": [
+        {
+          "id": "choice-1",
+          "text": "Монотонные преобразования"
+        },
+        {
+          "id": "choice-2",
+          "text": "Дискретная оптимизация"
+        },
+        {
+          "id": "choice-3",
+          "text": "В присланном фрагменте это не указано."
+        },
+        {
+          "id": "choice-4",
+          "text": "Такое соответствие в контексте не приведено."
+        }
+      ],
+      "correct_answer": "choice-2",
+      "reference_answer": "Дискретная оптимизация",
+      "key_points": [
+        "Дискретная оптимизация"
+      ],
+      "explanation": "Дискретная оптимизация указана в контексте; приведена связка «целочисленная переменная → дискретная производная → дискретный оптимум».",
+      "source": {
+        "id": "context.discrete-and-monotone-optimization",
+        "name": "Исследовательский контекст, присланный пользователем (на основе Учебника Рэма Бахарева и Памятки для олимпиадников)",
+        "source_type": "text",
+        "excerpt": "Дискретная оптимизация; монотонные преобразования. Целочисленная переменная → дискретная производная → дискретный оптимум."
+      },
+      "source_excerpt": "Дискретная оптимизация; монотонные преобразования. Целочисленная переменная → дискретная производная → дискретный оптимум."
+    },
+    {
+      "id": "mathematical-base.discrete-and-monotone-optimization.monotone-transformations.context-check",
+      "knowledge_id": "mathematical-base.discrete-and-monotone-optimization.monotone-transformations",
+      "type": "multiple_choice",
+      "difficulty": 1,
+      "question": "Какой вариант соответствует элементу «Монотонные преобразования» в присланном контексте?",
+      "options": [
+        {
+          "id": "choice-1",
+          "text": "Монотонные преобразования"
+        },
+        {
+          "id": "choice-2",
+          "text": "Дискретная оптимизация"
+        },
+        {
+          "id": "choice-3",
+          "text": "В присланном фрагменте это не указано."
+        },
+        {
+          "id": "choice-4",
+          "text": "Такое соответствие в контексте не приведено."
+        }
+      ],
+      "correct_answer": "choice-1",
+      "reference_answer": "Монотонные преобразования",
+      "key_points": [
+        "Монотонные преобразования"
+      ],
+      "explanation": "Монотонные преобразования перечислены в контексте среди конструкций оптимизации.",
+      "source": {
+        "id": "context.discrete-and-monotone-optimization",
+        "name": "Исследовательский контекст, присланный пользователем (на основе Учебника Рэма Бахарева и Памятки для олимпиадников)",
+        "source_type": "text",
+        "excerpt": "Дискретная оптимизация; монотонные преобразования. Целочисленная переменная → дискретная производная → дискретный оптимум."
+      },
+      "source_excerpt": "Дискретная оптимизация; монотонные преобразования. Целочисленная переменная → дискретная производная → дискретный оптимум."
+    }
+  ]
+}
