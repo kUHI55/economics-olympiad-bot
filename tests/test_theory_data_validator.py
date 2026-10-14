@@ -45,3 +45,19 @@ class TheoryDataValidatorTests(unittest.TestCase):
 
             with self.assertRaisesRegex(TheoryValidationError, "correct_answer"):
                 validate_theory_repository(root)
+
+    def test_same_source_can_have_item_specific_excerpts(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary_directory:
+            root = Path(temporary_directory) / "theory"
+            fixture_directory = root / "test-fixture" / "validation-fixture"
+            write_theory_fixture(fixture_directory)
+            questions_path = fixture_directory / "questions.json"
+            payload = json.loads(questions_path.read_text(encoding="utf-8"))
+            excerpt = "A distinct excerpt from the same source document."
+            payload["questions"][0]["source"]["excerpt"] = excerpt
+            payload["questions"][0]["source_excerpt"] = excerpt
+            questions_path.write_text(json.dumps(payload, ensure_ascii=False), encoding="utf-8")
+
+            report = validate_theory_repository(root)
+
+        self.assertEqual(report.topic_directories, 1)

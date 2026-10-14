@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "section": "monopoly",
+  "section_title": "Монополия",
+  "topic": "07-natural-monopoly",
+  "topic_title": "Естественная монополия",
+  "questions": [
+    {
+      "id": "monopoly.construction-06-natural-monopoly.mc-and-ac",
+      "knowledge_id": "monopoly.natural.economies-of-scale",
+      "type": "multiple_choice",
+      "difficulty": 2,
+      "question": "Почему цена P=MC может не покрыть затраты естественной монополии?",
+      "options": [
+        {"id": "choice-1", "text": "Потому что при таком регулировании может быть P<AC"},
+        {"id": "choice-2", "text": "Потому что MC всегда выше AC"},
+        {"id": "choice-3", "text": "Потому что постоянные затраты равны нулю"},
+        {"id": "choice-4", "text": "Потому что естественная монополия не имеет спроса"}
+      ],
+      "correct_answer": "choice-1",
+      "reference_answer": "Потому что при таком регулировании может быть P<AC",
+      "key_points": ["Средние затраты могут оставаться выше предельных", "Выручка может не покрыть все затраты"],
+      "explanation": "При высоких постоянных расходах и падающих средних затратах равенство цены предельным затратам не гарантирует покрытия средних затрат. В материалах не задана конкретная схема регулирования.",
+      "source": {"id": "monopoly-analysis-docx", "name": "Полный аналитический конспект по монополии (DOCX)", "source_type": "docx", "excerpt": "P=MC может дать P<AC, так что выручки не хватит для покрытия затрат."},
+      "source_excerpt": "P=MC может дать P<AC, так что выручки не хватит для покрытия затрат."
+    }
+  ]
+}

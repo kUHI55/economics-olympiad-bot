@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "section": "monopoly",
+  "section_title": "Монополия",
+  "topic": "04-elasticity-lerner",
+  "topic_title": "Эластичность и индекс Лернера",
+  "questions": [
+    {
+      "id": "monopoly.elasticity.lerner-example",
+      "knowledge_id": "monopoly.elasticity.lerner-index",
+      "type": "multiple_choice",
+      "difficulty": 2,
+      "question": "В классической внутренней задаче P=50 и ε=−3. Каковы индекс Лернера и MC?",
+      "options": [
+        {"id": "choice-1", "text": "Индекс 1/3; MC=100/3"},
+        {"id": "choice-2", "text": "Индекс −1/3; MC=200/3"},
+        {"id": "choice-3", "text": "Индекс 3; MC=0"},
+        {"id": "choice-4", "text": "Индекс 1/3; MC=50/3"}
+      ],
+      "correct_answer": "choice-1",
+      "reference_answer": "Индекс 1/3; MC=100/3",
+      "key_points": ["ε отрицательна в принятом обозначении", "MC=P(1−1/3)"],
+      "explanation": "−1/ε=−1/(−3)=1/3. Поэтому (50−MC)/50=1/3 и MC=50·2/3=100/3. Связь предполагает классический гладкий внутренний оптимум.",
+      "source": {"id": "monopoly-analysis-docx", "name": "Полный аналитический конспект по монополии (DOCX)", "source_type": "docx", "excerpt": "При P=50, ε=−3: индекс 1/3, поэтому MC=100/3."},
+      "source_excerpt": "При P=50, ε=−3: индекс 1/3, поэтому MC=100/3."
+    }
+  ]
+}

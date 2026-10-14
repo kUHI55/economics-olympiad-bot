@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "section": "monopoly",
+  "section_title": "Монополия",
+  "topic": "02-demand-and-mr",
+  "topic_title": "Спрос, выручка и предельная выручка",
+  "knowledge": [
+    {
+      "id": "monopoly.demand.revenue-and-mr",
+      "title": "Обратный спрос, выручка и MR",
+      "type": "formula",
+      "formula": "TR(Q)=P(Q)Q; P=a−bQ ⇒ MR=a−2bQ",
+      "definitions": {"TR": "Общая выручка", "MR": "Предельная выручка"},
+      "explanation": "Прямой спрос Qd(P) обращают в P(Q). При обычном нисходящем спросе дополнительная продажа требует снизить цену и на ранее продаваемые единицы, поэтому MR<P; для линейного обратного спроса MR=a−2bQ.",
+      "source": {"id": "monopoly-analysis-docx", "name": "Полный аналитический конспект по монополии (DOCX)", "source_type": "docx", "excerpt": "Для линейного обратного спроса P=a−bQ: TR=aQ−bQ², MR=a−2bQ."}
+    }
+  ]
+}

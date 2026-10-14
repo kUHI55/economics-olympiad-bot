@@ -8,7 +8,7 @@ import unittest
 from datetime import UTC, datetime, timedelta
 from pathlib import Path
 from types import SimpleNamespace
-from unittest.mock import patch
+from unittest.mock import AsyncMock, patch
 from wsgiref.util import setup_testing_defaults
 
 from sqlalchemy import func, select
@@ -16,7 +16,7 @@ from sqlalchemy.ext.asyncio import async_sessionmaker, create_async_engine
 
 import app.database.models  # noqa: F401
 import app.web.application as web_module
-from app.core.enums import AttemptVerdict
+from app.core.enums import AttemptVerdict, QuestionType
 from app.database.base import Base
 from app.database.models.learning import Attempt, Progress, ReviewSchedule
 from app.services.theory.importer import TheoryImporter
@@ -63,7 +63,11 @@ class TheoryWebRouteTests(unittest.TestCase):
         themes = {theme["id"]: theme for theme in payload["themes"]}
         self.assertEqual(themes["mathematical-base"]["title"], "Математика")
         self.assertEqual(themes["utility-and-consumer"]["title"], "Полезность и потребитель")
-        self.assertEqual(set(themes), {"mathematical-base", "utility-and-consumer"})
+        self.assertEqual(themes["monopoly"]["title"], "Монополия")
+        self.assertEqual(
+            set(themes),
+            {"mathematical-base", "utility-and-consumer", "monopoly"},
+        )
         self.assertNotIn("demo", themes)
         self.assertGreaterEqual(themes["mathematical-base"]["construction_count"], 14)
         self.assertEqual(
@@ -73,7 +77,10 @@ class TheoryWebRouteTests(unittest.TestCase):
         self.assertEqual(themes["mathematical-base"]["knowledge_count"], 54)
         self.assertEqual(themes["utility-and-consumer"]["knowledge_count"], 38)
         self.assertEqual(themes["utility-and-consumer"]["question_count"], 38)
-        self.assertEqual(len(payload["themes"]), 2)
+        self.assertEqual(themes["monopoly"]["knowledge_count"], 18)
+        self.assertEqual(themes["monopoly"]["question_count"], 23)
+        self.assertEqual(len(themes["monopoly"]["subtopics"]), 18)
+        self.assertEqual(len(payload["themes"]), 3)
         self.assertTrue(
             all(
                 subtopic["knowledge"] and subtopic["questions"]
@@ -89,6 +96,66 @@ class TheoryWebRouteTests(unittest.TestCase):
                 for question in topic["questions"]
             )
         )
+
+    def test_all_active_quiz_questions_have_four_distinct_keyed_choices(self) -> None:
+        repository = web_module.load_theory_repository(THEORY_ROOT)
+        questions = [
+            question
+            for topic in repository.topics
+            if not topic.knowledge.is_demo
+            for question in topic.questions.questions
+        ]
+        self.assertEqual(len(questions), 119)
+        for question in questions:
+            with self.subTest(question_id=question.id):
+                self.assertIs(question.type, QuestionType.MULTIPLE_CHOICE)
+                self.assertEqual(len(question.options), 4)
+                texts = [option.text.strip() for option in question.options]
+                self.assertTrue(all(texts))
+                self.assertEqual(len({text.casefold() for text in texts}), 4)
+                correct = [
+                    option for option in question.options
+                    if option.id == question.correct_answer
+                ]
+                self.assertEqual(len(correct), 1)
+                self.assertEqual(correct[0].text, question.reference_answer)
+                self.assertTrue(question.explanation.strip())
+
+    def test_quiz_frontend_uses_choices_and_retains_submission_state(self) -> None:
+        script = request(self.application, "/static/app.js")["body"].decode()
+        self.assertIn('input type="radio" name="answer"', script)
+        self.assertNotIn("<textarea", script)
+        self.assertIn("form.addEventListener(\"submit\", submitAnswer)", script)
+        self.assertIn("state.selectedAnswer", script)
+        self.assertIn('data-action="next-question"', script)
+        self.assertIn("renderQuizSummary", script)
+        self.assertIn("state.quizSession.correct += 1", script)
+        self.assertIn("state.answered ? \"disabled\"", script)
+        self.assertIn("allQuestions().filter", script)
+
+    def test_monopoly_construction_cards_have_quizzes(self) -> None:
+        notes_path = THEORY_ROOT / "monopoly" / "problem-constructions.md"
+        source = notes_path.read_text(encoding="utf-8")
+        construction_headings = [
+            line
+            for line in source.splitlines()
+            if line.startswith("## ") and line[3:4].isdigit()
+        ]
+        repository = web_module.load_theory_repository(THEORY_ROOT)
+        monopoly_questions = [
+            question.id
+            for topic in repository.topics
+            if topic.knowledge.section == "monopoly"
+            for question in topic.questions.questions
+        ]
+        script = request(self.application, "/static/app.js")["body"].decode()
+
+        self.assertEqual(len(construction_headings), 16)
+        for construction_number in range(1, 17):
+            marker = f".construction-{construction_number:02d}-"
+            self.assertTrue(any(marker in question_id for question_id in monopoly_questions))
+        self.assertIn("current.body.push", script)
+        self.assertIn('data-action="construction-quiz:', script)
 
     def test_study_interface_and_companion_documents_are_served(self) -> None:
         script = request(self.application, "/static/app.js")
@@ -109,6 +176,18 @@ class TheoryWebRouteTests(unittest.TestCase):
             self.application,
             "/api/documents/utility-and-consumer/review-sheet.md",
         )
+        monopoly_notes = request(
+            self.application,
+            "/api/documents/monopoly/study-notes.md",
+        )
+        monopoly_constructions = request(
+            self.application,
+            "/api/documents/monopoly/problem-constructions.md",
+        )
+        monopoly_review = request(
+            self.application,
+            "/api/documents/monopoly/review-sheet.md",
+        )
 
         self.assertTrue(script["status"].startswith("200"))
         self.assertIn(b"submitAnswer", script["body"])
@@ -120,6 +199,15 @@ class TheoryWebRouteTests(unittest.TestCase):
         self.assertIn("Карта всех 24 задач".encode(), utility_notes["body"])
         self.assertTrue(utility_constructions["status"].startswith("200"))
         self.assertTrue(utility_review["status"].startswith("200"))
+        self.assertTrue(monopoly_notes["status"].startswith("200"))
+        self.assertTrue(monopoly_constructions["status"].startswith("200"))
+        self.assertTrue(monopoly_review["status"].startswith("200"))
+        self.assertIn("Карта анализа всех 30 слайдов".encode(), monopoly_notes["body"])
+        self.assertIn("карта задач 1–24".encode(), monopoly_notes["body"])
+        self.assertIn("задачи 25–33".encode(), monopoly_notes["body"])
+        self.assertIn("56−8√19".encode(), monopoly_notes["body"])
+        self.assertIn("совместимости стимулов".encode(), monopoly_constructions["body"])
+        self.assertIn("Индекс Лернера".encode(), monopoly_review["body"])
 
     def test_full_user_report_is_served_without_rewriting(self) -> None:
         result = request(self.application, "/api/documents/study-notes.md")
@@ -133,6 +221,7 @@ class TheoryWebRouteTests(unittest.TestCase):
         body = json.dumps({"question_id": "math.test", "answer": "a"}).encode()
         with (
             patch.object(self.application, "_database_settings", return_value=SimpleNamespace(database_url="postgresql://configured")),
+            patch.object(self.application, "_database_available", new=AsyncMock(return_value=True)),
             patch.dict("os.environ", {"WEB_PASSWORD": "correct-horse"}),
         ):
             result = request(
@@ -148,6 +237,41 @@ class TheoryWebRouteTests(unittest.TestCase):
 
         self.assertTrue(result["status"].startswith("401"))
         self.assertIn("WWW-Authenticate", result["headers"])
+
+    def test_unavailable_configured_database_falls_back_to_loopback_quiz(self) -> None:
+        question_document = json.loads(
+            (
+                THEORY_ROOT
+                / "utility-and-consumer"
+                / "problem-set-and-workshop"
+                / "questions.json"
+            ).read_text(encoding="utf-8")
+        )
+        question = next(
+            item for item in question_document["questions"]
+            if item["id"].endswith(".problem-map.recall")
+        )
+        correct_index = next(
+            index for index, option in enumerate(question["options"])
+            if option["id"] == question["correct_answer"]
+        )
+        body = json.dumps({"question_id": question["id"], "answer": str(correct_index)}).encode()
+        with (
+            patch.object(self.application, "_database_settings", return_value=SimpleNamespace(database_url="postgresql://unavailable")),
+            patch.object(self.application, "_database_available", new=AsyncMock(return_value=False)),
+        ):
+            result = request(
+                self.application,
+                "/api/answer",
+                method="POST",
+                body=body,
+                headers={"CONTENT_TYPE": "application/json", "REMOTE_ADDR": "127.0.0.1"},
+            )
+
+        payload = json.loads(result["body"])
+        self.assertTrue(result["status"].startswith("200"))
+        self.assertEqual(payload["verdict"], "correct")
+        self.assertFalse(payload["progress_saved"])
 
     def test_local_answer_route_checks_json_without_password_or_database(self) -> None:
         repository = web_module.load_theory_repository(THEORY_ROOT)
@@ -176,6 +300,50 @@ class TheoryWebRouteTests(unittest.TestCase):
         self.assertEqual(payload["reference_answer"], question.reference_answer)
         self.assertEqual(payload["explanation"], question.explanation)
         self.assertFalse(payload["progress_saved"])
+
+    def test_monopoly_answers_are_checked_locally_with_explanation(self) -> None:
+        question_document = json.loads(
+            (
+                THEORY_ROOT
+                / "monopoly"
+                / "03-profit-optimization"
+                / "questions.json"
+            ).read_text(encoding="utf-8")
+        )
+        question = question_document["questions"][0]
+        correct_index = next(
+            index
+            for index, option in enumerate(question["options"])
+            if option["id"] == question["correct_answer"]
+        )
+        wrong_index = (correct_index + 1) % len(question["options"])
+        with patch.object(self.application, "_database_settings", return_value=None):
+            correct = request(
+                self.application,
+                "/api/answer",
+                method="POST",
+                body=json.dumps(
+                    {"question_id": question["id"], "answer": str(correct_index)}
+                ).encode(),
+                headers={"CONTENT_TYPE": "application/json", "REMOTE_ADDR": "127.0.0.1"},
+            )
+            incorrect = request(
+                self.application,
+                "/api/answer",
+                method="POST",
+                body=json.dumps(
+                    {"question_id": question["id"], "answer": str(wrong_index)}
+                ).encode(),
+                headers={"CONTENT_TYPE": "application/json", "REMOTE_ADDR": "127.0.0.1"},
+            )
+
+        correct_payload = json.loads(correct["body"])
+        incorrect_payload = json.loads(incorrect["body"])
+        self.assertEqual(correct_payload["verdict"], "correct")
+        self.assertEqual(incorrect_payload["verdict"], "incorrect")
+        self.assertEqual(incorrect_payload["reference_answer"], question["reference_answer"])
+        self.assertEqual(incorrect_payload["explanation"], question["explanation"])
+        self.assertFalse(incorrect_payload["progress_saved"])
 
     def test_utility_theme_quiz_checks_choice_and_explains_incorrect_answer(self) -> None:
         question_document = json.loads(
@@ -232,6 +400,16 @@ class TheoryWebRouteTests(unittest.TestCase):
         self.assertEqual(result["answer_mode"], "local")
         self.assertFalse(result["available"])
 
+    def test_progress_endpoint_uses_local_mode_when_configured_database_is_down(self) -> None:
+        settings = SimpleNamespace(database_url="postgresql://unavailable")
+        with (
+            patch.object(web_module, "get_settings", return_value=settings),
+            patch.object(self.application, "_database_available", new=AsyncMock(return_value=False)),
+        ):
+            result = asyncio.run(self.application._progress_payload())
+        self.assertEqual(result["answer_mode"], "local")
+        self.assertFalse(result["available"])
+
 
 class LocalAnswerCheckerTests(unittest.TestCase):
     @classmethod
@@ -251,12 +429,17 @@ class LocalAnswerCheckerTests(unittest.TestCase):
         result = check_local_answer(multiple_choice, str(correct_index))
         self.assertEqual(result["verdict"], "correct")
 
-        formula = next(q for q in self.questions if q.type.value == "formula")
+        formula_source = self.questions[0]
+        formula = formula_source.model_copy(
+            update={"type": QuestionType.FORMULA, "options": [], "correct_answer": None}
+        )
         exact_formula = check_local_answer(formula, formula.reference_answer)
         self.assertEqual(exact_formula["verdict"], "correct")
         self.assertFalse(exact_formula["progress_saved"])
 
-        free_response = next(q for q in self.questions if q.type.value != "multiple_choice")
+        free_response = formula.model_copy(
+            update={"type": QuestionType.UNDERSTANDING, "reference_answer": "эталонный текст"}
+        )
         uncertain = check_local_answer(free_response, "ответ своими словами, требующий проверки")
         self.assertEqual(uncertain["verdict"], "uncertain")
         self.assertIsNone(uncertain["score"])
@@ -264,7 +447,10 @@ class LocalAnswerCheckerTests(unittest.TestCase):
     def test_unsupported_formula_is_not_marked_incorrect(self) -> None:
         from app.web.answer_checker import check_local_answer
 
-        formula = next(q for q in self.questions if q.type.value == "formula")
+        formula_source = self.questions[0]
+        formula = formula_source.model_copy(
+            update={"type": QuestionType.FORMULA, "options": [], "correct_answer": None}
+        )
         result = check_local_answer(formula, "sqrt(x) + ln(y)")
         self.assertEqual(result["verdict"], "uncertain")
 
@@ -274,18 +460,14 @@ class LocalAnswerCheckerTests(unittest.TestCase):
         questions_by_type = {}
         for question in self.questions:
             questions_by_type.setdefault(question.type, question)
-        self.assertIn("multiple_choice", {kind.value for kind in questions_by_type})
-        self.assertIn("formula", {kind.value for kind in questions_by_type})
-        for question_type, question in questions_by_type.items():
-            if question_type.value == "multiple_choice":
-                answer = str(next(
-                    index for index, option in enumerate(question.options)
-                    if option.id == question.correct_answer
-                ))
-            else:
-                answer = question.reference_answer
-            with self.subTest(question_type=question_type.value):
-                self.assertEqual(check_local_answer(question, answer)["verdict"], "correct")
+        self.assertEqual({kind.value for kind in questions_by_type}, {"multiple_choice"})
+        question = questions_by_type[QuestionType.MULTIPLE_CHOICE]
+        answer = str(next(
+            index for index, option in enumerate(question.options)
+            if option.id == question.correct_answer
+        ))
+        with self.subTest(question_type="multiple_choice"):
+            self.assertEqual(check_local_answer(question, answer)["verdict"], "correct")
 
 
 class WebsiteProgressPersistenceTests(unittest.IsolatedAsyncioTestCase):

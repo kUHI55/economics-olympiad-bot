@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "section": "monopoly",
+  "section_title": "Монополия",
+  "topic": "02-demand-and-mr",
+  "topic_title": "Спрос, выручка и предельная выручка",
+  "questions": [
+    {
+      "id": "monopoly.construction-01-demand.linear-mr",
+      "knowledge_id": "monopoly.demand.revenue-and-mr",
+      "type": "multiple_choice",
+      "difficulty": 2,
+      "question": "Для обратного спроса P=100−2Q найдите MR.",
+      "options": [
+        {"id": "choice-1", "text": "MR=100−4Q"},
+        {"id": "choice-2", "text": "MR=100−2Q"},
+        {"id": "choice-3", "text": "MR=50−2Q"},
+        {"id": "choice-4", "text": "MR=200−2Q"}
+      ],
+      "correct_answer": "choice-1",
+      "reference_answer": "MR=100−4Q",
+      "key_points": ["Сначала TR=P(Q)Q", "Предельная выручка — производная TR"],
+      "explanation": "TR=(100−2Q)Q=100Q−2Q²; производная равна MR=100−4Q. При линейном обратном спросе коэффициент при Q удваивается.",
+      "source": {"id": "monopoly-analysis-docx", "name": "Полный аналитический конспект по монополии (DOCX)", "source_type": "docx", "excerpt": "Для линейного обратного спроса P=a−bQ: TR=aQ−bQ², MR=a−2bQ."},
+      "source_excerpt": "Для линейного обратного спроса P=a−bQ: TR=aQ−bQ², MR=a−2bQ."
+    }
+  ]
+}

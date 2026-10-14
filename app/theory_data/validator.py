@@ -125,7 +125,11 @@ def load_theory_repository(root: Path) -> TheoryRepository:
             *(item.source for item in questions.questions),
         ]:
             previous = source_references.setdefault(source.id, source)
-            if previous != source:
+            if (
+                previous.name != source.name
+                or previous.source_type != source.source_type
+                or previous.source_date != source.source_date
+            ):
                 errors.append(f"{directory}: source ID {source.id} has conflicting metadata")
 
         total_knowledge += len(knowledge.knowledge)

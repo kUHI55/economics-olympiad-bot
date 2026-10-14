@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "section": "monopoly",
+  "section_title": "Монополия",
+  "topic": "15-labor-monopsony",
+  "topic_title": "Монопсония труда и минимальная зарплата",
+  "questions": [
+    {
+      "id": "monopoly.construction-14-labor.task22-base",
+      "knowledge_id": "monopoly.labor.mrp-and-minimum-wage",
+      "type": "multiple_choice",
+      "difficulty": 4,
+      "question": "По буквальной постановке задачи 22, чему равны предельный доходный продукт и занятость без минимальной зарплаты?",
+      "options": [
+        {"id": "choice-1", "text": "MRP_L=1000−32L; L*=1000/33"},
+        {"id": "choice-2", "text": "MRP_L=1000−24L; L*=40"},
+        {"id": "choice-3", "text": "MRP_L=250−8L; L*=250/8"},
+        {"id": "choice-4", "text": "MRP_L=1000−32L; L*=40"}
+      ],
+      "correct_answer": "choice-1",
+      "reference_answer": "MRP_L=1000−32L; L*=1000/33",
+      "key_points": ["Q=4L", "Предельные расходы без минимума следуют из w=L/2"],
+      "explanation": "При Q=4L и Qd=250−P обратный спрос P=250−Q. Получается MRP_L=1000−32L. Без минимума затраты L²/2, поэтому π=1000L−16.5L² и L*=1000/33. Это не совпадает с формулой ключа.",
+      "source": {"id": "monopoly-analysis-docx", "name": "Полный аналитический конспект по монополии (DOCX)", "source_type": "docx", "excerpt": "Ключ задачника не согласуется с буквальным выводом из условия."},
+      "source_excerpt": "Ключ задачника не согласуется с буквальным выводом из условия."
+    },
+    {
+      "id": "monopoly.construction-14-labor.task22-key-discrepancy",
+      "knowledge_id": "monopoly.labor.mrp-and-minimum-wage",
+      "type": "multiple_choice",
+      "difficulty": 4,
+      "question": "Как следует обращаться с функцией из ключа задачи 22, если она не совпадает с выводом из буквального условия?",
+      "options": [
+        {"id": "choice-1", "text": "Сохранить расчёт из условия и явно отметить расхождение ключа"},
+        {"id": "choice-2", "text": "Заменить вывод на функцию ключа без проверки"},
+        {"id": "choice-3", "text": "Считать все функции предложения труда одинаковыми"},
+        {"id": "choice-4", "text": "Убрать минимальную зарплату из постановки"}
+      ],
+      "correct_answer": "choice-1",
+      "reference_answer": "Сохранить расчёт из условия и явно отметить расхождение ключа",
+      "key_points": ["Буквальные данные задачи", "Отдельно зафиксированное расхождение"],
+      "explanation": "Анализ сохраняет буквальный вывод, его кусочную функцию и трактовку минимальной ставки; функция ключа не подменяет его без проверки.",
+      "source": {"id": "monopoly-analysis-docx", "name": "Полный аналитический конспект по монополии (DOCX)", "source_type": "docx", "excerpt": "Ключ задачника не согласуется с буквальным выводом из условия."},
+      "source_excerpt": "Ключ задачника не согласуется с буквальным выводом из условия."
+    }
+  ]
+}

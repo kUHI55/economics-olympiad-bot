@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "section": "monopoly",
+  "section_title": "Монополия",
+  "topic": "05-taxes",
+  "topic_title": "Налоги и оптимальный выпуск",
+  "questions": [
+    {
+      "id": "monopoly.construction-03-taxes.receipts-vs-profit",
+      "knowledge_id": "monopoly.taxes.tax-bases",
+      "type": "multiple_choice",
+      "difficulty": 3,
+      "question": "В задаче 6 Q(t)=(90−t)/4. Какая ставка максимизирует налоговые поступления tQ(t)?",
+      "options": [
+        {"id": "choice-1", "text": "t=45"},
+        {"id": "choice-2", "text": "t=22.5"},
+        {"id": "choice-3", "text": "t=90"},
+        {"id": "choice-4", "text": "t=40, потому что это минимальная ставка для сборов 500"}
+      ],
+      "correct_answer": "choice-1",
+      "reference_answer": "t=45",
+      "key_points": ["Максимизируется tQ(t), а не прибыль фирмы", "Сборы имеют вершину при t=45"],
+      "explanation": "R(t)=t(90−t)/4 — вогнутая квадратичная функция с вершиной t=45. При этом сборы ровно 500 возникают отдельно при t=40 или 50; наименьшая такая ставка — 40.",
+      "source": {"id": "monopoly-analysis-docx", "name": "Полный аналитический конспект по монополии (DOCX)", "source_type": "docx", "excerpt": "Сборы R(t)=t(90−t)/4 максимальны при t=45."},
+      "source_excerpt": "Сборы R(t)=t(90−t)/4 максимальны при t=45."
+    }
+  ]
+}

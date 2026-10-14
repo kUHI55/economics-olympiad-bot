@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "section": "monopoly",
+  "section_title": "Монополия",
+  "topic": "14-international-trade",
+  "topic_title": "Международный посредник-монополист",
+  "questions": [
+    {
+      "id": "monopoly.construction-13-trade.optimal-volume",
+      "knowledge_id": "monopoly.trade.arbitrage-volume",
+      "type": "multiple_choice",
+      "difficulty": 3,
+      "question": "Для межстранового примера из конспекта какой объём торговли максимизирует прибыль посредника?",
+      "options": [
+        {"id": "choice-1", "text": "Q=22.5"},
+        {"id": "choice-2", "text": "Q=30"},
+        {"id": "choice-3", "text": "Q=45"},
+        {"id": "choice-4", "text": "Q=90"}
+      ],
+      "correct_answer": "choice-1",
+      "reference_answer": "Q=22.5",
+      "key_points": ["Прибыль (30−2Q/3)Q", "Оптимум должен сохранять направление торговли"],
+      "explanation": "Из данных двух стран получено π(Q)=(30−2Q/3)Q. Её внутренний максимум находится при Q=22.5; цены составляют PA=52.5 и PB=37.5.",
+      "source": {"id": "monopoly-analysis-docx", "name": "Полный аналитический конспект по монополии (DOCX)", "source_type": "docx", "excerpt": "Оптимум Q=22.5, PA=52.5, PB=37.5."},
+      "source_excerpt": "Оптимум Q=22.5, PA=52.5, PB=37.5."
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "section": "monopoly",
+  "section_title": "Монополия",
+  "topic": "13-intertemporal",
+  "topic_title": "Последовательное ценообразование",
+  "questions": [
+    {
+      "id": "monopoly.construction-12-intertemporal.two-periods",
+      "knowledge_id": "monopoly.intertemporal.residual-demand",
+      "type": "multiple_choice",
+      "difficulty": 3,
+      "question": "В задаче с Qd=120−P, нулевыми затратами и двумя периодами какой результат приведён для оптимальных цен?",
+      "options": [
+        {"id": "choice-1", "text": "P1=80, P2=40"},
+        {"id": "choice-2", "text": "P1=60, P2=60"},
+        {"id": "choice-3", "text": "P1=96, P2=72"},
+        {"id": "choice-4", "text": "P1=65, P2=45"}
+      ],
+      "correct_answer": "choice-1",
+      "reference_answer": "P1=80, P2=40",
+      "key_points": ["Учитывается остаточный спрос второго периода", "Общая прибыль оптимизируется совместно"],
+      "explanation": "Для двух периодов в анализе записано π=P1(120−P1)+P2(P1−P2), что даёт P1=80 и P2=40. Четырёхпериодные цены 96,72,48,24 относятся к другой постановке.",
+      "source": {"id": "monopoly-analysis-docx", "name": "Полный аналитический конспект по монополии (DOCX)", "source_type": "docx", "excerpt": "Для двух периодов оптимум P1=80,P2=40."},
+      "source_excerpt": "Для двух периодов оптимум P1=80,P2=40."
+    }
+  ]
+}

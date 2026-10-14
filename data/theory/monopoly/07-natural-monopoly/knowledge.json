@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "section": "monopoly",
+  "section_title": "Монополия",
+  "topic": "07-natural-monopoly",
+  "topic_title": "Естественная монополия",
+  "knowledge": [
+    {
+      "id": "monopoly.natural.economies-of-scale",
+      "title": "Экономия масштаба и покрытие затрат",
+      "type": "graphical_concept",
+      "formula": "P=MC<AC ⇒ выручка может не покрыть полные затраты",
+      "definitions": {},
+      "explanation": "Высокие постоянные затраты и падающие средние затраты могут делать одну инфраструктуру дешевле нескольких дублирующих. Цена на уровне MC не гарантирует покрытия AC; презентация не выводит конкретную схему регулирования.",
+      "source": {"id": "monopoly-analysis-docx", "name": "Полный аналитический конспект по монополии (DOCX)", "source_type": "docx", "excerpt": "P=MC может дать P<AC, так что выручки не хватит для покрытия затрат."}
+    }
+  ]
+}

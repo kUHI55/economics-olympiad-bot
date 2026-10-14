@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "section": "monopoly",
+  "section_title": "Монополия",
+  "topic": "18-source-checks",
+  "topic_title": "Проверка источников и выбор метода",
+  "knowledge": [
+    {
+      "id": "monopoly.sources.discrepancies-and-method-map",
+      "title": "Расхождения ключа и карта выбора метода",
+      "type": "common_mistake",
+      "explanation": "Сохранены замечания к задачам 10, 22, 25 и 26. Ответ следует проверять подстановкой в исходную постановку; неоднозначность условия или неполноту ключа надо обозначать, а не исправлять молча.",
+      "source": {"id": "monopoly-analysis-docx", "name": "Полный аналитический конспект по монополии (DOCX)", "source_type": "docx", "excerpt": "Расхождения ключа следует проверять по буквальной формулировке и расчёту."}
+    }
+  ]
+}

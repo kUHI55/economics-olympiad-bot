@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "section": "monopoly",
+  "section_title": "Монополия",
+  "topic": "14-international-trade",
+  "topic_title": "Международный посредник-монополист",
+  "knowledge": [
+    {
+      "id": "monopoly.trade.arbitrage-volume",
+      "title": "Торговый объём и межстрановой ценовой разрыв",
+      "type": "mechanism",
+      "formula": "π(Q)=(PA(Q)−PB(Q))Q",
+      "definitions": {},
+      "explanation": "После определения экспортёра и импортёра выразить избыточное предложение и спрос через единый торговый объём; получить цены в обеих странах и максимизировать прибыль посредника.",
+      "source": {"id": "monopoly-analysis-docx", "name": "Полный аналитический конспект по монополии (DOCX)", "source_type": "docx", "excerpt": "Прибыль посредника равна разности цены продажи и закупки, умноженной на объём."}
+    }
+  ]
+}

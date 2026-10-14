@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "section": "monopoly",
+  "section_title": "Монополия",
+  "topic": "10-first-degree",
+  "topic_title": "Дискриминация первого рода",
+  "questions": [
+    {
+      "id": "monopoly.construction-08-first-degree.output",
+      "knowledge_id": "monopoly.first-degree.individual-pricing",
+      "type": "multiple_choice",
+      "difficulty": 2,
+      "question": "При P=100−Q и MC=20 какой выпуск-кандидат следует из условия дискриминации первого рода?",
+      "options": [
+        {"id": "choice-1", "text": "Q=80"},
+        {"id": "choice-2", "text": "Q=40"},
+        {"id": "choice-3", "text": "Q=20"},
+        {"id": "choice-4", "text": "Q=100"}
+      ],
+      "correct_answer": "choice-1",
+      "reference_answer": "Q=80",
+      "key_points": ["При первом роде MR=P", "Решить P(Q)=MC"],
+      "explanation": "Индивидуальное ценообразование даёт P=MC. Из 100−Q=20 получаем Q=80; затем прибыль/излишек рассчитывается с учётом указанной структуры затрат.",
+      "source": {"id": "monopoly-analysis-docx", "name": "Полный аналитический конспект по монополии (DOCX)", "source_type": "docx", "excerpt": "При P=100−Q, MC=20: Q=80."},
+      "source_excerpt": "При P=100−Q, MC=20: Q=80."
+    }
+  ]
+}

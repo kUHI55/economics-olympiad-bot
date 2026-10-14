@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "section": "monopoly",
+  "section_title": "Монополия",
+  "topic": "03-profit-optimization",
+  "topic_title": "Максимизация прибыли",
+  "knowledge": [
+    {
+      "id": "monopoly.optimization.global-candidates",
+      "title": "MR=MC как кандидат и проверка глобального максимума",
+      "type": "mechanism",
+      "formula": "π=TR−TC; π′=MR−MC; внутренний кандидат: MR=MC",
+      "definitions": {},
+      "explanation": "Равенство MR=MC даёт только внутреннего кандидата. Нужно проверить максимум, область выпуска, нулевой выпуск, изломы, скачки, ограничения и несколько пересечений, а затем сравнить полную прибыль во всех кандидатах.",
+      "source": {"id": "monopoly-analysis-docx", "name": "Полный аналитический конспект по монополии (DOCX)", "source_type": "docx", "excerpt": "MR=MC — условие кандидата на внутренний экстремум, а не универсальное доказательство глобального максимума."}
+    }
+  ]
+}

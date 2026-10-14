@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "section": "monopoly",
+  "section_title": "Монополия",
+  "topic": "11-third-degree",
+  "topic_title": "Дискриминация третьего рода",
+  "knowledge": [
+    {
+      "id": "monopoly.third-degree.common-mc",
+      "title": "Сегменты и общие предельные затраты",
+      "type": "mechanism",
+      "formula": "ΣPi(Qi)Qi−TC(ΣQi); для активных рынков MRi=MC(ΣQi)",
+      "definitions": {},
+      "explanation": "Фирма совместно выбирает количества для отдельных рынков. При общей переменной MC условие использует суммарный выпуск; нужно проверить закрытие каждого рынка и граничные решения.",
+      "source": {"id": "monopoly-analysis-docx", "name": "Полный аналитический конспект по монополии (DOCX)", "source_type": "docx", "excerpt": "При непостоянной MC нельзя независимо решить каждый рынок, нужно учесть общий выпуск."}
+    }
+  ]
+}
