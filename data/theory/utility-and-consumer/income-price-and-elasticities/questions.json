@@ -8,7 +8,7 @@
     {
       "id": "utility-and-consumer.income-price-and-elasticities.engel-and-income-elasticity.recall",
       "knowledge_id": "utility-and-consumer.income-price-and-elasticities.engel-and-income-elasticity",
-      "type": "formula",
+      "type": "multiple_choice",
       "difficulty": 2,
       "question": "Как записана доходная эластичность спроса на x?",
       "reference_answer": "Eᵢˣ=(∂x/∂I)(I/x).",
@@ -22,12 +22,31 @@
         "source_type": "docx",
         "excerpt": "Eᵢˣ=(∂x/∂I)(I/x)"
       },
-      "source_excerpt": "Eᵢˣ=(∂x/∂I)(I/x)"
+      "source_excerpt": "Eᵢˣ=(∂x/∂I)(I/x)",
+      "options": [
+        {
+          "id": "choice-1",
+          "text": "Eᵢˣ=(∂x/∂pₓ)(pₓ/x)."
+        },
+        {
+          "id": "choice-2",
+          "text": "Eᵢˣ=(∂I/∂x)(I/x)."
+        },
+        {
+          "id": "choice-3",
+          "text": "Eᵢˣ=(∂x/∂I)(x/I)."
+        },
+        {
+          "id": "choice-4",
+          "text": "Eᵢˣ=(∂x/∂I)(I/x)."
+        }
+      ],
+      "correct_answer": "choice-4"
     },
     {
       "id": "utility-and-consumer.income-price-and-elasticities.own-cross-elasticity.recall",
       "knowledge_id": "utility-and-consumer.income-price-and-elasticities.own-cross-elasticity",
-      "type": "formula",
+      "type": "multiple_choice",
       "difficulty": 2,
       "question": "Как различить собственную и перекрёстную эластичность спроса на x?",
       "reference_answer": "По цене, по которой берётся производная: pₓ или pᵧ.",
@@ -41,12 +60,31 @@
         "source_type": "docx",
         "excerpt": "Eₚₓˣ=(∂x/∂pₓ)(pₓ/x); Eₚᵧˣ=(∂x/∂pᵧ)(pᵧ/x)"
       },
-      "source_excerpt": "Eₚₓˣ=(∂x/∂pₓ)(pₓ/x); Eₚᵧˣ=(∂x/∂pᵧ)(pᵧ/x)"
+      "source_excerpt": "Eₚₓˣ=(∂x/∂pₓ)(pₓ/x); Eₚᵧˣ=(∂x/∂pᵧ)(pᵧ/x)",
+      "options": [
+        {
+          "id": "choice-1",
+          "text": "В обеих берут производную спроса на x только по доходу I."
+        },
+        {
+          "id": "choice-2",
+          "text": "В собственной берут производную по pᵧ, а в перекрёстной — по pₓ."
+        },
+        {
+          "id": "choice-3",
+          "text": "По цене, по которой берётся производная: pₓ или pᵧ."
+        },
+        {
+          "id": "choice-4",
+          "text": "Собственная использует pₓ, перекрёстная — доход I."
+        }
+      ],
+      "correct_answer": "choice-3"
     },
     {
       "id": "utility-and-consumer.income-price-and-elasticities.normal-inferior-goods.recall",
       "knowledge_id": "utility-and-consumer.income-price-and-elasticities.normal-inferior-goods",
-      "type": "understanding",
+      "type": "multiple_choice",
       "difficulty": 2,
       "question": "На что опирается классификация товара по реакции спроса?",
       "reference_answer": "На реакцию функции спроса на доход или цену.",
@@ -60,7 +98,26 @@
         "source_type": "docx",
         "excerpt": "Доход, цены, эластичности и виды товаров"
       },
-      "source_excerpt": "Доход, цены, эластичности и виды товаров"
+      "source_excerpt": "Доход, цены, эластичности и виды товаров",
+      "options": [
+        {
+          "id": "choice-1",
+          "text": "На уровне полезности в одной корзине независимо от параметров."
+        },
+        {
+          "id": "choice-2",
+          "text": "На реакцию функции спроса на доход или цену."
+        },
+        {
+          "id": "choice-3",
+          "text": "Только на реакции спроса на изменение собственной цены."
+        },
+        {
+          "id": "choice-4",
+          "text": "На сравнении цен товаров без анализа функции спроса."
+        }
+      ],
+      "correct_answer": "choice-2"
     }
   ]
 }

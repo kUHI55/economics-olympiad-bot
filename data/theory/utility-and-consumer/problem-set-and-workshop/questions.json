@@ -14,7 +14,7 @@
       "options": [
         {
           "id": "choice-1",
-          "text": "24 задачи"
+          "text": "24."
         },
         {
           "id": "choice-2",
@@ -23,6 +23,10 @@
         {
           "id": "choice-3",
           "text": "10 задач"
+        },
+        {
+          "id": "choice-4",
+          "text": "23 задачи."
         }
       ],
       "correct_answer": "choice-1",
@@ -42,7 +46,7 @@
     {
       "id": "utility-and-consumer.problem-set-and-workshop.task10-piecewise.recall",
       "knowledge_id": "utility-and-consumer.problem-set-and-workshop.task10-piecewise",
-      "type": "understanding",
+      "type": "multiple_choice",
       "difficulty": 2,
       "question": "Сколько систем предельной полезности разобрано для задачи 10?",
       "reference_answer": "Четыре.",
@@ -56,12 +60,31 @@
         "source_type": "docx",
         "excerpt": "Задача 10: точные кусочные решения по четырём системам предельной полезности"
       },
-      "source_excerpt": "Задача 10: точные кусочные решения по четырём системам предельной полезности"
+      "source_excerpt": "Задача 10: точные кусочные решения по четырём системам предельной полезности",
+      "options": [
+        {
+          "id": "choice-1",
+          "text": "Четыре."
+        },
+        {
+          "id": "choice-2",
+          "text": "Две системы."
+        },
+        {
+          "id": "choice-3",
+          "text": "Три системы."
+        },
+        {
+          "id": "choice-4",
+          "text": "Пять систем."
+        }
+      ],
+      "correct_answer": "choice-1"
     },
     {
       "id": "utility-and-consumer.problem-set-and-workshop.task16-four-goods.recall",
       "knowledge_id": "utility-and-consumer.problem-set-and-workshop.task16-four-goods",
-      "type": "understanding",
+      "type": "multiple_choice",
       "difficulty": 2,
       "question": "Сколько функций разбирается в задаче 16 для четырёх товаров?",
       "reference_answer": "Восемь.",
@@ -75,12 +98,31 @@
         "source_type": "docx",
         "excerpt": "Задача 16: четыре товара A, B, C, D; восемь функций"
       },
-      "source_excerpt": "Задача 16: четыре товара A, B, C, D; восемь функций"
+      "source_excerpt": "Задача 16: четыре товара A, B, C, D; восемь функций",
+      "options": [
+        {
+          "id": "choice-1",
+          "text": "Четыре функции."
+        },
+        {
+          "id": "choice-2",
+          "text": "Восемь."
+        },
+        {
+          "id": "choice-3",
+          "text": "Шесть функций."
+        },
+        {
+          "id": "choice-4",
+          "text": "Десять функций."
+        }
+      ],
+      "correct_answer": "choice-2"
     },
     {
       "id": "utility-and-consumer.problem-set-and-workshop.source-discrepancies.recall",
       "knowledge_id": "utility-and-consumer.problem-set-and-workshop.source-discrepancies",
-      "type": "understanding",
+      "type": "multiple_choice",
       "difficulty": 2,
       "question": "Как конспект предлагает обращаться с неразборчивой формулой задачи 3(д)?",
       "reference_answer": "Сверить с оригинальным сканом и не восстанавливать формулу догадкой.",
@@ -94,12 +136,31 @@
         "source_type": "docx",
         "excerpt": "В задаче 3(д) формула требует проверки по исходному скану; расхождение задачи 13(г) не маскируется"
       },
-      "source_excerpt": "В задаче 3(д) формула требует проверки по исходному скану; расхождение задачи 13(г) не маскируется"
+      "source_excerpt": "В задаче 3(д) формула требует проверки по исходному скану; расхождение задачи 13(г) не маскируется",
+      "options": [
+        {
+          "id": "choice-1",
+          "text": "Сверить с оригинальным сканом и не восстанавливать формулу догадкой."
+        },
+        {
+          "id": "choice-2",
+          "text": "Восстановить наиболее вероятную формулу и не отмечать неопределённость."
+        },
+        {
+          "id": "choice-3",
+          "text": "Заменить её стандартной формулой из другого учебника."
+        },
+        {
+          "id": "choice-4",
+          "text": "Исключить задачу из конспекта, не сохраняя сведения о пробеле."
+        }
+      ],
+      "correct_answer": "choice-1"
     },
     {
       "id": "utility-and-consumer.problem-set-and-workshop.seminar-models.recall",
       "knowledge_id": "utility-and-consumer.problem-set-and-workshop.seminar-models",
-      "type": "understanding",
+      "type": "multiple_choice",
       "difficulty": 2,
       "question": "Назовите две модели, включённые в сводный разбор семинара.",
       "reference_answer": "Например, диетическая задача и обмен между потребителями.",
@@ -113,7 +174,26 @@
         "source_type": "docx",
         "excerpt": "Множественные ограничения; диетическая задача; целочисленная корзина; комплекты; обмен между двумя потребителями"
       },
-      "source_excerpt": "Множественные ограничения; диетическая задача; целочисленная корзина; комплекты; обмен между двумя потребителями"
+      "source_excerpt": "Множественные ограничения; диетическая задача; целочисленная корзина; комплекты; обмен между двумя потребителями",
+      "options": [
+        {
+          "id": "choice-1",
+          "text": "Например, диетическая задача и обмен между потребителями."
+        },
+        {
+          "id": "choice-2",
+          "text": "Задача о производительности капитала и выпуске."
+        },
+        {
+          "id": "choice-3",
+          "text": "Модель фирмы и производственная функция."
+        },
+        {
+          "id": "choice-4",
+          "text": "Кривые Энгеля и индекс Ласпейреса."
+        }
+      ],
+      "correct_answer": "choice-1"
     }
   ]
 }

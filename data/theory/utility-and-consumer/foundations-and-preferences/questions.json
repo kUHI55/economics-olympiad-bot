@@ -8,7 +8,7 @@
     {
       "id": "utility-and-consumer.foundations-and-preferences.consumer-model.recall",
       "knowledge_id": "utility-and-consumer.foundations-and-preferences.consumer-model",
-      "type": "understanding",
+      "type": "multiple_choice",
       "difficulty": 2,
       "question": "Что входит в базовую модель потребителя?",
       "reference_answer": "Корзина товаров, цены, доход и дополнительные ограничения.",
@@ -22,12 +22,31 @@
         "source_type": "docx",
         "excerpt": "Потребитель выбирает корзину товаров с учётом цен, дохода и дополнительных ограничений."
       },
-      "source_excerpt": "Потребитель выбирает корзину товаров с учётом цен, дохода и дополнительных ограничений."
+      "source_excerpt": "Потребитель выбирает корзину товаров с учётом цен, дохода и дополнительных ограничений.",
+      "options": [
+        {
+          "id": "choice-1",
+          "text": "Только предпочтения и функцию полезности, без цен и дохода."
+        },
+        {
+          "id": "choice-2",
+          "text": "Корзина товаров и цены, но без бюджета и других ограничений."
+        },
+        {
+          "id": "choice-3",
+          "text": "Доход и ограничения без выбора корзины товаров."
+        },
+        {
+          "id": "choice-4",
+          "text": "Корзина товаров, цены, доход и дополнительные ограничения."
+        }
+      ],
+      "correct_answer": "choice-4"
     },
     {
       "id": "utility-and-consumer.foundations-and-preferences.utility-representation.recall",
       "knowledge_id": "utility-and-consumer.foundations-and-preferences.utility-representation",
-      "type": "understanding",
+      "type": "multiple_choice",
       "difficulty": 2,
       "question": "Что представляет функция полезности?",
       "reference_answer": "Предпочтения потребителя.",
@@ -41,12 +60,31 @@
         "source_type": "docx",
         "excerpt": "Функция полезности представляет предпочтения потребителя"
       },
-      "source_excerpt": "Функция полезности представляет предпочтения потребителя"
+      "source_excerpt": "Функция полезности представляет предпочтения потребителя",
+      "options": [
+        {
+          "id": "choice-1",
+          "text": "Только бюджетное множество доступных корзин."
+        },
+        {
+          "id": "choice-2",
+          "text": "Физическое количество удовлетворения, измеренное в абсолютных единицах."
+        },
+        {
+          "id": "choice-3",
+          "text": "Рыночную цену каждого товара в корзине."
+        },
+        {
+          "id": "choice-4",
+          "text": "Предпочтения потребителя."
+        }
+      ],
+      "correct_answer": "choice-4"
     },
     {
       "id": "utility-and-consumer.foundations-and-preferences.indifference-curves.recall",
       "knowledge_id": "utility-and-consumer.foundations-and-preferences.indifference-curves",
-      "type": "understanding",
+      "type": "multiple_choice",
       "difficulty": 2,
       "question": "Как интерпретируется кривая безразличия?",
       "reference_answer": "Множество корзин с одинаковым уровнем полезности.",
@@ -60,12 +98,31 @@
         "source_type": "docx",
         "excerpt": "На кривой безразличия полезность постоянна"
       },
-      "source_excerpt": "На кривой безразличия полезность постоянна"
+      "source_excerpt": "На кривой безразличия полезность постоянна",
+      "options": [
+        {
+          "id": "choice-1",
+          "text": "Множество корзин с одинаковыми расходами."
+        },
+        {
+          "id": "choice-2",
+          "text": "Все корзины, расходующие весь доход при заданных ценах."
+        },
+        {
+          "id": "choice-3",
+          "text": "Множество корзин, где предельные полезности обоих товаров равны нулю."
+        },
+        {
+          "id": "choice-4",
+          "text": "Множество корзин с одинаковым уровнем полезности."
+        }
+      ],
+      "correct_answer": "choice-4"
     },
     {
       "id": "utility-and-consumer.foundations-and-preferences.budget-set.recall",
       "knowledge_id": "utility-and-consumer.foundations-and-preferences.budget-set",
-      "type": "formula",
+      "type": "multiple_choice",
       "difficulty": 2,
       "question": "Запишите бюджетное ограничение и наклон бюджетной линии.",
       "reference_answer": "pₓx+pᵧy≤I; наклон равен −pₓ/pᵧ.",
@@ -79,7 +136,26 @@
         "source_type": "docx",
         "excerpt": "pₓx+pᵧy≤I; наклон бюджета −pₓ/pᵧ"
       },
-      "source_excerpt": "pₓx+pᵧy≤I; наклон бюджета −pₓ/pᵧ"
+      "source_excerpt": "pₓx+pᵧy≤I; наклон бюджета −pₓ/pᵧ",
+      "options": [
+        {
+          "id": "choice-1",
+          "text": "pₓx+pᵧy=I; наклон −pᵧ/pₓ."
+        },
+        {
+          "id": "choice-2",
+          "text": "pₓx+pᵧy≥I; наклон pₓ/pᵧ."
+        },
+        {
+          "id": "choice-3",
+          "text": "x+y≤I; наклон −pₓ/pᵧ."
+        },
+        {
+          "id": "choice-4",
+          "text": "pₓx+pᵧy≤I; наклон равен −pₓ/pᵧ."
+        }
+      ],
+      "correct_answer": "choice-4"
     }
   ]
 }

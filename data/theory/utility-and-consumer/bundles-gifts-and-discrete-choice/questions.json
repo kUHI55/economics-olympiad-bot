@@ -8,7 +8,7 @@
     {
       "id": "utility-and-consumer.bundles-gifts-and-discrete-choice.topic-overview.recall",
       "knowledge_id": "utility-and-consumer.bundles-gifts-and-discrete-choice.topic-overview",
-      "type": "understanding",
+      "type": "multiple_choice",
       "difficulty": 1,
       "question": "Какие виды материала объединяет полный конспект?",
       "reference_answer": "Теория, формулы, алгоритмы, типы задач, решения и ловушки.",
@@ -22,12 +22,31 @@
         "source_type": "docx",
         "excerpt": "Теория • формулы • алгоритмы • типы задач • решения • ловушки"
       },
-      "source_excerpt": "Теория • формулы • алгоритмы • типы задач • решения • ловушки"
+      "source_excerpt": "Теория • формулы • алгоритмы • типы задач • решения • ловушки",
+      "options": [
+        {
+          "id": "choice-1",
+          "text": "Теория, примеры, определения, таблицы и ссылки на внешние сайты."
+        },
+        {
+          "id": "choice-2",
+          "text": "Теория, формулы, алгоритмы, типы задач, решения и ловушки."
+        },
+        {
+          "id": "choice-3",
+          "text": "Только готовые тестовые вопросы и правильные варианты."
+        },
+        {
+          "id": "choice-4",
+          "text": "Формулы, графики и ответы без алгоритмов и решений."
+        }
+      ],
+      "correct_answer": "choice-2"
     },
     {
       "id": "utility-and-consumer.bundles-gifts-and-discrete-choice.bundles.recall",
       "knowledge_id": "utility-and-consumer.bundles-gifts-and-discrete-choice.bundles",
-      "type": "understanding",
+      "type": "multiple_choice",
       "difficulty": 2,
       "question": "Что сравнивают в задаче о комплектной цене?",
       "reference_answer": "Цену комплекта со стоимостью товаров по отдельности.",
@@ -41,12 +60,31 @@
         "source_type": "docx",
         "excerpt": "Комплекты"
       },
-      "source_excerpt": "Комплекты"
+      "source_excerpt": "Комплекты",
+      "options": [
+        {
+          "id": "choice-1",
+          "text": "Цену одной единицы одного товара и полезность другого товара."
+        },
+        {
+          "id": "choice-2",
+          "text": "Цену комплекта со стоимостью товаров по отдельности."
+        },
+        {
+          "id": "choice-3",
+          "text": "Полезность комплекта и доход, не сравнивая отдельные цены."
+        },
+        {
+          "id": "choice-4",
+          "text": "Только число товаров в комплекте, не учитывая его цену."
+        }
+      ],
+      "correct_answer": "choice-2"
     },
     {
       "id": "utility-and-consumer.bundles-gifts-and-discrete-choice.gifts-and-promotions.recall",
       "knowledge_id": "utility-and-consumer.bundles-gifts-and-discrete-choice.gifts-and-promotions",
-      "type": "understanding",
+      "type": "multiple_choice",
       "difficulty": 2,
       "question": "Какие количества важно различать в задаче с подарком?",
       "reference_answer": "Оплаченные товары и товары, полученные с подарком.",
@@ -60,12 +98,31 @@
         "source_type": "docx",
         "excerpt": "Подарки и акции"
       },
-      "source_excerpt": "Подарки и акции"
+      "source_excerpt": "Подарки и акции",
+      "options": [
+        {
+          "id": "choice-1",
+          "text": "Только количество оплаченных единиц; подарок не входит в корзину."
+        },
+        {
+          "id": "choice-2",
+          "text": "Только итоговое количество, считая все единицы оплаченными."
+        },
+        {
+          "id": "choice-3",
+          "text": "Оплаченные товары и товары, полученные с подарком."
+        },
+        {
+          "id": "choice-4",
+          "text": "Цены подарка и оплаченных товаров без подсчёта итоговых количеств."
+        }
+      ],
+      "correct_answer": "choice-3"
     },
     {
       "id": "utility-and-consumer.bundles-gifts-and-discrete-choice.integer-bundles.recall",
       "knowledge_id": "utility-and-consumer.bundles-gifts-and-discrete-choice.integer-bundles",
-      "type": "understanding",
+      "type": "multiple_choice",
       "difficulty": 2,
       "question": "Как решается дискретная задача о корзине?",
       "reference_answer": "Перебрать целые допустимые варианты и сравнить полезность.",
@@ -79,12 +136,31 @@
         "source_type": "docx",
         "excerpt": "Дискретная задача: перебрать допустимые целые наборы/кандидаты; бюджет не обязательно активен"
       },
-      "source_excerpt": "Дискретная задача: перебрать допустимые целые наборы/кандидаты; бюджет не обязательно активен"
+      "source_excerpt": "Дискретная задача: перебрать допустимые целые наборы/кандидаты; бюджет не обязательно активен",
+      "options": [
+        {
+          "id": "choice-1",
+          "text": "Решить задачу как непрерывную, затем округлить один найденный ответ."
+        },
+        {
+          "id": "choice-2",
+          "text": "Перебрать целые допустимые варианты и сравнить полезность."
+        },
+        {
+          "id": "choice-3",
+          "text": "Проверить только корзину с активным бюджетным ограничением."
+        },
+        {
+          "id": "choice-4",
+          "text": "Выбрать набор с наибольшим количеством единиц без сравнения полезности."
+        }
+      ],
+      "correct_answer": "choice-2"
     },
     {
       "id": "utility-and-consumer.bundles-gifts-and-discrete-choice.saturation.recall",
       "knowledge_id": "utility-and-consumer.bundles-gifts-and-discrete-choice.saturation",
-      "type": "understanding",
+      "type": "multiple_choice",
       "difficulty": 2,
       "question": "Как следует учитывать точку насыщения при выборе?",
       "reference_answer": "Проверить точку насыщения и сравнить с другими кандидатами.",
@@ -98,7 +174,26 @@
         "source_type": "docx",
         "excerpt": "Точка насыщения"
       },
-      "source_excerpt": "Точка насыщения"
+      "source_excerpt": "Точка насыщения",
+      "options": [
+        {
+          "id": "choice-1",
+          "text": "Исключить точку насыщения и проверить только гладкий внутренний оптимум."
+        },
+        {
+          "id": "choice-2",
+          "text": "Проверить точку насыщения и сравнить с другими кандидатами."
+        },
+        {
+          "id": "choice-3",
+          "text": "Всегда увеличить потребление до расходования всего бюджета."
+        },
+        {
+          "id": "choice-4",
+          "text": "Приравнять предельную полезность к цене без проверки других кандидатов."
+        }
+      ],
+      "correct_answer": "choice-2"
     }
   ]
 }

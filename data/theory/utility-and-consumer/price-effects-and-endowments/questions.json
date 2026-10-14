@@ -8,7 +8,7 @@
     {
       "id": "utility-and-consumer.price-effects-and-endowments.substitution-income-effects.recall",
       "knowledge_id": "utility-and-consumer.price-effects-and-endowments.substitution-income-effects",
-      "type": "understanding",
+      "type": "multiple_choice",
       "difficulty": 2,
       "question": "На какие составляющие конспект предлагает разделять реакцию на изменение цены?",
       "reference_answer": "На эффект замещения и эффект дохода.",
@@ -22,12 +22,31 @@
         "source_type": "docx",
         "excerpt": "Эффект замещения, эффект дохода"
       },
-      "source_excerpt": "Эффект замещения, эффект дохода"
+      "source_excerpt": "Эффект замещения, эффект дохода",
+      "options": [
+        {
+          "id": "choice-1",
+          "text": "На изменение предпочтений и изменение технологии производства."
+        },
+        {
+          "id": "choice-2",
+          "text": "На изменение номинального дохода и изменение качества товара."
+        },
+        {
+          "id": "choice-3",
+          "text": "На эффект замещения и эффект дохода."
+        },
+        {
+          "id": "choice-4",
+          "text": "На изменение полезности и изменение предельных издержек."
+        }
+      ],
+      "correct_answer": "choice-3"
     },
     {
       "id": "utility-and-consumer.price-effects-and-endowments.hicks-slutsky.recall",
       "knowledge_id": "utility-and-consumer.price-effects-and-endowments.hicks-slutsky",
-      "type": "formula",
+      "type": "multiple_choice",
       "difficulty": 2,
       "question": "Какая формула разложения Слуцкого приведена в конспекте?",
       "reference_answer": "∂xᵢ/∂pⱼ=∂hᵢ/∂pⱼ−xⱼ∂xᵢ/∂I.",
@@ -41,12 +60,31 @@
         "source_type": "docx",
         "excerpt": "Слуцкий: ∂xᵢ/∂pⱼ=∂hᵢ/∂pⱼ−xⱼ∂xᵢ/∂I"
       },
-      "source_excerpt": "Слуцкий: ∂xᵢ/∂pⱼ=∂hᵢ/∂pⱼ−xⱼ∂xᵢ/∂I"
+      "source_excerpt": "Слуцкий: ∂xᵢ/∂pⱼ=∂hᵢ/∂pⱼ−xⱼ∂xᵢ/∂I",
+      "options": [
+        {
+          "id": "choice-1",
+          "text": "∂xᵢ/∂pⱼ=∂xᵢ/∂I−xⱼ∂hᵢ/∂pⱼ."
+        },
+        {
+          "id": "choice-2",
+          "text": "∂xᵢ/∂pⱼ=∂hᵢ/∂pᵢ−xⱼ∂xᵢ/∂I."
+        },
+        {
+          "id": "choice-3",
+          "text": "∂xᵢ/∂pⱼ=∂hᵢ/∂pⱼ+xⱼ∂xᵢ/∂I."
+        },
+        {
+          "id": "choice-4",
+          "text": "∂xᵢ/∂pⱼ=∂hᵢ/∂pⱼ−xⱼ∂xᵢ/∂I."
+        }
+      ],
+      "correct_answer": "choice-4"
     },
     {
       "id": "utility-and-consumer.price-effects-and-endowments.giffen-veblen.recall",
       "knowledge_id": "utility-and-consumer.price-effects-and-endowments.giffen-veblen",
-      "type": "understanding",
+      "type": "multiple_choice",
       "difficulty": 2,
       "question": "Какие эффекты нельзя автоматически считать одним и тем же объяснением реакции спроса?",
       "reference_answer": "Эффекты замещения и дохода, случай Гиффена и выбор при первоначальном запасе.",
@@ -60,12 +98,31 @@
         "source_type": "docx",
         "excerpt": "Гиффен и первоначальный запас"
       },
-      "source_excerpt": "Гиффен и первоначальный запас"
+      "source_excerpt": "Гиффен и первоначальный запас",
+      "options": [
+        {
+          "id": "choice-1",
+          "text": "Все четыре понятия являются разными названиями эффекта дохода."
+        },
+        {
+          "id": "choice-2",
+          "text": "Гиффен — это эффект замещения, а первоначальный запас — ценовая эластичность."
+        },
+        {
+          "id": "choice-3",
+          "text": "Эффекты замещения и дохода, случай Гиффена и выбор при первоначальном запасе."
+        },
+        {
+          "id": "choice-4",
+          "text": "Эффект дохода и замещения составляют один эффект; запас не влияет на выбор."
+        }
+      ],
+      "correct_answer": "choice-3"
     },
     {
       "id": "utility-and-consumer.price-effects-and-endowments.endowment.recall",
       "knowledge_id": "utility-and-consumer.price-effects-and-endowments.endowment",
-      "type": "understanding",
+      "type": "multiple_choice",
       "difficulty": 2,
       "question": "Что дополнительно учитывают в задаче о первоначальном запасе?",
       "reference_answer": "Стоимость исходной корзины и возможность торговли.",
@@ -79,7 +136,26 @@
         "source_type": "docx",
         "excerpt": "Первоначальный запас и торговля"
       },
-      "source_excerpt": "Первоначальный запас и торговля"
+      "source_excerpt": "Первоначальный запас и торговля",
+      "options": [
+        {
+          "id": "choice-1",
+          "text": "Только бюджет на покупку новой корзины без оценки исходного запаса."
+        },
+        {
+          "id": "choice-2",
+          "text": "Количество благ после торговли, считая исходный запас уже проданным."
+        },
+        {
+          "id": "choice-3",
+          "text": "Стоимость исходной корзины и возможность торговли."
+        },
+        {
+          "id": "choice-4",
+          "text": "Только предельную полезность товара, который обменивается."
+        }
+      ],
+      "correct_answer": "choice-3"
     }
   ]
 }

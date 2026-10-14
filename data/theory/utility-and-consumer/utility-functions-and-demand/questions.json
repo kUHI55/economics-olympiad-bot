@@ -8,7 +8,7 @@
     {
       "id": "utility-and-consumer.utility-functions-and-demand.cobb-douglas.recall",
       "knowledge_id": "utility-and-consumer.utility-functions-and-demand.cobb-douglas",
-      "type": "formula",
+      "type": "multiple_choice",
       "difficulty": 2,
       "question": "Каковы формулы спроса для U=xᵅyᵝ?",
       "reference_answer": "x*=αI/[(α+β)pₓ]; y*=βI/[(α+β)pᵧ].",
@@ -22,12 +22,31 @@
         "source_type": "docx",
         "excerpt": "Для Cobb–Douglas U=xᵅyᵝ: x*=αI/[(α+β)pₓ], y*=βI/[(α+β)pᵧ]"
       },
-      "source_excerpt": "Для Cobb–Douglas U=xᵅyᵝ: x*=αI/[(α+β)pₓ], y*=βI/[(α+β)pᵧ]"
+      "source_excerpt": "Для Cobb–Douglas U=xᵅyᵝ: x*=αI/[(α+β)pₓ], y*=βI/[(α+β)pᵧ]",
+      "options": [
+        {
+          "id": "choice-1",
+          "text": "x*=αI/pₓ; y*=βI/pᵧ."
+        },
+        {
+          "id": "choice-2",
+          "text": "x*=αI/[(α+β)pᵧ]; y*=βI/[(α+β)pₓ]."
+        },
+        {
+          "id": "choice-3",
+          "text": "x*=αI/[(α+β)pₓ]; y*=βI/[(α+β)pᵧ]."
+        },
+        {
+          "id": "choice-4",
+          "text": "x*=βI/[(α+β)pₓ]; y*=αI/[(α+β)pᵧ]."
+        }
+      ],
+      "correct_answer": "choice-3"
     },
     {
       "id": "utility-and-consumer.utility-functions-and-demand.substitutes-complements.recall",
       "knowledge_id": "utility-and-consumer.utility-functions-and-demand.substitutes-complements",
-      "type": "understanding",
+      "type": "multiple_choice",
       "difficulty": 2,
       "question": "Чем различается первый шаг для линейной полезности и для U=min(ax,by)?",
       "reference_answer": "Для линейной сравнивают отдачу на рубль; для min-связи используют ax=by.",
@@ -41,12 +60,31 @@
         "source_type": "docx",
         "excerpt": "Линейная U=ax+by: сравнить a/pₓ и b/pᵧ; U=min(ax,by): ax=by"
       },
-      "source_excerpt": "Линейная U=ax+by: сравнить a/pₓ и b/pᵧ; U=min(ax,by): ax=by"
+      "source_excerpt": "Линейная U=ax+by: сравнить a/pₓ и b/pᵧ; U=min(ax,by): ax=by",
+      "options": [
+        {
+          "id": "choice-1",
+          "text": "Для линейной задать ax=by; для min-функции сравнить a/pₓ и b/pᵧ."
+        },
+        {
+          "id": "choice-2",
+          "text": "Для обеих функций использовать равенство MUₓ/pₓ=MUᵧ/pᵧ как достаточное условие."
+        },
+        {
+          "id": "choice-3",
+          "text": "Для линейной выбрать самый дорогой товар; для min-функции весь бюджет направить в один товар."
+        },
+        {
+          "id": "choice-4",
+          "text": "Для линейной сравнивают отдачу на рубль; для min-связи используют ax=by."
+        }
+      ],
+      "correct_answer": "choice-4"
     },
     {
       "id": "utility-and-consumer.utility-functions-and-demand.convex-and-saturated-utility.recall",
       "knowledge_id": "utility-and-consumer.utility-functions-and-demand.convex-and-saturated-utility",
-      "type": "understanding",
+      "type": "multiple_choice",
       "difficulty": 2,
       "question": "Почему нельзя считать условие производной достаточным для U=x²+y²?",
       "reference_answer": "Потому что выпуклость требует проверки граничных кандидатов и сравнения значений полезности.",
@@ -60,12 +98,31 @@
         "source_type": "docx",
         "excerpt": "Выпуклая полезность: U=x²+y²; полезность с насыщением: U=ax−bx²+y"
       },
-      "source_excerpt": "Выпуклая полезность: U=x²+y²; полезность с насыщением: U=ax−bx²+y"
+      "source_excerpt": "Выпуклая полезность: U=x²+y²; полезность с насыщением: U=ax−bx²+y",
+      "options": [
+        {
+          "id": "choice-1",
+          "text": "Потому что U=x²+y² всегда убывает при увеличении товаров."
+        },
+        {
+          "id": "choice-2",
+          "text": "Потому что условие производной применимо только к линейной полезности."
+        },
+        {
+          "id": "choice-3",
+          "text": "Потому что выпуклость требует проверки граничных кандидатов и сравнения значений полезности."
+        },
+        {
+          "id": "choice-4",
+          "text": "Потому что при выпуклой полезности допустимых внутренних кандидатов не бывает."
+        }
+      ],
+      "correct_answer": "choice-3"
     },
     {
       "id": "utility-and-consumer.utility-functions-and-demand.demand-derivation.recall",
       "knowledge_id": "utility-and-consumer.utility-functions-and-demand.demand-derivation",
-      "type": "understanding",
+      "type": "multiple_choice",
       "difficulty": 2,
       "question": "Что представляют собой таблицы задач 3 и 7 в конспекте?",
       "reference_answer": "Формулы спроса для перечисленных функций полезности.",
@@ -79,12 +136,31 @@
         "source_type": "docx",
         "excerpt": "Вывод спроса: универсальная схема и формулы из задачника"
       },
-      "source_excerpt": "Вывод спроса: универсальная схема и формулы из задачника"
+      "source_excerpt": "Вывод спроса: универсальная схема и формулы из задачника",
+      "options": [
+        {
+          "id": "choice-1",
+          "text": "Таблицы доходных эластичностей для одной линейной функции."
+        },
+        {
+          "id": "choice-2",
+          "text": "Формулы спроса для перечисленных функций полезности."
+        },
+        {
+          "id": "choice-3",
+          "text": "Ответы к задачам 3 и 7 без связи с функциями полезности."
+        },
+        {
+          "id": "choice-4",
+          "text": "Перечни предпочтений без формул оптимального спроса."
+        }
+      ],
+      "correct_answer": "choice-2"
     },
     {
       "id": "utility-and-consumer.utility-functions-and-demand.aggregate-demand.recall",
       "knowledge_id": "utility-and-consumer.utility-functions-and-demand.aggregate-demand",
-      "type": "formula",
+      "type": "multiple_choice",
       "difficulty": 2,
       "question": "Как получить совокупный спрос из индивидуальных функций?",
       "reference_answer": "Суммировать индивидуальные количества спроса.",
@@ -98,7 +174,26 @@
         "source_type": "docx",
         "excerpt": "Суммирование спроса разных потребителей"
       },
-      "source_excerpt": "Суммирование спроса разных потребителей"
+      "source_excerpt": "Суммирование спроса разных потребителей",
+      "options": [
+        {
+          "id": "choice-1",
+          "text": "Перемножить индивидуальные функции спроса."
+        },
+        {
+          "id": "choice-2",
+          "text": "Усреднить индивидуальные количества спроса."
+        },
+        {
+          "id": "choice-3",
+          "text": "Суммировать индивидуальные количества спроса."
+        },
+        {
+          "id": "choice-4",
+          "text": "Сложить индивидуальные цены и оставить одну функцию количества."
+        }
+      ],
+      "correct_answer": "choice-3"
     }
   ]
 }

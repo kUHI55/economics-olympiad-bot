@@ -8,11 +8,14 @@
     {
       "id": "mathematical-base.equations-and-inequalities.verbal-condition-to-equation.check",
       "knowledge_id": "mathematical-base.equations-and-inequalities.verbal-condition-to-equation",
-      "type": "understanding",
+      "type": "multiple_choice",
       "difficulty": 1,
       "question": "Какой способ работы с условием перечислен в контексте?",
       "reference_answer": "Составление уравнения из словесного условия.",
-      "key_points": ["уравнение", "словесное условие"],
+      "key_points": [
+        "уравнение",
+        "словесное условие"
+      ],
       "explanation": "Формулировка взята из контекста.",
       "source": {
         "id": "context.equations-and-inequalities",
@@ -20,16 +23,38 @@
         "source_type": "text",
         "excerpt": "Составление уравнения из словесного условия; решение уравнений; неравенства; допустимые интервалы; ограничения."
       },
-      "source_excerpt": "Составление уравнения из словесного условия; решение уравнений; неравенства; допустимые интервалы; ограничения."
+      "source_excerpt": "Составление уравнения из словесного условия; решение уравнений; неравенства; допустимые интервалы; ограничения.",
+      "options": [
+        {
+          "id": "choice-1",
+          "text": "Составление уравнения из словесного условия."
+        },
+        {
+          "id": "choice-2",
+          "text": "Построение графика по таблице."
+        },
+        {
+          "id": "choice-3",
+          "text": "Нахождение производной функции."
+        },
+        {
+          "id": "choice-4",
+          "text": "Вычисление среднего темпа изменения."
+        }
+      ],
+      "correct_answer": "choice-1"
     },
     {
       "id": "mathematical-base.equations-and-inequalities.equations-and-inequalities.check",
       "knowledge_id": "mathematical-base.equations-and-inequalities.equations-and-inequalities",
-      "type": "comparison",
+      "type": "multiple_choice",
       "difficulty": 1,
       "question": "Какие два вида задач перечислены после составления уравнения?",
       "reference_answer": "Решение уравнений и неравенства.",
-      "key_points": ["решение уравнений", "неравенства"],
+      "key_points": [
+        "решение уравнений",
+        "неравенства"
+      ],
       "explanation": "Ответ следует из последовательности в контексте.",
       "source": {
         "id": "context.equations-and-inequalities",
@@ -37,16 +62,37 @@
         "source_type": "text",
         "excerpt": "Составление уравнения из словесного условия; решение уравнений; неравенства; допустимые интервалы; ограничения."
       },
-      "source_excerpt": "Составление уравнения из словесного условия; решение уравнений; неравенства; допустимые интервалы; ограничения."
+      "source_excerpt": "Составление уравнения из словесного условия; решение уравнений; неравенства; допустимые интервалы; ограничения.",
+      "options": [
+        {
+          "id": "choice-1",
+          "text": "Решение систем линейных уравнений и вычисление эластичности."
+        },
+        {
+          "id": "choice-2",
+          "text": "Построение графиков и касательных."
+        },
+        {
+          "id": "choice-3",
+          "text": "Нахождение производных и экстремумов."
+        },
+        {
+          "id": "choice-4",
+          "text": "Решение уравнений и неравенства."
+        }
+      ],
+      "correct_answer": "choice-4"
     },
     {
       "id": "mathematical-base.equations-and-inequalities.allowed-intervals-and-constraints.check",
       "knowledge_id": "mathematical-base.equations-and-inequalities.allowed-intervals-and-constraints",
-      "type": "understanding",
+      "type": "multiple_choice",
       "difficulty": 1,
       "question": "Что в контексте указано наряду с допустимыми интервалами?",
       "reference_answer": "Ограничения.",
-      "key_points": ["ограничения"],
+      "key_points": [
+        "ограничения"
+      ],
       "explanation": "Ответ прямо указан в контексте.",
       "source": {
         "id": "context.equations-and-inequalities",
@@ -54,7 +100,26 @@
         "source_type": "text",
         "excerpt": "Составление уравнения из словесного условия; решение уравнений; неравенства; допустимые интервалы; ограничения."
       },
-      "source_excerpt": "Составление уравнения из словесного условия; решение уравнений; неравенства; допустимые интервалы; ограничения."
+      "source_excerpt": "Составление уравнения из словесного условия; решение уравнений; неравенства; допустимые интервалы; ограничения.",
+      "options": [
+        {
+          "id": "choice-1",
+          "text": "Начальные условия."
+        },
+        {
+          "id": "choice-2",
+          "text": "Ограничения."
+        },
+        {
+          "id": "choice-3",
+          "text": "Графические обозначения."
+        },
+        {
+          "id": "choice-4",
+          "text": "Темпы изменения."
+        }
+      ],
+      "correct_answer": "choice-2"
     }
   ]
 }

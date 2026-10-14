@@ -8,7 +8,7 @@
     {
       "id": "utility-and-consumer.intertemporal-choice.intertemporal-budget.recall",
       "knowledge_id": "utility-and-consumer.intertemporal-choice.intertemporal-budget",
-      "type": "formula",
+      "type": "multiple_choice",
       "difficulty": 2,
       "question": "Как записано межвременное бюджетное ограничение при единой ставке?",
       "reference_answer": "c₁+c₂/(1+r)=s₁+s₂/(1+r).",
@@ -22,12 +22,31 @@
         "source_type": "docx",
         "excerpt": "c₁+c₂/(1+r)=s₁+s₂/(1+r), если ставка едина"
       },
-      "source_excerpt": "c₁+c₂/(1+r)=s₁+s₂/(1+r), если ставка едина"
+      "source_excerpt": "c₁+c₂/(1+r)=s₁+s₂/(1+r), если ставка едина",
+      "options": [
+        {
+          "id": "choice-1",
+          "text": "c₁+c₂(1+r)=s₁+s₂(1+r)."
+        },
+        {
+          "id": "choice-2",
+          "text": "c₁+c₂/(1−r)=s₁+s₂/(1−r)."
+        },
+        {
+          "id": "choice-3",
+          "text": "c₁+c₂/(1+r)=s₁+s₂/(1+r)."
+        },
+        {
+          "id": "choice-4",
+          "text": "c₁+c₂/r=s₁+s₂/r."
+        }
+      ],
+      "correct_answer": "choice-3"
     },
     {
       "id": "utility-and-consumer.intertemporal-choice.interest-rate-change.recall",
       "knowledge_id": "utility-and-consumer.intertemporal-choice.interest-rate-change",
-      "type": "understanding",
+      "type": "multiple_choice",
       "difficulty": 2,
       "question": "Какие эффекты рассматриваются при росте депозитной ставки?",
       "reference_answer": "Эффект дохода и эффект замещения.",
@@ -41,12 +60,31 @@
         "source_type": "docx",
         "excerpt": "Рост депозитной ставки: эффект дохода и замещения"
       },
-      "source_excerpt": "Рост депозитной ставки: эффект дохода и замещения"
+      "source_excerpt": "Рост депозитной ставки: эффект дохода и замещения",
+      "options": [
+        {
+          "id": "choice-1",
+          "text": "Только изменение текущего дохода, без эффекта замещения."
+        },
+        {
+          "id": "choice-2",
+          "text": "Только эффект замещения, поскольку эффект дохода исключён."
+        },
+        {
+          "id": "choice-3",
+          "text": "Эффект дохода и эффект замещения."
+        },
+        {
+          "id": "choice-4",
+          "text": "Изменение предпочтений и производственных издержек."
+        }
+      ],
+      "correct_answer": "choice-3"
     },
     {
       "id": "utility-and-consumer.intertemporal-choice.investment-project.recall",
       "knowledge_id": "utility-and-consumer.intertemporal-choice.investment-project",
-      "type": "formula",
+      "type": "multiple_choice",
       "difficulty": 2,
       "question": "Какое внутреннее условие дано для однопериодного инвестиционного проекта?",
       "reference_answer": "R′(X)=1+r.",
@@ -60,12 +98,31 @@
         "source_type": "docx",
         "excerpt": "Инвестиционный проект: R′(X)=1+r"
       },
-      "source_excerpt": "Инвестиционный проект: R′(X)=1+r"
+      "source_excerpt": "Инвестиционный проект: R′(X)=1+r",
+      "options": [
+        {
+          "id": "choice-1",
+          "text": "R′(X)=1−r."
+        },
+        {
+          "id": "choice-2",
+          "text": "R′(X)=1+r."
+        },
+        {
+          "id": "choice-3",
+          "text": "R(X)=1+r."
+        },
+        {
+          "id": "choice-4",
+          "text": "R′(X)=r."
+        }
+      ],
+      "correct_answer": "choice-2"
     },
     {
       "id": "utility-and-consumer.intertemporal-choice.piecewise-interest.recall",
       "knowledge_id": "utility-and-consumer.intertemporal-choice.piecewise-interest",
-      "type": "understanding",
+      "type": "multiple_choice",
       "difficulty": 2,
       "question": "Почему при разных ставках по займу и депозиту нужно рассматривать случаи?",
       "reference_answer": "Потому что бюджетная граница зависит от того, заёмщик потребитель или вкладчик.",
@@ -79,7 +136,26 @@
         "source_type": "docx",
         "excerpt": "Кусочные процентные ставки"
       },
-      "source_excerpt": "Кусочные процентные ставки"
+      "source_excerpt": "Кусочные процентные ставки",
+      "options": [
+        {
+          "id": "choice-1",
+          "text": "Потому что потребитель всегда может занимать и сберегать по одной и той же ставке."
+        },
+        {
+          "id": "choice-2",
+          "text": "Потому что ставки меняют только предпочтения, но не бюджетную границу."
+        },
+        {
+          "id": "choice-3",
+          "text": "Потому что бюджетная граница становится линейной с единственным наклоном."
+        },
+        {
+          "id": "choice-4",
+          "text": "Потому что бюджетная граница зависит от того, заёмщик потребитель или вкладчик."
+        }
+      ],
+      "correct_answer": "choice-4"
     }
   ]
 }

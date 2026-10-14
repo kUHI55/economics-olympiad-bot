@@ -10,6 +10,10 @@ const state = {
   questions: [],
   questionIndex: 0,
   answered: false,
+  selectedAnswer: null,
+  quizError: null,
+  quizSession: null,
+  quizSummary: null,
   password: null,
   lastResult: null,
 };
@@ -91,7 +95,16 @@ function setNavigation() {
   const active = state.view === "quizzes" ? "quizzes" : "topics";
   nav.innerHTML = mainViews.map(([id, label]) => `<a href="#${id}" data-view="${id}" class="${active === id ? "active" : ""}">${label}</a>`).join("");
   nav.querySelectorAll("a").forEach((link) => link.addEventListener("click", (event) => {
-    event.preventDefault(); state.view = link.dataset.view; state.questions = []; render(); window.scrollTo({ top: 0, behavior: "smooth" });
+    event.preventDefault();
+    state.view = link.dataset.view;
+    state.questions = [];
+    state.quizSession = null;
+    state.quizSummary = null;
+    state.selectedAnswer = null;
+    state.answered = false;
+    state.lastResult = null;
+    render();
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }));
 }
 
@@ -136,12 +149,19 @@ async function renderDocument(theme, name) {
 
 function parseConstructionCards(source) {
   const rows = [];
-  let group = "";
+  let current = null;
   for (const line of source.split(/\r?\n/)) {
-    const heading = line.match(/^##\s+(.+)$/);
-    if (heading) { group = heading[1]; continue; }
+    const heading = line.match(/^##\s+\d+\.\s+(.+)$/);
+    if (heading) {
+      current = { title: heading[1], body: [] };
+      rows.push(current);
+      continue;
+    }
+    if (/^##\s+/.test(line)) { current = null; continue; }
+    if (!current || !line.trim()) continue;
     const item = line.match(/^\d+\.\s+\*\*(.+?)\*\*\s*(.*)$/);
-    if (item) rows.push({ group, title: item[1].replace(/[.]$/, ""), body: item[2] });
+    if (item && item[1] === "Название.") continue;
+    current.body.push(line.replace(/^\d+\.\s+/, ""));
   }
   return rows;
 }
@@ -157,7 +177,7 @@ async function renderConstructions(theme) {
   if (!response.ok) throw new Error("Не удалось загрузить каталог конструкций.");
   const source = await response.text();
   const cards = parseConstructionCards(source);
-  content.innerHTML = `${renderThemeHeader(theme)}<div class="section-head"><div><p class="eyebrow">КОНСТРУКЦИИ ОЛИМПИАДНЫХ ЗАДАЧ</p><h2>Узнай ход задачи</h2></div><p>Признаки, ключевой приём, ограничения и ловушки взяты из каталога. Подробные разборы — в конспекте.</p></div><div class="construction-grid">${cards.map((card, index) => `<article class="construction-card" id="construction-${String(index + 1).padStart(2, "0")}"><span class="topic-number">КОНСТРУКЦИЯ ${String(index + 1).padStart(2, "0")}</span><h3>${escapeHtml(card.title)}</h3><p>${inlineMarkdown(card.body)}</p><small>${escapeHtml(card.group)}</small><button class="text-button" data-action="construction-quiz:${String(index + 1).padStart(2, "0")}">Тренировать эту конструкцию →</button></article>`).join("")}</div><button class="button" data-action="construction-quiz">Тренировать все конструкции →</button><div class="study-card"><h3>Примеры и оговорки источника</h3><p>Открой полный конспект, чтобы перейти к разобранным задачам, вычислениям и отмеченным неоднозначностям.</p><button class="button" data-action="theme-document:study-notes.md">Читать конспект</button></div>`;
+  content.innerHTML = `${renderThemeHeader(theme)}<div class="section-head"><div><p class="eyebrow">КОНСТРУКЦИИ ОЛИМПИАДНЫХ ЗАДАЧ</p><h2>Узнай ход задачи</h2></div><p>Признаки, ключевой приём, ограничения и ловушки взяты из каталога. Подробные разборы — в конспекте.</p></div><div class="construction-grid">${cards.map((card, index) => `<article class="construction-card" id="construction-${String(index + 1).padStart(2, "0")}"><span class="topic-number">КОНСТРУКЦИЯ ${String(index + 1).padStart(2, "0")}</span><h3>${escapeHtml(card.title)}</h3><p>${card.body.map(inlineMarkdown).join("<br>")}</p><small>Распознавание · алгоритм · границы · проверка</small><button class="text-button" data-action="construction-quiz:${String(index + 1).padStart(2, "0")}">Тренировать эту конструкцию →</button></article>`).join("")}</div><button class="button" data-action="construction-quiz">Тренировать все конструкции →</button><div class="study-card"><h3>Примеры и оговорки источника</h3><p>Открой полный конспект, чтобы перейти к разобранным задачам, вычислениям и отмеченным неоднозначностям.</p><button class="button" data-action="theme-document:study-notes.md">Читать конспект</button></div>`;
   bindActions();
 }
 
@@ -188,17 +208,26 @@ function renderQuizLanding() {
 
 function renderQuizQuestion() {
   const question = state.questions[state.questionIndex];
-  const options = question.options.length ? `<div>${question.options.map((option, index) => `<label class="quiz-option"><input type="radio" name="answer" value="${index}" ${state.answered ? "disabled" : ""}><span>${escapeHtml(option.text)}</span></label>`).join("")}</div>` : `<textarea class="answer" name="answer" placeholder="Запиши ответ своими словами или формулой" ${state.answered ? "disabled" : ""}></textarea>`;
+  const hasFourOptions = Array.isArray(question.options) && question.options.length === 4;
+  const options = hasFourOptions
+    ? `<div>${question.options.map((option, index) => `<label class="quiz-option"><input type="radio" name="answer" value="${index}" ${state.selectedAnswer === String(index) ? "checked" : ""} ${state.answered ? "disabled" : ""}><span>${escapeHtml(option.text)}</span></label>`).join("")}</div>`
+    : `<div class="feedback error">В этом вопросе не настроены четыре варианта ответа. Выбери другой вопрос или сообщи о проблеме.</div>`;
   const result = state.lastResult;
   const feedback = result ? `<div class="feedback ${result.verdict === "incorrect" ? "error" : ""}"><strong>${result.verdict === "correct" ? "Верно!" : result.verdict === "partial" ? "Частично верно" : result.verdict === "uncertain" ? "Не удалось надёжно оценить автоматически" : "Неверно — разберём ответ"}</strong><p>${escapeHtml(result.short_explanation || "")}</p><p><strong>Правильный ответ:</strong> ${escapeHtml(result.reference_answer)}</p><p>${escapeHtml(result.explanation)}</p><p class="source">Основание: ${escapeHtml(result.source_excerpt)}</p>${result.progress_saved === false ? '<p class="progress-note">Проверка работает локально; прогресс не сохраняется без PostgreSQL.</p>' : ""}<button class="text-button" data-action="open-answer-theory">Открыть связанный раздел теории →</button></div>` : "";
-  return `<div class="quiz-card active-quiz"><p class="eyebrow">${escapeHtml(question.theme_title)} · ${escapeHtml(question.subtopic_title)}</p><span class="quiz-progress">ВОПРОС ${state.questionIndex + 1} / ${state.questions.length} · СЛОЖНОСТЬ ${question.difficulty}/5</span><p class="quiz-question">${escapeHtml(question.question)}</p><form id="answer-form">${options}<div class="quiz-actions"><button class="button primary" type="submit" ${state.answered ? "disabled" : ""}>Проверить ответ</button>${state.answered ? `<button class="button" type="button" data-action="next-question">${state.questionIndex + 1 === state.questions.length ? "Завершить" : "Следующий вопрос"}</button>` : ""}</div></form>${state.quizError ? `<div class="feedback error">${escapeHtml(state.quizError)}</div>` : ""}${feedback}</div>`;
+  return `<div class="quiz-card active-quiz"><p class="eyebrow">${escapeHtml(question.theme_title)} · ${escapeHtml(question.subtopic_title)}</p><span class="quiz-progress">ВОПРОС ${state.questionIndex + 1} / ${state.questions.length} · СЛОЖНОСТЬ ${question.difficulty}/5</span><p class="quiz-question">${escapeHtml(question.question)}</p><form id="answer-form">${options}<div class="quiz-actions"><button class="button primary" type="submit" ${state.answered || !hasFourOptions ? "disabled" : ""}>Проверить ответ</button>${state.answered ? `<button class="button" type="button" data-action="next-question">${state.questionIndex + 1 === state.questions.length ? "Показать итог" : "Следующий вопрос"}</button>` : ""}</div></form>${state.quizError ? `<div class="feedback error">${escapeHtml(state.quizError)}</div>` : ""}${feedback}</div>`;
+}
+
+function renderQuizSummary() {
+  const summary = state.quizSummary;
+  const percent = summary.total ? Math.round((summary.correct / summary.total) * 100) : 0;
+  return `<div class="quiz-card"><p class="eyebrow">ТРЕНИРОВКА ЗАВЕРШЕНА</p><h2>Квиз пройден</h2><p>Правильных ответов: <strong>${summary.correct} из ${summary.total}</strong> (${percent}%).</p><p class="progress-note">${summary.local ? "Проверка работала локально; прогресс не сохранялся без PostgreSQL." : "Результаты сохранены в прогресс."}</p><button class="button primary" type="button" data-action="new-quiz">Новая тренировка</button></div>`;
 }
 
 function render() {
   setNavigation();
   if (!state.data) { content.innerHTML = `<p class="loading">Загружаю библиотеку…</p>`; return; }
   if (state.view === "topics") content.innerHTML = renderTopics();
-  else if (state.view === "quizzes") content.innerHTML = state.questions.length ? renderQuizQuestion() : renderQuizLanding();
+  else if (state.view === "quizzes") content.innerHTML = state.questions.length ? renderQuizQuestion() : state.quizSummary ? renderQuizSummary() : renderQuizLanding();
   else {
     const theme = currentTheme();
     const body = state.themePane === "theory" ? renderThemeTheoryContent(theme) : state.themePane === "quiz" ? renderThemeQuiz(theme) : "";
@@ -211,15 +240,41 @@ function render() {
 function showError(error) { content.innerHTML = `<div class="feedback error">${escapeHtml(error.message)}</div>`; }
 function showQuizError(message) { state.quizError = message; render(); }
 function setTheme(id) { state.themeId = id; state.subtopicId = null; state.themePane = "theory"; state.view = "theme"; render(); window.scrollTo({ top: 0, behavior: "smooth" }); }
-function beginQuiz(questions) {
-  state.questions = [...questions].sort(() => Math.random() - 0.5);
-  state.questionIndex = 0; state.answered = false; state.lastResult = null; state.quizError = null; state.view = "quizzes"; render();
+function beginQuiz(questions, count = questions.length, ensureThemeCoverage = false) {
+  if (!questions.length) { showQuizError("Для выбранного раздела пока нет вопросов с вариантами ответа."); return; }
+  const shuffled = (items) => [...items].sort(() => Math.random() - 0.5);
+  let selected = shuffled(questions);
+  if (ensureThemeCoverage && count > 1) {
+    const groups = new Map();
+    for (const question of selected) {
+      if (!groups.has(question.theme_id)) groups.set(question.theme_id, []);
+      groups.get(question.theme_id).push(question);
+    }
+    const representatives = [...groups.values()].map((group) => group[0]).slice(0, count);
+    const representativeIds = new Set(representatives.map((question) => question.id));
+    const remaining = selected.filter((question) => !representativeIds.has(question.id));
+    selected = shuffled([...representatives, ...shuffled(remaining).slice(0, count - representatives.length)]);
+  } else {
+    selected = selected.slice(0, count);
+  }
+  state.questions = selected;
+  if (!state.questions.length) { showQuizError("В выбранном режиме не нашлось вопросов."); return; }
+  state.questionIndex = 0;
+  state.answered = false;
+  state.selectedAnswer = null;
+  state.lastResult = null;
+  state.quizError = null;
+  state.quizSummary = null;
+  state.quizSession = { total: state.questions.length, correct: 0, local: state.progress.answer_mode === "local" };
+  state.view = "quizzes";
+  render();
 }
 function bindActions() {
   content.querySelectorAll("[data-theme]").forEach((card) => card.addEventListener("click", () => setTheme(card.dataset.theme)));
   content.querySelectorAll("[data-action]").forEach((element) => element.addEventListener("click", async () => {
     const action = element.dataset.action;
     if (action === "back-topics") { state.view = "topics"; state.questions = []; render(); }
+    else if (action === "new-quiz") { state.quizSummary = null; state.quizSession = null; state.view = "quizzes"; render(); }
     else if (action.startsWith("pane:")) { state.themePane = action.slice(5); render(); }
     else if (action.startsWith("theme-document:")) renderDocument(currentTheme(), action.slice(15)).catch(showError);
     else if (action.startsWith("subtopic-quiz:")) {
@@ -234,16 +289,25 @@ function bindActions() {
     else if (action === "start-theme-quiz") {
       const theme = currentTheme(); const category = document.querySelector("#theme-quiz-kind").value; const count = Number(document.querySelector("#theme-quiz-count").value);
       const questions = theme.subtopics.flatMap((subtopic) => subtopic.questions.filter((question) => category === "all" || question.category === category).map((question) => ({ ...question, theme_id: theme.id, theme_title: theme.title, subtopic_id: subtopic.id, subtopic_title: subtopic.title })));
-      beginQuiz(questions.slice(0, count));
+      beginQuiz(questions, count);
     }
     else if (action === "start-global-quiz") {
       const themeId = document.querySelector("#quiz-theme").value; const category = document.querySelector("#quiz-kind").value; const count = Number(document.querySelector("#quiz-count").value);
       const questions = allQuestions().filter((question) => (themeId === "all" || question.theme_id === themeId) && (category === "all" || question.category === category));
-      beginQuiz(questions.slice(0, count));
+      beginQuiz(questions, count, themeId === "all");
     }
     else if (action === "next-question") {
-      state.questionIndex += 1; state.answered = false; state.lastResult = null; state.quizError = null;
-      if (state.questionIndex >= state.questions.length) { state.questions = []; state.view = "quizzes"; }
+      if (state.questionIndex + 1 >= state.questions.length) {
+        state.quizSummary = { ...state.quizSession };
+        state.quizSession = null;
+        state.questions = [];
+      } else {
+        state.questionIndex += 1;
+      }
+      state.answered = false;
+      state.selectedAnswer = null;
+      state.lastResult = null;
+      state.quizError = null;
       render();
     }
     else if (action === "open-answer-theory") {
@@ -253,17 +317,22 @@ function bindActions() {
     }
     else if (action === "review-errors") await loadReviewQuestions();
   }));
+  content.querySelectorAll('input[name="answer"]').forEach((input) => input.addEventListener("change", () => {
+    state.selectedAnswer = input.value;
+    state.quizError = null;
+  }));
   const form = document.querySelector("#answer-form");
   if (form) form.addEventListener("submit", submitAnswer);
 }
 
 async function submitAnswer(event) {
   event.preventDefault();
+  if (state.answered) return;
   const question = state.questions[state.questionIndex];
   const selected = document.querySelector('input[name="answer"]:checked');
-  const freeText = document.querySelector('textarea[name="answer"]');
-  const answer = selected ? selected.value : freeText?.value.trim();
-  if (answer === undefined || answer === "") { showQuizError("Сначала выбери вариант или введи ответ."); return; }
+  const answer = selected ? selected.value : state.selectedAnswer;
+  if (!Array.isArray(question.options) || question.options.length !== 4) { showQuizError("В этом вопросе должны быть настроены ровно четыре варианта ответа."); return; }
+  if (answer === null || answer === undefined || answer === "") { showQuizError("Сначала выбери один из четырёх вариантов ответа."); return; }
   const localMode = state.progress.answer_mode === "local";
   if (!localMode && state.password === null) state.password = window.prompt("Пароль сайта (WEB_PASSWORD):");
   if (!localMode && state.password === null) return;
@@ -276,9 +345,19 @@ async function submitAnswer(event) {
     const response = await fetch("/api/answer", { method: "POST", headers, body: JSON.stringify({ question_id: question.id, answer }) });
     const result = await response.json();
     if (!response.ok) { if (response.status === 401) state.password = null; throw new Error(result.error || "Проверка не удалась."); }
-    state.answered = true; state.lastResult = result; state.quizError = null; render();
+    state.answered = true;
+    state.lastResult = result;
+    state.quizError = null;
+    if (result.progress_saved === false && state.quizSession) state.quizSession.local = true;
+    if (state.quizSession && result.verdict === "correct") state.quizSession.correct += 1;
+    render();
     if (result.progress_saved !== false) state.progress = await fetch("/api/progress").then((reply) => reply.json()).catch(() => state.progress);
-  } catch (error) { showQuizError(error.message || "Проверка не удалась."); }
+  } catch (error) {
+    const message = error instanceof TypeError
+      ? "Не удалось связаться с сервером. Выбранный вариант сохранён — попробуй отправить его ещё раз."
+      : error.message || "Проверка не удалась. Выбранный вариант сохранён — попробуй ещё раз.";
+    showQuizError(message);
+  }
 }
 
 async function loadReviewQuestions() {
@@ -298,7 +377,7 @@ async function loadReviewQuestions() {
 
 Promise.all([
   fetch("/api/theory").then((response) => { if (!response.ok) throw new Error("Не удалось загрузить учебные темы."); return response.json(); }),
-  fetch("/api/progress").then((response) => response.json()).catch(() => ({ available: false, themes: {} })),
+  fetch("/api/progress").then((response) => response.json()).catch(() => ({ available: false, answer_mode: "local", themes: {} })),
 ]).then(([data, progress]) => {
   state.data = data; state.progress = progress;
   const storageStatus = document.querySelector("#progress-storage-status");

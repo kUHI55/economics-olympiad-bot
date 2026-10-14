@@ -14,7 +14,7 @@ from urllib.parse import unquote
 
 from pydantic import ValidationError
 from pydantic_settings.exceptions import SettingsError
-from sqlalchemy import func, select
+from sqlalchemy import func, select, text
 from sqlalchemy.ext.asyncio import async_sessionmaker, create_async_engine
 from sqlalchemy.orm import selectinload
 
@@ -74,7 +74,10 @@ class TheoryWebApplication:
             if method == "POST" and path == "/api/answer":
                 body = self._read_json_body(environ)
                 settings = self._database_settings()
-                if settings is None:
+                database_available = settings is not None and asyncio.run(
+                    self._database_available(settings)
+                )
+                if not database_available:
                     self._require_local_request(environ)
                     result = self._check_answer_from_files(body)
                 else:
@@ -212,7 +215,7 @@ class TheoryWebApplication:
 
     async def _progress_payload(self) -> dict[str, Any]:
         settings = self._database_settings()
-        if settings is None:
+        if settings is None or not await self._database_available(settings):
             return {"available": False, "answer_mode": "local", "themes": {}}
         try:
             engine = create_async_engine(settings.database_url, pool_pre_ping=True)
@@ -255,7 +258,7 @@ class TheoryWebApplication:
             finally:
                 await engine.dispose()
         except Exception:
-            return {"available": False, "answer_mode": "database", "themes": {}}
+            return {"available": False, "answer_mode": "local", "themes": {}}
 
     async def _review_question_ids(self) -> dict[str, Any]:
         settings = get_settings()
@@ -350,6 +353,23 @@ class TheoryWebApplication:
         except (ValidationError, SettingsError):
             return None
         return settings if settings.database_url.strip() else None
+
+    @staticmethod
+    async def _database_available(settings) -> bool:
+        engine = None
+        try:
+            engine = create_async_engine(settings.database_url, pool_pre_ping=True)
+            async with engine.connect() as connection:
+                await connection.execute(text("SELECT 1"))
+            return True
+        except Exception:
+            return False
+        finally:
+            if engine is not None:
+                try:
+                    await engine.dispose()
+                except Exception:
+                    pass
 
     @staticmethod
     def _require_local_request(environ: dict[str, Any]) -> None:

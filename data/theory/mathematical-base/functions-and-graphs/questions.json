@@ -8,28 +8,56 @@
     {
       "id": "mathematical-base.functions-and-graphs.function-graph-range.check",
       "knowledge_id": "mathematical-base.functions-and-graphs.function-graph-range",
-      "type": "understanding",
+      "type": "multiple_choice",
       "difficulty": 1,
-      "question": "Какие три объекта перечислены для работы с функциями?",
-      "reference_answer": "Функция, графическое представление и работа функции на заданном диапазоне.",
-      "key_points": ["функция", "графическое представление", "заданный диапазон"],
-      "explanation": "Ответ воспроизводит перечисление из контекста.",
+      "question": "Что в контексте перечислено для анализа функции и графика?",
+      "reference_answer": "Функция, графическое представление, наклон и работа функции на заданном диапазоне.",
+      "key_points": [
+        "функция",
+        "графическое представление",
+        "наклон",
+        "заданный диапазон"
+      ],
+      "explanation": "В контексте названы функция, графическое представление, наклон и работа функции на заданном диапазоне.",
       "source": {
         "id": "context.functions-and-graphs",
         "name": "Исследовательский контекст, присланный пользователем (на основе Учебника Рэма Бахарева и Памятки для олимпиадников)",
         "source_type": "text",
         "excerpt": "Функция; графическое представление; наклон; работа функции на заданном диапазоне. Линейная функция: y = kx + b. Полиномиальная/степенная функция; парабола; гипербола; «галочка»; min/max. Парабола: y = ax² + bx + c. Вершина параболы: x* = -b/(2a). Гипербола: y = a/x^n. «Галочка»: y = ax + b/x."
       },
-      "source_excerpt": "Функция; графическое представление; наклон; работа функции на заданном диапазоне. Линейная функция: y = kx + b. Полиномиальная/степенная функция; парабола; гипербола; «галочка»; min/max. Парабола: y = ax² + bx + c. Вершина параболы: x* = -b/(2a). Гипербола: y = a/x^n. «Галочка»: y = ax + b/x."
+      "source_excerpt": "Функция; графическое представление; наклон; работа функции на заданном диапазоне. Линейная функция: y = kx + b. Полиномиальная/степенная функция; парабола; гипербола; «галочка»; min/max. Парабола: y = ax² + bx + c. Вершина параболы: x* = -b/(2a). Гипербола: y = a/x^n. «Галочка»: y = ax + b/x.",
+      "options": [
+        {
+          "id": "choice-1",
+          "text": "Функция, её производная и площадь под графиком."
+        },
+        {
+          "id": "choice-2",
+          "text": "Функция, графическое представление, наклон и работа функции на заданном диапазоне."
+        },
+        {
+          "id": "choice-3",
+          "text": "Парабола, гипербола и линейная функция."
+        },
+        {
+          "id": "choice-4",
+          "text": "Функция и её значение только в одной точке."
+        }
+      ],
+      "correct_answer": "choice-2"
     },
     {
       "id": "mathematical-base.functions-and-graphs.linear-function.formula",
       "knowledge_id": "mathematical-base.functions-and-graphs.linear-function",
-      "type": "formula",
+      "type": "multiple_choice",
       "difficulty": 1,
       "question": "Как в контексте записана линейная функция?",
       "reference_answer": "y = kx + b",
-      "key_points": ["y", "kx", "b"],
+      "key_points": [
+        "y",
+        "kx",
+        "b"
+      ],
       "explanation": "Формула приведена в контексте.",
       "source": {
         "id": "context.functions-and-graphs",
@@ -37,7 +65,26 @@
         "source_type": "text",
         "excerpt": "Функция; графическое представление; наклон; работа функции на заданном диапазоне. Линейная функция: y = kx + b. Полиномиальная/степенная функция; парабола; гипербола; «галочка»; min/max. Парабола: y = ax² + bx + c. Вершина параболы: x* = -b/(2a). Гипербола: y = a/x^n. «Галочка»: y = ax + b/x."
       },
-      "source_excerpt": "Функция; графическое представление; наклон; работа функции на заданном диапазоне. Линейная функция: y = kx + b. Полиномиальная/степенная функция; парабола; гипербола; «галочка»; min/max. Парабола: y = ax² + bx + c. Вершина параболы: x* = -b/(2a). Гипербола: y = a/x^n. «Галочка»: y = ax + b/x."
+      "source_excerpt": "Функция; графическое представление; наклон; работа функции на заданном диапазоне. Линейная функция: y = kx + b. Полиномиальная/степенная функция; парабола; гипербола; «галочка»; min/max. Парабола: y = ax² + bx + c. Вершина параболы: x* = -b/(2a). Гипербола: y = a/x^n. «Галочка»: y = ax + b/x.",
+      "options": [
+        {
+          "id": "choice-1",
+          "text": "y = ax² + bx + c"
+        },
+        {
+          "id": "choice-2",
+          "text": "y = a/x^n"
+        },
+        {
+          "id": "choice-3",
+          "text": "y = ax + b/x"
+        },
+        {
+          "id": "choice-4",
+          "text": "y = kx + b"
+        }
+      ],
+      "correct_answer": "choice-4"
     },
     {
       "id": "mathematical-base.functions-and-graphs.linear-function.select-formula",
@@ -46,13 +93,29 @@
       "difficulty": 2,
       "question": "Какой вариант является записью линейной функции из контекста?",
       "options": [
-        {"id": "A", "text": "y = kx + b"},
-        {"id": "B", "text": "y = a/x^n"},
-        {"id": "C", "text": "y = ax + b/x"}
+        {
+          "id": "choice-1",
+          "text": "y = ax + b/x"
+        },
+        {
+          "id": "choice-2",
+          "text": "y = ax² + bx + c"
+        },
+        {
+          "id": "choice-3",
+          "text": "y = kx + b"
+        },
+        {
+          "id": "choice-4",
+          "text": "y = a/x^n"
+        }
       ],
-      "correct_answer": "A",
+      "correct_answer": "choice-3",
       "reference_answer": "y = kx + b",
-      "key_points": ["kx", "b"],
+      "key_points": [
+        "kx",
+        "b"
+      ],
       "explanation": "Все варианты взяты из контекста, но линейной названа первая запись.",
       "source": {
         "id": "context.functions-and-graphs",
@@ -65,11 +128,14 @@
     {
       "id": "mathematical-base.functions-and-graphs.polynomial-and-power-functions.check",
       "knowledge_id": "mathematical-base.functions-and-graphs.polynomial-and-power-functions",
-      "type": "definition",
+      "type": "multiple_choice",
       "difficulty": 1,
       "question": "Какие два вида функций перечислены перед параболой?",
       "reference_answer": "Полиномиальная и степенная функции.",
-      "key_points": ["полиномиальная", "степенная"],
+      "key_points": [
+        "полиномиальная",
+        "степенная"
+      ],
       "explanation": "Ответ следует из списка в контексте.",
       "source": {
         "id": "context.functions-and-graphs",
@@ -77,16 +143,38 @@
         "source_type": "text",
         "excerpt": "Функция; графическое представление; наклон; работа функции на заданном диапазоне. Линейная функция: y = kx + b. Полиномиальная/степенная функция; парабола; гипербола; «галочка»; min/max. Парабола: y = ax² + bx + c. Вершина параболы: x* = -b/(2a). Гипербола: y = a/x^n. «Галочка»: y = ax + b/x."
       },
-      "source_excerpt": "Функция; графическое представление; наклон; работа функции на заданном диапазоне. Линейная функция: y = kx + b. Полиномиальная/степенная функция; парабола; гипербола; «галочка»; min/max. Парабола: y = ax² + bx + c. Вершина параболы: x* = -b/(2a). Гипербола: y = a/x^n. «Галочка»: y = ax + b/x."
+      "source_excerpt": "Функция; графическое представление; наклон; работа функции на заданном диапазоне. Линейная функция: y = kx + b. Полиномиальная/степенная функция; парабола; гипербола; «галочка»; min/max. Парабола: y = ax² + bx + c. Вершина параболы: x* = -b/(2a). Гипербола: y = a/x^n. «Галочка»: y = ax + b/x.",
+      "options": [
+        {
+          "id": "choice-1",
+          "text": "Линейная и обратная функции."
+        },
+        {
+          "id": "choice-2",
+          "text": "Гиперболическая и показательная функции."
+        },
+        {
+          "id": "choice-3",
+          "text": "Кусочная и логарифмическая функции."
+        },
+        {
+          "id": "choice-4",
+          "text": "Полиномиальная и степенная функции."
+        }
+      ],
+      "correct_answer": "choice-4"
     },
     {
       "id": "mathematical-base.functions-and-graphs.parabola-and-vertex.formulas",
       "knowledge_id": "mathematical-base.functions-and-graphs.parabola-and-vertex",
-      "type": "formula",
+      "type": "multiple_choice",
       "difficulty": 2,
       "question": "Какие две записи для параболы приведены в контексте?",
       "reference_answer": "y = ax² + bx + c; x* = -b/(2a).",
-      "key_points": ["y = ax² + bx + c", "x* = -b/(2a)"],
+      "key_points": [
+        "y = ax² + bx + c",
+        "x* = -b/(2a)"
+      ],
       "explanation": "Обе записи приведены в одном фрагменте контекста.",
       "source": {
         "id": "context.functions-and-graphs",
@@ -94,16 +182,38 @@
         "source_type": "text",
         "excerpt": "Функция; графическое представление; наклон; работа функции на заданном диапазоне. Линейная функция: y = kx + b. Полиномиальная/степенная функция; парабола; гипербола; «галочка»; min/max. Парабола: y = ax² + bx + c. Вершина параболы: x* = -b/(2a). Гипербола: y = a/x^n. «Галочка»: y = ax + b/x."
       },
-      "source_excerpt": "Функция; графическое представление; наклон; работа функции на заданном диапазоне. Линейная функция: y = kx + b. Полиномиальная/степенная функция; парабола; гипербола; «галочка»; min/max. Парабола: y = ax² + bx + c. Вершина параболы: x* = -b/(2a). Гипербола: y = a/x^n. «Галочка»: y = ax + b/x."
+      "source_excerpt": "Функция; графическое представление; наклон; работа функции на заданном диапазоне. Линейная функция: y = kx + b. Полиномиальная/степенная функция; парабола; гипербола; «галочка»; min/max. Парабола: y = ax² + bx + c. Вершина параболы: x* = -b/(2a). Гипербола: y = a/x^n. «Галочка»: y = ax + b/x.",
+      "options": [
+        {
+          "id": "choice-1",
+          "text": "y = ax² + bx + c; x* = -b/a."
+        },
+        {
+          "id": "choice-2",
+          "text": "y = ax² + bx + c; x* = b/(2a)."
+        },
+        {
+          "id": "choice-3",
+          "text": "y = ax² + bx + c; x* = -b/(2a)."
+        },
+        {
+          "id": "choice-4",
+          "text": "y = ax² + bx + c; x* = -b/(2c)."
+        }
+      ],
+      "correct_answer": "choice-3"
     },
     {
       "id": "mathematical-base.functions-and-graphs.hyperbola.formula",
       "knowledge_id": "mathematical-base.functions-and-graphs.hyperbola",
-      "type": "formula",
+      "type": "multiple_choice",
       "difficulty": 1,
       "question": "Как в контексте записана гипербола?",
       "reference_answer": "y = a/x^n",
-      "key_points": ["a", "x^n"],
+      "key_points": [
+        "a",
+        "x^n"
+      ],
       "explanation": "Формула воспроизводится из контекста.",
       "source": {
         "id": "context.functions-and-graphs",
@@ -111,16 +221,38 @@
         "source_type": "text",
         "excerpt": "Функция; графическое представление; наклон; работа функции на заданном диапазоне. Линейная функция: y = kx + b. Полиномиальная/степенная функция; парабола; гипербола; «галочка»; min/max. Парабола: y = ax² + bx + c. Вершина параболы: x* = -b/(2a). Гипербола: y = a/x^n. «Галочка»: y = ax + b/x."
       },
-      "source_excerpt": "Функция; графическое представление; наклон; работа функции на заданном диапазоне. Линейная функция: y = kx + b. Полиномиальная/степенная функция; парабола; гипербола; «галочка»; min/max. Парабола: y = ax² + bx + c. Вершина параболы: x* = -b/(2a). Гипербола: y = a/x^n. «Галочка»: y = ax + b/x."
+      "source_excerpt": "Функция; графическое представление; наклон; работа функции на заданном диапазоне. Линейная функция: y = kx + b. Полиномиальная/степенная функция; парабола; гипербола; «галочка»; min/max. Парабола: y = ax² + bx + c. Вершина параболы: x* = -b/(2a). Гипербола: y = a/x^n. «Галочка»: y = ax + b/x.",
+      "options": [
+        {
+          "id": "choice-1",
+          "text": "y = kx + b"
+        },
+        {
+          "id": "choice-2",
+          "text": "y = a/x^n"
+        },
+        {
+          "id": "choice-3",
+          "text": "y = ax² + bx + c"
+        },
+        {
+          "id": "choice-4",
+          "text": "y = ax + b/x"
+        }
+      ],
+      "correct_answer": "choice-2"
     },
     {
       "id": "mathematical-base.functions-and-graphs.checkmark-function.formula",
       "knowledge_id": "mathematical-base.functions-and-graphs.checkmark-function",
-      "type": "formula",
+      "type": "multiple_choice",
       "difficulty": 1,
       "question": "Какая запись названа в контексте функцией «галочка»?",
       "reference_answer": "y = ax + b/x",
-      "key_points": ["ax", "b/x"],
+      "key_points": [
+        "ax",
+        "b/x"
+      ],
       "explanation": "Запись сохранена в форме, указанной в контексте.",
       "source": {
         "id": "context.functions-and-graphs",
@@ -128,16 +260,38 @@
         "source_type": "text",
         "excerpt": "Функция; графическое представление; наклон; работа функции на заданном диапазоне. Линейная функция: y = kx + b. Полиномиальная/степенная функция; парабола; гипербола; «галочка»; min/max. Парабола: y = ax² + bx + c. Вершина параболы: x* = -b/(2a). Гипербола: y = a/x^n. «Галочка»: y = ax + b/x."
       },
-      "source_excerpt": "Функция; графическое представление; наклон; работа функции на заданном диапазоне. Линейная функция: y = kx + b. Полиномиальная/степенная функция; парабола; гипербола; «галочка»; min/max. Парабола: y = ax² + bx + c. Вершина параболы: x* = -b/(2a). Гипербола: y = a/x^n. «Галочка»: y = ax + b/x."
+      "source_excerpt": "Функция; графическое представление; наклон; работа функции на заданном диапазоне. Линейная функция: y = kx + b. Полиномиальная/степенная функция; парабола; гипербола; «галочка»; min/max. Парабола: y = ax² + bx + c. Вершина параболы: x* = -b/(2a). Гипербола: y = a/x^n. «Галочка»: y = ax + b/x.",
+      "options": [
+        {
+          "id": "choice-1",
+          "text": "y = ax² + bx + c"
+        },
+        {
+          "id": "choice-2",
+          "text": "y = a/x^n"
+        },
+        {
+          "id": "choice-3",
+          "text": "y = kx + b"
+        },
+        {
+          "id": "choice-4",
+          "text": "y = ax + b/x"
+        }
+      ],
+      "correct_answer": "choice-4"
     },
     {
       "id": "mathematical-base.functions-and-graphs.min-max-and-slope.check",
       "knowledge_id": "mathematical-base.functions-and-graphs.min-max-and-slope",
-      "type": "understanding",
+      "type": "multiple_choice",
       "difficulty": 1,
       "question": "Какие два понятия для функций и графиков перечислены вместе с графическим представлением?",
       "reference_answer": "Min/max и наклон.",
-      "key_points": ["min/max", "наклон"],
+      "key_points": [
+        "min/max",
+        "наклон"
+      ],
       "explanation": "Оба понятия перечислены в контексте.",
       "source": {
         "id": "context.functions-and-graphs",
@@ -145,7 +299,26 @@
         "source_type": "text",
         "excerpt": "Функция; графическое представление; наклон; работа функции на заданном диапазоне. Линейная функция: y = kx + b. Полиномиальная/степенная функция; парабола; гипербола; «галочка»; min/max. Парабола: y = ax² + bx + c. Вершина параболы: x* = -b/(2a). Гипербола: y = a/x^n. «Галочка»: y = ax + b/x."
       },
-      "source_excerpt": "Функция; графическое представление; наклон; работа функции на заданном диапазоне. Линейная функция: y = kx + b. Полиномиальная/степенная функция; парабола; гипербола; «галочка»; min/max. Парабола: y = ax² + bx + c. Вершина параболы: x* = -b/(2a). Гипербола: y = a/x^n. «Галочка»: y = ax + b/x."
+      "source_excerpt": "Функция; графическое представление; наклон; работа функции на заданном диапазоне. Линейная функция: y = kx + b. Полиномиальная/степенная функция; парабола; гипербола; «галочка»; min/max. Парабола: y = ax² + bx + c. Вершина параболы: x* = -b/(2a). Гипербола: y = a/x^n. «Галочка»: y = ax + b/x.",
+      "options": [
+        {
+          "id": "choice-1",
+          "text": "Процентное изменение и темп роста."
+        },
+        {
+          "id": "choice-2",
+          "text": "Число корней и область определения."
+        },
+        {
+          "id": "choice-3",
+          "text": "Min/max и наклон."
+        },
+        {
+          "id": "choice-4",
+          "text": "Сумма, произведение и частное функций."
+        }
+      ],
+      "correct_answer": "choice-3"
     }
   ]
 }
