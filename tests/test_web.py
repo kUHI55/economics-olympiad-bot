@@ -97,6 +97,28 @@ class TheoryWebRouteTests(unittest.TestCase):
             )
         )
 
+    def test_static_assets_use_expected_types_and_reject_unknown_files(self) -> None:
+        for name in ("app.js", "learning.js"):
+            with self.subTest(asset=name):
+                response = request(self.application, f"/static/{name}")
+                self.assertTrue(response["status"].startswith("200"))
+                self.assertEqual(response["headers"]["Content-Type"], "text/javascript; charset=utf-8")
+                self.assertEqual(response["body"], (PROJECT_ROOT / "app" / "web" / "static" / name).read_bytes())
+
+        stylesheet = request(self.application, "/static/styles.css")
+        self.assertTrue(stylesheet["status"].startswith("200"))
+        self.assertEqual(stylesheet["headers"]["Content-Type"], "text/css; charset=utf-8")
+        self.assertEqual(stylesheet["body"], (PROJECT_ROOT / "app" / "web" / "static" / "styles.css").read_bytes())
+
+        unknown = request(self.application, "/static/not-a-real-asset.js")
+        self.assertTrue(unknown["status"].startswith("404"))
+
+    def test_html_loads_learning_module_before_app_and_app_reports_missing_module(self) -> None:
+        homepage = request(self.application, "/")["body"].decode()
+        self.assertLess(homepage.index('src="/static/learning.js"'), homepage.index('src="/static/app.js"'))
+        app_script = request(self.application, "/static/app.js")["body"].decode()
+        self.assertIn("EcolabLearning is unavailable: /static/learning.js did not initialize before app.js", app_script)
+
     def test_all_active_quiz_questions_have_four_distinct_keyed_choices(self) -> None:
         repository = web_module.load_theory_repository(THEORY_ROOT)
         questions = [

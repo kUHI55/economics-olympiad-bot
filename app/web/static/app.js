@@ -25,6 +25,10 @@ const state = {
 };
 const content = document.querySelector("#content");
 const nav = document.querySelector("#navigation");
+if (!globalThis.EcolabLearning || typeof globalThis.EcolabLearning.readStore !== "function") {
+  content.innerHTML = `<div class="feedback error">Не удалось загрузить модуль локальной статистики <code>/static/learning.js</code>. Обнови страницу; если ошибка повторится, проверь адрес и ответ сервера для этого файла.</div>`;
+  throw new Error("EcolabLearning is unavailable: /static/learning.js did not initialize before app.js");
+}
 const mainViews = [["topics", "Темы"], ["quizzes", "Квизы"], ["stats", "Статистика"]];
 
 function escapeHtml(value) {

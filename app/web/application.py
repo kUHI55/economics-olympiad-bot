@@ -531,9 +531,14 @@ class TheoryWebApplication:
 
     def _static_response(self, path: str, start_response) -> list[bytes]:
         name = path.removeprefix("/static/")
-        if name not in {"app.js", "learning.js", "styles.css"}:
+        content_types = {
+            "app.js": "text/javascript; charset=utf-8",
+            "learning.js": "text/javascript; charset=utf-8",
+            "styles.css": "text/css; charset=utf-8",
+        }
+        content_type = content_types.get(name)
+        if content_type is None:
             return self._json_response(start_response, HTTPStatus.NOT_FOUND, {"error": "Файл не найден."})
-        content_type = "text/javascript; charset=utf-8" if name.endswith(".js") else "text/css; charset=utf-8"
         return self._respond(start_response, HTTPStatus.OK, self._read_static(name), content_type)
 
     def _read_static(self, name: str) -> bytes:

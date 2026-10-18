@@ -324,3 +324,16 @@ test("database session failure preserves the selected quiz and offers local cont
   assert.equal(JSON.parse(answerRequest.options.body).mode, "local");
   assert.match(harness.content.innerHTML, /Попытка и статистика сохранены в этом браузере/);
 });
+
+test("missing learning module shows its loading cause before quiz initialization", () => {
+  const content = { innerHTML: "" };
+  const context = { document: { querySelector: (selector) => selector === "#content" ? content : {} } };
+  vm.createContext(context);
+  const script = fs.readFileSync(path.join(__dirname, "../app/web/static/app.js"), "utf8");
+  assert.throws(
+    () => vm.runInContext(script, context),
+    /EcolabLearning is unavailable: \/static\/learning\.js did not initialize before app\.js/,
+  );
+  assert.match(content.innerHTML, /Не удалось загрузить модуль локальной статистики/);
+  assert.doesNotMatch(content.innerHTML, /Cannot read properties of null/);
+});
