@@ -19,10 +19,16 @@ from sqlalchemy.ext.asyncio import async_sessionmaker, create_async_engine
 from sqlalchemy.orm import selectinload
 
 from app.core.config import get_settings
-from app.core.enums import AttemptVerdict, QuestionType
-from app.database.models.catalog import Section, Topic
+from app.core.enums import AttemptVerdict, QuestionType, QuizMode
+from app.database.models.catalog import Section, Subtopic, Topic
 from app.database.models.content import KnowledgeElement, Question
-from app.database.models.learning import Attempt, Progress, ReviewSchedule
+from app.database.models.learning import (
+    Attempt,
+    Progress,
+    QuizSession,
+    ReviewSchedule,
+    SessionQuestion,
+)
 from app.database.models.user import User
 from app.database.repositories.user import UserRepository
 from app.services.llm.client import UnavailableLlmClient
@@ -64,6 +70,24 @@ class TheoryWebApplication:
                 return self._json_response(
                     start_response, HTTPStatus.OK, asyncio.run(self._progress_payload())
                 )
+            if method == "GET" and path == "/api/statistics":
+                self._require_web_password(environ)
+                return self._json_response(
+                    start_response, HTTPStatus.OK, asyncio.run(self._database_statistics())
+                )
+            if method == "POST" and path == "/api/quiz-sessions":
+                self._require_web_password(environ)
+                return self._json_response(
+                    start_response, HTTPStatus.CREATED,
+                    asyncio.run(self._start_web_session(self._read_json_body(environ))),
+                )
+            if method == "POST" and path.startswith("/api/quiz-sessions/") and path.endswith("/complete"):
+                self._require_web_password(environ)
+                session_id = path.removeprefix("/api/quiz-sessions/").removesuffix("/complete").strip("/")
+                return self._json_response(
+                    start_response, HTTPStatus.OK,
+                    asyncio.run(self._complete_web_session(session_id, self._read_json_body(environ))),
+                )
             if method == "GET" and path == "/api/review-questions":
                 self._require_web_password(environ)
                 return self._json_response(
@@ -74,8 +98,10 @@ class TheoryWebApplication:
             if method == "POST" and path == "/api/answer":
                 body = self._read_json_body(environ)
                 settings = self._database_settings()
-                database_available = settings is not None and asyncio.run(
-                    self._database_available(settings)
+                database_available = (
+                    bool(os.getenv("WEB_PASSWORD"))
+                    and settings is not None
+                    and asyncio.run(self._database_available(settings))
                 )
                 if not database_available:
                     self._require_local_request(environ)
@@ -140,6 +166,7 @@ class TheoryWebApplication:
                         "id": question["id"],
                         "knowledge_id": question["knowledge_id"],
                         "knowledge_type": knowledge_by_id[question["knowledge_id"]]["type"],
+                        "knowledge_title": knowledge_by_id[question["knowledge_id"]]["title"],
                         "category": (
                             "construction"
                             if CONSTRUCTION_QUESTION_MARKER in question["id"]
@@ -215,7 +242,11 @@ class TheoryWebApplication:
 
     async def _progress_payload(self) -> dict[str, Any]:
         settings = self._database_settings()
-        if settings is None or not await self._database_available(settings):
+        if (
+            settings is None
+            or not os.getenv("WEB_PASSWORD")
+            or not await self._database_available(settings)
+        ):
             return {"available": False, "answer_mode": "local", "themes": {}}
         try:
             engine = create_async_engine(settings.database_url, pool_pre_ping=True)
@@ -307,6 +338,176 @@ class TheoryWebApplication:
         finally:
             await engine.dispose()
 
+    async def _start_web_session(self, body: dict[str, Any]) -> dict[str, Any]:
+        question_ids = body.get("question_ids")
+        context = body.get("context") or {}
+        if (
+            not isinstance(question_ids, list) or not question_ids or len(question_ids) > 100
+            or any(not isinstance(value, str) for value in question_ids)
+            or len(set(question_ids)) != len(question_ids)
+        ):
+            raise WebRequestError(HTTPStatus.BAD_REQUEST, "Некорректный список вопросов квиза.")
+        settings = get_settings()
+        engine = create_async_engine(settings.database_url, pool_pre_ping=True)
+        factory = async_sessionmaker(engine, expire_on_commit=False)
+        try:
+            async with factory() as session:
+                user = await UserRepository(session).get_or_create(
+                    settings.admin_id, "website", "Web learner", True
+                )
+                questions = list(await session.scalars(select(Question).where(
+                    Question.external_id.in_(question_ids), Question.is_active.is_(True)
+                )))
+                by_external_id = {question.external_id: question for question in questions}
+                if len(by_external_id) != len(question_ids):
+                    raise WebRequestError(HTTPStatus.BAD_REQUEST, "Квиз содержит неизвестные или неактивные вопросы.")
+                session_row = QuizSession(
+                    user_id=user.id, mode=QuizMode.PRACTICE,
+                    scope_type=str(context.get("type", "mixed"))[:32],
+                    total_questions=len(question_ids),
+                    started_at=self._browser_datetime(body.get("started_at"), datetime.now(UTC)),
+                )
+                session.add(session_row)
+                await session.flush()
+                session.add_all([
+                    SessionQuestion(quiz_session_id=session_row.id,
+                        question_id=by_external_id[external_id].id, position=position)
+                    for position, external_id in enumerate(question_ids, start=1)
+                ])
+                await session.commit()
+                return {"session_id": session_row.id}
+        finally:
+            await engine.dispose()
+
+    async def _complete_web_session(
+        self, raw_session_id: str, body: dict[str, Any] | None = None
+    ) -> dict[str, Any]:
+        try:
+            session_id = int(raw_session_id)
+        except ValueError as error:
+            raise WebRequestError(HTTPStatus.BAD_REQUEST, "Некорректный идентификатор сессии.") from error
+        settings = get_settings()
+        engine = create_async_engine(settings.database_url, pool_pre_ping=True)
+        factory = async_sessionmaker(engine, expire_on_commit=False)
+        try:
+            async with factory() as session:
+                user_id = await session.scalar(select(User.id).where(User.telegram_id == settings.admin_id))
+                session_row = await session.get(QuizSession, session_id)
+                if session_row is None or session_row.user_id != user_id:
+                    raise WebRequestError(HTTPStatus.NOT_FOUND, "Сессия квиза не найдена.")
+                answered = await session.scalar(select(func.count(SessionQuestion.id)).where(
+                    SessionQuestion.quiz_session_id == session_id,
+                    SessionQuestion.completed.is_(True),
+                ))
+                if int(answered or 0) < session_row.total_questions:
+                    raise WebRequestError(HTTPStatus.CONFLICT, "Нельзя завершить квиз до ответа на все вопросы.")
+                correct = await session.scalar(select(func.count(Attempt.id)).where(
+                    Attempt.quiz_session_id == session_id,
+                    Attempt.user_id == user_id,
+                    Attempt.verdict == AttemptVerdict.CORRECT,
+                ))
+                if session_row.completed_at is None:
+                    session_row.completed_at = self._browser_datetime(
+                        (body or {}).get("ended_at"), datetime.now(UTC)
+                    )
+                    await session.commit()
+                return {"completed": True, "total": session_row.total_questions, "correct": int(correct or 0)}
+        finally:
+            await engine.dispose()
+
+    async def _database_statistics(self) -> dict[str, Any]:
+        settings = get_settings()
+        engine = create_async_engine(settings.database_url, pool_pre_ping=True)
+        factory = async_sessionmaker(engine, expire_on_commit=False)
+        try:
+            async with factory() as session:
+                user_id = await session.scalar(select(User.id).where(User.telegram_id == settings.admin_id))
+                if user_id is None:
+                    return {"sessions": [], "activeSessionId": None, "legacyAttempts": 0}
+                db_sessions = list(await session.scalars(
+                    select(QuizSession).where(QuizSession.user_id == user_id)
+                    .order_by(QuizSession.started_at.desc())
+                ))
+                session_ids = [item.id for item in db_sessions]
+                records: dict[int, dict[str, Any]] = {}
+                for item in db_sessions:
+                    records[item.id] = {
+                        "id": f"db-{item.id}", "dbSessionId": item.id,
+                        "startedAt": item.started_at.isoformat(),
+                        "endedAt": item.completed_at.isoformat() if item.completed_at else None,
+                        "status": "completed" if item.completed_at else "in_progress",
+                        "questionIds": [], "currentIndex": 0, "attempts": [],
+                        "context": {"type": item.scope_type, "themeId": "all", "subtopicId": None, "label": "Квиз"},
+                    }
+                if session_ids:
+                    planned = (await session.execute(
+                        select(SessionQuestion.quiz_session_id, Question.external_id,
+                            Section.external_id, Section.name, Subtopic.external_id, Subtopic.name)
+                        .join(Question, Question.id == SessionQuestion.question_id)
+                        .join(KnowledgeElement, KnowledgeElement.id == Question.knowledge_element_id)
+                        .join(Section, Section.id == KnowledgeElement.section_id)
+                        .outerjoin(Subtopic, Subtopic.id == KnowledgeElement.subtopic_id)
+                        .where(SessionQuestion.quiz_session_id.in_(session_ids))
+                        .order_by(SessionQuestion.position)
+                    )).all()
+                    context_rows: dict[int, list[tuple[str, str | None, str, str | None]]] = {}
+                    for sid, question_id, section_external, section_name, subtopic_external, subtopic_name in planned:
+                        if question_id:
+                            records[sid]["questionIds"].append(question_id)
+                        theme_id = (section_external or "").removeprefix("section:")
+                        subtopic_id = (subtopic_external or "").split("/subtopic:")[-1] if subtopic_external else None
+                        context_rows.setdefault(sid, []).append((theme_id, subtopic_id, section_name, subtopic_name))
+                    for sid, values in context_rows.items():
+                        themes = {row[0] for row in values if row[0]}
+                        subtopics = {row[1] for row in values if row[1]}
+                        records[sid]["context"] = {
+                            "type": records[sid]["context"]["type"],
+                            "themeId": next(iter(themes)) if len(themes) == 1 else "all",
+                            "subtopicId": next(iter(subtopics)) if len(subtopics) == 1 else None,
+                            "label": next((row[2] for row in values), "Квиз") if len(themes) == 1 else "Смешанный квиз",
+                        }
+                rows = (await session.execute(
+                    select(Attempt, Question.external_id, Section.external_id, Subtopic.external_id,
+                        KnowledgeElement.external_id, KnowledgeElement.knowledge_type)
+                    .join(Question, Question.id == Attempt.question_id)
+                    .join(KnowledgeElement, KnowledgeElement.id == Question.knowledge_element_id)
+                    .join(Section, Section.id == KnowledgeElement.section_id)
+                    .outerjoin(Subtopic, Subtopic.id == KnowledgeElement.subtopic_id)
+                    .where(Attempt.user_id == user_id)
+                    .order_by(Attempt.answered_at)
+                )).all()
+                legacy_attempts = 0
+                for attempt, question_id, section_external, subtopic_external, knowledge_id, knowledge_type in rows:
+                    record = records.get(attempt.quiz_session_id)
+                    if record is None:
+                        legacy_attempts += 1
+                        continue
+                    record["attempts"].append({
+                        "questionId": question_id,
+                        "themeId": (section_external or "").removeprefix("section:"),
+                        "subtopicId": (subtopic_external or "").split("/subtopic:")[-1] if subtopic_external else None,
+                        "constructionId": knowledge_id if str(knowledge_type) in {"mechanism", "example"} else None,
+                        "verdict": attempt.verdict.value,
+                        "answeredAt": attempt.answered_at.isoformat(),
+                    })
+                return {"sessions": list(records.values()), "activeSessionId": None, "legacyAttempts": legacy_attempts}
+        finally:
+            await engine.dispose()
+
+    @staticmethod
+    def _browser_datetime(value: Any, fallback: datetime) -> datetime:
+        if value is None:
+            return fallback
+        if not isinstance(value, str):
+            raise WebRequestError(HTTPStatus.BAD_REQUEST, "Некорректная дата тренировочной сессии.")
+        try:
+            parsed = datetime.fromisoformat(value.replace("Z", "+00:00"))
+        except ValueError as error:
+            raise WebRequestError(HTTPStatus.BAD_REQUEST, "Некорректная дата тренировочной сессии.") from error
+        if parsed.tzinfo is None:
+            raise WebRequestError(HTTPStatus.BAD_REQUEST, "Дата сессии должна содержать часовой пояс.")
+        return parsed
+
     def _document_response(self, path: str, start_response) -> list[bytes]:
         parts = path.removeprefix("/api/documents/").split("/")
         if len(parts) == 1:
@@ -326,7 +527,7 @@ class TheoryWebApplication:
 
     def _static_response(self, path: str, start_response) -> list[bytes]:
         name = path.removeprefix("/static/")
-        if name not in {"app.js", "styles.css"}:
+        if name not in {"app.js", "learning.js", "styles.css"}:
             return self._json_response(start_response, HTTPStatus.NOT_FOUND, {"error": "Файл не найден."})
         content_type = "text/javascript; charset=utf-8" if name.endswith(".js") else "text/css; charset=utf-8"
         return self._respond(start_response, HTTPStatus.OK, self._read_static(name), content_type)
@@ -481,6 +682,45 @@ class TheoryWebApplication:
                 user = await UserRepository(session).get_or_create(
                     settings.admin_id, "website", "Web learner", True
                 )
+                quiz_session_id = body.get("session_id")
+                quiz_session = None
+                if quiz_session_id is not None:
+                    try:
+                        quiz_session_id = int(quiz_session_id)
+                    except (ValueError, TypeError) as error:
+                        raise WebRequestError(HTTPStatus.BAD_REQUEST, "Некорректная сессия квиза.") from error
+                    quiz_session = await session.get(QuizSession, quiz_session_id)
+                    if quiz_session is None or quiz_session.user_id != user.id or quiz_session.completed_at is not None:
+                        raise WebRequestError(HTTPStatus.NOT_FOUND, "Сессия квиза недоступна.")
+                    session_question = await session.scalar(
+                        select(SessionQuestion).where(
+                            SessionQuestion.quiz_session_id == quiz_session.id,
+                            SessionQuestion.question_id == question.id,
+                        )
+                    )
+                    if session_question is None:
+                        raise WebRequestError(HTTPStatus.BAD_REQUEST, "Вопрос не входит в эту сессию.")
+                    prior_attempt = await session.scalar(
+                        select(Attempt).where(
+                            Attempt.quiz_session_id == quiz_session.id,
+                            Attempt.question_id == question.id,
+                        ).order_by(Attempt.id.desc()).limit(1)
+                    )
+                    if prior_attempt is not None:
+                        saved_result = prior_attempt.feedback or {}
+                        return {
+                            "verdict": prior_attempt.verdict.value,
+                            "score": prior_attempt.score,
+                            "short_explanation": saved_result.get("short_explanation", "Ответ уже был проверен."),
+                            "reference_answer": question.reference_answer,
+                            "explanation": question.explanation,
+                            "source_excerpt": question.source_excerpt,
+                            "knowledge_id": question.knowledge_element.external_id,
+                            "theme_id": question.knowledge_element.external_id.split(".", 1)[0],
+                            "progress_saved": True,
+                            "duplicate_submission": True,
+                        }
+                    session_question.completed = True
                 await ProgressService(session).record_attempt(
                     user_id=user.id,
                     question=question,
@@ -490,6 +730,7 @@ class TheoryWebApplication:
                     feedback=result.model_dump(mode="json"),
                     hint_used=False,
                     answer_revealed=False,
+                    quiz_session_id=quiz_session.id if quiz_session else None,
                 )
                 await session.commit()
                 return {

@@ -129,9 +129,12 @@ class TheoryWebRouteTests(unittest.TestCase):
         self.assertIn("state.selectedAnswer", script)
         self.assertIn('data-action="next-question"', script)
         self.assertIn("renderQuizSummary", script)
-        self.assertIn("state.quizSession.correct += 1", script)
+        self.assertIn("recordLocalAttempt(question, answer, result)", script)
         self.assertIn("state.answered ? \"disabled\"", script)
         self.assertIn("allQuestions().filter", script)
+        self.assertIn("popstate", script)
+        self.assertIn("renderStatistics", script)
+        self.assertTrue(request(self.application, "/static/learning.js")["status"].startswith("200"))
 
     def test_monopoly_construction_cards_have_quizzes(self) -> None:
         notes_path = THEORY_ROOT / "monopoly" / "problem-constructions.md"
@@ -237,6 +240,35 @@ class TheoryWebRouteTests(unittest.TestCase):
 
         self.assertTrue(result["status"].startswith("401"))
         self.assertIn("WWW-Authenticate", result["headers"])
+
+    def test_configured_database_without_web_password_keeps_loopback_quiz_local(self) -> None:
+        repository = web_module.load_theory_repository(THEORY_ROOT)
+        question = next(
+            item for topic in repository.topics for item in topic.questions.questions
+            if item.options
+        )
+        answer = str(next(
+            index for index, option in enumerate(question.options)
+            if option.id == question.correct_answer
+        ))
+        body = json.dumps({"question_id": question.id, "answer": answer}).encode()
+        settings = SimpleNamespace(database_url="postgresql://configured")
+        with (
+            patch.object(self.application, "_database_settings", return_value=settings),
+            patch.object(self.application, "_database_available", new=AsyncMock(return_value=True)),
+            patch.dict("os.environ", {"WEB_PASSWORD": ""}),
+            patch.object(web_module, "get_settings", return_value=settings),
+        ):
+            result = request(
+                self.application, "/api/answer", method="POST", body=body,
+                headers={"CONTENT_TYPE": "application/json", "REMOTE_ADDR": "127.0.0.1"},
+            )
+            progress = asyncio.run(self.application._progress_payload())
+        payload = json.loads(result["body"])
+        self.assertTrue(result["status"].startswith("200"))
+        self.assertEqual(payload["verdict"], "correct")
+        self.assertFalse(payload["progress_saved"])
+        self.assertEqual(progress["answer_mode"], "local")
 
     def test_unavailable_configured_database_falls_back_to_loopback_quiz(self) -> None:
         question_document = json.loads(
@@ -540,7 +572,10 @@ class WebsiteProgressPersistenceTests(unittest.IsolatedAsyncioTestCase):
             llm_model="unused",
         )
         application = TheoryWebApplication(self.root)
-        with patch.object(web_module, "get_settings", return_value=settings):
+        with (
+            patch.object(web_module, "get_settings", return_value=settings),
+            patch.dict("os.environ", {"WEB_PASSWORD": "configured"}),
+        ):
             result = await application._save_answer(
                 {"question_id": question["id"], "answer": str(incorrect_index)}
             )
@@ -604,3 +639,81 @@ class WebsiteProgressPersistenceTests(unittest.IsolatedAsyncioTestCase):
             after_correction = await TheoryWebApplication(self.root)._review_question_ids()
 
         self.assertNotIn(question["id"], after_correction["question_ids"])
+
+    async def test_web_quiz_session_links_attempts_prevents_duplicates_and_reports_completion(self) -> None:
+        question_doc = json.loads((self.topic_directory / "questions.json").read_text(encoding="utf-8"))
+        question = question_doc["questions"][0]
+        correct_index = next(
+            index for index, option in enumerate(question["options"])
+            if option["id"] == question["correct_answer"]
+        )
+        settings = SimpleNamespace(
+            database_url=self.database_url, admin_id=123456, llm_api_key=None, llm_model="unused"
+        )
+        application = TheoryWebApplication(self.root)
+        with patch.object(web_module, "get_settings", return_value=settings):
+            created = await application._start_web_session({
+                "question_ids": [question["id"]],
+                "context": {"type": "subtopic", "label": "Математика"},
+            })
+            session_id = created["session_id"]
+            first = await application._save_answer({
+                "question_id": question["id"], "answer": str(correct_index), "session_id": session_id,
+            })
+            duplicate = await application._save_answer({
+                "question_id": question["id"], "answer": str((correct_index + 1) % 4), "session_id": session_id,
+            })
+            result = await application._complete_web_session(str(session_id))
+            statistics = await application._database_statistics()
+
+        async with self.factory() as session:
+            attempt_count = await session.scalar(select(func.count()).select_from(Attempt))
+            quiz_session = await session.get(web_module.QuizSession, session_id)
+        self.assertEqual(attempt_count, 1)
+        self.assertEqual(first["verdict"], "correct")
+        self.assertTrue(duplicate["duplicate_submission"])
+        self.assertEqual(duplicate["verdict"], "correct")
+        self.assertEqual(result, {"completed": True, "total": 1, "correct": 1})
+        self.assertIsNotNone(quiz_session.completed_at)
+        self.assertEqual(len(statistics["sessions"]), 1)
+        self.assertEqual(statistics["sessions"][0]["status"], "completed")
+        self.assertEqual(len(statistics["sessions"][0]["attempts"]), 1)
+
+    async def test_web_session_links_attempts_prevents_duplicates_and_reports_completion(self) -> None:
+        question_doc = json.loads((self.topic_directory / "questions.json").read_text(encoding="utf-8"))
+        question = question_doc["questions"][0]
+        correct_index = next(
+            index for index, option in enumerate(question["options"])
+            if option["id"] == question["correct_answer"]
+        )
+        settings = SimpleNamespace(
+            database_url=self.database_url, admin_id=123456, llm_api_key=None, llm_model="unused"
+        )
+        application = TheoryWebApplication(self.root)
+        with patch.object(web_module, "get_settings", return_value=settings):
+            created = await application._start_web_session({
+                "question_ids": [question["id"]],
+                "context": {"type": "subtopic", "label": "Математика"},
+            })
+            session_id = created["session_id"]
+            first = await application._save_answer({
+                "question_id": question["id"], "answer": str(correct_index), "session_id": session_id,
+            })
+            duplicate = await application._save_answer({
+                "question_id": question["id"], "answer": str((correct_index + 1) % 4), "session_id": session_id,
+            })
+            result = await application._complete_web_session(str(session_id))
+            statistics = await application._database_statistics()
+
+        async with self.factory() as session:
+            attempt_count = await session.scalar(select(func.count()).select_from(Attempt))
+            quiz_session = await session.get(web_module.QuizSession, session_id)
+        self.assertEqual(attempt_count, 1)
+        self.assertEqual(first["verdict"], "correct")
+        self.assertTrue(duplicate["duplicate_submission"])
+        self.assertEqual(duplicate["verdict"], "correct")
+        self.assertEqual(result, {"completed": True, "total": 1, "correct": 1})
+        self.assertIsNotNone(quiz_session.completed_at)
+        self.assertEqual(len(statistics["sessions"]), 1)
+        self.assertEqual(statistics["sessions"][0]["status"], "completed")
+        self.assertEqual(len(statistics["sessions"][0]["attempts"]), 1)
