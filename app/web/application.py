@@ -97,18 +97,22 @@ class TheoryWebApplication:
                 return self._document_response(path, start_response)
             if method == "POST" and path == "/api/answer":
                 body = self._read_json_body(environ)
-                settings = self._database_settings()
-                database_available = (
-                    bool(os.getenv("WEB_PASSWORD"))
-                    and settings is not None
-                    and asyncio.run(self._database_available(settings))
-                )
-                if not database_available:
+                if body.get("mode") == "local":
                     self._require_local_request(environ)
                     result = self._check_answer_from_files(body)
                 else:
-                    self._require_web_password(environ)
-                    result = asyncio.run(self._save_answer(body))
+                    settings = self._database_settings()
+                    database_available = (
+                        bool(os.getenv("WEB_PASSWORD"))
+                        and settings is not None
+                        and asyncio.run(self._database_available(settings))
+                    )
+                    if not database_available:
+                        self._require_local_request(environ)
+                        result = self._check_answer_from_files(body)
+                    else:
+                        self._require_web_password(environ)
+                        result = asyncio.run(self._save_answer(body))
                 return self._json_response(start_response, HTTPStatus.OK, result)
             return self._json_response(start_response, HTTPStatus.NOT_FOUND, {"error": "Страница не найдена."})
         except WebRequestError as error:

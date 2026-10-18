@@ -136,6 +136,47 @@ class TheoryWebRouteTests(unittest.TestCase):
         self.assertIn("renderStatistics", script)
         self.assertTrue(request(self.application, "/static/learning.js")["status"].startswith("200"))
 
+    def test_local_quiz_start_and_review_do_not_require_database_password(self) -> None:
+        script = request(self.application, "/static/app.js")["body"].decode()
+        self.assertIn('action === "start-theme-quiz"', script)
+        self.assertIn('action === "start-global-quiz"', script)
+        self.assertIn('state.progress.answer_mode === "database" && !context.forceLocal', script)
+        self.assertIn('state.pendingQuiz = { questions: selected, count, ensureThemeCoverage, context }', script)
+        self.assertIn('action === "continue-local-quiz"', script)
+        self.assertIn('EcolabLearning.reviewQuestionIds(state.learning)', script)
+        self.assertIn('state.progress.answer_mode === "local"', script)
+        self.assertIn('state.quizSession?.local === true', script)
+        self.assertIn('state.questions = selected;', script)
+
+    def test_local_answer_mode_can_be_explicitly_selected_without_password(self) -> None:
+        question = next(
+            question
+            for topic in web_module.load_theory_repository(THEORY_ROOT).topics
+            for question in topic.questions.questions
+        )
+        correct_index = next(
+            index for index, option in enumerate(question.options)
+            if option.id == question.correct_answer
+        )
+        body = json.dumps({
+            "mode": "local", "question_id": question.id, "answer": str(correct_index),
+        }).encode()
+        with (
+            patch.dict("os.environ", {"WEB_PASSWORD": "configured"}),
+            patch.object(self.application, "_database_settings", side_effect=AssertionError("local mode must not query DB config")),
+        ):
+            result = request(
+                self.application,
+                "/api/answer",
+                method="POST",
+                body=body,
+                headers={"CONTENT_TYPE": "application/json", "REMOTE_ADDR": "127.0.0.1"},
+            )
+        payload = json.loads(result["body"])
+        self.assertTrue(result["status"].startswith("200"))
+        self.assertEqual(payload["verdict"], "correct")
+        self.assertFalse(payload["progress_saved"])
+
     def test_monopoly_construction_cards_have_quizzes(self) -> None:
         notes_path = THEORY_ROOT / "monopoly" / "problem-constructions.md"
         source = notes_path.read_text(encoding="utf-8")

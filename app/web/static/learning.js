@@ -50,6 +50,26 @@
       percent: percent(correct, determinate), determinate };
   }
 
+  function reviewQuestionIds(store) {
+    const latest = new Map();
+    const attempts = (store?.sessions || []).flatMap((session, sessionIndex) =>
+      (session.attempts || []).map((attempt, attemptIndex) => ({
+        attempt,
+        order: attempt.answeredAt || session.startedAt || "",
+        sessionIndex,
+        attemptIndex,
+      })),
+    ).sort((a, b) => a.order.localeCompare(b.order)
+      || a.sessionIndex - b.sessionIndex || a.attemptIndex - b.attemptIndex);
+    for (const { attempt } of attempts) {
+      if (typeof attempt.questionId === "string"
+          && ["correct", "incorrect"].includes(attempt.verdict)) {
+        latest.set(attempt.questionId, attempt.verdict);
+      }
+    }
+    return [...latest.entries()].filter(([, verdict]) => verdict === "incorrect").map(([id]) => id);
+  }
+
   function summarize(store, themes) {
     const completed = store.sessions.filter((session) => session.status === "completed");
     const chronologicalCompleted = [...completed].sort((a, b) => (a.startedAt || "").localeCompare(b.startedAt || ""));
@@ -150,7 +170,7 @@
     return Number.isNaN(date.valueOf()) ? "—" : new Intl.DateTimeFormat("ru-RU", options).format(date);
   }
 
-  const api = { STORAGE_KEY, emptyStore, readStore, writeStore, summarize, percent, formatDate };
+  const api = { STORAGE_KEY, emptyStore, readStore, writeStore, summarize, percent, formatDate, reviewQuestionIds };
   root.EcolabLearning = api;
   if (typeof module !== "undefined" && module.exports) module.exports = api;
 })(typeof window === "undefined" ? globalThis : window);
