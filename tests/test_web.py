@@ -64,9 +64,10 @@ class TheoryWebRouteTests(unittest.TestCase):
         self.assertEqual(themes["mathematical-base"]["title"], "Математика")
         self.assertEqual(themes["utility-and-consumer"]["title"], "Полезность и потребитель")
         self.assertEqual(themes["monopoly"]["title"], "Монополия")
+        self.assertEqual(themes["finance"]["title"], "Финансы")
         self.assertEqual(
             set(themes),
-            {"mathematical-base", "utility-and-consumer", "monopoly"},
+            {"mathematical-base", "utility-and-consumer", "monopoly", "finance"},
         )
         self.assertNotIn("demo", themes)
         self.assertGreaterEqual(themes["mathematical-base"]["construction_count"], 14)
@@ -80,7 +81,10 @@ class TheoryWebRouteTests(unittest.TestCase):
         self.assertEqual(themes["monopoly"]["knowledge_count"], 18)
         self.assertEqual(themes["monopoly"]["question_count"], 23)
         self.assertEqual(len(themes["monopoly"]["subtopics"]), 18)
-        self.assertEqual(len(payload["themes"]), 3)
+        self.assertEqual(themes["finance"]["knowledge_count"], 363)
+        self.assertEqual(themes["finance"]["question_count"], 362)
+        self.assertEqual(len(themes["finance"]["subtopics"]), 13)
+        self.assertEqual(len(payload["themes"]), 4)
         self.assertTrue(
             all(
                 subtopic["knowledge"] and subtopic["questions"]
@@ -127,7 +131,7 @@ class TheoryWebRouteTests(unittest.TestCase):
             if not topic.knowledge.is_demo
             for question in topic.questions.questions
         ]
-        self.assertEqual(len(questions), 119)
+        self.assertEqual(len(questions), 481)
         for question in questions:
             with self.subTest(question_id=question.id):
                 self.assertIs(question.type, QuestionType.MULTIPLE_CHOICE)
