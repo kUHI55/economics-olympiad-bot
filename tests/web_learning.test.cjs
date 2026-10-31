@@ -111,7 +111,7 @@ test("unanswered local sessions and their attempts survive page reload", () => {
   assert.deepEqual(learning.reviewQuestionIds(restored), ["monopoly.q1"]);
 });
 
-function createQuizHarness({ answerMode = "local", storage = memoryStorage(), failSession = false } = {}) {
+function createQuizHarness({ answerMode = "local", storage = memoryStorage(), failSession = false, questionPrompt = null } = {}) {
   class Element {
     constructor(dataset = {}, value = "") { this.dataset = dataset; this.value = value; this.handlers = {}; }
     addEventListener(name, handler) { this.handlers[name] = handler; }
@@ -157,7 +157,7 @@ function createQuizHarness({ answerMode = "local", storage = memoryStorage(), fa
     documents: [], subtopics: [{
       id: "basics", title: "Основы", knowledge: [],
       questions: [0, 1].map((index) => ({
-        id: `monopoly.q${index + 1}`, question: `Вопрос ${index + 1}?`, difficulty: 1,
+        id: `monopoly.q${index + 1}`, question: questionPrompt || `Вопрос ${index + 1}?`, difficulty: 1,
         category: "theory", knowledge_id: "monopoly.basics",
         options: ["A", "B", "C", "D"].map((text, option) => ({ id: String(option), text })),
         reference_answer: "A", explanation: "Пояснение", source_excerpt: "Источник",
@@ -276,6 +276,16 @@ test("real app flow starts theme and mixed local quizzes, checks an answer, and 
   await restored.action("start-global-quiz");
   assert.match(restored.content.innerHTML, /ВОПРОС 1 \/ 1/);
   assert.equal(vm.runInContext("state.quizSession.context.themeId", restored.context), "all");
+});
+
+test("quiz question renders inline formula markdown as safe code markup", async () => {
+  const harness = createQuizHarness({ questionPrompt: "Как называется модель: `FV=S*(1+r)^n`? <script>" });
+  await harness.ready;
+  await harness.navigate("quizzes");
+  await harness.action("start-global-quiz");
+  assert.match(harness.content.innerHTML, /<code>FV=S\*\(1\+r\)\^n<\/code>/);
+  assert.doesNotMatch(harness.content.innerHTML, /<script>/);
+  assert.doesNotMatch(harness.content.innerHTML, /\[формула из справочника\]/);
 });
 
 test("local review launches saved wrong questions and empty review keeps normal quiz available", async () => {

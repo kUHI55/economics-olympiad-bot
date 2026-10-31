@@ -80,6 +80,33 @@ class FinanceThemeTests(unittest.TestCase):
         self.assertIn("finance.method.protocol-10.question", question_ids)
         self.assertIn("finance.method.protocol-12.question", question_ids)
 
+    def test_finance_questions_have_no_unfilled_templates_and_formula_prompts_use_linked_knowledge(self) -> None:
+        repository = load_theory_repository(PROJECT_ROOT / "data" / "theory")
+        finance = [topic for topic in repository.topics if topic.knowledge.section == "finance"]
+        questions = [question for topic in finance for question in topic.questions.questions]
+        knowledge = {
+            item.id: item
+            for topic in finance
+            for item in topic.knowledge.knowledge
+        }
+        placeholders = re.compile(
+            r"\[(?:[^\]]*(?:формул\w*|ответ\w*|заполн\w*|placeholder|todo)[^\]]*)\]"
+            r"|\b(?:TODO|TBD|PLACEHOLDER)\b",
+            re.IGNORECASE,
+        )
+        for question in questions:
+            with self.subTest(question_id=question.id):
+                self.assertIsNone(placeholders.search(question.question))
+
+        formula_questions = [question for question in questions if question.id.startswith("finance.formula.")]
+        self.assertEqual(len(formula_questions), 83)
+        for question in formula_questions:
+            item = knowledge[question.knowledge_id]
+            if item.formula:
+                self.assertIn(f"`{item.formula}`", question.question)
+            else:
+                self.assertIn(item.explanation, question.question)
+
     def test_review_sheet_and_documents_are_served_by_the_existing_site(self) -> None:
         review = (FINANCE_ROOT / "review-sheet.md").read_text(encoding="utf-8")
         self.assertIn("Задача 38(д)", review)
@@ -96,6 +123,30 @@ class FinanceThemeTests(unittest.TestCase):
         self.assertEqual(
             set(finance["documents"]),
             {"study-notes.md", "problem-constructions.md", "review-sheet.md"},
+        )
+        api_questions = [
+            question
+            for topic in finance["subtopics"]
+            for question in topic["questions"]
+            if question["id"].startswith("finance.formula.")
+        ]
+        self.assertEqual(len(api_questions), 83)
+        self.assertTrue(all("[формула из справочника]" not in item["question"] for item in api_questions))
+        expected_prompts = {
+            item["id"]: item["question"]
+            for item in json.loads(
+                (FINANCE_ROOT / "00-definitions-and-formulas" / "questions.json").read_text(
+                    encoding="utf-8"
+                )
+            )["questions"]
+            if item["id"].startswith("finance.formula.")
+        }
+        self.assertEqual(
+            {item["id"]: item["question"] for item in api_questions},
+            expected_prompts,
+        )
+        self.assertTrue(
+            all("correct_answer" not in item and "reference_answer" not in item for item in api_questions)
         )
 
         for document in finance["documents"]:
