@@ -1,0 +1,274 @@
+{
+  "schema_version": 1,
+  "section": "financial-literacy",
+  "section_title": "Финансовая грамотность",
+  "topic": "08-section-8",
+  "topic_title": "Цифровой рубль",
+  "questions": [
+    {
+      "id": "financial-literacy.fin-q063",
+      "source_record_id": "FIN-Q063",
+      "source_topic_id": "FIN",
+      "source_type": "comparison",
+      "source_difficulty": "basic",
+      "source_subtopic": "Три формы рубля",
+      "source_slides": [
+        33
+      ],
+      "knowledge_id": "financial-literacy.fin-c032",
+      "linked_knowledge_ids": [
+        "financial-literacy.fin-c032"
+      ],
+      "type": "comparison",
+      "difficulty": 1,
+      "question": "Чьим обязательством является наличный, обычный безналичный и цифровой рубль по таблице лекции?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "Наличный — обязательство Банка России; безналичный остаток на счёте — обязательство коммерческого банка; цифровой рубль — обязательство Банка России.",
+      "key_points": [
+        "Наличный — обязательство Банка России; безналичный остаток на счёте — обязательство коммерческого банка; цифровой рубль — обязательство Банка России."
+      ],
+      "explanation": "Это главное различие таблицы: формы рубля различаются местом учёта и тем, кто является должником перед держателем.",
+      "source": {
+        "id": "financial-literacy.fin-lecture",
+        "name": "Финграм лекция.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-26",
+        "excerpt": "Чьим обязательством является наличный, обычный безналичный и цифровой рубль по таблице лекции?"
+      },
+      "source_excerpt": "Чьим обязательством является наличный, обычный безналичный и цифровой рубль по таблице лекции?"
+    },
+    {
+      "id": "financial-literacy.fin-q064",
+      "source_record_id": "FIN-Q064",
+      "source_topic_id": "FIN",
+      "source_type": "definition",
+      "source_difficulty": "basic",
+      "source_subtopic": "Цифровой рубль",
+      "source_slides": [
+        33
+      ],
+      "knowledge_id": "financial-literacy.fin-c032",
+      "linked_knowledge_ids": [
+        "financial-literacy.fin-c032"
+      ],
+      "type": "definition",
+      "difficulty": 1,
+      "question": "Является ли цифровой рубль отдельной валютой или криптовалютой?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "Нет. Это форма российского рубля; один цифровой рубль равен одному обычному рублю. Он не является криптовалютой и не является банковским вкладом.",
+      "key_points": [
+        "Нет. Это форма российского рубля; один цифровой рубль равен одному обычному рублю. Он не является криптовалютой и не является банковским вкладом."
+      ],
+      "explanation": "Лекция выделяет три формы одного рубля, а не три разные валюты.",
+      "source": {
+        "id": "financial-literacy.fin-lecture",
+        "name": "Финграм лекция.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-26",
+        "excerpt": "Является ли цифровой рубль отдельной валютой или криптовалютой?"
+      },
+      "source_excerpt": "Является ли цифровой рубль отдельной валютой или криптовалютой?"
+    },
+    {
+      "id": "financial-literacy.fin-q065",
+      "source_record_id": "FIN-Q065",
+      "source_topic_id": "FIN",
+      "source_type": "explanation",
+      "source_difficulty": "basic",
+      "source_subtopic": "Цифровой кошелёк",
+      "source_slides": [
+        34
+      ],
+      "knowledge_id": "financial-literacy.fin-c033",
+      "linked_knowledge_ids": [
+        "financial-literacy.fin-c033"
+      ],
+      "type": "understanding",
+      "difficulty": 1,
+      "question": "Где учитываются цифровые рубли и какую роль выполняет подключённый коммерческий банк?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "Цифровые рубли учитываются на платформе Банка России; подключённый банк обеспечивает интерфейс доступа.",
+      "key_points": [
+        "Цифровые рубли учитываются на платформе Банка России; подключённый банк обеспечивает интерфейс доступа."
+      ],
+      "explanation": "Человек обращается к кошельку через банковское приложение, но цифровые рубли — обязательство ЦБ. По слайду один кошелёк доступен через разные подключённые банки.",
+      "source": {
+        "id": "financial-literacy.fin-lecture",
+        "name": "Финграм лекция.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-26",
+        "excerpt": "Где учитываются цифровые рубли и какую роль выполняет подключённый коммерческий банк?"
+      },
+      "source_excerpt": "Где учитываются цифровые рубли и какую роль выполняет подключённый коммерческий банк?"
+    },
+    {
+      "id": "financial-literacy.fin-q066",
+      "source_record_id": "FIN-Q066",
+      "source_topic_id": "FIN",
+      "source_type": "recall",
+      "source_difficulty": "basic",
+      "source_subtopic": "Цифровой рубль",
+      "source_slides": [
+        35
+      ],
+      "knowledge_id": "financial-literacy.fin-c034",
+      "linked_knowledge_ids": [
+        "financial-literacy.fin-c034"
+      ],
+      "type": "understanding",
+      "difficulty": 1,
+      "question": "Какие свойства цифрового рубля перечислены на слайде 35?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "Нет процентов, кешбэка и кредита в цифровых рублях; гражданин не обязан открывать кошелёк; переводы между гражданами бесплатны; указан лимит пополнения 300 тыс. руб. в месяц; страхование вкладов не применяется.",
+      "key_points": [
+        "Нет процентов, кешбэка и кредита в цифровых рублях; гражданин не обязан открывать кошелёк; переводы между гражданами бесплатны; указан лимит пополнения 300 тыс. руб. в месяц; страхование вкладов не применяется."
+      ],
+      "explanation": "Ответ следует воспроизводить со ссылкой на конкретный слайд. Вопрос о составе источников для лимита пополнения требует отметить различие со слайдом 42.",
+      "source": {
+        "id": "financial-literacy.fin-lecture",
+        "name": "Финграм лекция.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-26",
+        "excerpt": "Какие свойства цифрового рубля перечислены на слайде 35?"
+      },
+      "source_excerpt": "Какие свойства цифрового рубля перечислены на слайде 35?"
+    },
+    {
+      "id": "financial-literacy.fin-q067",
+      "source_record_id": "FIN-Q067",
+      "source_topic_id": "FIN",
+      "source_type": "comparison",
+      "source_difficulty": "basic",
+      "source_subtopic": "Цифровой рубль и СБП",
+      "source_slides": [
+        36
+      ],
+      "knowledge_id": "financial-literacy.fin-c035",
+      "linked_knowledge_ids": [
+        "financial-literacy.fin-c035"
+      ],
+      "type": "comparison",
+      "difficulty": 1,
+      "question": "Как цифровой рубль сравнивается с обычным счётом и СБП по процентам и кешбэку?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "По обычному банковскому счёту проценты могут начисляться и кешбэк возможен; по цифровому рублю проценты и кешбэк не начисляются.",
+      "key_points": [
+        "По обычному банковскому счёту проценты могут начисляться и кешбэк возможен; по цифровому рублю проценты и кешбэк не начисляются."
+      ],
+      "explanation": "Это одно из сравнений на слайде 36. Переводы между гражданами цифровыми рублями по лекции бесплатны.",
+      "source": {
+        "id": "financial-literacy.fin-lecture",
+        "name": "Финграм лекция.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-26",
+        "excerpt": "Как цифровой рубль сравнивается с обычным счётом и СБП по процентам и кешбэку?"
+      },
+      "source_excerpt": "Как цифровой рубль сравнивается с обычным счётом и СБП по процентам и кешбэку?"
+    },
+    {
+      "id": "financial-literacy.fin-q068",
+      "source_record_id": "FIN-Q068",
+      "source_topic_id": "FIN",
+      "source_type": "recall",
+      "source_difficulty": "basic",
+      "source_subtopic": "Цифровой рубль и бизнес",
+      "source_slides": [
+        36
+      ],
+      "knowledge_id": "financial-literacy.fin-c035",
+      "linked_knowledge_ids": [
+        "financial-literacy.fin-c035"
+      ],
+      "type": "understanding",
+      "difficulty": 1,
+      "question": "Какая стандартная комиссия для бизнеса приведена в лекции с 2027 года?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "0,3% за оплату товаров цифровыми рублями, но не более 1 500 рублей за операцию.",
+      "key_points": [
+        "0,3% за оплату товаров цифровыми рублями, но не более 1 500 рублей за операцию."
+      ],
+      "explanation": "Значение относится к будущему периоду, указанному в лекции, и не должно представляться как параметр 2026 года.",
+      "source": {
+        "id": "financial-literacy.fin-lecture",
+        "name": "Финграм лекция.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-26",
+        "excerpt": "Какая стандартная комиссия для бизнеса приведена в лекции с 2027 года?"
+      },
+      "source_excerpt": "Какая стандартная комиссия для бизнеса приведена в лекции с 2027 года?"
+    },
+    {
+      "id": "financial-literacy.fin-q069",
+      "source_record_id": "FIN-Q069",
+      "source_topic_id": "FIN",
+      "source_type": "definition",
+      "source_difficulty": "basic",
+      "source_subtopic": "Смарт-контракты",
+      "source_slides": [
+        37
+      ],
+      "knowledge_id": "financial-literacy.fin-c036",
+      "linked_knowledge_ids": [
+        "financial-literacy.fin-c036"
+      ],
+      "type": "definition",
+      "difficulty": 1,
+      "question": "Что такое смарт-контракт в контексте лекции?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "Механизм, позволяющий провести платёж автоматически при выполнении заранее заданных условий.",
+      "key_points": [
+        "Механизм, позволяющий провести платёж автоматически при выполнении заранее заданных условий."
+      ],
+      "explanation": "Пример — оплата подрядчику после подтверждения выполненных строительных работ. Это описание функции автоматизации платежа из презентации.",
+      "source": {
+        "id": "financial-literacy.fin-lecture",
+        "name": "Финграм лекция.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-26",
+        "excerpt": "Что такое смарт-контракт в контексте лекции?"
+      },
+      "source_excerpt": "Что такое смарт-контракт в контексте лекции?"
+    },
+    {
+      "id": "financial-literacy.fin-q070",
+      "source_record_id": "FIN-Q070",
+      "source_topic_id": "FIN",
+      "source_type": "explanation",
+      "source_difficulty": "basic",
+      "source_subtopic": "Цифровой рубль и банки",
+      "source_slides": [
+        38
+      ],
+      "knowledge_id": "financial-literacy.fin-c037",
+      "linked_knowledge_ids": [
+        "financial-literacy.fin-c037"
+      ],
+      "type": "understanding",
+      "difficulty": 1,
+      "question": "Что меняется при переводе 100 тыс. рублей с банковского счёта в цифровой кошелёк в схеме лекции?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "Обязательство коммерческого банка перед клиентом уменьшается на 100 тыс. руб.; цифровые рубли клиента на платформе ЦБ увеличиваются на 100 тыс. руб.; при обычной схеме уменьшаются резервы банка в ЦБ.",
+      "key_points": [
+        "Обязательство коммерческого банка перед клиентом уменьшается на 100 тыс. руб.; цифровые рубли клиента на платформе ЦБ увеличиваются на 100 тыс. руб.; при обычной схеме уменьшаются резервы банка в ЦБ."
+      ],
+      "explanation": "У Банка России меняется структура обязательств: меньше резервов коммерческого банка, больше цифровых рублей гражданина. Последствия массового перехода на слайде поставлены как открытый вопрос.",
+      "source": {
+        "id": "financial-literacy.fin-lecture",
+        "name": "Финграм лекция.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-26",
+        "excerpt": "Что меняется при переводе 100 тыс. рублей с банковского счёта в цифровой кошелёк в схеме лекции?"
+      },
+      "source_excerpt": "Что меняется при переводе 100 тыс. рублей с банковского счёта в цифровой кошелёк в схеме лекции?"
+    }
+  ],
+  "section_description": "Налоги, вклады, кредиты, предпринимательство, инвестиции и цифровой рубль по материалам лекции «Финансовая грамотность»."
+}

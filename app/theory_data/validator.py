@@ -61,6 +61,7 @@ def load_theory_repository(root: Path) -> TheoryRepository:
     total_questions = 0
     demo_directories = 0
     known_ids: set[str] = set()
+    knowledge_ids_by_section: dict[str, set[str]] = {}
     question_ids: set[str] = set()
     source_references: dict[str, SourceReference] = {}
     topics: list[TheoryTopicDirectory] = []
@@ -109,13 +110,9 @@ def load_theory_repository(root: Path) -> TheoryRepository:
                 f"{directory}: duplicate knowledge IDs: {sorted(duplicate_knowledge_ids)}"
             )
         known_ids.update(document_knowledge_ids)
+        knowledge_ids_by_section.setdefault(knowledge.section, set()).update(document_knowledge_ids)
 
         for question in questions.questions:
-            if question.knowledge_id not in document_knowledge_ids:
-                errors.append(
-                    f"{questions_path}: question {question.id} references unknown "
-                    f"knowledge_id {question.knowledge_id}"
-                )
             if question.id in question_ids:
                 errors.append(f"{questions_path}: duplicate question ID: {question.id}")
             question_ids.add(question.id)
@@ -137,6 +134,19 @@ def load_theory_repository(root: Path) -> TheoryRepository:
         topics.append(
             TheoryTopicDirectory(directory=directory, knowledge=knowledge, questions=questions)
         )
+
+    if errors:
+        raise TheoryValidationError(errors)
+    for topic in topics:
+        section_ids = knowledge_ids_by_section.get(topic.knowledge.section, set())
+        for question in topic.questions.questions:
+            for knowledge_id in {question.knowledge_id, *question.linked_knowledge_ids}:
+                if knowledge_id not in section_ids:
+                    errors.append(
+                        f"{topic.directory / 'questions.json'}: question {question.id} "
+                        f"references unknown knowledge_id {knowledge_id} in section "
+                        f"{topic.knowledge.section}"
+                    )
 
     if errors:
         raise TheoryValidationError(errors)

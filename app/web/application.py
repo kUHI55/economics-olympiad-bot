@@ -136,12 +136,21 @@ class TheoryWebApplication:
 
     def _theory_payload(self) -> dict[str, Any]:
         themes: dict[str, dict[str, Any]] = {}
+        section_knowledge: dict[str, dict[str, dict[str, Any]]] = {}
+        documents: list[tuple[Path, dict[str, Any], dict[str, Any]]] = []
         for knowledge_path in sorted(self.theory_root.rglob("knowledge.json")):
             knowledge_document = json.loads(knowledge_path.read_text(encoding="utf-8"))
             if knowledge_document.get("is_demo", False):
                 continue
             questions_path = knowledge_path.with_name("questions.json")
             question_document = json.loads(questions_path.read_text(encoding="utf-8"))
+            section_id = knowledge_document["section"]
+            index = section_knowledge.setdefault(section_id, {})
+            for item in knowledge_document["knowledge"]:
+                index[item["id"]] = {**item, "subtopic_id": knowledge_document["topic"]}
+            documents.append((knowledge_path, knowledge_document, question_document))
+
+        for _, knowledge_document, question_document in documents:
             section_id = knowledge_document["section"]
             section_directory = self.theory_root / section_id
             theme = themes.setdefault(
@@ -157,20 +166,36 @@ class TheoryWebApplication:
                     "documents": [],
                 },
             )
-            knowledge_by_id = {
-                item["id"]: item for item in knowledge_document["knowledge"]
-            }
+            knowledge_by_id = section_knowledge[section_id]
             subtopic_id = knowledge_document["topic"]
+            subtopic_title = knowledge_document.get("topic_title") or subtopic_id
             subtopic = {
                 "id": subtopic_id,
-                "title": knowledge_document.get("topic_title") or subtopic_id,
-                "knowledge": knowledge_document["knowledge"],
+                "title": subtopic_title,
+                "knowledge": [
+                    {**item, "subtopic_id": subtopic_id}
+                    for item in knowledge_document["knowledge"]
+                ],
                 "questions": [
                     {
                         "id": question["id"],
                         "knowledge_id": question["knowledge_id"],
                         "knowledge_type": knowledge_by_id[question["knowledge_id"]]["type"],
                         "knowledge_title": knowledge_by_id[question["knowledge_id"]]["title"],
+                        "knowledge_subtopic_id": knowledge_by_id[question["knowledge_id"]]["subtopic_id"],
+                        "linked_knowledge_ids": question.get(
+                            "linked_knowledge_ids", [question["knowledge_id"]]
+                        ),
+                        "related_knowledge": [
+                            {
+                                "id": knowledge_id,
+                                "title": knowledge_by_id[knowledge_id]["title"],
+                                "subtopic_id": knowledge_by_id[knowledge_id]["subtopic_id"],
+                            }
+                            for knowledge_id in question.get(
+                                "linked_knowledge_ids", [question["knowledge_id"]]
+                            )
+                        ],
                         "category": (
                             "construction"
                             if CONSTRUCTION_QUESTION_MARKER in question["id"]
@@ -182,6 +207,8 @@ class TheoryWebApplication:
                         "difficulty": question["difficulty"],
                         "question": question["question"],
                         "options": question.get("options", []),
+                        "source_type": question.get("source_type"),
+                        "source_subtopic": question.get("source_subtopic"),
                     }
                     for question in question_document["questions"]
                 ],
@@ -189,7 +216,7 @@ class TheoryWebApplication:
             theme["subtopics"].append(subtopic)
 
             if theme["description"] == "":
-                theme["description"] = self._theme_description(
+                theme["description"] = knowledge_document.get("section_description") or self._theme_description(
                     section_directory, knowledge_document["knowledge"]
                 )
             theme["documents"] = [

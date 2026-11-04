@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "section": "financial-literacy",
+  "section_title": "Финансовая грамотность",
+  "topic": "09-section-9",
+  "topic_title": "Актуальные инициативы и сводные таблицы лекции",
+  "questions": [
+    {
+      "id": "financial-literacy.fin-q071",
+      "source_record_id": "FIN-Q071",
+      "source_topic_id": "FIN",
+      "source_type": "trap",
+      "source_difficulty": "basic",
+      "source_subtopic": "Налоговые инициативы",
+      "source_slides": [
+        40
+      ],
+      "knowledge_id": "financial-literacy.fin-c038",
+      "linked_knowledge_ids": [
+        "financial-literacy.fin-c038"
+      ],
+      "type": "common_mistake",
+      "difficulty": 1,
+      "question": "Предложение Минфина на 2027 год автоматически является действующим законом?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "Нет. Лекция подчёркивает, что предложения бюджетного пакета не являются новыми действующими нормами.",
+      "key_points": [
+        "Нет. Лекция подчёркивает, что предложения бюджетного пакета не являются новыми действующими нормами."
+      ],
+      "explanation": "Нужно различать действующее правило, предложение и вступившую в силу норму. Перед этапом лекция советует проверить итоговый закон.",
+      "source": {
+        "id": "financial-literacy.fin-lecture",
+        "name": "Финграм лекция.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-26",
+        "excerpt": "Предложение Минфина на 2027 год автоматически является действующим законом?"
+      },
+      "source_excerpt": "Предложение Минфина на 2027 год автоматически является действующим законом?"
+    }
+  ],
+  "section_description": "Налоги, вклады, кредиты, предпринимательство, инвестиции и цифровой рубль по материалам лекции «Финансовая грамотность»."
+}

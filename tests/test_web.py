@@ -65,9 +65,11 @@ class TheoryWebRouteTests(unittest.TestCase):
         self.assertEqual(themes["utility-and-consumer"]["title"], "Полезность и потребитель")
         self.assertEqual(themes["monopoly"]["title"], "Монополия")
         self.assertEqual(themes["finance"]["title"], "Финансы")
+        self.assertEqual(themes["financial-literacy"]["title"], "Финансовая грамотность")
+        self.assertEqual(themes["elasticity"]["title"], "Эластичность")
         self.assertEqual(
             set(themes),
-            {"mathematical-base", "utility-and-consumer", "monopoly", "finance"},
+            {"mathematical-base", "utility-and-consumer", "monopoly", "finance", "financial-literacy", "elasticity"},
         )
         self.assertNotIn("demo", themes)
         self.assertGreaterEqual(themes["mathematical-base"]["construction_count"], 14)
@@ -83,8 +85,12 @@ class TheoryWebRouteTests(unittest.TestCase):
         self.assertEqual(len(themes["monopoly"]["subtopics"]), 18)
         self.assertEqual(themes["finance"]["knowledge_count"], 363)
         self.assertEqual(themes["finance"]["question_count"], 362)
+        self.assertEqual(themes["financial-literacy"]["knowledge_count"], 53)
+        self.assertEqual(themes["financial-literacy"]["question_count"], 71)
+        self.assertEqual(themes["elasticity"]["knowledge_count"], 60)
+        self.assertEqual(themes["elasticity"]["question_count"], 62)
         self.assertEqual(len(themes["finance"]["subtopics"]), 13)
-        self.assertEqual(len(payload["themes"]), 4)
+        self.assertEqual(len(payload["themes"]), 6)
         self.assertTrue(
             all(
                 subtopic["knowledge"] and subtopic["questions"]
@@ -96,10 +102,47 @@ class TheoryWebRouteTests(unittest.TestCase):
             all(
                 "reference_answer" not in question and "correct_answer" not in question
                 for theme in payload["themes"]
-                for topic in theme["subtopics"]
-                for question in topic["questions"]
+                for subtopic in theme["subtopics"]
+                for question in subtopic["questions"]
             )
         )
+
+    def test_open_answer_is_checked_locally_and_answer_keys_stay_out_of_catalog(self) -> None:
+        catalog_response = request(self.application, "/api/theory")
+        catalog = json.loads(catalog_response["body"])
+        theme = next(item for item in catalog["themes"] if item["id"] == "elasticity")
+        question = next(
+            question
+            for subtopic in theme["subtopics"]
+            for question in subtopic["questions"]
+        )
+        self.assertNotIn("reference_answer", question)
+        self.assertNotIn("correct_answer", question)
+
+        source_question = next(
+            question
+            for topic in web_module.load_theory_repository(THEORY_ROOT).topics
+            if topic.knowledge.section == "elasticity"
+            for question in topic.questions.questions
+        )
+        result = request(
+            self.application,
+            "/api/answer",
+            method="POST",
+            body=json.dumps(
+                {
+                    "mode": "local",
+                    "question_id": source_question.id,
+                    "answer": source_question.reference_answer,
+                },
+                ensure_ascii=False,
+            ).encode("utf-8"),
+            headers={"REMOTE_ADDR": "127.0.0.1", "CONTENT_TYPE": "application/json"},
+        )
+        checked = json.loads(result["body"])
+        self.assertTrue(result["status"].startswith("200"))
+        self.assertEqual(checked["verdict"], "correct")
+        self.assertEqual(checked["reference_answer"], source_question.reference_answer)
 
     def test_static_assets_use_expected_types_and_reject_unknown_files(self) -> None:
         for name in ("app.js", "learning.js"):
@@ -117,13 +160,32 @@ class TheoryWebRouteTests(unittest.TestCase):
         unknown = request(self.application, "/static/not-a-real-asset.js")
         self.assertTrue(unknown["status"].startswith("404"))
 
+    def test_new_study_notes_are_available_through_existing_document_route(self) -> None:
+        for section, phrase in (
+            ("financial-literacy", "Конспект для ЭкоЛаба: Финансовая грамотность"),
+            ("elasticity", "Конспект для ЭкоЛаба: Эластичность"),
+        ):
+            with self.subTest(section=section):
+                response = request(
+                    self.application,
+                    f"/api/documents/{section}/study-notes.md",
+                )
+                self.assertTrue(response["status"].startswith("200"))
+                self.assertEqual(response["headers"]["Content-Type"], "text/markdown; charset=utf-8")
+                self.assertIn(phrase, response["body"].decode("utf-8"))
+
+        homepage = request(self.application, "/")["body"].decode("utf-8")
+        self.assertIn("mathjax@3.2.2/es5/tex-chtml.js", homepage)
+        script = request(self.application, "/static/app.js")["body"].decode("utf-8")
+        self.assertIn("MathJax.typesetPromise", script)
+
     def test_html_loads_learning_module_before_app_and_app_reports_missing_module(self) -> None:
         homepage = request(self.application, "/")["body"].decode()
         self.assertLess(homepage.index('src="/static/learning.js"'), homepage.index('src="/static/app.js"'))
         app_script = request(self.application, "/static/app.js")["body"].decode()
         self.assertIn("EcolabLearning is unavailable: /static/learning.js did not initialize before app.js", app_script)
 
-    def test_all_active_quiz_questions_have_four_distinct_keyed_choices(self) -> None:
+    def test_active_quiz_questions_preserve_choice_and_open_answer_formats(self) -> None:
         repository = web_module.load_theory_repository(THEORY_ROOT)
         questions = [
             question
@@ -131,26 +193,36 @@ class TheoryWebRouteTests(unittest.TestCase):
             if not topic.knowledge.is_demo
             for question in topic.questions.questions
         ]
-        self.assertEqual(len(questions), 481)
+        self.assertEqual(len(questions), 614)
+        multiple_choice_count = 0
+        open_answer_count = 0
         for question in questions:
             with self.subTest(question_id=question.id):
-                self.assertIs(question.type, QuestionType.MULTIPLE_CHOICE)
-                self.assertEqual(len(question.options), 4)
-                texts = [option.text.strip() for option in question.options]
-                self.assertTrue(all(texts))
-                self.assertEqual(len({text.casefold() for text in texts}), 4)
-                correct = [
-                    option for option in question.options
-                    if option.id == question.correct_answer
-                ]
-                self.assertEqual(len(correct), 1)
-                self.assertEqual(correct[0].text, question.reference_answer)
+                if question.type is QuestionType.MULTIPLE_CHOICE:
+                    multiple_choice_count += 1
+                    self.assertEqual(len(question.options), 4)
+                    texts = [option.text.strip() for option in question.options]
+                    self.assertTrue(all(texts))
+                    self.assertEqual(len({text.casefold() for text in texts}), 4)
+                    correct = [
+                        option for option in question.options
+                        if option.id == question.correct_answer
+                    ]
+                    self.assertEqual(len(correct), 1)
+                    self.assertEqual(correct[0].text, question.reference_answer)
+                else:
+                    open_answer_count += 1
+                    self.assertEqual(question.options, [])
+                    self.assertIsNone(question.correct_answer)
                 self.assertTrue(question.explanation.strip())
+        self.assertEqual(multiple_choice_count, 481)
+        self.assertEqual(open_answer_count, 133)
 
     def test_quiz_frontend_uses_choices_and_retains_submission_state(self) -> None:
         script = request(self.application, "/static/app.js")["body"].decode()
         self.assertIn('input type="radio" name="answer"', script)
-        self.assertNotIn("<textarea", script)
+        self.assertIn('<textarea class="answer"', script)
+        self.assertIn('question.type === "multiple_choice"', script)
         self.assertIn("form.addEventListener(\"submit\", submitAnswer)", script)
         self.assertIn("state.selectedAnswer", script)
         self.assertIn('data-action="next-question"', script)
@@ -178,7 +250,9 @@ class TheoryWebRouteTests(unittest.TestCase):
         question = next(
             question
             for topic in web_module.load_theory_repository(THEORY_ROOT).topics
+            if any(item.type is QuestionType.MULTIPLE_CHOICE for item in topic.questions.questions)
             for question in topic.questions.questions
+            if question.type is QuestionType.MULTIPLE_CHOICE
         )
         correct_index = next(
             index for index, option in enumerate(question.options)
@@ -559,14 +633,17 @@ class LocalAnswerCheckerTests(unittest.TestCase):
         questions_by_type = {}
         for question in self.questions:
             questions_by_type.setdefault(question.type, question)
-        self.assertEqual({kind.value for kind in questions_by_type}, {"multiple_choice"})
-        question = questions_by_type[QuestionType.MULTIPLE_CHOICE]
-        answer = str(next(
-            index for index, option in enumerate(question.options)
-            if option.id == question.correct_answer
-        ))
-        with self.subTest(question_type="multiple_choice"):
-            self.assertEqual(check_local_answer(question, answer)["verdict"], "correct")
+        self.assertGreater(len(questions_by_type), 1)
+        for question_type, question in questions_by_type.items():
+            if question_type is QuestionType.MULTIPLE_CHOICE:
+                answer = str(next(
+                    index for index, option in enumerate(question.options)
+                    if option.id == question.correct_answer
+                ))
+            else:
+                answer = question.reference_answer
+            with self.subTest(question_type=question_type.value):
+                self.assertEqual(check_local_answer(question, answer)["verdict"], "correct")
 
 
 class WebsiteProgressPersistenceTests(unittest.IsolatedAsyncioTestCase):

@@ -1,0 +1,445 @@
+{
+  "schema_version": 1,
+  "section": "financial-literacy",
+  "section_title": "Финансовая грамотность",
+  "topic": "02-section-2",
+  "topic_title": "Самозанятость и предпринимательство",
+  "questions": [
+    {
+      "id": "financial-literacy.fin-q017",
+      "source_record_id": "FIN-Q017",
+      "source_topic_id": "FIN",
+      "source_type": "recall",
+      "source_difficulty": "basic",
+      "source_subtopic": "НПД",
+      "source_slides": [
+        9
+      ],
+      "knowledge_id": "financial-literacy.fin-c009",
+      "linked_knowledge_ids": [
+        "financial-literacy.fin-c009"
+      ],
+      "type": "understanding",
+      "difficulty": 1,
+      "question": "Какая ставка НПД применяется к доходу от физического лица?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "4%.",
+      "key_points": [
+        "4%."
+      ],
+      "explanation": "Лекция разделяет покупателей на физлиц и ИП/организации. Для физических лиц указана ставка 4%.",
+      "source": {
+        "id": "financial-literacy.fin-lecture",
+        "name": "Финграм лекция.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-26",
+        "excerpt": "Какая ставка НПД применяется к доходу от физического лица?"
+      },
+      "source_excerpt": "Какая ставка НПД применяется к доходу от физического лица?"
+    },
+    {
+      "id": "financial-literacy.fin-q018",
+      "source_record_id": "FIN-Q018",
+      "source_topic_id": "FIN",
+      "source_type": "recall",
+      "source_difficulty": "basic",
+      "source_subtopic": "НПД",
+      "source_slides": [
+        9
+      ],
+      "knowledge_id": "financial-literacy.fin-c009",
+      "linked_knowledge_ids": [
+        "financial-literacy.fin-c009"
+      ],
+      "type": "understanding",
+      "difficulty": 1,
+      "question": "Какая ставка НПД применяется к доходу от ИП или организации?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "6%.",
+      "key_points": [
+        "6%."
+      ],
+      "explanation": "Ставка зависит от категории покупателя, а не только от вида услуги.",
+      "source": {
+        "id": "financial-literacy.fin-lecture",
+        "name": "Финграм лекция.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-26",
+        "excerpt": "Какая ставка НПД применяется к доходу от ИП или организации?"
+      },
+      "source_excerpt": "Какая ставка НПД применяется к доходу от ИП или организации?"
+    },
+    {
+      "id": "financial-literacy.fin-q019",
+      "source_record_id": "FIN-Q019",
+      "source_topic_id": "FIN",
+      "source_type": "recall",
+      "source_difficulty": "basic",
+      "source_subtopic": "НПД",
+      "source_slides": [
+        9
+      ],
+      "knowledge_id": "financial-literacy.fin-c009",
+      "linked_knowledge_ids": [
+        "financial-literacy.fin-c009"
+      ],
+      "type": "understanding",
+      "difficulty": 1,
+      "question": "Каков лимит дохода на НПД по лекции?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "2,4 млн рублей за календарный год; отдельного ограничения по отдельным месяцам нет.",
+      "key_points": [
+        "2,4 млн рублей за календарный год; отдельного ограничения по отдельным месяцам нет."
+      ],
+      "explanation": "Важно не путать годовой лимит с месячным лимитом: презентация прямо говорит, что отдельного месячного ограничения нет.",
+      "source": {
+        "id": "financial-literacy.fin-lecture",
+        "name": "Финграм лекция.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-26",
+        "excerpt": "Каков лимит дохода на НПД по лекции?"
+      },
+      "source_excerpt": "Каков лимит дохода на НПД по лекции?"
+    },
+    {
+      "id": "financial-literacy.fin-q020",
+      "source_record_id": "FIN-Q020",
+      "source_topic_id": "FIN",
+      "source_type": "explanation",
+      "source_difficulty": "basic",
+      "source_subtopic": "НПД",
+      "source_slides": [
+        9
+      ],
+      "knowledge_id": "financial-literacy.fin-c009",
+      "linked_knowledge_ids": [
+        "financial-literacy.fin-c009"
+      ],
+      "type": "understanding",
+      "difficulty": 1,
+      "question": "Что делает стартовый бонус НПД в 10 000 рублей?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "Автоматически снижает начисляемый налог до полного исчерпания бонуса.",
+      "key_points": [
+        "Автоматически снижает начисляемый налог до полного исчерпания бонуса."
+      ],
+      "explanation": "Это налоговый бонус, уменьшающий начисленный налог; его не следует путать с доходом или ежемесячной выплатой.",
+      "source": {
+        "id": "financial-literacy.fin-lecture",
+        "name": "Финграм лекция.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-26",
+        "excerpt": "Что делает стартовый бонус НПД в 10 000 рублей?"
+      },
+      "source_excerpt": "Что делает стартовый бонус НПД в 10 000 рублей?"
+    },
+    {
+      "id": "financial-literacy.fin-q021",
+      "source_record_id": "FIN-Q021",
+      "source_topic_id": "FIN",
+      "source_type": "recall",
+      "source_difficulty": "basic",
+      "source_subtopic": "НПД",
+      "source_slides": [
+        9
+      ],
+      "knowledge_id": "financial-literacy.fin-c009",
+      "linked_knowledge_ids": [
+        "financial-literacy.fin-c009"
+      ],
+      "type": "understanding",
+      "difficulty": 1,
+      "question": "Может ли самозанятый на НПД нанимать работников по трудовому договору для деятельности на этом режиме?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "Нет.",
+      "key_points": [
+        "Нет."
+      ],
+      "explanation": "Это одно из ограничений режима, прямо перечисленных на слайде. Также в лекции сказано, что перепродажа закупленных товаров обычно запрещена.",
+      "source": {
+        "id": "financial-literacy.fin-lecture",
+        "name": "Финграм лекция.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-26",
+        "excerpt": "Может ли самозанятый на НПД нанимать работников по трудовому договору для деятельности на этом режиме?"
+      },
+      "source_excerpt": "Может ли самозанятый на НПД нанимать работников по трудовому договору для деятельности на этом режиме?"
+    },
+    {
+      "id": "financial-literacy.fin-q022",
+      "source_record_id": "FIN-Q022",
+      "source_topic_id": "FIN",
+      "source_type": "explanation",
+      "source_difficulty": "basic",
+      "source_subtopic": "НПД и пенсионные права",
+      "source_slides": [
+        9,
+        12
+      ],
+      "knowledge_id": "financial-literacy.fin-c009",
+      "linked_knowledge_ids": [
+        "financial-literacy.fin-c009"
+      ],
+      "type": "understanding",
+      "difficulty": 1,
+      "question": "Что говорится в лекции об обязательных фиксированных страховых взносах самозанятого на НПД и пенсионных правах?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "Нет обязательных фиксированных страховых взносов за себя, но пенсионные права автоматически не накапливаются.",
+      "key_points": [
+        "Нет обязательных фиксированных страховых взносов за себя, но пенсионные права автоматически не накапливаются."
+      ],
+      "explanation": "Отсутствие обязательных фиксированных взносов не означает автоматического накопления пенсионных прав.",
+      "source": {
+        "id": "financial-literacy.fin-lecture",
+        "name": "Финграм лекция.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-26",
+        "excerpt": "Что говорится в лекции об обязательных фиксированных страховых взносах самозанятого на НПД и пенсионных правах?"
+      },
+      "source_excerpt": "Что говорится в лекции об обязательных фиксированных страховых взносах самозанятого на НПД и пенсионных правах?"
+    },
+    {
+      "id": "financial-literacy.fin-q023",
+      "source_record_id": "FIN-Q023",
+      "source_topic_id": "FIN",
+      "source_type": "definition",
+      "source_difficulty": "basic",
+      "source_subtopic": "ИП",
+      "source_slides": [
+        10
+      ],
+      "knowledge_id": "financial-literacy.fin-c010",
+      "linked_knowledge_ids": [
+        "financial-literacy.fin-c010"
+      ],
+      "type": "definition",
+      "difficulty": 1,
+      "question": "Кто такой индивидуальный предприниматель?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "Физическое лицо, зарегистрированное для ведения предпринимательской деятельности без создания юридического лица.",
+      "key_points": [
+        "Физическое лицо, зарегистрированное для ведения предпринимательской деятельности без создания юридического лица."
+      ],
+      "explanation": "Это определение из лекции. ИП остаётся физическим лицом, но ведёт предпринимательскую деятельность в зарегистрированном статусе.",
+      "source": {
+        "id": "financial-literacy.fin-lecture",
+        "name": "Финграм лекция.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-26",
+        "excerpt": "Кто такой индивидуальный предприниматель?"
+      },
+      "source_excerpt": "Кто такой индивидуальный предприниматель?"
+    },
+    {
+      "id": "financial-literacy.fin-q024",
+      "source_record_id": "FIN-Q024",
+      "source_topic_id": "FIN",
+      "source_type": "comparison",
+      "source_difficulty": "basic",
+      "source_subtopic": "ИП",
+      "source_slides": [
+        10
+      ],
+      "knowledge_id": "financial-literacy.fin-c010",
+      "linked_knowledge_ids": [
+        "financial-literacy.fin-c010",
+        "financial-literacy.fin-f08",
+        "financial-literacy.fin-f09"
+      ],
+      "type": "comparison",
+      "difficulty": 1,
+      "question": "В чём различие УСН «Доходы» и УСН «Доходы минус расходы» по лекции?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "При УСН «Доходы» налоговая база — учитываемые доходы; при УСН «Доходы минус расходы» — разница учитываемых доходов и расходов.",
+      "key_points": [
+        "При УСН «Доходы» налоговая база — учитываемые доходы; при УСН «Доходы минус расходы» — разница учитываемых доходов и расходов."
+      ],
+      "explanation": "В таблице лекции указаны ставки 6% и 15% соответственно. Реальное применение зависит от ограничений режима и правил учёта.",
+      "source": {
+        "id": "financial-literacy.fin-lecture",
+        "name": "Финграм лекция.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-26",
+        "excerpt": "В чём различие УСН «Доходы» и УСН «Доходы минус расходы» по лекции?"
+      },
+      "source_excerpt": "В чём различие УСН «Доходы» и УСН «Доходы минус расходы» по лекции?"
+    },
+    {
+      "id": "financial-literacy.fin-q025",
+      "source_record_id": "FIN-Q025",
+      "source_topic_id": "FIN",
+      "source_type": "recall",
+      "source_difficulty": "basic",
+      "source_subtopic": "Страховые взносы ИП",
+      "source_slides": [
+        11
+      ],
+      "knowledge_id": "financial-literacy.fin-c011",
+      "linked_knowledge_ids": [
+        "financial-literacy.fin-c011"
+      ],
+      "type": "understanding",
+      "difficulty": 1,
+      "question": "Какой фиксированный размер страховых взносов ИП приведён для 2026 года?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "57 390 рублей за год.",
+      "key_points": [
+        "57 390 рублей за год."
+      ],
+      "explanation": "Это числовой параметр, приведённый на слайде 11. Его следует хранить с указанием года и источника.",
+      "source": {
+        "id": "financial-literacy.fin-lecture",
+        "name": "Финграм лекция.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-26",
+        "excerpt": "Какой фиксированный размер страховых взносов ИП приведён для 2026 года?"
+      },
+      "source_excerpt": "Какой фиксированный размер страховых взносов ИП приведён для 2026 года?"
+    },
+    {
+      "id": "financial-literacy.fin-q026",
+      "source_record_id": "FIN-Q026",
+      "source_topic_id": "FIN",
+      "source_type": "definition",
+      "source_difficulty": "basic",
+      "source_subtopic": "Страховые взносы ИП",
+      "source_slides": [
+        11
+      ],
+      "knowledge_id": "financial-literacy.fin-c011",
+      "linked_knowledge_ids": [
+        "financial-literacy.fin-c011",
+        "financial-literacy.fin-f10"
+      ],
+      "type": "definition",
+      "difficulty": 1,
+      "question": "Когда по лекции возникает дополнительный взнос 1%?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "При доходе выше 300 000 рублей; 1% начисляется на превышение.",
+      "key_points": [
+        "При доходе выше 300 000 рублей; 1% начисляется на превышение."
+      ],
+      "explanation": "В формуле берётся положительное превышение над 300 000 рублей. Для конкретного режима важно определить, какой доход учитывается.",
+      "source": {
+        "id": "financial-literacy.fin-lecture",
+        "name": "Финграм лекция.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-26",
+        "excerpt": "Когда по лекции возникает дополнительный взнос 1%?"
+      },
+      "source_excerpt": "Когда по лекции возникает дополнительный взнос 1%?"
+    },
+    {
+      "id": "financial-literacy.fin-q027",
+      "source_record_id": "FIN-Q027",
+      "source_topic_id": "FIN",
+      "source_type": "calculation",
+      "source_difficulty": "basic",
+      "source_subtopic": "Страховые взносы ИП",
+      "source_slides": [
+        11
+      ],
+      "knowledge_id": "financial-literacy.fin-c011",
+      "linked_knowledge_ids": [
+        "financial-literacy.fin-c011",
+        "financial-literacy.fin-f10",
+        "financial-literacy.fin-f11"
+      ],
+      "type": "understanding",
+      "difficulty": 1,
+      "question": "В примере ИП на УСН «Доходы» без работников заработал 1,2 млн рублей. Каковы взносы и налог УСН после уменьшения по примеру лекции?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "Взносы — 66 390 рублей; налог до уменьшения — 72 000 рублей; после уменьшения — 5 610 рублей.",
+      "key_points": [
+        "Взносы — 66 390 рублей; налог до уменьшения — 72 000 рублей; после уменьшения — 5 610 рублей."
+      ],
+      "explanation": "Взносы: 57 390 + 1% × (1 200 000 − 300 000) = 66 390. Налог: 1 200 000 × 6% = 72 000. По примеру лекции налог уменьшается на подлежащие уплате взносы: 72 000 − 66 390 = 5 610. Это условный пример с указанными условиями, не универсальная формула для всех ИП.",
+      "source": {
+        "id": "financial-literacy.fin-lecture",
+        "name": "Финграм лекция.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-26",
+        "excerpt": "В примере ИП на УСН «Доходы» без работников заработал 1,2 млн рублей. Каковы взносы и налог УСН после уменьшения по примеру лекции?"
+      },
+      "source_excerpt": "В примере ИП на УСН «Доходы» без работников заработал 1,2 млн рублей. Каковы взносы и налог УСН после уменьшения по примеру лекции?"
+    },
+    {
+      "id": "financial-literacy.fin-q028",
+      "source_record_id": "FIN-Q028",
+      "source_topic_id": "FIN",
+      "source_type": "application",
+      "source_difficulty": "basic",
+      "source_subtopic": "Совмещение зарплаты и НПД",
+      "source_slides": [
+        13
+      ],
+      "knowledge_id": "financial-literacy.fin-c012",
+      "linked_knowledge_ids": [
+        "financial-literacy.fin-c012"
+      ],
+      "type": "understanding",
+      "difficulty": 1,
+      "question": "Можно ли одновременно получать зарплату и доход на НПД?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "Да, если соблюдаются условия режима и ограничения на доходы от нынешнего и бывшего работодателя.",
+      "key_points": [
+        "Да, если соблюдаются условия режима и ограничения на доходы от нынешнего и бывшего работодателя."
+      ],
+      "explanation": "В примере зарплата и самозанятая подработка облагаются разными налогами; трудовые отношения нельзя просто маскировать под услуги на НПД.",
+      "source": {
+        "id": "financial-literacy.fin-lecture",
+        "name": "Финграм лекция.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-26",
+        "excerpt": "Можно ли одновременно получать зарплату и доход на НПД?"
+      },
+      "source_excerpt": "Можно ли одновременно получать зарплату и доход на НПД?"
+    },
+    {
+      "id": "financial-literacy.fin-q029",
+      "source_record_id": "FIN-Q029",
+      "source_topic_id": "FIN",
+      "source_type": "calculation",
+      "source_difficulty": "basic",
+      "source_subtopic": "Совмещение зарплаты и НПД",
+      "source_slides": [
+        13
+      ],
+      "knowledge_id": "financial-literacy.fin-c012",
+      "linked_knowledge_ids": [
+        "financial-literacy.fin-c012"
+      ],
+      "type": "understanding",
+      "difficulty": 1,
+      "question": "В примере зарплата 1,2 млн рублей, доход на НПД от физлиц 400 тыс. рублей, нет вычетов и неиспользованного бонуса. Какова сумма двух налогов?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "172 000 рублей: 156 000 НДФЛ с зарплаты и 16 000 НПД с подработки.",
+      "key_points": [
+        "172 000 рублей: 156 000 НДФЛ с зарплаты и 16 000 НПД с подработки."
+      ],
+      "explanation": "С зарплаты: 1 200 000 × 13% = 156 000; НПД: 400 000 × 4% = 16 000. Это два отдельных налога.",
+      "source": {
+        "id": "financial-literacy.fin-lecture",
+        "name": "Финграм лекция.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-26",
+        "excerpt": "В примере зарплата 1,2 млн рублей, доход на НПД от физлиц 400 тыс. рублей, нет вычетов и неиспользованного бонуса. Какова сумма двух налогов?"
+      },
+      "source_excerpt": "В примере зарплата 1,2 млн рублей, доход на НПД от физлиц 400 тыс. рублей, нет вычетов и неиспользованного бонуса. Какова сумма двух налогов?"
+    }
+  ],
+  "section_description": "Налоги, вклады, кредиты, предпринимательство, инвестиции и цифровой рубль по материалам лекции «Финансовая грамотность»."
+}

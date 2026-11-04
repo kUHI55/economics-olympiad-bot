@@ -111,7 +111,7 @@ test("unanswered local sessions and their attempts survive page reload", () => {
   assert.deepEqual(learning.reviewQuestionIds(restored), ["monopoly.q1"]);
 });
 
-function createQuizHarness({ answerMode = "local", storage = memoryStorage(), failSession = false, questionPrompt = null } = {}) {
+function createQuizHarness({ answerMode = "local", storage = memoryStorage(), failSession = false, questionPrompt = null, questionType = "multiple_choice" } = {}) {
   class Element {
     constructor(dataset = {}, value = "") { this.dataset = dataset; this.value = value; this.handlers = {}; }
     addEventListener(name, handler) { this.handlers[name] = handler; }
@@ -158,8 +158,9 @@ function createQuizHarness({ answerMode = "local", storage = memoryStorage(), fa
       id: "basics", title: "Основы", knowledge: [],
       questions: [0, 1].map((index) => ({
         id: `monopoly.q${index + 1}`, question: questionPrompt || `Вопрос ${index + 1}?`, difficulty: 1,
-        category: "theory", knowledge_id: "monopoly.basics",
-        options: ["A", "B", "C", "D"].map((text, option) => ({ id: String(option), text })),
+        category: "theory", type: questionType, knowledge_id: "monopoly.basics",
+        related_knowledge: [{ id: "monopoly.basics", title: "Основы", subtopic_id: "basics" }],
+        options: questionType === "multiple_choice" ? ["A", "B", "C", "D"].map((text, option) => ({ id: String(option), text })) : [],
         reference_answer: "A", explanation: "Пояснение", source_excerpt: "Источник",
       })),
     }],
@@ -175,8 +176,8 @@ function createQuizHarness({ answerMode = "local", storage = memoryStorage(), fa
       ? response({ error: "Database unavailable" }, 503)
       : response({ session_id: 77 }, 201);
     if (url === "/api/answer") return response({
-      verdict: JSON.parse(options.body).answer === "0" ? "correct" : "incorrect",
-      score: JSON.parse(options.body).answer === "0" ? 1 : 0,
+      verdict: questionType === "multiple_choice" ? (JSON.parse(options.body).answer === "0" ? "correct" : "incorrect") : "uncertain",
+      score: questionType === "multiple_choice" ? (JSON.parse(options.body).answer === "0" ? 1 : 0) : null,
       reference_answer: "A", explanation: "Пояснение", short_explanation: "Проверено",
       source_excerpt: "Источник", progress_saved: JSON.parse(options.body).mode !== "local",
     });
@@ -184,6 +185,7 @@ function createQuizHarness({ answerMode = "local", storage = memoryStorage(), fa
     throw new Error(`Unexpected fetch: ${url}`);
   };
   const selected = { value: "" };
+  const openAnswer = { value: "" };
   const elements = new Map();
   const document = {
     querySelector(selector) {
@@ -191,6 +193,7 @@ function createQuizHarness({ answerMode = "local", storage = memoryStorage(), fa
       if (selector === "#navigation") return nav;
       if (selector === "#progress-storage-status") return elements.get(selector) || (elements.set(selector, { textContent: "" }), elements.get(selector));
       if (selector === 'input[name="answer"]:checked') return selected.value ? selected : null;
+      if (selector === 'textarea[name="answer"]') return content.html.includes('name="answer"') && content.html.includes("<textarea") ? openAnswer : null;
       if (selector === "#answer-form" && content.html.includes('id="answer-form"')) {
         const key = `form:${content.html}`;
         if (!elementCache.has(key)) elementCache.set(key, new Element());
@@ -203,7 +206,10 @@ function createQuizHarness({ answerMode = "local", storage = memoryStorage(), fa
       if (selector === "#quiz-theme") return { get value() { return controls.quizTheme; }, set value(value) { controls.quizTheme = value; } };
       return null;
     },
-    querySelectorAll: () => [],
+    querySelectorAll(selector) {
+      if (selector === 'textarea[name="answer"]' && content.html.includes("<textarea")) return [openAnswer];
+      return [];
+    },
   };
   const window = {
     location: { hash: "#home", href: "http://localhost/#home" }, scrollY: 0,
@@ -234,7 +240,7 @@ function createQuizHarness({ answerMode = "local", storage = memoryStorage(), fa
     assert.ok(link, `navigation item ${view} is visible`);
     await link.handlers.click({ preventDefault() {} });
   };
-  return { context, content, requests, selected, storage, ready, action, navigate, controls };
+  return { context, content, requests, selected, openAnswer, storage, ready, action, navigate, controls };
 }
 
 test("real app flow starts theme and mixed local quizzes, checks an answer, and resumes after reload", async () => {
@@ -286,6 +292,21 @@ test("quiz question renders inline formula markdown as safe code markup", async 
   assert.match(harness.content.innerHTML, /<code>FV=S\*\(1\+r\)\^n<\/code>/);
   assert.doesNotMatch(harness.content.innerHTML, /<script>/);
   assert.doesNotMatch(harness.content.innerHTML, /\[формула из справочника\]/);
+});
+
+test("source open-answer questions render a text field and accept a cautious local self-check", async () => {
+  const harness = createQuizHarness({ questionType: "understanding", questionPrompt: "Объясни связь цены и спроса." });
+  await harness.ready;
+  await harness.navigate("quizzes");
+  await harness.action("start-global-quiz");
+  assert.match(harness.content.innerHTML, /<textarea class="answer"/);
+  assert.match(harness.content.innerHTML, /Открытый ответ не оценивается по совпадению строк/);
+  harness.openAnswer.value = "Пробный свободный ответ";
+  await harness.context.document.querySelector("#answer-form").handlers.submit({ preventDefault() {} });
+  assert.match(harness.content.innerHTML, /Не удалось надёжно оценить автоматически/);
+  assert.match(harness.content.innerHTML, /Правильный ответ:<\/strong> A/);
+  assert.match(harness.content.innerHTML, /Показать итог/);
+  assert.equal(learning.readStore(harness.storage).sessions[0].attempts[0].verdict, "uncertain");
 });
 
 test("local review launches saved wrong questions and empty review keeps normal quiz available", async () => {

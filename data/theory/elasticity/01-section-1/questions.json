@@ -1,0 +1,384 @@
+{
+  "schema_version": 1,
+  "section": "elasticity",
+  "section_title": "Эластичность",
+  "topic": "01-section-1",
+  "topic_title": "Основное понятие эластичности",
+  "questions": [
+    {
+      "id": "elasticity.el-q001",
+      "source_record_id": "EL-Q001",
+      "source_topic_id": "EL",
+      "source_type": "definition",
+      "source_difficulty": "basic",
+      "source_subtopic": "Основы",
+      "source_slides": [
+        3
+      ],
+      "knowledge_id": "elasticity.el-c001",
+      "linked_knowledge_ids": [
+        "elasticity.el-c001"
+      ],
+      "type": "definition",
+      "difficulty": 1,
+      "question": "Что измеряет эластичность?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "Насколько относительно изменяется одна величина при изменении другой.",
+      "key_points": [
+        "Насколько относительно изменяется одна величина при изменении другой."
+      ],
+      "explanation": "Эластичность сравнивает относительные (процентные) изменения, в отличие от производной, которая измеряет абсолютное изменение результата на единицу изменения аргумента.",
+      "source": {
+        "id": "elasticity.el-lecture",
+        "name": "эластичность.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-28",
+        "excerpt": "Что измеряет эластичность?"
+      },
+      "source_excerpt": "Что измеряет эластичность?"
+    },
+    {
+      "id": "elasticity.el-q002",
+      "source_record_id": "EL-Q002",
+      "source_topic_id": "EL",
+      "source_type": "comparison",
+      "source_difficulty": "basic",
+      "source_subtopic": "Основы",
+      "source_slides": [
+        3,
+        4
+      ],
+      "knowledge_id": "elasticity.el-c001",
+      "linked_knowledge_ids": [
+        "elasticity.el-c001",
+        "elasticity.el-c002"
+      ],
+      "type": "comparison",
+      "difficulty": 1,
+      "question": "Чем производная dy/dx отличается от эластичности?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "Производная измеряет абсолютное изменение y при изменении x на единицу; эластичность измеряет отношение относительных изменений y и x.",
+      "key_points": [
+        "Производная измеряет абсолютное изменение y при изменении x на единицу; эластичность измеряет отношение относительных изменений y и x."
+      ],
+      "explanation": "Эластичность является безразмерной и не зависит от единиц измерения переменных.",
+      "source": {
+        "id": "elasticity.el-lecture",
+        "name": "эластичность.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-28",
+        "excerpt": "Чем производная dy/dx отличается от эластичности?"
+      },
+      "source_excerpt": "Чем производная dy/dx отличается от эластичности?"
+    },
+    {
+      "id": "elasticity.el-q003",
+      "source_record_id": "EL-Q003",
+      "source_topic_id": "EL",
+      "source_type": "formula",
+      "source_difficulty": "basic",
+      "source_subtopic": "Точечная эластичность",
+      "source_slides": [
+        4
+      ],
+      "knowledge_id": "elasticity.el-c002",
+      "linked_knowledge_ids": [
+        "elasticity.el-c002",
+        "elasticity.el-f01"
+      ],
+      "type": "formula",
+      "difficulty": 1,
+      "question": "Запиши точечную эластичность y по x через производную.",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "E_{y,x} = (dy/dx) × (x/y).",
+      "key_points": [
+        "E_{y,x} = (dy/dx) × (x/y)."
+      ],
+      "explanation": "Производную умножают на отношение значения аргумента к значению функции. Это локальная эластичность в рассматриваемой точке.",
+      "source": {
+        "id": "elasticity.el-lecture",
+        "name": "эластичность.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-28",
+        "excerpt": "Запиши точечную эластичность y по x через производную."
+      },
+      "source_excerpt": "Запиши точечную эластичность y по x через производную."
+    },
+    {
+      "id": "elasticity.el-q004",
+      "source_record_id": "EL-Q004",
+      "source_topic_id": "EL",
+      "source_type": "comparison",
+      "source_difficulty": "basic",
+      "source_subtopic": "Дуговая эластичность",
+      "source_slides": [
+        4
+      ],
+      "knowledge_id": "elasticity.el-c002",
+      "linked_knowledge_ids": [
+        "elasticity.el-c002",
+        "elasticity.el-c003",
+        "elasticity.el-f01",
+        "elasticity.el-f02"
+      ],
+      "type": "comparison",
+      "difficulty": 1,
+      "question": "Чем точечная эластичность отличается от дуговой?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "Точечная описывает реакцию в одной точке при бесконечно малом изменении; дуговая измеряет относительное изменение на отрезке между двумя точками с использованием средних значений.",
+      "key_points": [
+        "Точечная описывает реакцию в одной точке при бесконечно малом изменении; дуговая измеряет относительное изменение на отрезке между двумя точками с использованием средних значений."
+      ],
+      "explanation": "Для конечных изменений между наблюдаемыми точками применяют дуговой метод. При сближении точек дуговая эластичность стремится к точечной.",
+      "source": {
+        "id": "elasticity.el-lecture",
+        "name": "эластичность.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-28",
+        "excerpt": "Чем точечная эластичность отличается от дуговой?"
+      },
+      "source_excerpt": "Чем точечная эластичность отличается от дуговой?"
+    },
+    {
+      "id": "elasticity.el-q005",
+      "source_record_id": "EL-Q005",
+      "source_topic_id": "EL",
+      "source_type": "explanation",
+      "source_difficulty": "basic",
+      "source_subtopic": "Дуговая эластичность",
+      "source_slides": [
+        4,
+        5
+      ],
+      "knowledge_id": "elasticity.el-c003",
+      "linked_knowledge_ids": [
+        "elasticity.el-c003",
+        "elasticity.el-f02"
+      ],
+      "type": "understanding",
+      "difficulty": 1,
+      "question": "Почему дуговая эластичность на средних значениях не зависит от направления перехода?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "Потому что при обмене начальной и конечной точек меняются знаки и числителя, и знаменателя, а средние значения остаются теми же; отношение не меняется.",
+      "key_points": [
+        "Потому что при обмене начальной и конечной точек меняются знаки и числителя, и знаменателя, а средние значения остаются теми же; отношение не меняется."
+      ],
+      "explanation": "В отличие от процента относительно начального значения, средняя база симметрична по отношению к двум точкам.",
+      "source": {
+        "id": "elasticity.el-lecture",
+        "name": "эластичность.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-28",
+        "excerpt": "Почему дуговая эластичность на средних значениях не зависит от направления перехода?"
+      },
+      "source_excerpt": "Почему дуговая эластичность на средних значениях не зависит от направления перехода?"
+    },
+    {
+      "id": "elasticity.el-q006",
+      "source_record_id": "EL-Q006",
+      "source_topic_id": "EL",
+      "source_type": "calculation",
+      "source_difficulty": "basic",
+      "source_subtopic": "Дуговая эластичность",
+      "source_slides": [
+        5
+      ],
+      "knowledge_id": "elasticity.el-c003",
+      "linked_knowledge_ids": [
+        "elasticity.el-c003",
+        "elasticity.el-f02"
+      ],
+      "type": "understanding",
+      "difficulty": 1,
+      "question": "Цена выросла с 10 до 12, количество спроса упало со 100 до 80. Чему равна дуговая эластичность?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "−11/9 ≈ −1,22.",
+      "key_points": [
+        "−11/9 ≈ −1,22."
+      ],
+      "explanation": "Среднее количество 90; средняя цена 11. Эластичность = (−20/90)/(2/11) = −11/9. Относительно начальных значений получилось бы −1.",
+      "source": {
+        "id": "elasticity.el-lecture",
+        "name": "эластичность.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-28",
+        "excerpt": "Цена выросла с 10 до 12, количество спроса упало со 100 до 80. Чему равна дуговая эластичность?"
+      },
+      "source_excerpt": "Цена выросла с 10 до 12, количество спроса упало со 100 до 80. Чему равна дуговая эластичность?"
+    },
+    {
+      "id": "elasticity.el-q007",
+      "source_record_id": "EL-Q007",
+      "source_topic_id": "EL",
+      "source_type": "variables",
+      "source_difficulty": "basic",
+      "source_subtopic": "Геометрический смысл",
+      "source_slides": [
+        6
+      ],
+      "knowledge_id": "elasticity.el-c004",
+      "linked_knowledge_ids": [
+        "elasticity.el-c004",
+        "elasticity.el-f03"
+      ],
+      "type": "notation",
+      "difficulty": 1,
+      "question": "Что означает Q_T на графике касательной из слайда 6?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "Q_T — точка, в которой касательная к обратной кривой спроса в точке A пересекает ось количества Q.",
+      "key_points": [
+        "Q_T — точка, в которой касательная к обратной кривой спроса в точке A пересекает ось количества Q."
+      ],
+      "explanation": "Через горизонтальный отрезок от Q_A до Q_T можно выразить точечную эластичность в точке A.",
+      "source": {
+        "id": "elasticity.el-lecture",
+        "name": "эластичность.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-28",
+        "excerpt": "Что означает Q_T на графике касательной из слайда 6?"
+      },
+      "source_excerpt": "Что означает Q_T на графике касательной из слайда 6?"
+    },
+    {
+      "id": "elasticity.el-q008",
+      "source_record_id": "EL-Q008",
+      "source_topic_id": "EL",
+      "source_type": "formula",
+      "source_difficulty": "basic",
+      "source_subtopic": "Геометрический смысл",
+      "source_slides": [
+        6
+      ],
+      "knowledge_id": "elasticity.el-c004",
+      "linked_knowledge_ids": [
+        "elasticity.el-c004",
+        "elasticity.el-f03"
+      ],
+      "type": "formula",
+      "difficulty": 1,
+      "question": "Как выразить ценовую эластичность через Q_T и Q_A по слайду 6?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "E_{Q,P} = −(Q_T − Q_A)/Q_A.",
+      "key_points": [
+        "E_{Q,P} = −(Q_T − Q_A)/Q_A."
+      ],
+      "explanation": "Это геометрическая форма точечной эластичности для касательной к обратной функции спроса, показанной на слайде.",
+      "source": {
+        "id": "elasticity.el-lecture",
+        "name": "эластичность.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-28",
+        "excerpt": "Как выразить ценовую эластичность через Q_T и Q_A по слайду 6?"
+      },
+      "source_excerpt": "Как выразить ценовую эластичность через Q_T и Q_A по слайду 6?"
+    },
+    {
+      "id": "elasticity.el-q009",
+      "source_record_id": "EL-Q009",
+      "source_topic_id": "EL",
+      "source_type": "explanation",
+      "source_difficulty": "basic",
+      "source_subtopic": "Конечные изменения",
+      "source_slides": [
+        7
+      ],
+      "knowledge_id": "elasticity.el-c005",
+      "linked_knowledge_ids": [
+        "elasticity.el-c005"
+      ],
+      "type": "understanding",
+      "difficulty": 1,
+      "question": "Почему конечное процентное изменение не всегда равно точечной эластичности?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "Точечная эластичность является локальной величиной; при большом изменении цена и количество могут пройти участок, на котором эластичность меняется.",
+      "key_points": [
+        "Точечная эластичность является локальной величиной; при большом изменении цена и количество могут пройти участок, на котором эластичность меняется."
+      ],
+      "explanation": "Для небольших изменений производная даёт приближение. В лекции для линейной функции пример совпадает точно, а для нелинейной — нет.",
+      "source": {
+        "id": "elasticity.el-lecture",
+        "name": "эластичность.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-28",
+        "excerpt": "Почему конечное процентное изменение не всегда равно точечной эластичности?"
+      },
+      "source_excerpt": "Почему конечное процентное изменение не всегда равно точечной эластичности?"
+    },
+    {
+      "id": "elasticity.el-q010",
+      "source_record_id": "EL-Q010",
+      "source_topic_id": "EL",
+      "source_type": "explanation",
+      "source_difficulty": "basic",
+      "source_subtopic": "Конечные изменения",
+      "source_slides": [
+        7
+      ],
+      "knowledge_id": "elasticity.el-c005",
+      "linked_knowledge_ids": [
+        "elasticity.el-c005"
+      ],
+      "type": "understanding",
+      "difficulty": 1,
+      "question": "Для Q = 100 − 2P цена меняется с 10 до 20. Почему в примере конечное отношение и точечная эластичность в начальной точке совпали?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "Потому что функция линейна и производная Q′P = −2 постоянна; поэтому ΔQ = Q′P × ΔP точно.",
+      "key_points": [
+        "Потому что функция линейна и производная Q′P = −2 постоянна; поэтому ΔQ = Q′P × ΔP точно."
+      ],
+      "explanation": "Начальный спрос 80, конечный 60; конечное отношение равно −1/4. Точечная эластичность в P=10 также −2×10/80=−1/4.",
+      "source": {
+        "id": "elasticity.el-lecture",
+        "name": "эластичность.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-28",
+        "excerpt": "Для Q = 100 − 2P цена меняется с 10 до 20. Почему в примере конечное отношение и точечная эластичность в начальной точке совпали?"
+      },
+      "source_excerpt": "Для Q = 100 − 2P цена меняется с 10 до 20. Почему в примере конечное отношение и точечная эластичность в начальной точке совпали?"
+    },
+    {
+      "id": "elasticity.el-q011",
+      "source_record_id": "EL-Q011",
+      "source_topic_id": "EL",
+      "source_type": "calculation",
+      "source_difficulty": "basic",
+      "source_subtopic": "Конечные изменения",
+      "source_slides": [
+        7
+      ],
+      "knowledge_id": "elasticity.el-c005",
+      "linked_knowledge_ids": [
+        "elasticity.el-c005"
+      ],
+      "type": "understanding",
+      "difficulty": 1,
+      "question": "Для Q = 1000/P при изменении цены с 10 до 20 чему равны точечная эластичность и конечное процентное отношение относительно начальной точки?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "Точечная эластичность равна −1; конечное отношение относительно начальной точки равно −1/2.",
+      "key_points": [
+        "Точечная эластичность равна −1; конечное отношение относительно начальной точки равно −1/2."
+      ],
+      "explanation": "Q падает с 100 до 50. Фактическое изменение спроса −50/100, изменение цены 10/10, отношение −1/2. Для функции Q=1000/P точечная эластичность постоянна −1.",
+      "source": {
+        "id": "elasticity.el-lecture",
+        "name": "эластичность.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-28",
+        "excerpt": "Для Q = 1000/P при изменении цены с 10 до 20 чему равны точечная эластичность и конечное процентное отношение относительно начальной точки?"
+      },
+      "source_excerpt": "Для Q = 1000/P при изменении цены с 10 до 20 чему равны точечная эластичность и конечное процентное отношение относительно начальной точки?"
+    }
+  ],
+  "section_description": "Виды эластичности, спрос, выручка, налоговое бремя и монопольное ценообразование по материалам лекции «Эластичность»."
+}

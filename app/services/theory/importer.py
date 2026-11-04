@@ -81,6 +81,12 @@ class TheoryImporter:
                     seen_knowledge_ids.add(item.id)
                     knowledge_by_external_id[item.id] = element
 
+            for topic_directory in repository.topics:
+                taxonomy = topic_directory.knowledge
+                section = await self._upsert_section(taxonomy)
+                topic = await self._upsert_topic(section, taxonomy)
+                subtopic = await self._upsert_subtopic(topic, taxonomy)
+                relative_path = topic_directory.directory.relative_to(root).as_posix()
                 for item in topic_directory.questions.questions:
                     source = await self._upsert_source(
                         item.source,
@@ -289,6 +295,11 @@ class TheoryImporter:
         topic: Topic,
         subtopic: Subtopic | None,
     ) -> KnowledgeElement:
+        content = item.explanation
+        if item.conditions:
+            content += f"\n\nУсловия применения: {item.conditions}"
+        if item.notes:
+            content += f"\n\nПримечание: {item.notes}"
         element = await self.session.scalar(
             select(KnowledgeElement).where(KnowledgeElement.external_id == item.id)
         )
@@ -301,10 +312,10 @@ class TheoryImporter:
                 subtopic_id=subtopic.id if subtopic is not None else None,
                 title=item.title,
                 knowledge_type=item.type,
-                content=item.explanation,
+                content=content,
                 formula=item.formula,
                 notation=item.definitions,
-                economic_meaning=None,
+                economic_meaning=item.economic_meaning,
                 source_excerpt=item.source.excerpt,
                 is_active=True,
             )
@@ -316,10 +327,10 @@ class TheoryImporter:
         element.subtopic_id = subtopic.id if subtopic is not None else None
         element.title = item.title
         element.knowledge_type = item.type
-        element.content = item.explanation
+        element.content = content
         element.formula = item.formula
         element.notation = item.definitions
-        element.economic_meaning = None
+        element.economic_meaning = item.economic_meaning
         element.source_excerpt = item.source.excerpt
         element.is_active = True
         return element

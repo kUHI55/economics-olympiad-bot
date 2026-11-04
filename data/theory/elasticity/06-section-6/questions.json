@@ -1,0 +1,354 @@
+{
+  "schema_version": 1,
+  "section": "elasticity",
+  "section_title": "Эластичность",
+  "topic": "06-section-6",
+  "topic_title": "Распределение налогового бремени",
+  "questions": [
+    {
+      "id": "elasticity.el-q044",
+      "source_record_id": "EL-Q044",
+      "source_topic_id": "EL",
+      "source_type": "definition",
+      "source_difficulty": "basic",
+      "source_subtopic": "Налоговое бремя",
+      "source_slides": [
+        21
+      ],
+      "knowledge_id": "elasticity.el-c018",
+      "linked_knowledge_ids": [
+        "elasticity.el-c018",
+        "elasticity.el-f23"
+      ],
+      "type": "definition",
+      "difficulty": 1,
+      "question": "Что означает налоговый клин?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "Разница между ценой, уплачиваемой покупателем, и ценой, получаемой продавцом: Pd−Ps=t.",
+      "key_points": [
+        "Разница между ценой, уплачиваемой покупателем, и ценой, получаемой продавцом: Pd−Ps=t."
+      ],
+      "explanation": "Потоварный налог создаёт вертикальный разрыв между ценой спроса и ценой предложения в новом равновесии.",
+      "source": {
+        "id": "elasticity.el-lecture",
+        "name": "эластичность.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-28",
+        "excerpt": "Что означает налоговый клин?"
+      },
+      "source_excerpt": "Что означает налоговый клин?"
+    },
+    {
+      "id": "elasticity.el-q045",
+      "source_record_id": "EL-Q045",
+      "source_topic_id": "EL",
+      "source_type": "formula",
+      "source_difficulty": "basic",
+      "source_subtopic": "Налоговое бремя",
+      "source_slides": [
+        21
+      ],
+      "knowledge_id": "elasticity.el-c018",
+      "linked_knowledge_ids": [
+        "elasticity.el-c018",
+        "elasticity.el-f24"
+      ],
+      "type": "formula",
+      "difficulty": 1,
+      "question": "Для обратного спроса Pd=a−bQ и предложения Ps=c+dQ чему равно равновесное количество после налога t?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "Qt=(a−c−t)/(b+d).",
+      "key_points": [
+        "Qt=(a−c−t)/(b+d)."
+      ],
+      "explanation": "Приравниваем a−bQ=c+dQ+t и решаем относительно Q. Указаны линейные обратные функции и b,d>0.",
+      "source": {
+        "id": "elasticity.el-lecture",
+        "name": "эластичность.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-28",
+        "excerpt": "Для обратного спроса Pd=a−bQ и предложения Ps=c+dQ чему равно равновесное количество после налога t?"
+      },
+      "source_excerpt": "Для обратного спроса Pd=a−bQ и предложения Ps=c+dQ чему равно равновесное количество после налога t?"
+    },
+    {
+      "id": "elasticity.el-q046",
+      "source_record_id": "EL-Q046",
+      "source_topic_id": "EL",
+      "source_type": "formula",
+      "source_difficulty": "basic",
+      "source_subtopic": "Налоговое бремя",
+      "source_slides": [
+        22
+      ],
+      "knowledge_id": "elasticity.el-c019",
+      "linked_knowledge_ids": [
+        "elasticity.el-c019",
+        "elasticity.el-f27"
+      ],
+      "type": "formula",
+      "difficulty": 1,
+      "question": "Какую долю потоварного налога несут покупатели через эластичности?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "Es/(|Ed|+Es).",
+      "key_points": [
+        "Es/(|Ed|+Es)."
+      ],
+      "explanation": "В линейной модели это доля бремени покупателей; продавцы несут |Ed|/(|Ed|+Es). Менее эластичная сторона несёт большую долю. Для нелинейных функций формула локальна для небольшого налога.",
+      "source": {
+        "id": "elasticity.el-lecture",
+        "name": "эластичность.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-28",
+        "excerpt": "Какую долю потоварного налога несут покупатели через эластичности?"
+      },
+      "source_excerpt": "Какую долю потоварного налога несут покупатели через эластичности?"
+    },
+    {
+      "id": "elasticity.el-q047",
+      "source_record_id": "EL-Q047",
+      "source_topic_id": "EL",
+      "source_type": "formula",
+      "source_difficulty": "basic",
+      "source_subtopic": "Налоговое бремя",
+      "source_slides": [
+        22
+      ],
+      "knowledge_id": "elasticity.el-c019",
+      "linked_knowledge_ids": [
+        "elasticity.el-c019",
+        "elasticity.el-f28"
+      ],
+      "type": "formula",
+      "difficulty": 1,
+      "question": "Какую долю налога несут продавцы через эластичности?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "|Ed|/(|Ed|+Es).",
+      "key_points": [
+        "|Ed|/(|Ed|+Es)."
+      ],
+      "explanation": "Покупатели несут Es/(|Ed|+Es); две доли в сумме равны единице. Менее эластичная сторона несёт большую долю.",
+      "source": {
+        "id": "elasticity.el-lecture",
+        "name": "эластичность.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-28",
+        "excerpt": "Какую долю налога несут продавцы через эластичности?"
+      },
+      "source_excerpt": "Какую долю налога несут продавцы через эластичности?"
+    },
+    {
+      "id": "elasticity.el-q048",
+      "source_record_id": "EL-Q048",
+      "source_topic_id": "EL",
+      "source_type": "concept",
+      "source_difficulty": "basic",
+      "source_subtopic": "Налоговое бремя",
+      "source_slides": [
+        21,
+        22
+      ],
+      "knowledge_id": "elasticity.el-c019",
+      "linked_knowledge_ids": [
+        "elasticity.el-c019"
+      ],
+      "type": "understanding",
+      "difficulty": 1,
+      "question": "Кто несёт большую долю налогового бремени?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "Менее эластичная сторона рынка.",
+      "key_points": [
+        "Менее эластичная сторона рынка."
+      ],
+      "explanation": "Менее эластичной стороне труднее изменить объём покупок или продаж при изменении цены, поэтому её доля бремени выше. Юридический плательщик налога не определяет экономическое распределение бремени.",
+      "source": {
+        "id": "elasticity.el-lecture",
+        "name": "эластичность.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-28",
+        "excerpt": "Кто несёт большую долю налогового бремени?"
+      },
+      "source_excerpt": "Кто несёт большую долю налогового бремени?"
+    },
+    {
+      "id": "elasticity.el-q049",
+      "source_record_id": "EL-Q049",
+      "source_topic_id": "EL",
+      "source_type": "calculation",
+      "source_difficulty": "basic",
+      "source_subtopic": "Налоговое бремя",
+      "source_slides": [
+        23
+      ],
+      "knowledge_id": "elasticity.el-c018",
+      "linked_knowledge_ids": [
+        "elasticity.el-c018",
+        "elasticity.el-c019",
+        "elasticity.el-f24"
+      ],
+      "type": "understanding",
+      "difficulty": 1,
+      "question": "Для Pd=100−2Q, Ps=10+Q и налога t=18 найдите равновесие и цены после налога.",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "До налога Q0=30, P0=40; после налога Qt=24, цена покупателя 52, цена продавца 34.",
+      "key_points": [
+        "До налога Q0=30, P0=40; после налога Qt=24, цена покупателя 52, цена продавца 34."
+      ],
+      "explanation": "До налога приравниваем 100−2Q=10+Q. После налога 100−2Q=10+Q+18. Подставление Qt=24 даёт цены 52 и 34; разрыв равен 18.",
+      "source": {
+        "id": "elasticity.el-lecture",
+        "name": "эластичность.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-28",
+        "excerpt": "Для Pd=100−2Q, Ps=10+Q и налога t=18 найдите равновесие и цены после налога."
+      },
+      "source_excerpt": "Для Pd=100−2Q, Ps=10+Q и налога t=18 найдите равновесие и цены после налога."
+    },
+    {
+      "id": "elasticity.el-q050",
+      "source_record_id": "EL-Q050",
+      "source_topic_id": "EL",
+      "source_type": "calculation",
+      "source_difficulty": "basic",
+      "source_subtopic": "Налоговое бремя",
+      "source_slides": [
+        23
+      ],
+      "knowledge_id": "elasticity.el-c019",
+      "linked_knowledge_ids": [
+        "elasticity.el-c019",
+        "elasticity.el-f27",
+        "elasticity.el-f28"
+      ],
+      "type": "understanding",
+      "difficulty": 1,
+      "question": "В примере с налогом 18 рублей сколько бремени несут покупатели и продавцы?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "Покупатели — 12 рублей, или 2/3; продавцы — 6 рублей, или 1/3.",
+      "key_points": [
+        "Покупатели — 12 рублей, или 2/3; продавцы — 6 рублей, или 1/3."
+      ],
+      "explanation": "Покупательская цена выросла с 40 до 52; цена продавца снизилась с 40 до 34. Сумма 12+6=18. Эластичности дают те же доли: |Ed|=2/3, Es=4/3.",
+      "source": {
+        "id": "elasticity.el-lecture",
+        "name": "эластичность.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-28",
+        "excerpt": "В примере с налогом 18 рублей сколько бремени несут покупатели и продавцы?"
+      },
+      "source_excerpt": "В примере с налогом 18 рублей сколько бремени несут покупатели и продавцы?"
+    },
+    {
+      "id": "elasticity.el-q051",
+      "source_record_id": "EL-Q051",
+      "source_topic_id": "EL",
+      "source_type": "comparison",
+      "source_difficulty": "basic",
+      "source_subtopic": "Максимизация налоговых сборов",
+      "source_slides": [
+        24,
+        25
+      ],
+      "knowledge_id": "elasticity.el-c020",
+      "linked_knowledge_ids": [
+        "elasticity.el-c020",
+        "elasticity.el-f29",
+        "elasticity.el-f30"
+      ],
+      "type": "comparison",
+      "difficulty": 1,
+      "question": "Чем задача о максимизации налоговых сборов отличается от задачи распределения налогового бремени?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "В первой требуется выбрать налог, максимизирующий сборы; во второй — определить, как заданный налог распределяется между покупателями и продавцами.",
+      "key_points": [
+        "В первой требуется выбрать налог, максимизирующий сборы; во второй — определить, как заданный налог распределяется между покупателями и продавцами."
+      ],
+      "explanation": "При максимизации нужно построить T(Q)=[Pd(Q)−Ps(Q)]Q и вывести условие максимума. Формулы долей бремени не дают автоматически ставку, максимизирующую сборы.",
+      "source": {
+        "id": "elasticity.el-lecture",
+        "name": "эластичность.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-28",
+        "excerpt": "Чем задача о максимизации налоговых сборов отличается от задачи распределения налогового бремени?"
+      },
+      "source_excerpt": "Чем задача о максимизации налоговых сборов отличается от задачи распределения налогового бремени?"
+    },
+    {
+      "id": "elasticity.el-q052",
+      "source_record_id": "EL-Q052",
+      "source_topic_id": "EL",
+      "source_type": "calculation",
+      "source_difficulty": "basic",
+      "source_subtopic": "Максимизация налоговых сборов",
+      "source_slides": [
+        25
+      ],
+      "knowledge_id": "elasticity.el-c020",
+      "linked_knowledge_ids": [
+        "elasticity.el-c020",
+        "elasticity.el-f30",
+        "elasticity.el-f31"
+      ],
+      "type": "understanding",
+      "difficulty": 1,
+      "question": "Если |Ed|=4 и Es=2 в задаче лекции о максимизации налоговых сборов, как соотносятся цены покупателя и продавца?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "Pd=2Ps.",
+      "key_points": [
+        "Pd=2Ps."
+      ],
+      "explanation": "Условие максимума даёт Pd−Ps−Pd/4−Ps/2=0, откуда 3Pd/4=3Ps/2 и Pd=2Ps. Налог равен Ps, поэтому t/Pd=50%, а t/Ps=100%.",
+      "source": {
+        "id": "elasticity.el-lecture",
+        "name": "эластичность.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-28",
+        "excerpt": "Если |Ed|=4 и Es=2 в задаче лекции о максимизации налоговых сборов, как соотносятся цены покупателя и продавца?"
+      },
+      "source_excerpt": "Если |Ed|=4 и Es=2 в задаче лекции о максимизации налоговых сборов, как соотносятся цены покупателя и продавца?"
+    },
+    {
+      "id": "elasticity.el-q053",
+      "source_record_id": "EL-Q053",
+      "source_topic_id": "EL",
+      "source_type": "calculation",
+      "source_difficulty": "basic",
+      "source_subtopic": "Максимизация налоговых сборов",
+      "source_slides": [
+        25
+      ],
+      "knowledge_id": "elasticity.el-c020",
+      "linked_knowledge_ids": [
+        "elasticity.el-c020"
+      ],
+      "type": "understanding",
+      "difficulty": 1,
+      "question": "В задаче с |Ed|=4 и Es=2 чему равна ставка налога как доля цены покупателя и как доля цены продавца?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "50% от цены покупателя и 100% от цены продавца.",
+      "key_points": [
+        "50% от цены покупателя и 100% от цены продавца."
+      ],
+      "explanation": "Из Pd=2Ps следует t=Pd−Ps=Ps=Pd/2. Поэтому t/Pd=1/2, t/Ps=1.",
+      "source": {
+        "id": "elasticity.el-lecture",
+        "name": "эластичность.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-28",
+        "excerpt": "В задаче с |Ed|=4 и Es=2 чему равна ставка налога как доля цены покупателя и как доля цены продавца?"
+      },
+      "source_excerpt": "В задаче с |Ed|=4 и Es=2 чему равна ставка налога как доля цены покупателя и как доля цены продавца?"
+    }
+  ],
+  "section_description": "Виды эластичности, спрос, выручка, налоговое бремя и монопольное ценообразование по материалам лекции «Эластичность»."
+}

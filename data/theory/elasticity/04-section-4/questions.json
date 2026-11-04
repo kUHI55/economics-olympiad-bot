@@ -1,0 +1,316 @@
+{
+  "schema_version": 1,
+  "section": "elasticity",
+  "section_title": "Эластичность",
+  "topic": "04-section-4",
+  "topic_title": "Полезные свойства эластичности функций",
+  "questions": [
+    {
+      "id": "elasticity.el-q030",
+      "source_record_id": "EL-Q030",
+      "source_topic_id": "EL",
+      "source_type": "formula",
+      "source_difficulty": "basic",
+      "source_subtopic": "Степенная функция",
+      "source_slides": [
+        14
+      ],
+      "knowledge_id": "elasticity.el-c012",
+      "linked_knowledge_ids": [
+        "elasticity.el-c012",
+        "elasticity.el-f12"
+      ],
+      "type": "formula",
+      "difficulty": 1,
+      "question": "Чему равна эластичность функции y=ax^b при a>0 и x>0?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "b.",
+      "key_points": [
+        "b."
+      ],
+      "explanation": "Производная равна abx^(b−1). Умножая на x/y, получаем b. Параметр a меняет масштаб, но не эластичность.",
+      "source": {
+        "id": "elasticity.el-lecture",
+        "name": "эластичность.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-28",
+        "excerpt": "Чему равна эластичность функции y=ax^b при a>0 и x>0?"
+      },
+      "source_excerpt": "Чему равна эластичность функции y=ax^b при a>0 и x>0?"
+    },
+    {
+      "id": "elasticity.el-q031",
+      "source_record_id": "EL-Q031",
+      "source_topic_id": "EL",
+      "source_type": "formula",
+      "source_difficulty": "basic",
+      "source_subtopic": "Постоянная эластичность",
+      "source_slides": [
+        14
+      ],
+      "knowledge_id": "elasticity.el-c012",
+      "linked_knowledge_ids": [
+        "elasticity.el-c012",
+        "elasticity.el-f13"
+      ],
+      "type": "formula",
+      "difficulty": 1,
+      "question": "Если спрос Q(P)=A/P^k, чему равна ценовая эластичность?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "−k.",
+      "key_points": [
+        "−k."
+      ],
+      "explanation": "Это степенная функция с показателем −k. Поэтому эластичность постоянна во всех точках.",
+      "source": {
+        "id": "elasticity.el-lecture",
+        "name": "эластичность.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-28",
+        "excerpt": "Если спрос Q(P)=A/P^k, чему равна ценовая эластичность?"
+      },
+      "source_excerpt": "Если спрос Q(P)=A/P^k, чему равна ценовая эластичность?"
+    },
+    {
+      "id": "elasticity.el-q032",
+      "source_record_id": "EL-Q032",
+      "source_topic_id": "EL",
+      "source_type": "recall",
+      "source_difficulty": "basic",
+      "source_subtopic": "Постоянная эластичность",
+      "source_slides": [
+        14
+      ],
+      "knowledge_id": "elasticity.el-c012",
+      "linked_knowledge_ids": [
+        "elasticity.el-c012"
+      ],
+      "type": "understanding",
+      "difficulty": 1,
+      "question": "При каком k спрос Q=A/P^k эластичен, а при каком неэластичен?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "При k>1 спрос эластичен; при 0<k<1 — неэластичен; при k=1 — единичная эластичность.",
+      "key_points": [
+        "При k>1 спрос эластичен; при 0<k<1 — неэластичен; при k=1 — единичная эластичность."
+      ],
+      "explanation": "Эластичность равна −k, поэтому классификация проводится по модулю k. При k=1 выручка PQ=A постоянна.",
+      "source": {
+        "id": "elasticity.el-lecture",
+        "name": "эластичность.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-28",
+        "excerpt": "При каком k спрос Q=A/P^k эластичен, а при каком неэластичен?"
+      },
+      "source_excerpt": "При каком k спрос Q=A/P^k эластичен, а при каком неэластичен?"
+    },
+    {
+      "id": "elasticity.el-q033",
+      "source_record_id": "EL-Q033",
+      "source_topic_id": "EL",
+      "source_type": "formula",
+      "source_difficulty": "basic",
+      "source_subtopic": "Эластичность произведения",
+      "source_slides": [
+        15
+      ],
+      "knowledge_id": "elasticity.el-c013",
+      "linked_knowledge_ids": [
+        "elasticity.el-c013",
+        "elasticity.el-f14"
+      ],
+      "type": "formula",
+      "difficulty": 1,
+      "question": "Какова эластичность произведения z=f(x)g(x)?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "E_{z,x}=E_{f,x}+E_{g,x}.",
+      "key_points": [
+        "E_{z,x}=E_{f,x}+E_{g,x}."
+      ],
+      "explanation": "По правилу производной произведения и определению эластичности получается сумма эластичностей множителей.",
+      "source": {
+        "id": "elasticity.el-lecture",
+        "name": "эластичность.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-28",
+        "excerpt": "Какова эластичность произведения z=f(x)g(x)?"
+      },
+      "source_excerpt": "Какова эластичность произведения z=f(x)g(x)?"
+    },
+    {
+      "id": "elasticity.el-q034",
+      "source_record_id": "EL-Q034",
+      "source_topic_id": "EL",
+      "source_type": "formula",
+      "source_difficulty": "basic",
+      "source_subtopic": "Эластичность произведения",
+      "source_slides": [
+        15
+      ],
+      "knowledge_id": "elasticity.el-c013",
+      "linked_knowledge_ids": [
+        "elasticity.el-c013",
+        "elasticity.el-f15"
+      ],
+      "type": "formula",
+      "difficulty": 1,
+      "question": "Какова эластичность z=f^a g^b?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "E_{z,x}=aE_{f,x}+bE_{g,x}.",
+      "key_points": [
+        "E_{z,x}=aE_{f,x}+bE_{g,x}."
+      ],
+      "explanation": "Эластичности факторов складываются, но умножаются на соответствующие показатели степени.",
+      "source": {
+        "id": "elasticity.el-lecture",
+        "name": "эластичность.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-28",
+        "excerpt": "Какова эластичность z=f^a g^b?"
+      },
+      "source_excerpt": "Какова эластичность z=f^a g^b?"
+    },
+    {
+      "id": "elasticity.el-q035",
+      "source_record_id": "EL-Q035",
+      "source_topic_id": "EL",
+      "source_type": "formula",
+      "source_difficulty": "basic",
+      "source_subtopic": "Выручка",
+      "source_slides": [
+        15,
+        17
+      ],
+      "knowledge_id": "elasticity.el-c014",
+      "linked_knowledge_ids": [
+        "elasticity.el-c014",
+        "elasticity.el-f16"
+      ],
+      "type": "formula",
+      "difficulty": 1,
+      "question": "Какова эластичность выручки TR=PQ по цене?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "E_{TR,P}=1+E_{Q,P}.",
+      "key_points": [
+        "E_{TR,P}=1+E_{Q,P}."
+      ],
+      "explanation": "Выручка — произведение цены и количества; эластичность цены по самой себе равна 1, а эластичности произведения складываются. Для малого изменения знак этой величины определяет направление изменения выручки.",
+      "source": {
+        "id": "elasticity.el-lecture",
+        "name": "эластичность.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-28",
+        "excerpt": "Какова эластичность выручки TR=PQ по цене?"
+      },
+      "source_excerpt": "Какова эластичность выручки TR=PQ по цене?"
+    },
+    {
+      "id": "elasticity.el-q036",
+      "source_record_id": "EL-Q036",
+      "source_topic_id": "EL",
+      "source_type": "formula",
+      "source_difficulty": "basic",
+      "source_subtopic": "Обратная функция",
+      "source_slides": [
+        16
+      ],
+      "knowledge_id": "elasticity.el-c015",
+      "linked_knowledge_ids": [
+        "elasticity.el-c015",
+        "elasticity.el-f17"
+      ],
+      "type": "formula",
+      "difficulty": 1,
+      "question": "Как связаны эластичности взаимно обратных функций?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "E_{x,y}=1/E_{y,x}.",
+      "key_points": [
+        "E_{x,y}=1/E_{y,x}."
+      ],
+      "explanation": "При обратимости и ненулевой производной эластичность обратной функции является обратной величиной.",
+      "source": {
+        "id": "elasticity.el-lecture",
+        "name": "эластичность.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-28",
+        "excerpt": "Как связаны эластичности взаимно обратных функций?"
+      },
+      "source_excerpt": "Как связаны эластичности взаимно обратных функций?"
+    },
+    {
+      "id": "elasticity.el-q037",
+      "source_record_id": "EL-Q037",
+      "source_topic_id": "EL",
+      "source_type": "formula",
+      "source_difficulty": "basic",
+      "source_subtopic": "Сложная функция",
+      "source_slides": [
+        16
+      ],
+      "knowledge_id": "elasticity.el-c015",
+      "linked_knowledge_ids": [
+        "elasticity.el-c015",
+        "elasticity.el-f18"
+      ],
+      "type": "formula",
+      "difficulty": 1,
+      "question": "Как связаны эластичности в цепочке z=f(y), y=g(x)?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "E_{z,x}=E_{z,y}×E_{y,x}.",
+      "key_points": [
+        "E_{z,x}=E_{z,y}×E_{y,x}."
+      ],
+      "explanation": "Это эластичностная форма правила цепочки: относительные реакции последовательно перемножаются.",
+      "source": {
+        "id": "elasticity.el-lecture",
+        "name": "эластичность.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-28",
+        "excerpt": "Как связаны эластичности в цепочке z=f(y), y=g(x)?"
+      },
+      "source_excerpt": "Как связаны эластичности в цепочке z=f(y), y=g(x)?"
+    },
+    {
+      "id": "elasticity.el-q039",
+      "source_record_id": "EL-Q039",
+      "source_topic_id": "EL",
+      "source_type": "concept",
+      "source_difficulty": "basic",
+      "source_subtopic": "Выручка",
+      "source_slides": [
+        17,
+        14
+      ],
+      "knowledge_id": "elasticity.el-c014",
+      "linked_knowledge_ids": [
+        "elasticity.el-c014"
+      ],
+      "type": "understanding",
+      "difficulty": 1,
+      "question": "При каком значении ценовой эластичности спроса выручка не меняется в первом приближении при небольшом изменении цены?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "При E_{Q,P}=−1.",
+      "key_points": [
+        "При E_{Q,P}=−1."
+      ],
+      "explanation": "Тогда E_{TR,P}=1+(−1)=0. Это локальное утверждение в первом приближении. Для Q=A/P выручка постоянна точно при любой цене.",
+      "source": {
+        "id": "elasticity.el-lecture",
+        "name": "эластичность.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-28",
+        "excerpt": "При каком значении ценовой эластичности спроса выручка не меняется в первом приближении при небольшом изменении цены?"
+      },
+      "source_excerpt": "При каком значении ценовой эластичности спроса выручка не меняется в первом приближении при небольшом изменении цены?"
+    }
+  ],
+  "section_description": "Виды эластичности, спрос, выручка, налоговое бремя и монопольное ценообразование по материалам лекции «Эластичность»."
+}

@@ -1,0 +1,554 @@
+{
+  "schema_version": 1,
+  "section": "financial-literacy",
+  "section_title": "Финансовая грамотность",
+  "topic": "01-section-1",
+  "topic_title": "Доходы физического лица и налоги",
+  "questions": [
+    {
+      "id": "financial-literacy.fin-q001",
+      "source_record_id": "FIN-Q001",
+      "source_topic_id": "FIN",
+      "source_type": "definition",
+      "source_difficulty": "basic",
+      "source_subtopic": "Налоговые базы",
+      "source_slides": [
+        3
+      ],
+      "knowledge_id": "financial-literacy.fin-c001",
+      "linked_knowledge_ids": [
+        "financial-literacy.fin-c001"
+      ],
+      "type": "definition",
+      "difficulty": 1,
+      "question": "Что такое налоговая база?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "Сумма дохода, к которой применяется налоговая ставка после предусмотренных законом уменьшений.",
+      "key_points": [
+        "Сумма дохода, к которой применяется налоговая ставка после предусмотренных законом уменьшений."
+      ],
+      "explanation": "Налог рассчитывается не обязательно со всех поступлений: сначала определяется база с учётом применимых уменьшений.",
+      "source": {
+        "id": "financial-literacy.fin-lecture",
+        "name": "Финграм лекция.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-26",
+        "excerpt": "Что такое налоговая база?"
+      },
+      "source_excerpt": "Что такое налоговая база?"
+    },
+    {
+      "id": "financial-literacy.fin-q002",
+      "source_record_id": "FIN-Q002",
+      "source_topic_id": "FIN",
+      "source_type": "definition",
+      "source_difficulty": "basic",
+      "source_subtopic": "Налоговые базы",
+      "source_slides": [
+        3
+      ],
+      "knowledge_id": "financial-literacy.fin-c002",
+      "linked_knowledge_ids": [
+        "financial-literacy.fin-c002"
+      ],
+      "type": "definition",
+      "difficulty": 1,
+      "question": "Кто такой налоговый агент?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "Лицо, которое рассчитывает, удерживает и перечисляет налог за получателя дохода.",
+      "key_points": [
+        "Лицо, которое рассчитывает, удерживает и перечисляет налог за получателя дохода."
+      ],
+      "explanation": "В примере лекции работодатель удерживает НДФЛ с зарплаты работника. Выплата зарплаты и перечисление удержанного налога — разные действия.",
+      "source": {
+        "id": "financial-literacy.fin-lecture",
+        "name": "Финграм лекция.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-26",
+        "excerpt": "Кто такой налоговый агент?"
+      },
+      "source_excerpt": "Кто такой налоговый агент?"
+    },
+    {
+      "id": "financial-literacy.fin-q003",
+      "source_record_id": "FIN-Q003",
+      "source_topic_id": "FIN",
+      "source_type": "application",
+      "source_difficulty": "basic",
+      "source_subtopic": "Налоговые базы",
+      "source_slides": [
+        3
+      ],
+      "knowledge_id": "financial-literacy.fin-c003",
+      "linked_knowledge_ids": [
+        "financial-literacy.fin-c003"
+      ],
+      "type": "understanding",
+      "difficulty": 1,
+      "question": "Друг вернул ранее выданный долг в размере 30 000 рублей переводом на карту. Возникает ли НДФЛ только из-за возврата долга?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "Нет. Сам возврат долга не создаёт нового облагаемого дохода.",
+      "key_points": [
+        "Нет. Сам возврат долга не создаёт нового облагаемого дохода."
+      ],
+      "explanation": "Возвращаются ранее переданные деньги. Поступление на карту не тождественно возникновению дохода. Ответ относится именно к возврату долга, описанному в лекции.",
+      "source": {
+        "id": "financial-literacy.fin-lecture",
+        "name": "Финграм лекция.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-26",
+        "excerpt": "Друг вернул ранее выданный долг в размере 30 000 рублей переводом на карту. Возникает ли НДФЛ только из-за возврата долга?"
+      },
+      "source_excerpt": "Друг вернул ранее выданный долг в размере 30 000 рублей переводом на карту. Возникает ли НДФЛ только из-за возврата долга?"
+    },
+    {
+      "id": "financial-literacy.fin-q004",
+      "source_record_id": "FIN-Q004",
+      "source_topic_id": "FIN",
+      "source_type": "definition",
+      "source_difficulty": "basic",
+      "source_subtopic": "Прогрессивная шкала",
+      "source_slides": [
+        4,
+        5
+      ],
+      "knowledge_id": "financial-literacy.fin-c004",
+      "linked_knowledge_ids": [
+        "financial-literacy.fin-c004"
+      ],
+      "type": "definition",
+      "difficulty": 1,
+      "question": "Что означает прогрессивная шкала НДФЛ в примере лекции?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "По мере роста годового дохода следующие части дохода облагаются по более высоким ставкам.",
+      "key_points": [
+        "По мере роста годового дохода следующие части дохода облагаются по более высоким ставкам."
+      ],
+      "explanation": "Повышенная ставка применяется к соответствующему диапазону (части) дохода, а не ко всему доходу после пересечения порога.",
+      "source": {
+        "id": "financial-literacy.fin-lecture",
+        "name": "Финграм лекция.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-26",
+        "excerpt": "Что означает прогрессивная шкала НДФЛ в примере лекции?"
+      },
+      "source_excerpt": "Что означает прогрессивная шкала НДФЛ в примере лекции?"
+    },
+    {
+      "id": "financial-literacy.fin-q005",
+      "source_record_id": "FIN-Q005",
+      "source_topic_id": "FIN",
+      "source_type": "recall",
+      "source_difficulty": "basic",
+      "source_subtopic": "Прогрессивная шкала",
+      "source_slides": [
+        4
+      ],
+      "knowledge_id": "financial-literacy.fin-c004",
+      "linked_knowledge_ids": [
+        "financial-literacy.fin-c004"
+      ],
+      "type": "understanding",
+      "difficulty": 1,
+      "question": "Назови ставки и пороги прогрессивной шкалы НДФЛ, приведённые в лекции.",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "До 2,4 млн руб. включительно — 13%; от 2,4 до 5 млн — 15%; от 5 до 20 млн — 18%; от 20 до 50 млн — 20%; свыше 50 млн — 22%.",
+      "key_points": [
+        "До 2,4 млн руб. включительно — 13%; от 2,4 до 5 млн — 15%; от 5 до 20 млн — 18%; от 20 до 50 млн — 20%; свыше 50 млн — 22%."
+      ],
+      "explanation": "Нужно разбивать доход на части по соответствующим диапазонам. Значения воспроизводят лекцию с актуальностью 26.10.2026.",
+      "source": {
+        "id": "financial-literacy.fin-lecture",
+        "name": "Финграм лекция.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-26",
+        "excerpt": "Назови ставки и пороги прогрессивной шкалы НДФЛ, приведённые в лекции."
+      },
+      "source_excerpt": "Назови ставки и пороги прогрессивной шкалы НДФЛ, приведённые в лекции."
+    },
+    {
+      "id": "financial-literacy.fin-q006",
+      "source_record_id": "FIN-Q006",
+      "source_topic_id": "FIN",
+      "source_type": "comparison",
+      "source_difficulty": "basic",
+      "source_subtopic": "Прогрессивная шкала",
+      "source_slides": [
+        4,
+        5
+      ],
+      "knowledge_id": "financial-literacy.fin-c005",
+      "linked_knowledge_ids": [
+        "financial-literacy.fin-c005",
+        "financial-literacy.fin-f01"
+      ],
+      "type": "comparison",
+      "difficulty": 1,
+      "question": "Чем предельная ставка отличается от средней?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "Предельная ставка — ставка на дополнительный рубль дохода; средняя ставка — весь налог, делённый на весь доход.",
+      "key_points": [
+        "Предельная ставка — ставка на дополнительный рубль дохода; средняя ставка — весь налог, делённый на весь доход."
+      ],
+      "explanation": "Средняя ставка учитывает все диапазоны, в которых находились части дохода. Поэтому она может быть ниже ставки последнего диапазона.",
+      "source": {
+        "id": "financial-literacy.fin-lecture",
+        "name": "Финграм лекция.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-26",
+        "excerpt": "Чем предельная ставка отличается от средней?"
+      },
+      "source_excerpt": "Чем предельная ставка отличается от средней?"
+    },
+    {
+      "id": "financial-literacy.fin-q007",
+      "source_record_id": "FIN-Q007",
+      "source_topic_id": "FIN",
+      "source_type": "formula",
+      "source_difficulty": "basic",
+      "source_subtopic": "Прогрессивная шкала",
+      "source_slides": [
+        4,
+        5
+      ],
+      "knowledge_id": "financial-literacy.fin-c005",
+      "linked_knowledge_ids": [
+        "financial-literacy.fin-c005",
+        "financial-literacy.fin-f01"
+      ],
+      "type": "formula",
+      "difficulty": 1,
+      "question": "Как рассчитать среднюю ставку, если известны весь налог T и общий доход Y?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "tср = T / Y.",
+      "key_points": [
+        "tср = T / Y."
+      ],
+      "explanation": "Сначала суммируется налог по всем диапазонам, затем эта сумма делится на весь доход. Результат можно представить в процентах.",
+      "source": {
+        "id": "financial-literacy.fin-lecture",
+        "name": "Финграм лекция.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-26",
+        "excerpt": "Как рассчитать среднюю ставку, если известны весь налог T и общий доход Y?"
+      },
+      "source_excerpt": "Как рассчитать среднюю ставку, если известны весь налог T и общий доход Y?"
+    },
+    {
+      "id": "financial-literacy.fin-q008",
+      "source_record_id": "FIN-Q008",
+      "source_topic_id": "FIN",
+      "source_type": "calculation",
+      "source_difficulty": "basic",
+      "source_subtopic": "Прогрессивная шкала",
+      "source_slides": [
+        5
+      ],
+      "knowledge_id": "financial-literacy.fin-c004",
+      "linked_knowledge_ids": [
+        "financial-literacy.fin-c004",
+        "financial-literacy.fin-c005",
+        "financial-literacy.fin-f02"
+      ],
+      "type": "understanding",
+      "difficulty": 1,
+      "question": "Работник получил 6 млн рублей за год. Какой НДФЛ получается по примеру лекции без вычетов?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "882 000 рублей.",
+      "key_points": [
+        "882 000 рублей."
+      ],
+      "explanation": "2,4 млн × 13% = 312 тыс.; следующие 2,6 млн × 15% = 390 тыс.; последний 1 млн × 18% = 180 тыс. Итого 882 тыс. руб. Средняя ставка 14,7%, предельная — 18%.",
+      "source": {
+        "id": "financial-literacy.fin-lecture",
+        "name": "Финграм лекция.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-26",
+        "excerpt": "Работник получил 6 млн рублей за год. Какой НДФЛ получается по примеру лекции без вычетов?"
+      },
+      "source_excerpt": "Работник получил 6 млн рублей за год. Какой НДФЛ получается по примеру лекции без вычетов?"
+    },
+    {
+      "id": "financial-literacy.fin-q009",
+      "source_record_id": "FIN-Q009",
+      "source_topic_id": "FIN",
+      "source_type": "explanation",
+      "source_difficulty": "basic",
+      "source_subtopic": "Разные доходы",
+      "source_slides": [
+        3,
+        6
+      ],
+      "knowledge_id": "financial-literacy.fin-c003",
+      "linked_knowledge_ids": [
+        "financial-literacy.fin-c003",
+        "financial-literacy.fin-c006"
+      ],
+      "type": "understanding",
+      "difficulty": 1,
+      "question": "Почему нельзя просто сложить все поступления на банковскую карту и умножить на 13%?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "Потому что поступления могут иметь разную природу, не каждое является доходом, а разные доходы могут относиться к разным налоговым базам и ставкам.",
+      "key_points": [
+        "Потому что поступления могут иметь разную природу, не каждое является доходом, а разные доходы могут относиться к разным налоговым базам и ставкам."
+      ],
+      "explanation": "Лекция выделяет проценты по вкладам, дивиденды, продажу ценных бумаг, продажу недвижимости и денежные подарки от физлиц как ситуации с особыми правилами.",
+      "source": {
+        "id": "financial-literacy.fin-lecture",
+        "name": "Финграм лекция.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-26",
+        "excerpt": "Почему нельзя просто сложить все поступления на банковскую карту и умножить на 13%?"
+      },
+      "source_excerpt": "Почему нельзя просто сложить все поступления на банковскую карту и умножить на 13%?"
+    },
+    {
+      "id": "financial-literacy.fin-q010",
+      "source_record_id": "FIN-Q010",
+      "source_topic_id": "FIN",
+      "source_type": "formula",
+      "source_difficulty": "basic",
+      "source_subtopic": "Проценты по вкладам",
+      "source_slides": [
+        7
+      ],
+      "knowledge_id": "financial-literacy.fin-c007",
+      "linked_knowledge_ids": [
+        "financial-literacy.fin-c007",
+        "financial-literacy.fin-f03"
+      ],
+      "type": "formula",
+      "difficulty": 1,
+      "question": "Как определяется необлагаемый лимит процентного дохода по формуле лекции?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "L = 1 000 000 × r_max, где r_max — максимальная ключевая ставка на первое число любого месяца соответствующего года, записанная десятичной дробью.",
+      "key_points": [
+        "L = 1 000 000 × r_max, где r_max — максимальная ключевая ставка на первое число любого месяца соответствующего года, записанная десятичной дробью."
+      ],
+      "explanation": "Например, 21% в формуле записывается как 0,21. Лимит связан с максимальной ключевой ставкой за установленный период, а не со ставкой конкретного вклада.",
+      "source": {
+        "id": "financial-literacy.fin-lecture",
+        "name": "Финграм лекция.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-26",
+        "excerpt": "Как определяется необлагаемый лимит процентного дохода по формуле лекции?"
+      },
+      "source_excerpt": "Как определяется необлагаемый лимит процентного дохода по формуле лекции?"
+    },
+    {
+      "id": "financial-literacy.fin-q011",
+      "source_record_id": "FIN-Q011",
+      "source_topic_id": "FIN",
+      "source_type": "variables",
+      "source_difficulty": "basic",
+      "source_subtopic": "Проценты по вкладам",
+      "source_slides": [
+        7
+      ],
+      "knowledge_id": "financial-literacy.fin-c007",
+      "linked_knowledge_ids": [
+        "financial-literacy.fin-c007",
+        "financial-literacy.fin-f04"
+      ],
+      "type": "notation",
+      "difficulty": 1,
+      "question": "Что означает I в формуле B = max(0; I − L)?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "I — совокупный процентный доход по всем подходящим вкладам за год.",
+      "key_points": [
+        "I — совокупный процентный доход по всем подходящим вкладам за год."
+      ],
+      "explanation": "Из совокупного процентного дохода вычитают необлагаемый лимит. Если превышения нет, облагаемая часть равна нулю.",
+      "source": {
+        "id": "financial-literacy.fin-lecture",
+        "name": "Финграм лекция.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-26",
+        "excerpt": "Что означает I в формуле B = max(0; I − L)?"
+      },
+      "source_excerpt": "Что означает I в формуле B = max(0; I − L)?"
+    },
+    {
+      "id": "financial-literacy.fin-q012",
+      "source_record_id": "FIN-Q012",
+      "source_topic_id": "FIN",
+      "source_type": "calculation",
+      "source_difficulty": "basic",
+      "source_subtopic": "Проценты по вкладам",
+      "source_slides": [
+        7
+      ],
+      "knowledge_id": "financial-literacy.fin-c007",
+      "linked_knowledge_ids": [
+        "financial-literacy.fin-c007",
+        "financial-literacy.fin-f03",
+        "financial-literacy.fin-f04",
+        "financial-literacy.fin-f05"
+      ],
+      "type": "understanding",
+      "difficulty": 1,
+      "question": "Проценты по всем вкладам за год — 250 000 рублей, максимальная ключевая ставка для примера — 21%. Чему равны лимит и облагаемое превышение?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "Лимит — 210 000 рублей; облагаемое превышение — 40 000 рублей.",
+      "key_points": [
+        "Лимит — 210 000 рублей; облагаемое превышение — 40 000 рублей."
+      ],
+      "explanation": "L = 1 000 000 × 0,21 = 210 000; B = 250 000 − 210 000 = 40 000. В примере лекции налог по ставке 13% равен 5 200 руб.",
+      "source": {
+        "id": "financial-literacy.fin-lecture",
+        "name": "Финграм лекция.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-26",
+        "excerpt": "Проценты по всем вкладам за год — 250 000 рублей, максимальная ключевая ставка для примера — 21%. Чему равны лимит и облагаемое превышение?"
+      },
+      "source_excerpt": "Проценты по всем вкладам за год — 250 000 рублей, максимальная ключевая ставка для примера — 21%. Чему равны лимит и облагаемое превышение?"
+    },
+    {
+      "id": "financial-literacy.fin-q013",
+      "source_record_id": "FIN-Q013",
+      "source_topic_id": "FIN",
+      "source_type": "trap",
+      "source_difficulty": "basic",
+      "source_subtopic": "Проценты по вкладам",
+      "source_slides": [
+        6,
+        7
+      ],
+      "knowledge_id": "financial-literacy.fin-c007",
+      "linked_knowledge_ids": [
+        "financial-literacy.fin-c007"
+      ],
+      "type": "common_mistake",
+      "difficulty": 1,
+      "question": "Получает ли каждый банк отдельный необлагаемый лимит процентов?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "Нет. Процентные доходы суммируются по всем подходящим банкам; лимит относится к совокупному доходу.",
+      "key_points": [
+        "Нет. Процентные доходы суммируются по всем подходящим банкам; лимит относится к совокупному доходу."
+      ],
+      "explanation": "Нельзя умножать лимит на количество банков. Это прямо выделено как важное свойство на слайде.",
+      "source": {
+        "id": "financial-literacy.fin-lecture",
+        "name": "Финграм лекция.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-26",
+        "excerpt": "Получает ли каждый банк отдельный необлагаемый лимит процентов?"
+      },
+      "source_excerpt": "Получает ли каждый банк отдельный необлагаемый лимит процентов?"
+    },
+    {
+      "id": "financial-literacy.fin-q014",
+      "source_record_id": "FIN-Q014",
+      "source_topic_id": "FIN",
+      "source_type": "definition",
+      "source_difficulty": "basic",
+      "source_subtopic": "Налоговые вычеты",
+      "source_slides": [
+        8
+      ],
+      "knowledge_id": "financial-literacy.fin-c008",
+      "linked_knowledge_ids": [
+        "financial-literacy.fin-c008"
+      ],
+      "type": "definition",
+      "difficulty": 1,
+      "question": "Что такое налоговый вычет в контексте лекции?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "Предусмотренное законом уменьшение налоговой базы, которое при выполнении условий позволяет уменьшить НДФЛ или вернуть часть ранее уплаченного налога.",
+      "key_points": [
+        "Предусмотренное законом уменьшение налоговой базы, которое при выполнении условий позволяет уменьшить НДФЛ или вернуть часть ранее уплаченного налога."
+      ],
+      "explanation": "Вычет не равен сумме денег, возвращаемых человеку. Возвращается налог в пределах установленных ограничений.",
+      "source": {
+        "id": "financial-literacy.fin-lecture",
+        "name": "Финграм лекция.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-26",
+        "excerpt": "Что такое налоговый вычет в контексте лекции?"
+      },
+      "source_excerpt": "Что такое налоговый вычет в контексте лекции?"
+    },
+    {
+      "id": "financial-literacy.fin-q015",
+      "source_record_id": "FIN-Q015",
+      "source_topic_id": "FIN",
+      "source_type": "calculation",
+      "source_difficulty": "basic",
+      "source_subtopic": "Налоговые вычеты",
+      "source_slides": [
+        8
+      ],
+      "knowledge_id": "financial-literacy.fin-c008",
+      "linked_knowledge_ids": [
+        "financial-literacy.fin-c008",
+        "financial-literacy.fin-f06"
+      ],
+      "type": "understanding",
+      "difficulty": 1,
+      "question": "Сколько можно вернуть при расходах на собственное обучение 100 000 рублей и ставке НДФЛ 13%, если право на вычет есть и налога достаточно?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "13 000 рублей.",
+      "key_points": [
+        "13 000 рублей."
+      ],
+      "explanation": "Возврат = допустимая база вычета × ставка: 100 000 × 13% = 13 000. Возвращается не вся сумма расходов.",
+      "source": {
+        "id": "financial-literacy.fin-lecture",
+        "name": "Финграм лекция.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-26",
+        "excerpt": "Сколько можно вернуть при расходах на собственное обучение 100 000 рублей и ставке НДФЛ 13%, если право на вычет есть и налога достаточно?"
+      },
+      "source_excerpt": "Сколько можно вернуть при расходах на собственное обучение 100 000 рублей и ставке НДФЛ 13%, если право на вычет есть и налога достаточно?"
+    },
+    {
+      "id": "financial-literacy.fin-q016",
+      "source_record_id": "FIN-Q016",
+      "source_topic_id": "FIN",
+      "source_type": "recall",
+      "source_difficulty": "basic",
+      "source_subtopic": "Налоговые вычеты",
+      "source_slides": [
+        8
+      ],
+      "knowledge_id": "financial-literacy.fin-c008",
+      "linked_knowledge_ids": [
+        "financial-literacy.fin-c008"
+      ],
+      "type": "understanding",
+      "difficulty": 1,
+      "question": "Какие лимиты социальных вычетов указаны в презентации?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "Собственное обучение, обычное лечение и ряд иных расходов — общая база до 150 000 руб. в год; обучение ребёнка — отдельный лимит 110 000 руб. на ребёнка; дорогостоящее лечение — отдельное правило без общего лимита 150 000 руб.",
+      "key_points": [
+        "Собственное обучение, обычное лечение и ряд иных расходов — общая база до 150 000 руб. в год; обучение ребёнка — отдельный лимит 110 000 руб. на ребёнка; дорогостоящее лечение — отдельное правило без общего лимита 150 000 руб."
+      ],
+      "explanation": "Нужно различать общий социальный лимит, отдельный лимит на обучение ребёнка и особое правило дорогостоящего лечения. Значения воспроизводят лекцию.",
+      "source": {
+        "id": "financial-literacy.fin-lecture",
+        "name": "Финграм лекция.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-26",
+        "excerpt": "Какие лимиты социальных вычетов указаны в презентации?"
+      },
+      "source_excerpt": "Какие лимиты социальных вычетов указаны в презентации?"
+    }
+  ],
+  "section_description": "Налоги, вклады, кредиты, предпринимательство, инвестиции и цифровой рубль по материалам лекции «Финансовая грамотность»."
+}

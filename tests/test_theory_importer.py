@@ -55,6 +55,49 @@ class TheoryImporterTests(unittest.IsolatedAsyncioTestCase):
         self.assertTrue(element.is_active)
         self.assertEqual(element.external_id, KNOWLEDGE_ID)
 
+    async def test_question_can_reference_knowledge_from_a_later_subtopic(self) -> None:
+        later_directory = self.theory_root / "test-fixture" / "z-later-subtopic"
+        later_directory.mkdir(parents=True)
+        first_knowledge_path = self.fixture_directory / "knowledge.json"
+        first_questions_path = self.fixture_directory / "questions.json"
+        second_knowledge_path = later_directory / "knowledge.json"
+        second_questions_path = later_directory / "questions.json"
+
+        first_knowledge = json.loads(first_knowledge_path.read_text(encoding="utf-8"))
+        first_questions = json.loads(first_questions_path.read_text(encoding="utf-8"))
+        second_knowledge = json.loads(json.dumps(first_knowledge))
+        second_questions = json.loads(json.dumps(first_questions))
+        second_id = "test-fixture.z-later-subtopic.later-term"
+        second_knowledge["topic"] = "z-later-subtopic"
+        second_knowledge["subtopic"] = "later-example"
+        second_knowledge["knowledge"][0]["id"] = second_id
+        second_questions["topic"] = "z-later-subtopic"
+        second_questions["subtopic"] = "later-example"
+        second_questions["questions"][0]["id"] = "test-fixture.z-later-subtopic.later-term-check"
+        second_questions["questions"][0]["knowledge_id"] = second_id
+        first_questions["questions"][0]["knowledge_id"] = second_id
+        first_questions["questions"][0]["linked_knowledge_ids"] = [second_id]
+
+        for path, payload in (
+            (first_questions_path, first_questions),
+            (second_knowledge_path, second_knowledge),
+            (second_questions_path, second_questions),
+        ):
+            path.write_text(json.dumps(payload, ensure_ascii=False), encoding="utf-8")
+
+        report = await self.synchronize()
+        async with self.session_factory() as session:
+            target = await session.scalar(
+                select(KnowledgeElement).where(KnowledgeElement.external_id == second_id)
+            )
+            question = await session.scalar(
+                select(Question).where(Question.external_id == QUESTION_ID)
+            )
+            self.assertIsNotNone(target)
+            self.assertEqual(question.knowledge_element_id, target.id)
+        self.assertEqual(report.knowledge_elements, 2)
+        self.assertEqual(report.questions, 2)
+
     async def test_updates_existing_element(self) -> None:
         await self.synchronize()
         knowledge_path = self.fixture_directory / "knowledge.json"

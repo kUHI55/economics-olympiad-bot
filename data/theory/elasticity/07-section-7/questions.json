@@ -1,0 +1,322 @@
+{
+  "schema_version": 1,
+  "section": "elasticity",
+  "section_title": "Эластичность",
+  "topic": "07-section-7",
+  "topic_title": "Монополия и индекс Лернера",
+  "questions": [
+    {
+      "id": "elasticity.el-q054",
+      "source_record_id": "EL-Q054",
+      "source_topic_id": "EL",
+      "source_type": "definition",
+      "source_difficulty": "basic",
+      "source_subtopic": "Индекс Лернера",
+      "source_slides": [
+        26
+      ],
+      "knowledge_id": "elasticity.el-c021",
+      "linked_knowledge_ids": [
+        "elasticity.el-c021",
+        "elasticity.el-f34"
+      ],
+      "type": "definition",
+      "difficulty": 1,
+      "question": "Что измеряет индекс Лернера?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "Относительную наценку монополиста цены над предельными издержками: (P−MC)/P.",
+      "key_points": [
+        "Относительную наценку монополиста цены над предельными издержками: (P−MC)/P."
+      ],
+      "explanation": "Индекс показывает относительный разрыв между ценой и предельными издержками. В модели лекции он связывается с обратной абсолютной ценовой эластичностью спроса.",
+      "source": {
+        "id": "elasticity.el-lecture",
+        "name": "эластичность.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-28",
+        "excerpt": "Что измеряет индекс Лернера?"
+      },
+      "source_excerpt": "Что измеряет индекс Лернера?"
+    },
+    {
+      "id": "elasticity.el-q055",
+      "source_record_id": "EL-Q055",
+      "source_topic_id": "EL",
+      "source_type": "formula",
+      "source_difficulty": "basic",
+      "source_subtopic": "Индекс Лернера",
+      "source_slides": [
+        26
+      ],
+      "knowledge_id": "elasticity.el-c021",
+      "linked_knowledge_ids": [
+        "elasticity.el-c021",
+        "elasticity.el-f34"
+      ],
+      "type": "formula",
+      "difficulty": 1,
+      "question": "Запиши формулу индекса Лернера через абсолютную ценовую эластичность спроса.",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "L=(P−MC)/P=1/|E_{Q,P}|.",
+      "key_points": [
+        "L=(P−MC)/P=1/|E_{Q,P}|."
+      ],
+      "explanation": "Для обычного нисходящего спроса E<0, поэтому промежуточная запись со знаковой эластичностью: (P−MC)/P=−1/E. При положительном индексе это равно 1/|E|. Предполагается внутренний оптимум и условие MR=MC.",
+      "source": {
+        "id": "elasticity.el-lecture",
+        "name": "эластичность.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-28",
+        "excerpt": "Запиши формулу индекса Лернера через абсолютную ценовую эластичность спроса."
+      },
+      "source_excerpt": "Запиши формулу индекса Лернера через абсолютную ценовую эластичность спроса."
+    },
+    {
+      "id": "elasticity.el-q056",
+      "source_record_id": "EL-Q056",
+      "source_topic_id": "EL",
+      "source_type": "formula",
+      "source_difficulty": "basic",
+      "source_subtopic": "Монополия",
+      "source_slides": [
+        26
+      ],
+      "knowledge_id": "elasticity.el-c022",
+      "linked_knowledge_ids": [
+        "elasticity.el-c022",
+        "elasticity.el-f32",
+        "elasticity.el-f33"
+      ],
+      "type": "formula",
+      "difficulty": 1,
+      "question": "Какое условие первого порядка использует монополист при внутреннем максимуме прибыли?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "MR=MC.",
+      "key_points": [
+        "MR=MC."
+      ],
+      "explanation": "Монополист максимизирует π(Q)=P(Q)Q−TC(Q). Производная выручки равна MR, производная общих издержек — MC. Условие первого порядка: MR−MC=0. Само по себе оно ещё не заменяет проверку условий оптимума.",
+      "source": {
+        "id": "elasticity.el-lecture",
+        "name": "эластичность.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-28",
+        "excerpt": "Какое условие первого порядка использует монополист при внутреннем максимуме прибыли?"
+      },
+      "source_excerpt": "Какое условие первого порядка использует монополист при внутреннем максимуме прибыли?"
+    },
+    {
+      "id": "elasticity.el-q057",
+      "source_record_id": "EL-Q057",
+      "source_topic_id": "EL",
+      "source_type": "proof",
+      "source_difficulty": "basic",
+      "source_subtopic": "Монополия",
+      "source_slides": [
+        26
+      ],
+      "knowledge_id": "elasticity.el-c021",
+      "linked_knowledge_ids": [
+        "elasticity.el-c021",
+        "elasticity.el-c022",
+        "elasticity.el-f33",
+        "elasticity.el-f34"
+      ],
+      "type": "understanding",
+      "difficulty": 1,
+      "question": "Почему при MC>0 внутренний оптимум монополиста на обычном нисходящем спросе находится на эластичном участке?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "Потому что MR=MC>0, а MR=P(1+1/E); при E<0 положительная MR требует |E|>1.",
+      "key_points": [
+        "Потому что MR=MC>0, а MR=P(1+1/E); при E<0 положительная MR требует |E|>1."
+      ],
+      "explanation": "Это вывод лекции для внутреннего оптимума с единой ценой, положительной ценой и обычным нисходящим спросом. Нельзя распространять вывод без этих предпосылок.",
+      "source": {
+        "id": "elasticity.el-lecture",
+        "name": "эластичность.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-28",
+        "excerpt": "Почему при MC>0 внутренний оптимум монополиста на обычном нисходящем спросе находится на эластичном участке?"
+      },
+      "source_excerpt": "Почему при MC>0 внутренний оптимум монополиста на обычном нисходящем спросе находится на эластичном участке?"
+    },
+    {
+      "id": "elasticity.el-q058",
+      "source_record_id": "EL-Q058",
+      "source_topic_id": "EL",
+      "source_type": "calculation",
+      "source_difficulty": "basic",
+      "source_subtopic": "Монополия",
+      "source_slides": [
+        27
+      ],
+      "knowledge_id": "elasticity.el-c021",
+      "linked_knowledge_ids": [
+        "elasticity.el-c021",
+        "elasticity.el-c022",
+        "elasticity.el-f34"
+      ],
+      "type": "understanding",
+      "difficulty": 1,
+      "question": "Для Q(P)=4096/P^4 и TC(Q)=3Q найдите оптимальные цену, выпуск и прибыль.",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "P*=4, Q*=16, π*=16.",
+      "key_points": [
+        "P*=4, Q*=16, π*=16."
+      ],
+      "explanation": "Эластичность спроса −4; MC=3. По Лернеру (P−3)/P=1/4, откуда P=4. Выпуск 4096/4^4=16; прибыль (4−3)×16=16.",
+      "source": {
+        "id": "elasticity.el-lecture",
+        "name": "эластичность.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-28",
+        "excerpt": "Для Q(P)=4096/P^4 и TC(Q)=3Q найдите оптимальные цену, выпуск и прибыль."
+      },
+      "source_excerpt": "Для Q(P)=4096/P^4 и TC(Q)=3Q найдите оптимальные цену, выпуск и прибыль."
+    },
+    {
+      "id": "elasticity.el-q059",
+      "source_record_id": "EL-Q059",
+      "source_topic_id": "EL",
+      "source_type": "formula",
+      "source_difficulty": "basic",
+      "source_subtopic": "Оптимальная цена при линейном спросе",
+      "source_slides": [
+        29
+      ],
+      "knowledge_id": "elasticity.el-c023",
+      "linked_knowledge_ids": [
+        "elasticity.el-c023",
+        "elasticity.el-f35"
+      ],
+      "type": "formula",
+      "difficulty": 1,
+      "question": "При D(P)=a−bP и MC=1 какую формулу оптимальной цены приводит лекция?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "P*=1/2 × (a/b + 1).",
+      "key_points": [
+        "P*=1/2 × (a/b + 1)."
+      ],
+      "explanation": "Прибыль π(P)=(P−1)(a−bP). Условие первого порядка a+b−2bP=0 даёт указанную формулу. Она относится к линейному спросу и MC=1.",
+      "source": {
+        "id": "elasticity.el-lecture",
+        "name": "эластичность.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-28",
+        "excerpt": "При D(P)=a−bP и MC=1 какую формулу оптимальной цены приводит лекция?"
+      },
+      "source_excerpt": "При D(P)=a−bP и MC=1 какую формулу оптимальной цены приводит лекция?"
+    },
+    {
+      "id": "elasticity.el-q060",
+      "source_record_id": "EL-Q060",
+      "source_topic_id": "EL",
+      "source_type": "formula",
+      "source_difficulty": "basic",
+      "source_subtopic": "Оптимальная цена при постоянной эластичности",
+      "source_slides": [
+        29
+      ],
+      "knowledge_id": "elasticity.el-c023",
+      "linked_knowledge_ids": [
+        "elasticity.el-c023",
+        "elasticity.el-f36"
+      ],
+      "type": "formula",
+      "difficulty": 1,
+      "question": "При D(P)=A/P^k, MC=1 и k>1 чему равна оптимальная цена?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "P*=k/(k−1).",
+      "key_points": [
+        "P*=k/(k−1)."
+      ],
+      "explanation": "Эластичность равна −k. По Лернеру (P−1)/P=1/k; решая, получаем P=k/(k−1). Оптимальная цена не зависит от A.",
+      "source": {
+        "id": "elasticity.el-lecture",
+        "name": "эластичность.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-28",
+        "excerpt": "При D(P)=A/P^k, MC=1 и k>1 чему равна оптимальная цена?"
+      },
+      "source_excerpt": "При D(P)=A/P^k, MC=1 и k>1 чему равна оптимальная цена?"
+    },
+    {
+      "id": "elasticity.el-q061",
+      "source_record_id": "EL-Q061",
+      "source_topic_id": "EL",
+      "source_type": "trap",
+      "source_difficulty": "basic",
+      "source_subtopic": "Средний спрос и оптимальная цена",
+      "source_slides": [
+        28,
+        29,
+        30
+      ],
+      "knowledge_id": "elasticity.el-c024",
+      "linked_knowledge_ids": [
+        "elasticity.el-c024"
+      ],
+      "type": "common_mistake",
+      "difficulty": 1,
+      "question": "Верно ли, что оптимальная цена при среднем спросе всегда равна среднему арифметическому оптимальных цен при двух исходных сценариях?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "Нет. Средняя функция спроса не обязана давать среднюю оптимальную цену.",
+      "key_points": [
+        "Нет. Средняя функция спроса не обязана давать среднюю оптимальную цену."
+      ],
+      "explanation": "В задаче регионального этапа равенство выполняется только для вариантов 1, 2 и 4, но не для варианта 3. Цены нужно оптимизировать отдельно в каждом сценарии.",
+      "source": {
+        "id": "elasticity.el-lecture",
+        "name": "эластичность.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-28",
+        "excerpt": "Верно ли, что оптимальная цена при среднем спросе всегда равна среднему арифметическому оптимальных цен при двух исходных сценариях?"
+      },
+      "source_excerpt": "Верно ли, что оптимальная цена при среднем спросе всегда равна среднему арифметическому оптимальных цен при двух исходных сценариях?"
+    },
+    {
+      "id": "elasticity.el-q062",
+      "source_record_id": "EL-Q062",
+      "source_topic_id": "EL",
+      "source_type": "recall",
+      "source_difficulty": "basic",
+      "source_subtopic": "Средний спрос и оптимальная цена",
+      "source_slides": [
+        28,
+        29,
+        30
+      ],
+      "knowledge_id": "elasticity.el-c024",
+      "linked_knowledge_ids": [
+        "elasticity.el-c024"
+      ],
+      "type": "understanding",
+      "difficulty": 1,
+      "question": "Какие варианты задачи регионального этапа из лекции удовлетворяют равенству Pm*=(Pg*+Pb*)/2?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "Варианты 1, 2 и 4.",
+      "key_points": [
+        "Варианты 1, 2 и 4."
+      ],
+      "explanation": "Вариант 3 не подходит: средняя оптимальная цена исходных сценариев равна 11/4, а цена при среднем спросе равна 5/2. В таблице финального слайда дан ответ 1, 2, 4.",
+      "source": {
+        "id": "elasticity.el-lecture",
+        "name": "эластичность.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-28",
+        "excerpt": "Какие варианты задачи регионального этапа из лекции удовлетворяют равенству Pm*=(Pg*+Pb*)/2?"
+      },
+      "source_excerpt": "Какие варианты задачи регионального этапа из лекции удовлетворяют равенству Pm*=(Pg*+Pb*)/2?"
+    }
+  ],
+  "section_description": "Виды эластичности, спрос, выручка, налоговое бремя и монопольное ценообразование по материалам лекции «Эластичность»."
+}

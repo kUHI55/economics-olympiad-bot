@@ -1,0 +1,446 @@
+{
+  "schema_version": 1,
+  "section": "elasticity",
+  "section_title": "Эластичность",
+  "topic": "03-section-3",
+  "topic_title": "Эластичность по доходу и перекрёстная эластичность",
+  "questions": [
+    {
+      "id": "elasticity.el-q017",
+      "source_record_id": "EL-Q017",
+      "source_topic_id": "EL",
+      "source_type": "formula",
+      "source_difficulty": "basic",
+      "source_subtopic": "Доходная эластичность",
+      "source_slides": [
+        10
+      ],
+      "knowledge_id": "elasticity.el-c008",
+      "linked_knowledge_ids": [
+        "elasticity.el-c008",
+        "elasticity.el-f05"
+      ],
+      "type": "formula",
+      "difficulty": 1,
+      "question": "Запиши формулу эластичности спроса по доходу.",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "E_{Q,I} = Q′I × (I/Q).",
+      "key_points": [
+        "E_{Q,I} = Q′I × (I/Q)."
+      ],
+      "explanation": "I — доход; Q — спрос; Q′I — производная спроса по доходу. Она показывает процентную реакцию спроса на изменение дохода.",
+      "source": {
+        "id": "elasticity.el-lecture",
+        "name": "эластичность.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-28",
+        "excerpt": "Запиши формулу эластичности спроса по доходу."
+      },
+      "source_excerpt": "Запиши формулу эластичности спроса по доходу."
+    },
+    {
+      "id": "elasticity.el-q018",
+      "source_record_id": "EL-Q018",
+      "source_topic_id": "EL",
+      "source_type": "recall",
+      "source_difficulty": "basic",
+      "source_subtopic": "Доходная эластичность",
+      "source_slides": [
+        10
+      ],
+      "knowledge_id": "elasticity.el-c008",
+      "linked_knowledge_ids": [
+        "elasticity.el-c008"
+      ],
+      "type": "understanding",
+      "difficulty": 1,
+      "question": "Как по знаку доходной эластичности различить низший и нормальный товар?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "Низший товар: E_{Q,I}<0; нормальный товар: E_{Q,I}>0.",
+      "key_points": [
+        "Низший товар: E_{Q,I}<0; нормальный товар: E_{Q,I}>0."
+      ],
+      "explanation": "Для низшего товара рост дохода уменьшает спрос; для нормального увеличивает.",
+      "source": {
+        "id": "elasticity.el-lecture",
+        "name": "эластичность.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-28",
+        "excerpt": "Как по знаку доходной эластичности различить низший и нормальный товар?"
+      },
+      "source_excerpt": "Как по знаку доходной эластичности различить низший и нормальный товар?"
+    },
+    {
+      "id": "elasticity.el-q019",
+      "source_record_id": "EL-Q019",
+      "source_topic_id": "EL",
+      "source_type": "recall",
+      "source_difficulty": "basic",
+      "source_subtopic": "Доходная эластичность",
+      "source_slides": [
+        10
+      ],
+      "knowledge_id": "elasticity.el-c008",
+      "linked_knowledge_ids": [
+        "elasticity.el-c008"
+      ],
+      "type": "understanding",
+      "difficulty": 1,
+      "question": "Какие условия соответствуют предмету первой необходимости и предмету роскоши в лекции?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "Первая необходимость: 0<E_{Q,I}<1; предмет роскоши: E_{Q,I}>1.",
+      "key_points": [
+        "Первая необходимость: 0<E_{Q,I}<1; предмет роскоши: E_{Q,I}>1."
+      ],
+      "explanation": "Спрос на первую необходимость растёт медленнее дохода; на предмет роскоши — быстрее дохода.",
+      "source": {
+        "id": "elasticity.el-lecture",
+        "name": "эластичность.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-28",
+        "excerpt": "Какие условия соответствуют предмету первой необходимости и предмету роскоши в лекции?"
+      },
+      "source_excerpt": "Какие условия соответствуют предмету первой необходимости и предмету роскоши в лекции?"
+    },
+    {
+      "id": "elasticity.el-q020",
+      "source_record_id": "EL-Q020",
+      "source_topic_id": "EL",
+      "source_type": "comparison",
+      "source_difficulty": "basic",
+      "source_subtopic": "Товар Гиффена и Веблена",
+      "source_slides": [
+        11
+      ],
+      "knowledge_id": "elasticity.el-c009",
+      "linked_knowledge_ids": [
+        "elasticity.el-c009"
+      ],
+      "type": "comparison",
+      "difficulty": 1,
+      "question": "Чем товар Гиффена отличается от товара Веблена?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "Для Гиффена отрицательный эффект дохода для низшего товара по модулю превосходит эффект замещения; для Веблена высокая цена повышает привлекательность товара как сигнала статуса.",
+      "key_points": [
+        "Для Гиффена отрицательный эффект дохода для низшего товара по модулю превосходит эффект замещения; для Веблена высокая цена повышает привлекательность товара как сигнала статуса."
+      ],
+      "explanation": "Механизмы разные: у Гиффена — потребительский выбор и эффекты дохода/замещения; у Веблена — статусная привлекательность высокой цены.",
+      "source": {
+        "id": "elasticity.el-lecture",
+        "name": "эластичность.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-28",
+        "excerpt": "Чем товар Гиффена отличается от товара Веблена?"
+      },
+      "source_excerpt": "Чем товар Гиффена отличается от товара Веблена?"
+    },
+    {
+      "id": "elasticity.el-q021",
+      "source_record_id": "EL-Q021",
+      "source_topic_id": "EL",
+      "source_type": "trap",
+      "source_difficulty": "basic",
+      "source_subtopic": "Товар Гиффена и Веблена",
+      "source_slides": [
+        11
+      ],
+      "knowledge_id": "elasticity.el-c009",
+      "linked_knowledge_ids": [
+        "elasticity.el-c009"
+      ],
+      "type": "common_mistake",
+      "difficulty": 1,
+      "question": "Цена телефона выросла, а продажи тоже выросли. Доказывает ли это положительную ценовую эластичность спроса?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "Нет. Могли измениться качество, реклама или доходы, сдвинув спрос.",
+      "key_points": [
+        "Нет. Могли измениться качество, реклама или доходы, сдвинув спрос."
+      ],
+      "explanation": "Для вывода о ценовой эластичности нужно рассматривать изменение цены при прочих равных и движение вдоль одной кривой спроса, а не смешивать его со сдвигом кривой.",
+      "source": {
+        "id": "elasticity.el-lecture",
+        "name": "эластичность.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-28",
+        "excerpt": "Цена телефона выросла, а продажи тоже выросли. Доказывает ли это положительную ценовую эластичность спроса?"
+      },
+      "source_excerpt": "Цена телефона выросла, а продажи тоже выросли. Доказывает ли это положительную ценовую эластичность спроса?"
+    },
+    {
+      "id": "elasticity.el-q022",
+      "source_record_id": "EL-Q022",
+      "source_topic_id": "EL",
+      "source_type": "definition",
+      "source_difficulty": "basic",
+      "source_subtopic": "Перекрёстная эластичность",
+      "source_slides": [
+        12
+      ],
+      "knowledge_id": "elasticity.el-c010",
+      "linked_knowledge_ids": [
+        "elasticity.el-c010",
+        "elasticity.el-f06"
+      ],
+      "type": "definition",
+      "difficulty": 1,
+      "question": "Что измеряет перекрёстная эластичность?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "Относительную реакцию спроса на товар x на изменение цены другого товара y.",
+      "key_points": [
+        "Относительную реакцию спроса на товар x на изменение цены другого товара y."
+      ],
+      "explanation": "Формула использует производную спроса на x по цене y и отношение Py/Qx. Знак помогает классифицировать связь товаров.",
+      "source": {
+        "id": "elasticity.el-lecture",
+        "name": "эластичность.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-28",
+        "excerpt": "Что измеряет перекрёстная эластичность?"
+      },
+      "source_excerpt": "Что измеряет перекрёстная эластичность?"
+    },
+    {
+      "id": "elasticity.el-q023",
+      "source_record_id": "EL-Q023",
+      "source_topic_id": "EL",
+      "source_type": "recall",
+      "source_difficulty": "basic",
+      "source_subtopic": "Перекрёстная эластичность",
+      "source_slides": [
+        12
+      ],
+      "knowledge_id": "elasticity.el-c010",
+      "linked_knowledge_ids": [
+        "elasticity.el-c010"
+      ],
+      "type": "understanding",
+      "difficulty": 1,
+      "question": "Что означает положительная перекрёстная эластичность?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "Товары-заменители в рассматриваемой модели: рост цены y сопровождается увеличением спроса на x.",
+      "key_points": [
+        "Товары-заменители в рассматриваемой модели: рост цены y сопровождается увеличением спроса на x."
+      ],
+      "explanation": "В лекции примером служат чай и кофе.",
+      "source": {
+        "id": "elasticity.el-lecture",
+        "name": "эластичность.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-28",
+        "excerpt": "Что означает положительная перекрёстная эластичность?"
+      },
+      "source_excerpt": "Что означает положительная перекрёстная эластичность?"
+    },
+    {
+      "id": "elasticity.el-q024",
+      "source_record_id": "EL-Q024",
+      "source_topic_id": "EL",
+      "source_type": "recall",
+      "source_difficulty": "basic",
+      "source_subtopic": "Перекрёстная эластичность",
+      "source_slides": [
+        12
+      ],
+      "knowledge_id": "elasticity.el-c010",
+      "linked_knowledge_ids": [
+        "elasticity.el-c010"
+      ],
+      "type": "understanding",
+      "difficulty": 1,
+      "question": "Что означает отрицательная перекрёстная эластичность?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "Товары-дополнители: рост цены y сопровождается снижением спроса на x.",
+      "key_points": [
+        "Товары-дополнители: рост цены y сопровождается снижением спроса на x."
+      ],
+      "explanation": "Пример лекции — принтер и картриджи.",
+      "source": {
+        "id": "elasticity.el-lecture",
+        "name": "эластичность.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-28",
+        "excerpt": "Что означает отрицательная перекрёстная эластичность?"
+      },
+      "source_excerpt": "Что означает отрицательная перекрёстная эластичность?"
+    },
+    {
+      "id": "elasticity.el-q025",
+      "source_record_id": "EL-Q025",
+      "source_topic_id": "EL",
+      "source_type": "calculation",
+      "source_difficulty": "basic",
+      "source_subtopic": "Перекрёстная эластичность",
+      "source_slides": [
+        12
+      ],
+      "knowledge_id": "elasticity.el-c010",
+      "linked_knowledge_ids": [
+        "elasticity.el-c010",
+        "elasticity.el-f06"
+      ],
+      "type": "understanding",
+      "difficulty": 1,
+      "question": "Для Qx=50−2Px+3Py при Px=Py=10 найдите перекрёстную эластичность спроса x по цене y.",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "Qx=60; E_{Qx,Py}=1/2.",
+      "key_points": [
+        "Qx=60; E_{Qx,Py}=1/2."
+      ],
+      "explanation": "Производная по Py равна 3. Эластичность = 3×10/60=1/2. Знак положительный, поэтому товары являются заменителями в этой модели.",
+      "source": {
+        "id": "elasticity.el-lecture",
+        "name": "эластичность.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-28",
+        "excerpt": "Для Qx=50−2Px+3Py при Px=Py=10 найдите перекрёстную эластичность спроса x по цене y."
+      },
+      "source_excerpt": "Для Qx=50−2Px+3Py при Px=Py=10 найдите перекрёстную эластичность спроса x по цене y."
+    },
+    {
+      "id": "elasticity.el-q026",
+      "source_record_id": "EL-Q026",
+      "source_topic_id": "EL",
+      "source_type": "formula",
+      "source_difficulty": "basic",
+      "source_subtopic": "Бюджетное равенство",
+      "source_slides": [
+        13
+      ],
+      "knowledge_id": "elasticity.el-c011",
+      "linked_knowledge_ids": [
+        "elasticity.el-c011",
+        "elasticity.el-f09"
+      ],
+      "type": "formula",
+      "difficulty": 1,
+      "question": "Как записывается бюджетное равенство для двух товаров, если потребитель тратит весь доход?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "Px·x(I) + Py·y(I) = I.",
+      "key_points": [
+        "Px·x(I) + Py·y(I) = I."
+      ],
+      "explanation": "Сумма расходов на товары равна доходу. Именно это равенство дифференцируется по доходу в выводе лекции.",
+      "source": {
+        "id": "elasticity.el-lecture",
+        "name": "эластичность.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-28",
+        "excerpt": "Как записывается бюджетное равенство для двух товаров, если потребитель тратит весь доход?"
+      },
+      "source_excerpt": "Как записывается бюджетное равенство для двух товаров, если потребитель тратит весь доход?"
+    },
+    {
+      "id": "elasticity.el-q027",
+      "source_record_id": "EL-Q027",
+      "source_topic_id": "EL",
+      "source_type": "variables",
+      "source_difficulty": "basic",
+      "source_subtopic": "Бюджетное равенство",
+      "source_slides": [
+        13
+      ],
+      "knowledge_id": "elasticity.el-c011",
+      "linked_knowledge_ids": [
+        "elasticity.el-c011",
+        "elasticity.el-f10"
+      ],
+      "type": "notation",
+      "difficulty": 1,
+      "question": "Что означает sx = Px·x/I?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "Доля дохода, расходуемая на товар x.",
+      "key_points": [
+        "Доля дохода, расходуемая на товар x."
+      ],
+      "explanation": "Числитель — расходы на товар x, знаменатель — весь доход. Аналогично определяется sy.",
+      "source": {
+        "id": "elasticity.el-lecture",
+        "name": "эластичность.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-28",
+        "excerpt": "Что означает sx = Px·x/I?"
+      },
+      "source_excerpt": "Что означает sx = Px·x/I?"
+    },
+    {
+      "id": "elasticity.el-q028",
+      "source_record_id": "EL-Q028",
+      "source_topic_id": "EL",
+      "source_type": "formula",
+      "source_difficulty": "basic",
+      "source_subtopic": "Бюджетное равенство",
+      "source_slides": [
+        13
+      ],
+      "knowledge_id": "elasticity.el-c011",
+      "linked_knowledge_ids": [
+        "elasticity.el-c011",
+        "elasticity.el-f11"
+      ],
+      "type": "formula",
+      "difficulty": 1,
+      "question": "Какова связь доходных эластичностей двух товаров при полном расходовании дохода на эти два товара?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "sx·E_{x,I} + sy·E_{y,I} = 1.",
+      "key_points": [
+        "sx·E_{x,I} + sy·E_{y,I} = 1."
+      ],
+      "explanation": "Это взвешенная сумма доходных эластичностей, где веса — доли расходов на каждый товар. Условие: весь доход расходуется на два товара, цены постоянны при дифференцировании.",
+      "source": {
+        "id": "elasticity.el-lecture",
+        "name": "эластичность.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-28",
+        "excerpt": "Какова связь доходных эластичностей двух товаров при полном расходовании дохода на эти два товара?"
+      },
+      "source_excerpt": "Какова связь доходных эластичностей двух товаров при полном расходовании дохода на эти два товара?"
+    },
+    {
+      "id": "elasticity.el-q029",
+      "source_record_id": "EL-Q029",
+      "source_topic_id": "EL",
+      "source_type": "calculation",
+      "source_difficulty": "basic",
+      "source_subtopic": "Бюджетное равенство",
+      "source_slides": [
+        13
+      ],
+      "knowledge_id": "elasticity.el-c011",
+      "linked_knowledge_ids": [
+        "elasticity.el-c011",
+        "elasticity.el-f11"
+      ],
+      "type": "understanding",
+      "difficulty": 1,
+      "question": "На товар x тратится четверть дохода, его доходная эластичность равна 2. На y тратится три четверти. Найдите E_y,I.",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "2/3.",
+      "key_points": [
+        "2/3."
+      ],
+      "explanation": "1/4×2 + 3/4×E_y,I = 1; отсюда 3/4×E_y,I = 1/2 и E_y,I=2/3.",
+      "source": {
+        "id": "elasticity.el-lecture",
+        "name": "эластичность.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-28",
+        "excerpt": "На товар x тратится четверть дохода, его доходная эластичность равна 2. На y тратится три четверти. Найдите E_y,I."
+      },
+      "source_excerpt": "На товар x тратится четверть дохода, его доходная эластичность равна 2. На y тратится три четверти. Найдите E_y,I."
+    }
+  ],
+  "section_description": "Виды эластичности, спрос, выручка, налоговое бремя и монопольное ценообразование по материалам лекции «Эластичность»."
+}

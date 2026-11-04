@@ -1,0 +1,176 @@
+{
+  "schema_version": 1,
+  "section": "financial-literacy",
+  "section_title": "Финансовая грамотность",
+  "topic": "06-section-6",
+  "topic_title": "Банк России, ключевая ставка и банковская устойчивость",
+  "questions": [
+    {
+      "id": "financial-literacy.fin-q053",
+      "source_record_id": "FIN-Q053",
+      "source_topic_id": "FIN",
+      "source_type": "comparison",
+      "source_difficulty": "basic",
+      "source_subtopic": "Банк России",
+      "source_slides": [
+        28
+      ],
+      "knowledge_id": "financial-literacy.fin-c025",
+      "linked_knowledge_ids": [
+        "financial-literacy.fin-c025"
+      ],
+      "type": "comparison",
+      "difficulty": 1,
+      "question": "Чем Банк России отличается от обычного коммерческого банка по роли?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "Банк России проводит денежно-кредитную политику, регулирует систему и отвечает за её устойчивость; коммерческие банки принимают вклады, выдают кредиты и проводят платежи.",
+      "key_points": [
+        "Банк России проводит денежно-кредитную политику, регулирует систему и отвечает за её устойчивость; коммерческие банки принимают вклады, выдают кредиты и проводят платежи."
+      ],
+      "explanation": "Лекция также отличает обязательства Банка России от обязательств коммерческих банков перед клиентами. Коммерческие банки создают депозитные деньги при кредитовании в рамках банковской системы.",
+      "source": {
+        "id": "financial-literacy.fin-lecture",
+        "name": "Финграм лекция.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-26",
+        "excerpt": "Чем Банк России отличается от обычного коммерческого банка по роли?"
+      },
+      "source_excerpt": "Чем Банк России отличается от обычного коммерческого банка по роли?"
+    },
+    {
+      "id": "financial-literacy.fin-q054",
+      "source_record_id": "FIN-Q054",
+      "source_topic_id": "FIN",
+      "source_type": "recall",
+      "source_difficulty": "basic",
+      "source_subtopic": "Ключевая ставка",
+      "source_slides": [
+        29
+      ],
+      "knowledge_id": "financial-literacy.fin-c026",
+      "linked_knowledge_ids": [
+        "financial-literacy.fin-c026"
+      ],
+      "type": "understanding",
+      "difficulty": 1,
+      "question": "Какие три направления влияния повышения ключевой ставки перечислены в лекции?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "Новые кредиты обычно дорожают; новые вклады могут давать больше; цены старых длинных облигаций с фиксированным купоном падают.",
+      "key_points": [
+        "Новые кредиты обычно дорожают; новые вклады могут давать больше; цены старых длинных облигаций с фиксированным купоном падают."
+      ],
+      "explanation": "Новые условия кредитов и вкладов меняются, а старая облигация с более низким фиксированным купоном становится менее привлекательной при росте рыночных ставок. Это общие тенденции, а не безусловная гарантия для каждого продукта.",
+      "source": {
+        "id": "financial-literacy.fin-lecture",
+        "name": "Финграм лекция.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-26",
+        "excerpt": "Какие три направления влияния повышения ключевой ставки перечислены в лекции?"
+      },
+      "source_excerpt": "Какие три направления влияния повышения ключевой ставки перечислены в лекции?"
+    },
+    {
+      "id": "financial-literacy.fin-q055",
+      "source_record_id": "FIN-Q055",
+      "source_topic_id": "FIN",
+      "source_type": "definition",
+      "source_difficulty": "basic",
+      "source_subtopic": "Ликвидность и платёжеспособность",
+      "source_slides": [
+        30
+      ],
+      "knowledge_id": "financial-literacy.fin-c027",
+      "linked_knowledge_ids": [
+        "financial-literacy.fin-c027"
+      ],
+      "type": "definition",
+      "difficulty": 1,
+      "question": "Что такое ликвидность банка?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "Способность банка сейчас выполнять платежи и выдавать деньги вкладчикам.",
+      "key_points": [
+        "Способность банка сейчас выполнять платежи и выдавать деньги вкладчикам."
+      ],
+      "explanation": "Даже банк с ценными долгосрочными активами может испытывать недостаток доступных денег для немедленных выплат.",
+      "source": {
+        "id": "financial-literacy.fin-lecture",
+        "name": "Финграм лекция.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-26",
+        "excerpt": "Что такое ликвидность банка?"
+      },
+      "source_excerpt": "Что такое ликвидность банка?"
+    },
+    {
+      "id": "financial-literacy.fin-q056",
+      "source_record_id": "FIN-Q056",
+      "source_topic_id": "FIN",
+      "source_type": "definition",
+      "source_difficulty": "basic",
+      "source_subtopic": "Ликвидность и платёжеспособность",
+      "source_slides": [
+        30
+      ],
+      "knowledge_id": "financial-literacy.fin-c028",
+      "linked_knowledge_ids": [
+        "financial-literacy.fin-c028"
+      ],
+      "type": "definition",
+      "difficulty": 1,
+      "question": "Что такое платёжеспособность банка?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "Достаточность активов банка для покрытия его обязательств.",
+      "key_points": [
+        "Достаточность активов банка для покрытия его обязательств."
+      ],
+      "explanation": "Банк может иметь деньги для текущих платежей, но из-за крупных убытков активов/капитала может быть недостаточно для обязательств. Это отличается от временного недостатка ликвидных средств.",
+      "source": {
+        "id": "financial-literacy.fin-lecture",
+        "name": "Финграм лекция.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-26",
+        "excerpt": "Что такое платёжеспособность банка?"
+      },
+      "source_excerpt": "Что такое платёжеспособность банка?"
+    },
+    {
+      "id": "financial-literacy.fin-q057",
+      "source_record_id": "FIN-Q057",
+      "source_topic_id": "FIN",
+      "source_type": "application",
+      "source_difficulty": "basic",
+      "source_subtopic": "Ликвидность и платёжеспособность",
+      "source_slides": [
+        30
+      ],
+      "knowledge_id": "financial-literacy.fin-c027",
+      "linked_knowledge_ids": [
+        "financial-literacy.fin-c027",
+        "financial-literacy.fin-c028"
+      ],
+      "type": "understanding",
+      "difficulty": 1,
+      "question": "Банк выдал много долгосрочных кредитов, но все вкладчики сегодня требуют деньги. Какая проблема прежде всего описана?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "Ликвидность.",
+      "key_points": [
+        "Ликвидность."
+      ],
+      "explanation": "Проблема состоит в нехватке доступных средств для немедленных выплат. Для вывода о платёжеспособности отдельно нужно оценить стоимость активов и обязательств.",
+      "source": {
+        "id": "financial-literacy.fin-lecture",
+        "name": "Финграм лекция.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-26",
+        "excerpt": "Банк выдал много долгосрочных кредитов, но все вкладчики сегодня требуют деньги. Какая проблема прежде всего описана?"
+      },
+      "source_excerpt": "Банк выдал много долгосрочных кредитов, но все вкладчики сегодня требуют деньги. Какая проблема прежде всего описана?"
+    }
+  ],
+  "section_description": "Налоги, вклады, кредиты, предпринимательство, инвестиции и цифровой рубль по материалам лекции «Финансовая грамотность»."
+}

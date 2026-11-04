@@ -1,0 +1,234 @@
+{
+  "schema_version": 1,
+  "section": "elasticity",
+  "section_title": "Эластичность",
+  "topic": "07-section-7",
+  "topic_title": "Монополия и индекс Лернера",
+  "knowledge": [
+    {
+      "id": "elasticity.el-c021",
+      "source_record_id": "EL-C021",
+      "source_category": "Монополия",
+      "title": "Индекс Лернера",
+      "type": "definition",
+      "definitions": {
+        "Индекс Лернера": "Относительная наценка (P−MC)/P; при внутреннем оптимуме единой цены и обычном нисходящем спросе равна 1/|E|."
+      },
+      "explanation": "Относительная наценка (P−MC)/P; при внутреннем оптимуме единой цены и обычном нисходящем спросе равна 1/|E|.",
+      "source_slides": [
+        26,
+        27
+      ],
+      "source": {
+        "id": "elasticity.el-lecture",
+        "name": "эластичность.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-28",
+        "excerpt": "Относительная наценка (P−MC)/P; при внутреннем оптимуме единой цены и обычном нисходящем спросе равна 1/|E|."
+      }
+    },
+    {
+      "id": "elasticity.el-c022",
+      "source_record_id": "EL-C022",
+      "source_category": "Монополия",
+      "title": "Оптимум монополиста",
+      "type": "definition",
+      "definitions": {
+        "Оптимум монополиста": "Монополист максимизирует π(Q)=P(Q)Q−TC(Q); условие первого порядка внутреннего оптимума — MR=MC."
+      },
+      "explanation": "Монополист максимизирует π(Q)=P(Q)Q−TC(Q); условие первого порядка внутреннего оптимума — MR=MC.",
+      "source_slides": [
+        26,
+        27
+      ],
+      "source": {
+        "id": "elasticity.el-lecture",
+        "name": "эластичность.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-28",
+        "excerpt": "Монополист максимизирует π(Q)=P(Q)Q−TC(Q); условие первого порядка внутреннего оптимума — MR=MC."
+      }
+    },
+    {
+      "id": "elasticity.el-c023",
+      "source_record_id": "EL-C023",
+      "source_category": "Монополия",
+      "title": "Оптимальная цена при заданных формах спроса",
+      "type": "definition",
+      "definitions": {
+        "Оптимальная цена при заданных формах спроса": "При MC=1 линейный спрос D(P)=a−bP даёт P*=1/2(a/b+1); спрос A/P^k, k>1, даёт P*=k/(k−1)."
+      },
+      "explanation": "При MC=1 линейный спрос D(P)=a−bP даёт P*=1/2(a/b+1); спрос A/P^k, k>1, даёт P*=k/(k−1).",
+      "source_slides": [
+        29
+      ],
+      "source": {
+        "id": "elasticity.el-lecture",
+        "name": "эластичность.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-28",
+        "excerpt": "При MC=1 линейный спрос D(P)=a−bP даёт P*=1/2(a/b+1); спрос A/P^k, k>1, даёт P*=k/(k−1)."
+      }
+    },
+    {
+      "id": "elasticity.el-c024",
+      "source_record_id": "EL-C024",
+      "source_category": "Монополия",
+      "title": "Средний спрос и оптимальные цены",
+      "type": "definition",
+      "definitions": {
+        "Средний спрос и оптимальные цены": "Средняя функция спроса не обязана давать среднюю арифметическую оптимальных цен исходных сценариев."
+      },
+      "explanation": "Средняя функция спроса не обязана давать среднюю арифметическую оптимальных цен исходных сценариев.",
+      "source_slides": [
+        28,
+        29,
+        30
+      ],
+      "source": {
+        "id": "elasticity.el-lecture",
+        "name": "эластичность.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-28",
+        "excerpt": "Средняя функция спроса не обязана давать среднюю арифметическую оптимальных цен исходных сценариев."
+      }
+    },
+    {
+      "id": "elasticity.el-f32",
+      "source_record_id": "EL-F32",
+      "source_category": "EL",
+      "title": "Прибыль монополиста",
+      "type": "formula",
+      "formula": "\\pi(Q)=P(Q)Q-TC(Q)",
+      "definitions": {
+        "π": "прибыль",
+        "P(Q)": "цена по обратной функции спроса",
+        "Q": "выпуск/продажи",
+        "TC(Q)": "общие издержки"
+      },
+      "economic_meaning": "Прибыль равна выручке минус общие издержки.",
+      "conditions": "Модель монополиста с единой ценой из лекции.",
+      "notes": "",
+      "explanation": "Прибыль равна выручке минус общие издержки.",
+      "source_slides": [
+        26
+      ],
+      "source": {
+        "id": "elasticity.el-lecture",
+        "name": "эластичность.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-28",
+        "excerpt": "\\pi(Q)=P(Q)Q-TC(Q)"
+      }
+    },
+    {
+      "id": "elasticity.el-f33",
+      "source_record_id": "EL-F33",
+      "source_category": "EL",
+      "title": "Условие внутреннего оптимума монополиста",
+      "type": "formula",
+      "formula": "MR=MC",
+      "definitions": {
+        "MR": "предельная выручка",
+        "MC": "предельные издержки"
+      },
+      "economic_meaning": "При внутреннем максимуме прибыли предельная выручка равна предельным издержкам.",
+      "conditions": "Это условие первого порядка; само по себе не гарантирует максимум без проверки достаточных условий и границ.",
+      "notes": "",
+      "explanation": "При внутреннем максимуме прибыли предельная выручка равна предельным издержкам.",
+      "source_slides": [
+        26
+      ],
+      "source": {
+        "id": "elasticity.el-lecture",
+        "name": "эластичность.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-28",
+        "excerpt": "MR=MC"
+      }
+    },
+    {
+      "id": "elasticity.el-f34",
+      "source_record_id": "EL-F34",
+      "source_category": "EL",
+      "title": "Индекс Лернера",
+      "type": "formula",
+      "formula": "L=\\frac{P-MC}{P}=-\\frac{1}{E_{Q,P}}=\\frac{1}{|E_{Q,P}|}",
+      "definitions": {
+        "L": "индекс Лернера",
+        "P": "цена монополиста",
+        "MC": "предельные издержки",
+        "EQP": "ценовая эластичность спроса, отрицательная на обычном нисходящем спросе"
+      },
+      "economic_meaning": "Измеряет относительную наценку цены над предельными издержками и связывает её с обратной абсолютной эластичностью спроса.",
+      "conditions": "Внутренний оптимум, единая цена, обычный нисходящий спрос; промежуточный знак −1/E нужен при отрицательной знаковой эластичности.",
+      "notes": "",
+      "explanation": "Измеряет относительную наценку цены над предельными издержками и связывает её с обратной абсолютной эластичностью спроса.",
+      "source_slides": [
+        26,
+        27
+      ],
+      "source": {
+        "id": "elasticity.el-lecture",
+        "name": "эластичность.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-28",
+        "excerpt": "L=\\frac{P-MC}{P}=-\\frac{1}{E_{Q,P}}=\\frac{1}{|E_{Q,P}|}"
+      }
+    },
+    {
+      "id": "elasticity.el-f35",
+      "source_record_id": "EL-F35",
+      "source_category": "EL",
+      "title": "Оптимальная цена при линейном спросе и MC=1",
+      "type": "formula",
+      "formula": "P^*=\\frac12\\left(\\frac{a}{b}+1\\right)",
+      "definitions": {
+        "a,b": "параметры спроса D(P)=a−bP",
+        "P*": "оптимальная цена"
+      },
+      "economic_meaning": "Оптимальная цена для конкретного класса линейных функций спроса при предельных издержках 1.",
+      "conditions": "D(P)=a−bP, MC=1; функция прибыли имеет внутренний максимум.",
+      "notes": "",
+      "explanation": "Оптимальная цена для конкретного класса линейных функций спроса при предельных издержках 1.",
+      "source_slides": [
+        29
+      ],
+      "source": {
+        "id": "elasticity.el-lecture",
+        "name": "эластичность.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-28",
+        "excerpt": "P^*=\\frac12\\left(\\frac{a}{b}+1\\right)"
+      }
+    },
+    {
+      "id": "elasticity.el-f36",
+      "source_record_id": "EL-F36",
+      "source_category": "EL",
+      "title": "Оптимальная цена при постоянной эластичности и MC=1",
+      "type": "formula",
+      "formula": "P^*=\\frac{k}{k-1}",
+      "definitions": {
+        "k": "показатель степени в D(P)=A/P^k",
+        "P*": "оптимальная цена"
+      },
+      "economic_meaning": "Оптимальная цена для спроса постоянной эластичности; в лекции не зависит от параметра масштаба A.",
+      "conditions": "D(P)=A/P^k, MC=1, k>1; внутренний оптимум.",
+      "notes": "",
+      "explanation": "Оптимальная цена для спроса постоянной эластичности; в лекции не зависит от параметра масштаба A.",
+      "source_slides": [
+        29,
+        30
+      ],
+      "source": {
+        "id": "elasticity.el-lecture",
+        "name": "эластичность.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-28",
+        "excerpt": "P^*=\\frac{k}{k-1}"
+      }
+    }
+  ],
+  "section_description": "Виды эластичности, спрос, выручка, налоговое бремя и монопольное ценообразование по материалам лекции «Эластичность»."
+}

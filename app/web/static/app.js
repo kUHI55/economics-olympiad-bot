@@ -37,7 +37,7 @@ function escapeHtml(value) {
 
 function inlineMarkdown(value) {
   return escapeHtml(value)
-    .replace(/\\\\\((.*?)\\\\\)/g, '<span class="math-inline">$1</span>')
+    .replace(/\\\((.*?)\\\)/g, '<span class="math-inline">\\($1\\)</span>')
     .replace(/`([^`]+)`/g, "<code>$1</code>")
     .replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>")
     .replace(/\*([^*]+)\*/g, "<em>$1</em>");
@@ -51,6 +51,8 @@ function renderMarkdown(source) {
   let table = [];
   let inCode = false;
   let code = [];
+  let inMath = false;
+  let math = [];
   const flushParagraph = () => {
     if (paragraph.length) output.push(`<p>${inlineMarkdown(paragraph.join(" "))}</p>`);
     paragraph = [];
@@ -70,6 +72,17 @@ function renderMarkdown(source) {
     table = [];
   };
   for (const line of source.replace(/&#x20;/g, " ").replace(/\r/g, "").split("\n")) {
+    if (line.trim() === "\\[") {
+      flushParagraph(); flushList(); flushTable();
+      inMath = true; math = []; continue;
+    }
+    if (inMath) {
+      if (line.trim() === "\\]") {
+        output.push(`<div class="math-display">\\[${escapeHtml(math.join("\n"))}\\]</div>`);
+        inMath = false; math = [];
+      } else math.push(line);
+      continue;
+    }
     if (line.trim().startsWith("```")) {
       flushParagraph(); flushList(); flushTable();
       if (inCode) output.push(`<pre class="math-block">${escapeHtml(code.join("\n"))}</pre>`);
@@ -86,7 +99,7 @@ function renderMarkdown(source) {
       const id = `section-${output.length}`;
       output.push(`<h${depth} id="${id}">${inlineMarkdown(title)}</h${depth}>`); continue;
     }
-    if (/^\\\\\[|^\\\\\]|^\$\$/.test(line.trim())) { flushParagraph(); output.push(`<pre class="math-block">${escapeHtml(line.trim())}</pre>`); continue; }
+    if (/^\$\$/.test(line.trim())) { flushParagraph(); output.push(`<div class="math-display">${escapeHtml(line.trim())}</div>`); continue; }
     if (/^\s*>/.test(line)) { flushParagraph(); flushList(); flushTable(); output.push(`<blockquote>${inlineMarkdown(line.replace(/^\s*>\s?/, ""))}</blockquote>`); continue; }
     const listMatch = line.match(/^\s*(?:[-*+]\s+|\d+[.)]\s+)(.*)$/);
     if (listMatch) {
@@ -254,7 +267,18 @@ function isReturnContextValid() {
 }
 
 function renderKnowledgeItem(item) {
-  return `<article class="knowledge-item" id="knowledge-${escapeHtml(item.id)}"><span class="label">${escapeHtml(item.type.replaceAll("_", " ").toUpperCase())}</span><h3>${escapeHtml(item.title)}</h3>${item.formula ? `<div class="formula">${escapeHtml(item.formula)}</div>` : ""}<p>${escapeHtml(item.explanation)}</p>${Object.keys(item.definitions || {}).length ? `<ul>${Object.entries(item.definitions).map(([key, value]) => `<li><strong>${escapeHtml(key)}:</strong> ${escapeHtml(value)}</li>`).join("")}</ul>` : ""}<p class="source">Источник: ${escapeHtml(item.source.name)} · ${escapeHtml(item.source.excerpt)}</p></article>`;
+  const details = [
+    item.economic_meaning ? `<p><strong>Экономический смысл:</strong> ${inlineMarkdown(item.economic_meaning)}</p>` : "",
+    item.conditions ? `<p><strong>Условия применения:</strong> ${inlineMarkdown(item.conditions)}</p>` : "",
+    item.notes ? `<p><strong>Примечание:</strong> ${inlineMarkdown(item.notes)}</p>` : "",
+  ].join("");
+  return `<article class="knowledge-item" id="knowledge-${escapeHtml(item.id)}"><span class="label">${escapeHtml(item.type.replaceAll("_", " ").toUpperCase())}</span><h3>${escapeHtml(item.title)}</h3>${item.formula ? `<div class="formula math-render">\\[${escapeHtml(item.formula)}\\]</div>` : ""}<p>${inlineMarkdown(item.explanation)}</p>${details}${Object.keys(item.definitions || {}).length ? `<ul>${Object.entries(item.definitions).map(([key, value]) => `<li><strong>${escapeHtml(key)}:</strong> ${inlineMarkdown(value)}</li>`).join("")}</ul>` : ""}<p class="source">Источник: ${escapeHtml(item.source.name)} · ${escapeHtml(item.source.excerpt)}</p></article>`;
+}
+
+function typesetMath(root = content) {
+  if (globalThis.MathJax?.typesetPromise) {
+    globalThis.MathJax.typesetPromise([root]).catch((error) => console.warn("MathJax typesetting failed", error));
+  }
 }
 
 async function renderDocument(theme, name) {
@@ -266,6 +290,7 @@ async function renderDocument(theme, name) {
   const headings = [...html.matchAll(/<h([2-5]) id="([^"]+)">([^<]+)<\/h\d>/g)];
   const sidebar = headings.map((heading) => `<a href="#${heading[2]}">${heading[3]}</a>`).join("");
   content.innerHTML = `${renderThemeHeader(theme)}<div class="lesson-layout"><aside class="lesson-nav">${sidebar}</aside><article class="markdown">${html}</article></div>`;
+  typesetMath(content);
   bindActions();
 }
 
@@ -379,13 +404,14 @@ function renderStatistics() {
 
 function renderQuizQuestion() {
   const question = state.questions[state.questionIndex];
-  const hasFourOptions = Array.isArray(question.options) && question.options.length === 4;
-  const options = hasFourOptions
+  const isMultipleChoice = question.type === "multiple_choice";
+  const options = isMultipleChoice
     ? `<div>${question.options.map((option, index) => `<label class="quiz-option"><input type="radio" name="answer" value="${index}" ${state.selectedAnswer === String(index) ? "checked" : ""} ${state.answered ? "disabled" : ""}><span>${escapeHtml(option.text)}</span></label>`).join("")}</div>`
-    : `<div class="feedback error">В этом вопросе не настроены четыре варианта ответа. Выбери другой вопрос или сообщи о проблеме.</div>`;
+    : `<label class="answer-label" for="open-answer">Твой ответ</label><textarea class="answer" id="open-answer" name="answer" maxlength="2000" ${state.answered ? "disabled" : ""}>${escapeHtml(state.selectedAnswer || "")}</textarea><p class="progress-note">Открытый ответ не оценивается по совпадению строк. Если оценка будет неопределённой, сравни его с эталоном и объяснением.</p>`;
   const result = state.lastResult;
-  const feedback = result ? `<div class="feedback ${result.verdict === "incorrect" ? "error" : ""}"><strong>${result.verdict === "correct" ? "Верно!" : result.verdict === "partial" ? "Частично верно" : result.verdict === "uncertain" ? "Не удалось надёжно оценить автоматически" : "Неверно — разберём ответ"}</strong><p>${escapeHtml(result.short_explanation || "")}</p><p><strong>Правильный ответ:</strong> ${escapeHtml(result.reference_answer)}</p><p>${escapeHtml(result.explanation)}</p><p class="source">Основание: ${escapeHtml(result.source_excerpt)}</p>${result.progress_saved === false ? '<p class="progress-note">Попытка и статистика сохранены в этом браузере; синхронизация с PostgreSQL недоступна.</p>' : ""}<button class="text-button" data-action="open-answer-theory">Открыть связанный раздел теории →</button></div>` : "";
-  return `<div class="quiz-card active-quiz"><p class="eyebrow">${escapeHtml(question.theme_title)} · ${escapeHtml(question.subtopic_title)}</p><span class="quiz-progress">ВОПРОС ${state.questionIndex + 1} / ${state.questions.length} · СЛОЖНОСТЬ ${question.difficulty}/5</span><p class="quiz-question">${inlineMarkdown(question.question)}</p><form id="answer-form">${options}<div class="quiz-actions"><button class="button primary" type="submit" ${state.answered || !hasFourOptions ? "disabled" : ""}>Проверить ответ</button>${state.answered ? `<button class="button" type="button" data-action="next-question">${state.questionIndex + 1 === state.questions.length ? "Показать итог" : "Следующий вопрос"}</button>` : ""}</div></form>${state.quizError ? `<div class="feedback error">${escapeHtml(state.quizError)}</div>` : ""}${feedback}</div>`;
+  const feedback = result ? `<div class="feedback ${result.verdict === "incorrect" ? "error" : ""}"><strong>${result.verdict === "correct" ? "Верно!" : result.verdict === "partial" ? "Частично верно" : result.verdict === "uncertain" ? "Не удалось надёжно оценить автоматически" : "Неверно — разберём ответ"}</strong><p>${inlineMarkdown(result.short_explanation || "")}</p><p><strong>Правильный ответ:</strong> ${inlineMarkdown(result.reference_answer)}</p><p>${inlineMarkdown(result.explanation)}</p><p class="source">Основание: ${inlineMarkdown(result.source_excerpt)}</p>${result.progress_saved === false ? '<p class="progress-note">Попытка и статистика сохранены в этом браузере; синхронизация с PostgreSQL недоступна.</p>' : ""}<button class="text-button" data-action="open-answer-theory">Открыть связанный раздел теории →</button></div>` : "";
+  const related = (question.related_knowledge || []).map((item) => `<button class="text-button" type="button" data-action="open-question-knowledge:${escapeHtml(item.id)}">${escapeHtml(item.title)} →</button>`).join(" ");
+  return `<div class="quiz-card active-quiz"><p class="eyebrow">${escapeHtml(question.theme_title)} · ${escapeHtml(question.subtopic_title)}</p><span class="quiz-progress">ВОПРОС ${state.questionIndex + 1} / ${state.questions.length} · СЛОЖНОСТЬ ${question.difficulty}/5</span><p class="quiz-question">${inlineMarkdown(question.question)}</p>${related ? `<div class="related-knowledge"><span>Связанные понятия и формулы:</span> ${related}</div>` : ""}<form id="answer-form">${options}<div class="quiz-actions"><button class="button primary" type="submit" ${state.answered ? "disabled" : ""}>Проверить ответ</button>${state.answered ? `<button class="button" type="button" data-action="next-question">${state.questionIndex + 1 === state.questions.length ? "Показать итог" : "Следующий вопрос"}</button>` : ""}</div></form>${state.quizError ? `<div class="feedback error">${escapeHtml(state.quizError)}</div>` : ""}${feedback}</div>`;
 }
 
 function renderQuizSummary() {
@@ -407,6 +433,7 @@ function render() {
     content.innerHTML = `${renderThemeHeader(theme)}${body}`;
   }
   bindActions();
+  typesetMath(content);
 }
 
 function showError(error) { content.innerHTML = `<div class="feedback error">${escapeHtml(error.message)}</div>`; }
@@ -606,9 +633,27 @@ function bindActions() {
       render();
       document.querySelector(`#knowledge-${CSS.escape(question.knowledge_id)}`)?.scrollIntoView({ behavior: "smooth", block: "center" });
     }
+    else if (action.startsWith("open-question-knowledge:")) {
+      const knowledgeId = action.slice("open-question-knowledge:".length);
+      const question = state.questions[state.questionIndex];
+      const linked = question.related_knowledge?.find((item) => item.id === knowledgeId);
+      if (linked) {
+        saveCurrentQuestionState();
+        state.returnContext = { sessionId: currentSession()?.id, questionId: question.id, questionIndex: state.questionIndex, scrollY: window.scrollY };
+        state.themeId = question.theme_id; state.view = "theme"; state.themePane = "theory"; state.subtopicId = linked.subtopic_id;
+        saveLearning(); history.pushState({ ecolab: true, route: captureRoute() }, "", `#theme-${encodeURIComponent(question.theme_id)}`); render();
+        requestAnimationFrame(() => document.querySelector(`#knowledge-${CSS.escape(knowledgeId)}`)?.scrollIntoView({ behavior: "smooth", block: "center" }));
+      }
+    }
     else if (action === "review-errors") await loadReviewQuestions();
   }));
   content.querySelectorAll('input[name="answer"]').forEach((input) => input.addEventListener("change", () => {
+    state.selectedAnswer = input.value;
+    state.quizError = null;
+    saveCurrentQuestionState();
+    replaceCurrentRoute();
+  }));
+  content.querySelectorAll('textarea[name="answer"]').forEach((input) => input.addEventListener("input", () => {
     state.selectedAnswer = input.value;
     state.quizError = null;
     saveCurrentQuestionState();
@@ -624,9 +669,10 @@ async function submitAnswer(event) {
   if (state.answered) return;
   const question = state.questions[state.questionIndex];
   const selected = document.querySelector('input[name="answer"]:checked');
-  const answer = selected ? selected.value : state.selectedAnswer;
-  if (!Array.isArray(question.options) || question.options.length !== 4) { showQuizError("В этом вопросе должны быть настроены ровно четыре варианта ответа."); return; }
-  if (answer === null || answer === undefined || answer === "") { showQuizError("Сначала выбери один из четырёх вариантов ответа."); return; }
+  const answer = selected ? selected.value : document.querySelector('textarea[name="answer"]')?.value ?? state.selectedAnswer;
+  if (question.type === "multiple_choice" && (!Array.isArray(question.options) || question.options.length < 2)) { showQuizError("Варианты ответа для этого вопроса не загрузились."); return; }
+  if (question.type !== "multiple_choice" && !Array.isArray(question.options)) { showQuizError("Не удалось определить формат ответа. Перезагрузи квиз."); return; }
+  if (answer === null || answer === undefined || answer.trim() === "") { showQuizError(question.type === "multiple_choice" ? "Сначала выбери вариант ответа." : "Сначала введи ответ."); return; }
   const localMode = state.progress.answer_mode === "local" || state.quizSession?.local === true;
   const headers = localMode ? { "Content-Type": "application/json" } : databaseHeaders(true);
   if (!headers) return;

@@ -1,0 +1,177 @@
+{
+  "schema_version": 1,
+  "section": "financial-literacy",
+  "section_title": "Финансовая грамотность",
+  "topic": "07-section-7",
+  "topic_title": "Валютный курс и доходность",
+  "questions": [
+    {
+      "id": "financial-literacy.fin-q058",
+      "source_record_id": "FIN-Q058",
+      "source_topic_id": "FIN",
+      "source_type": "concept",
+      "source_difficulty": "basic",
+      "source_subtopic": "Валютный курс",
+      "source_slides": [
+        31
+      ],
+      "knowledge_id": "financial-literacy.fin-c029",
+      "linked_knowledge_ids": [
+        "financial-literacy.fin-c029"
+      ],
+      "type": "understanding",
+      "difficulty": 1,
+      "question": "Если доллар подорожал с 90 до 100 рублей, что произошло с рублём относительно доллара?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "Рубль ослаб: за один доллар требуется больше рублей.",
+      "key_points": [
+        "Рубль ослаб: за один доллар требуется больше рублей."
+      ],
+      "explanation": "Курс в лекции выражен в рублях за доллар. Увеличение числа рублей за единицу иностранной валюты означает ослабление рубля.",
+      "source": {
+        "id": "financial-literacy.fin-lecture",
+        "name": "Финграм лекция.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-26",
+        "excerpt": "Если доллар подорожал с 90 до 100 рублей, что произошло с рублём относительно доллара?"
+      },
+      "source_excerpt": "Если доллар подорожал с 90 до 100 рублей, что произошло с рублём относительно доллара?"
+    },
+    {
+      "id": "financial-literacy.fin-q059",
+      "source_record_id": "FIN-Q059",
+      "source_topic_id": "FIN",
+      "source_type": "definition",
+      "source_difficulty": "basic",
+      "source_subtopic": "Спред",
+      "source_slides": [
+        31
+      ],
+      "knowledge_id": "financial-literacy.fin-c030",
+      "linked_knowledge_ids": [
+        "financial-literacy.fin-c030"
+      ],
+      "type": "definition",
+      "difficulty": 1,
+      "question": "Что такое валютный спред в примере лекции?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "Разница между курсом продажи и курсом покупки валюты банком; 100 − 95 = 5 рублей за доллар.",
+      "key_points": [
+        "Разница между курсом продажи и курсом покупки валюты банком; 100 − 95 = 5 рублей за доллар."
+      ],
+      "explanation": "Курс покупки и продажи указан с позиции банка. Клиент покупает валюту по курсу продажи банка, а продаёт обратно по курсу покупки банка.",
+      "source": {
+        "id": "financial-literacy.fin-lecture",
+        "name": "Финграм лекция.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-26",
+        "excerpt": "Что такое валютный спред в примере лекции?"
+      },
+      "source_excerpt": "Что такое валютный спред в примере лекции?"
+    },
+    {
+      "id": "financial-literacy.fin-q060",
+      "source_record_id": "FIN-Q060",
+      "source_topic_id": "FIN",
+      "source_type": "calculation",
+      "source_difficulty": "basic",
+      "source_subtopic": "Спред",
+      "source_slides": [
+        31
+      ],
+      "knowledge_id": "financial-literacy.fin-c030",
+      "linked_knowledge_ids": [
+        "financial-literacy.fin-c030"
+      ],
+      "type": "understanding",
+      "difficulty": 1,
+      "question": "Клиент покупает 100 долларов по 100 рублей, а сразу продаёт обратно по 95 рублей. Какова потеря?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "500 рублей.",
+      "key_points": [
+        "500 рублей."
+      ],
+      "explanation": "Покупка стоит 10 000 руб.; продажа приносит 9 500 руб.; разница 500 руб. возникает из-за спреда даже без изменения рыночного курса.",
+      "source": {
+        "id": "financial-literacy.fin-lecture",
+        "name": "Финграм лекция.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-26",
+        "excerpt": "Клиент покупает 100 долларов по 100 рублей, а сразу продаёт обратно по 95 рублей. Какова потеря?"
+      },
+      "source_excerpt": "Клиент покупает 100 долларов по 100 рублей, а сразу продаёт обратно по 95 рублей. Какова потеря?"
+    },
+    {
+      "id": "financial-literacy.fin-q061",
+      "source_record_id": "FIN-Q061",
+      "source_topic_id": "FIN",
+      "source_type": "variables",
+      "source_difficulty": "basic",
+      "source_subtopic": "Валютная доходность",
+      "source_slides": [
+        32
+      ],
+      "knowledge_id": "financial-literacy.fin-c031",
+      "linked_knowledge_ids": [
+        "financial-literacy.fin-c031",
+        "financial-literacy.fin-f15"
+      ],
+      "type": "notation",
+      "difficulty": 1,
+      "question": "Что обозначают E0 и E1 в формуле валютной доходности?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "E0 — начальный курс, E1 — конечный курс; оба измеряются количеством рублей за единицу иностранной валюты.",
+      "key_points": [
+        "E0 — начальный курс, E1 — конечный курс; оба измеряются количеством рублей за единицу иностранной валюты."
+      ],
+      "explanation": "Отношение E1/E0 отражает изменение валютного курса за период. Если котировка задана иначе, формулу нельзя переносить без преобразования.",
+      "source": {
+        "id": "financial-literacy.fin-lecture",
+        "name": "Финграм лекция.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-26",
+        "excerpt": "Что обозначают E0 и E1 в формуле валютной доходности?"
+      },
+      "source_excerpt": "Что обозначают E0 и E1 в формуле валютной доходности?"
+    },
+    {
+      "id": "financial-literacy.fin-q062",
+      "source_record_id": "FIN-Q062",
+      "source_topic_id": "FIN",
+      "source_type": "calculation",
+      "source_difficulty": "basic",
+      "source_subtopic": "Валютная доходность",
+      "source_slides": [
+        32
+      ],
+      "knowledge_id": "financial-literacy.fin-c031",
+      "linked_knowledge_ids": [
+        "financial-literacy.fin-c031",
+        "financial-literacy.fin-f15"
+      ],
+      "type": "understanding",
+      "difficulty": 1,
+      "question": "Актив вырос со 100 до 110 долларов, курс изменился с 90 до 100 рублей за доллар. Какова доходность в рублях?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "Приблизительно 22,2%.",
+      "key_points": [
+        "Приблизительно 22,2%."
+      ],
+      "explanation": "Начальная стоимость 9 000 руб.; конечная 11 000 руб.; доходность = 11 000/9 000 − 1 ≈ 22,2%. Долларовая доходность равна 10%.",
+      "source": {
+        "id": "financial-literacy.fin-lecture",
+        "name": "Финграм лекция.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-26",
+        "excerpt": "Актив вырос со 100 до 110 долларов, курс изменился с 90 до 100 рублей за доллар. Какова доходность в рублях?"
+      },
+      "source_excerpt": "Актив вырос со 100 до 110 долларов, курс изменился с 90 до 100 рублей за доллар. Какова доходность в рублях?"
+    }
+  ],
+  "section_description": "Налоги, вклады, кредиты, предпринимательство, инвестиции и цифровой рубль по материалам лекции «Финансовая грамотность»."
+}

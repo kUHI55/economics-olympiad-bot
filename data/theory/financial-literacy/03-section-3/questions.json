@@ -1,0 +1,342 @@
+{
+  "schema_version": 1,
+  "section": "financial-literacy",
+  "section_title": "Финансовая грамотность",
+  "topic": "03-section-3",
+  "topic_title": "Банковские вклады, кредиты и финансовая безопасность",
+  "questions": [
+    {
+      "id": "financial-literacy.fin-q030",
+      "source_record_id": "FIN-Q030",
+      "source_topic_id": "FIN",
+      "source_type": "definition",
+      "source_difficulty": "basic",
+      "source_subtopic": "Страхование вкладов",
+      "source_slides": [
+        14
+      ],
+      "knowledge_id": "financial-literacy.fin-c013",
+      "linked_knowledge_ids": [
+        "financial-literacy.fin-c013"
+      ],
+      "type": "definition",
+      "difficulty": 1,
+      "question": "Что такое АСВ?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "Агентство по страхованию вкладов; оно организует выплату страхового возмещения при страховом случае в участвующем в системе банке.",
+      "key_points": [
+        "Агентство по страхованию вкладов; оно организует выплату страхового возмещения при страховом случае в участвующем в системе банке."
+      ],
+      "explanation": "В лекции примером страхового случая назван отзыв лицензии. Страхуется не любой финансовый актив, а подходящие банковские средства.",
+      "source": {
+        "id": "financial-literacy.fin-lecture",
+        "name": "Финграм лекция.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-26",
+        "excerpt": "Что такое АСВ?"
+      },
+      "source_excerpt": "Что такое АСВ?"
+    },
+    {
+      "id": "financial-literacy.fin-q031",
+      "source_record_id": "FIN-Q031",
+      "source_topic_id": "FIN",
+      "source_type": "recall",
+      "source_difficulty": "basic",
+      "source_subtopic": "Страхование вкладов",
+      "source_slides": [
+        14
+      ],
+      "knowledge_id": "financial-literacy.fin-c013",
+      "linked_knowledge_ids": [
+        "financial-literacy.fin-c013"
+      ],
+      "type": "understanding",
+      "difficulty": 1,
+      "question": "Каков стандартный лимит страхования вкладов в презентации?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "1,4 млн рублей на одного вкладчика в одном банке.",
+      "key_points": [
+        "1,4 млн рублей на одного вкладчика в одном банке."
+      ],
+      "explanation": "Лимит применяется к совокупности подходящих счетов и вкладов в конкретном банке, включая начисленные проценты в пределах описанного правила. Значение относится к презентации на 26.10.2026.",
+      "source": {
+        "id": "financial-literacy.fin-lecture",
+        "name": "Финграм лекция.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-26",
+        "excerpt": "Каков стандартный лимит страхования вкладов в презентации?"
+      },
+      "source_excerpt": "Каков стандартный лимит страхования вкладов в презентации?"
+    },
+    {
+      "id": "financial-literacy.fin-q032",
+      "source_record_id": "FIN-Q032",
+      "source_topic_id": "FIN",
+      "source_type": "calculation",
+      "source_difficulty": "basic",
+      "source_subtopic": "Страхование вкладов",
+      "source_slides": [
+        14,
+        15
+      ],
+      "knowledge_id": "financial-literacy.fin-c013",
+      "linked_knowledge_ids": [
+        "financial-literacy.fin-c013",
+        "financial-literacy.fin-f12"
+      ],
+      "type": "understanding",
+      "difficulty": 1,
+      "question": "У вкладчика в одном банке два вклада: 1 млн и 700 тыс. рублей. Сколько возместит АСВ по стандартному лимиту лекции?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "1,4 млн рублей.",
+      "key_points": [
+        "1,4 млн рублей."
+      ],
+      "explanation": "Два вклада одного человека в одном банке не создают два лимита. Общая сумма 1,7 млн, возмещение ограничено 1,4 млн.",
+      "source": {
+        "id": "financial-literacy.fin-lecture",
+        "name": "Финграм лекция.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-26",
+        "excerpt": "У вкладчика в одном банке два вклада: 1 млн и 700 тыс. рублей. Сколько возместит АСВ по стандартному лимиту лекции?"
+      },
+      "source_excerpt": "У вкладчика в одном банке два вклада: 1 млн и 700 тыс. рублей. Сколько возместит АСВ по стандартному лимиту лекции?"
+    },
+    {
+      "id": "financial-literacy.fin-q033",
+      "source_record_id": "FIN-Q033",
+      "source_topic_id": "FIN",
+      "source_type": "trap",
+      "source_difficulty": "basic",
+      "source_subtopic": "Страхование вкладов",
+      "source_slides": [
+        14
+      ],
+      "knowledge_id": "financial-literacy.fin-c013",
+      "linked_knowledge_ids": [
+        "financial-literacy.fin-c013"
+      ],
+      "type": "common_mistake",
+      "difficulty": 1,
+      "question": "Застрахованы ли АСВ как банковские вклады акции, облигации, паи фондов и обычный брокерский остаток?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "Нет, они не являются застрахованными банковскими вкладами.",
+      "key_points": [
+        "Нет, они не являются застрахованными банковскими вкладами."
+      ],
+      "explanation": "Нельзя переносить страховой лимит обычного вклада на инвестиционные активы и брокерский счёт.",
+      "source": {
+        "id": "financial-literacy.fin-lecture",
+        "name": "Финграм лекция.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-26",
+        "excerpt": "Застрахованы ли АСВ как банковские вклады акции, облигации, паи фондов и обычный брокерский остаток?"
+      },
+      "source_excerpt": "Застрахованы ли АСВ как банковские вклады акции, облигации, паи фондов и обычный брокерский остаток?"
+    },
+    {
+      "id": "financial-literacy.fin-q034",
+      "source_record_id": "FIN-Q034",
+      "source_topic_id": "FIN",
+      "source_type": "recall",
+      "source_difficulty": "basic",
+      "source_subtopic": "Финансовая безопасность",
+      "source_slides": [
+        16
+      ],
+      "knowledge_id": "financial-literacy.fin-c014",
+      "linked_knowledge_ids": [
+        "financial-literacy.fin-c014"
+      ],
+      "type": "understanding",
+      "difficulty": 1,
+      "question": "Какие данные нельзя сообщать никому по правилам слайда?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "PIN, CVV/CVC карты, пароли и одноразовые коды, коды подтверждения входа, доступ к экрану или банковскому приложению.",
+      "key_points": [
+        "PIN, CVV/CVC карты, пароли и одноразовые коды, коды подтверждения входа, доступ к экрану или банковскому приложению."
+      ],
+      "explanation": "Номер телефона через СБП, номер карты/счёта и имя получателя обычно могут быть достаточны для перевода; конфиденциальные коды и доступы сообщать нельзя.",
+      "source": {
+        "id": "financial-literacy.fin-lecture",
+        "name": "Финграм лекция.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-26",
+        "excerpt": "Какие данные нельзя сообщать никому по правилам слайда?"
+      },
+      "source_excerpt": "Какие данные нельзя сообщать никому по правилам слайда?"
+    },
+    {
+      "id": "financial-literacy.fin-q035",
+      "source_record_id": "FIN-Q035",
+      "source_topic_id": "FIN",
+      "source_type": "definition",
+      "source_difficulty": "basic",
+      "source_subtopic": "Самозапрет на кредиты",
+      "source_slides": [
+        17
+      ],
+      "knowledge_id": "financial-literacy.fin-c015",
+      "linked_knowledge_ids": [
+        "financial-literacy.fin-c015"
+      ],
+      "type": "definition",
+      "difficulty": 1,
+      "question": "Что такое самозапрет на кредиты и где его можно оформить по лекции?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "Это ограничение на получение определённых потребительских кредитов и займов; оформляется через Госуслуги или МФЦ.",
+      "key_points": [
+        "Это ограничение на получение определённых потребительских кредитов и займов; оформляется через Госуслуги или МФЦ."
+      ],
+      "explanation": "Отметка появляется в кредитной истории, банк и МФО обязаны её проверить. Самозапрет не охватывает все кредитные продукты; пример исключения в лекции — ипотека.",
+      "source": {
+        "id": "financial-literacy.fin-lecture",
+        "name": "Финграм лекция.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-26",
+        "excerpt": "Что такое самозапрет на кредиты и где его можно оформить по лекции?"
+      },
+      "source_excerpt": "Что такое самозапрет на кредиты и где его можно оформить по лекции?"
+    },
+    {
+      "id": "financial-literacy.fin-q036",
+      "source_record_id": "FIN-Q036",
+      "source_topic_id": "FIN",
+      "source_type": "recall",
+      "source_difficulty": "basic",
+      "source_subtopic": "Период охлаждения",
+      "source_slides": [
+        18
+      ],
+      "knowledge_id": "financial-literacy.fin-c016",
+      "linked_knowledge_ids": [
+        "financial-literacy.fin-c016"
+      ],
+      "type": "understanding",
+      "difficulty": 1,
+      "question": "Какая пауза указана для кредита от 50 до 200 тыс. рублей?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "4 часа.",
+      "key_points": [
+        "4 часа."
+      ],
+      "explanation": "По таблице лекции до 50 тыс. обязательной паузы нет; от 50 до 200 тыс. — 4 часа; свыше 200 тыс. — 48 часов. Точная граничная формулировка на 50 тыс. неоднозначна.",
+      "source": {
+        "id": "financial-literacy.fin-lecture",
+        "name": "Финграм лекция.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-26",
+        "excerpt": "Какая пауза указана для кредита от 50 до 200 тыс. рублей?"
+      },
+      "source_excerpt": "Какая пауза указана для кредита от 50 до 200 тыс. рублей?"
+    },
+    {
+      "id": "financial-literacy.fin-q037",
+      "source_record_id": "FIN-Q037",
+      "source_topic_id": "FIN",
+      "source_type": "recall",
+      "source_difficulty": "basic",
+      "source_subtopic": "Период охлаждения",
+      "source_slides": [
+        18
+      ],
+      "knowledge_id": "financial-literacy.fin-c016",
+      "linked_knowledge_ids": [
+        "financial-literacy.fin-c016"
+      ],
+      "type": "understanding",
+      "difficulty": 1,
+      "question": "Какая пауза указана для кредита свыше 200 тыс. рублей?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "48 часов.",
+      "key_points": [
+        "48 часов."
+      ],
+      "explanation": "Во время паузы заёмщик может отказаться от получения денег. Лекция также перечисляет исключения.",
+      "source": {
+        "id": "financial-literacy.fin-lecture",
+        "name": "Финграм лекция.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-26",
+        "excerpt": "Какая пауза указана для кредита свыше 200 тыс. рублей?"
+      },
+      "source_excerpt": "Какая пауза указана для кредита свыше 200 тыс. рублей?"
+    },
+    {
+      "id": "financial-literacy.fin-q038",
+      "source_record_id": "FIN-Q038",
+      "source_topic_id": "FIN",
+      "source_type": "recall",
+      "source_difficulty": "basic",
+      "source_subtopic": "Микрозаймы",
+      "source_slides": [
+        19
+      ],
+      "knowledge_id": "financial-literacy.fin-c017",
+      "linked_knowledge_ids": [
+        "financial-literacy.fin-c017"
+      ],
+      "type": "understanding",
+      "difficulty": 1,
+      "question": "Какова максимальная переплата, приведённая в лекции для соответствующих новых потребительских займов сроком до года с 1 апреля 2026 года?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "100% первоначальной суммы займа.",
+      "key_points": [
+        "100% первоначальной суммы займа."
+      ],
+      "explanation": "Для займа 10 000 руб. пример показывает общую сумму возврата до 20 000 руб. Это ограничение не означает, что заём выгоден; лекция отмечает, что для особых категорий и старых договоров могут быть иные правила.",
+      "source": {
+        "id": "financial-literacy.fin-lecture",
+        "name": "Финграм лекция.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-26",
+        "excerpt": "Какова максимальная переплата, приведённая в лекции для соответствующих новых потребительских займов сроком до года с 1 апреля 2026 года?"
+      },
+      "source_excerpt": "Какова максимальная переплата, приведённая в лекции для соответствующих новых потребительских займов сроком до года с 1 апреля 2026 года?"
+    },
+    {
+      "id": "financial-literacy.fin-q039",
+      "source_record_id": "FIN-Q039",
+      "source_topic_id": "FIN",
+      "source_type": "calculation",
+      "source_difficulty": "basic",
+      "source_subtopic": "Микрозаймы",
+      "source_slides": [
+        19
+      ],
+      "knowledge_id": "financial-literacy.fin-c017",
+      "linked_knowledge_ids": [
+        "financial-literacy.fin-c017"
+      ],
+      "type": "understanding",
+      "difficulty": 1,
+      "question": "При первоначальной сумме займа 10 000 рублей и предельной переплате 100% сколько составляет общая сумма возврата в примере лекции?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "20 000 рублей: 10 000 основного долга плюс до 10 000 переплаты.",
+      "key_points": [
+        "20 000 рублей: 10 000 основного долга плюс до 10 000 переплаты."
+      ],
+      "explanation": "Переплата равна 100% первоначальной суммы, то есть ещё 10 000 руб. поверх основного долга.",
+      "source": {
+        "id": "financial-literacy.fin-lecture",
+        "name": "Финграм лекция.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-26",
+        "excerpt": "При первоначальной сумме займа 10 000 рублей и предельной переплате 100% сколько составляет общая сумма возврата в примере лекции?"
+      },
+      "source_excerpt": "При первоначальной сумме займа 10 000 рублей и предельной переплате 100% сколько составляет общая сумма возврата в примере лекции?"
+    }
+  ],
+  "section_description": "Налоги, вклады, кредиты, предпринимательство, инвестиции и цифровой рубль по материалам лекции «Финансовая грамотность»."
+}

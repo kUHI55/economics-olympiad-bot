@@ -1,0 +1,186 @@
+{
+  "schema_version": 1,
+  "section": "elasticity",
+  "section_title": "Эластичность",
+  "topic": "05-section-5",
+  "topic_title": "Эластичность спроса и выручка",
+  "knowledge": [
+    {
+      "id": "elasticity.el-c016",
+      "source_record_id": "EL-C016",
+      "source_category": "Выручка",
+      "title": "Выручка при линейном спросе",
+      "type": "definition",
+      "definitions": {
+        "Выручка при линейном спросе": "Для примера P=100−Q выручка — парабола 100Q−Q²; максимум достигается при Q=50, P=50 и единичной эластичности."
+      },
+      "explanation": "Для примера P=100−Q выручка — парабола 100Q−Q²; максимум достигается при Q=50, P=50 и единичной эластичности.",
+      "source_slides": [
+        18
+      ],
+      "source": {
+        "id": "elasticity.el-lecture",
+        "name": "эластичность.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-28",
+        "excerpt": "Для примера P=100−Q выручка — парабола 100Q−Q²; максимум достигается при Q=50, P=50 и единичной эластичности."
+      }
+    },
+    {
+      "id": "elasticity.el-c017",
+      "source_record_id": "EL-C017",
+      "source_category": "Линейный спрос",
+      "title": "Эластичность линейного спроса",
+      "type": "definition",
+      "definitions": {
+        "Эластичность линейного спроса": "Для P=Pmax−bQ эластичность можно выразить через максимальное цену или количество; выше середины спрос эластичен, ниже — неэластичен."
+      },
+      "explanation": "Для P=Pmax−bQ эластичность можно выразить через максимальное цену или количество; выше середины спрос эластичен, ниже — неэластичен.",
+      "source_slides": [
+        19,
+        20
+      ],
+      "source": {
+        "id": "elasticity.el-lecture",
+        "name": "эластичность.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-28",
+        "excerpt": "Для P=Pmax−bQ эластичность можно выразить через максимальное цену или количество; выше середины спрос эластичен, ниже — неэластичен."
+      }
+    },
+    {
+      "id": "elasticity.el-f18",
+      "source_record_id": "EL-F18",
+      "source_category": "EL",
+      "title": "Линейный пример выручки",
+      "type": "formula",
+      "formula": "P(Q)=100-Q\\Rightarrow TR(Q)=100Q-Q^2",
+      "definitions": {
+        "Q": "количество",
+        "P": "цена по конкретной обратной функции"
+      },
+      "economic_meaning": "Для данного линейного примера выручка является параболой, максимум достигается при Q=50 и P=50.",
+      "conditions": "Числа 100 и коэффициент наклона 1 относятся только к примеру лекции.",
+      "notes": "",
+      "explanation": "Для данного линейного примера выручка является параболой, максимум достигается при Q=50 и P=50.",
+      "source_slides": [
+        18
+      ],
+      "source": {
+        "id": "elasticity.el-lecture",
+        "name": "эластичность.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-28",
+        "excerpt": "P(Q)=100-Q\\Rightarrow TR(Q)=100Q-Q^2"
+      }
+    },
+    {
+      "id": "elasticity.el-f19",
+      "source_record_id": "EL-F19",
+      "source_category": "EL",
+      "title": "Максимум выручки в линейном примере",
+      "type": "formula",
+      "formula": "TR\\prime(Q)=100-2Q=0\\Rightarrow Q^*=50,\\ P^*=50",
+      "definitions": {
+        "Q*": "количество, максимизирующее выручку в примере",
+        "P*": "соответствующая цена"
+      },
+      "economic_meaning": "Показывает нахождение вершины параболы выручки в примере с P=100−Q.",
+      "conditions": "Только для конкретного примера на слайде, не универсальная формула.",
+      "notes": "",
+      "explanation": "Показывает нахождение вершины параболы выручки в примере с P=100−Q.",
+      "source_slides": [
+        18
+      ],
+      "source": {
+        "id": "elasticity.el-lecture",
+        "name": "эластичность.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-28",
+        "excerpt": "TR\\prime(Q)=100-2Q=0\\Rightarrow Q^*=50,\\ P^*=50"
+      }
+    },
+    {
+      "id": "elasticity.el-f20",
+      "source_record_id": "EL-F20",
+      "source_category": "EL",
+      "title": "Обратный линейный спрос",
+      "type": "formula",
+      "formula": "P(Q)=P_{\\max}-bQ",
+      "definitions": {
+        "Pmax": "цена при Q=0",
+        "b": "положительный коэффициент наклона",
+        "Q": "количество"
+      },
+      "economic_meaning": "Линейная обратная функция спроса с отрицательным наклоном.",
+      "conditions": "b>0, как указано в лекции.",
+      "notes": "",
+      "explanation": "Линейная обратная функция спроса с отрицательным наклоном.",
+      "source_slides": [
+        19
+      ],
+      "source": {
+        "id": "elasticity.el-lecture",
+        "name": "эластичность.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-28",
+        "excerpt": "P(Q)=P_{\\max}-bQ"
+      }
+    },
+    {
+      "id": "elasticity.el-f21",
+      "source_record_id": "EL-F21",
+      "source_category": "EL",
+      "title": "Максимальное количество линейного спроса",
+      "type": "formula",
+      "formula": "Q_{\\max}=\\frac{P_{\\max}}{b}",
+      "definitions": {
+        "Qmax": "количество при нулевой цене",
+        "Pmax": "максимальная цена",
+        "b": "коэффициент наклона обратного спроса"
+      },
+      "economic_meaning": "Получается из условия P=0 в обратной функции линейного спроса.",
+      "conditions": "Только для P=Pmax−bQ.",
+      "notes": "",
+      "explanation": "Получается из условия P=0 в обратной функции линейного спроса.",
+      "source_slides": [
+        19
+      ],
+      "source": {
+        "id": "elasticity.el-lecture",
+        "name": "эластичность.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-28",
+        "excerpt": "Q_{\\max}=\\frac{P_{\\max}}{b}"
+      }
+    },
+    {
+      "id": "elasticity.el-f22",
+      "source_record_id": "EL-F22",
+      "source_category": "EL",
+      "title": "Эластичность линейного спроса через Qmax",
+      "type": "formula",
+      "formula": "E_{Q,P}=-\\frac{Q_{\\max}-Q}{Q}",
+      "definitions": {
+        "Qmax": "максимальное количество при нулевой цене",
+        "Q": "текущее количество спроса"
+      },
+      "economic_meaning": "Позволяет вычислить эластичность линейного спроса через горизонтальные отрезки графика.",
+      "conditions": "Для линейной обратной функции спроса, приведённой на слайде.",
+      "notes": "",
+      "explanation": "Позволяет вычислить эластичность линейного спроса через горизонтальные отрезки графика.",
+      "source_slides": [
+        19,
+        20
+      ],
+      "source": {
+        "id": "elasticity.el-lecture",
+        "name": "эластичность.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-28",
+        "excerpt": "E_{Q,P}=-\\frac{Q_{\\max}-Q}{Q}"
+      }
+    }
+  ],
+  "section_description": "Виды эластичности, спрос, выручка, налоговое бремя и монопольное ценообразование по материалам лекции «Эластичность»."
+}

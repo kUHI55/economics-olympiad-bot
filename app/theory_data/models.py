@@ -27,6 +27,12 @@ class KnowledgeItem(TheoryFileModel):
     type: KnowledgeType
     formula: str | None = Field(default=None, max_length=1000)
     definitions: dict[str, str] = Field(default_factory=dict)
+    source_record_id: str | None = Field(default=None, max_length=80)
+    source_category: str | None = Field(default=None, max_length=255)
+    economic_meaning: str | None = None
+    conditions: str | None = None
+    notes: str | None = None
+    source_slides: list[int] = Field(default_factory=list)
     explanation: str = Field(min_length=2)
     source: SourceReference
 
@@ -35,6 +41,7 @@ class TaxonomyDocument(TheoryFileModel):
     schema_version: Literal[1] = 1
     section: str = Field(pattern=ID_PATTERN, min_length=2, max_length=64)
     section_title: str | None = Field(default=None, min_length=1, max_length=255)
+    section_description: str | None = Field(default=None, min_length=1, max_length=500)
     topic: str = Field(pattern=ID_PATTERN, min_length=2, max_length=64)
     topic_title: str | None = Field(default=None, min_length=1, max_length=255)
     subtopic: str | None = Field(default=None, pattern=ID_PATTERN, max_length=64)
@@ -80,8 +87,15 @@ class QuestionOption(TheoryFileModel):
 
 class QuestionItem(TheoryFileModel):
     id: str = Field(pattern=ID_PATTERN, min_length=2, max_length=160)
+    source_record_id: str | None = Field(default=None, max_length=80)
     knowledge_id: str = Field(pattern=ID_PATTERN, min_length=2, max_length=160)
+    linked_knowledge_ids: list[str] = Field(default_factory=list)
     type: QuestionType
+    source_type: str | None = Field(default=None, max_length=40)
+    source_topic_id: str | None = Field(default=None, max_length=40)
+    source_difficulty: str | None = Field(default=None, max_length=40)
+    source_subtopic: str | None = Field(default=None, max_length=255)
+    source_slides: list[int] = Field(default_factory=list)
     difficulty: int = Field(ge=1, le=5)
     question: str = Field(min_length=5)
     options: list[QuestionOption] = Field(default_factory=list)
@@ -104,6 +118,11 @@ class QuestionItem(TheoryFileModel):
                 raise ValueError("Multiple choice correct_answer must reference one option ID")
         elif self.options or self.correct_answer is not None:
             raise ValueError("Only multiple choice questions may have options or correct_answer")
+        if self.linked_knowledge_ids:
+            if self.knowledge_id not in self.linked_knowledge_ids:
+                raise ValueError("linked_knowledge_ids must include the primary knowledge_id")
+            if len(self.linked_knowledge_ids) != len(set(self.linked_knowledge_ids)):
+                raise ValueError("linked_knowledge_ids must be unique")
         if self.source_excerpt != self.source.excerpt:
             raise ValueError("source_excerpt must exactly match source.excerpt")
         return self

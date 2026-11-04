@@ -1,0 +1,182 @@
+{
+  "schema_version": 1,
+  "section": "elasticity",
+  "section_title": "Эластичность",
+  "topic": "05-section-5",
+  "topic_title": "Эластичность спроса и выручка",
+  "questions": [
+    {
+      "id": "elasticity.el-q038",
+      "source_record_id": "EL-Q038",
+      "source_topic_id": "EL",
+      "source_type": "calculation",
+      "source_difficulty": "basic",
+      "source_subtopic": "Выручка",
+      "source_slides": [
+        17
+      ],
+      "knowledge_id": "elasticity.el-c014",
+      "linked_knowledge_ids": [
+        "elasticity.el-c014",
+        "elasticity.el-f16"
+      ],
+      "type": "understanding",
+      "difficulty": 1,
+      "question": "Если ценовая эластичность спроса равна −3 и цена повышается на 1%, как приблизительно изменится выручка?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "Снизится примерно на 2%.",
+      "key_points": [
+        "Снизится примерно на 2%."
+      ],
+      "explanation": "E_TR,P=1+(−3)=−2. Для малого изменения цены +1% выручка изменится примерно на −2%.",
+      "source": {
+        "id": "elasticity.el-lecture",
+        "name": "эластичность.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-28",
+        "excerpt": "Если ценовая эластичность спроса равна −3 и цена повышается на 1%, как приблизительно изменится выручка?"
+      },
+      "source_excerpt": "Если ценовая эластичность спроса равна −3 и цена повышается на 1%, как приблизительно изменится выручка?"
+    },
+    {
+      "id": "elasticity.el-q040",
+      "source_record_id": "EL-Q040",
+      "source_topic_id": "EL",
+      "source_type": "calculation",
+      "source_difficulty": "basic",
+      "source_subtopic": "Линейный спрос и выручка",
+      "source_slides": [
+        18
+      ],
+      "knowledge_id": "elasticity.el-c016",
+      "linked_knowledge_ids": [
+        "elasticity.el-c016",
+        "elasticity.el-f19",
+        "elasticity.el-f20"
+      ],
+      "type": "understanding",
+      "difficulty": 1,
+      "question": "Для P(Q)=100−Q найдите функцию выручки и её максимум.",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "TR(Q)=100Q−Q²; максимум достигается при Q=50 и P=50.",
+      "key_points": [
+        "TR(Q)=100Q−Q²; максимум достигается при Q=50 и P=50."
+      ],
+      "explanation": "TR=P×Q=(100−Q)Q. Производная 100−2Q равна нулю при Q=50; цена тогда 50. В точке максимума спрос имеет эластичность −1.",
+      "source": {
+        "id": "elasticity.el-lecture",
+        "name": "эластичность.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-28",
+        "excerpt": "Для P(Q)=100−Q найдите функцию выручки и её максимум."
+      },
+      "source_excerpt": "Для P(Q)=100−Q найдите функцию выручки и её максимум."
+    },
+    {
+      "id": "elasticity.el-q041",
+      "source_record_id": "EL-Q041",
+      "source_topic_id": "EL",
+      "source_type": "recall",
+      "source_difficulty": "basic",
+      "source_subtopic": "Линейный спрос",
+      "source_slides": [
+        18,
+        20
+      ],
+      "knowledge_id": "elasticity.el-c016",
+      "linked_knowledge_ids": [
+        "elasticity.el-c016"
+      ],
+      "type": "understanding",
+      "difficulty": 1,
+      "question": "Для линейного спроса что происходит с эластичностью выше и ниже середины отрезка?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "Выше середины спрос эластичен; в середине единичная эластичность; ниже середины неэластичен.",
+      "key_points": [
+        "Выше середины спрос эластичен; в середине единичная эластичность; ниже середины неэластичен."
+      ],
+      "explanation": "Середина — середина отрезка между пересечениями прямой спроса с осями. Это относится к линейной кривой, как в лекции.",
+      "source": {
+        "id": "elasticity.el-lecture",
+        "name": "эластичность.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-28",
+        "excerpt": "Для линейного спроса что происходит с эластичностью выше и ниже середины отрезка?"
+      },
+      "source_excerpt": "Для линейного спроса что происходит с эластичностью выше и ниже середины отрезка?"
+    },
+    {
+      "id": "elasticity.el-q042",
+      "source_record_id": "EL-Q042",
+      "source_topic_id": "EL",
+      "source_type": "formula",
+      "source_difficulty": "basic",
+      "source_subtopic": "Линейный спрос",
+      "source_slides": [
+        19
+      ],
+      "knowledge_id": "elasticity.el-c017",
+      "linked_knowledge_ids": [
+        "elasticity.el-c017",
+        "elasticity.el-f20"
+      ],
+      "type": "formula",
+      "difficulty": 1,
+      "question": "Запиши обратную функцию линейного спроса из слайда 19.",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "P(Q)=Pmax−bQ, при b>0.",
+      "key_points": [
+        "P(Q)=Pmax−bQ, при b>0."
+      ],
+      "explanation": "Pmax — цена при нулевом спросе; b — положительный коэффициент наклона. Максимальное количество Qmax=Pmax/b.",
+      "source": {
+        "id": "elasticity.el-lecture",
+        "name": "эластичность.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-28",
+        "excerpt": "Запиши обратную функцию линейного спроса из слайда 19."
+      },
+      "source_excerpt": "Запиши обратную функцию линейного спроса из слайда 19."
+    },
+    {
+      "id": "elasticity.el-q043",
+      "source_record_id": "EL-Q043",
+      "source_topic_id": "EL",
+      "source_type": "formula",
+      "source_difficulty": "basic",
+      "source_subtopic": "Линейный спрос",
+      "source_slides": [
+        19,
+        20
+      ],
+      "knowledge_id": "elasticity.el-c017",
+      "linked_knowledge_ids": [
+        "elasticity.el-c017",
+        "elasticity.el-f22"
+      ],
+      "type": "formula",
+      "difficulty": 1,
+      "question": "Как выразить эластичность линейного спроса через максимальное количество и текущее количество?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "E_{Q,P}=−(Qmax−Q)/Q.",
+      "key_points": [
+        "E_{Q,P}=−(Qmax−Q)/Q."
+      ],
+      "explanation": "Qmax — количество при нулевой цене; Q — рассматриваемое количество. Для Qmax=10 при Q=2 получаем −4, при Q=5 — −1, при Q=8 — −1/4.",
+      "source": {
+        "id": "elasticity.el-lecture",
+        "name": "эластичность.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-28",
+        "excerpt": "Как выразить эластичность линейного спроса через максимальное количество и текущее количество?"
+      },
+      "source_excerpt": "Как выразить эластичность линейного спроса через максимальное количество и текущее количество?"
+    }
+  ],
+  "section_description": "Виды эластичности, спрос, выручка, налоговое бремя и монопольное ценообразование по материалам лекции «Эластичность»."
+}

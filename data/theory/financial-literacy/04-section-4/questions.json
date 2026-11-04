@@ -1,0 +1,243 @@
+{
+  "schema_version": 1,
+  "section": "financial-literacy",
+  "section_title": "Финансовая грамотность",
+  "topic": "04-section-4",
+  "topic_title": "Инвестиции, налоги и ИИС-3",
+  "questions": [
+    {
+      "id": "financial-literacy.fin-q040",
+      "source_record_id": "FIN-Q040",
+      "source_topic_id": "FIN",
+      "source_type": "definition",
+      "source_difficulty": "basic",
+      "source_subtopic": "Инвестиции",
+      "source_slides": [
+        20
+      ],
+      "knowledge_id": "financial-literacy.fin-c018",
+      "linked_knowledge_ids": [
+        "financial-literacy.fin-c018"
+      ],
+      "type": "definition",
+      "difficulty": 1,
+      "question": "Что такое диверсификация?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "Распределение вложений между разными активами, уменьшающее зависимость портфеля от одного актива.",
+      "key_points": [
+        "Распределение вложений между разными активами, уменьшающее зависимость портфеля от одного актива."
+      ],
+      "explanation": "Это не означает полного устранения инвестиционного риска; слайд говорит об уменьшении зависимости от одного актива.",
+      "source": {
+        "id": "financial-literacy.fin-lecture",
+        "name": "Финграм лекция.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-26",
+        "excerpt": "Что такое диверсификация?"
+      },
+      "source_excerpt": "Что такое диверсификация?"
+    },
+    {
+      "id": "financial-literacy.fin-q041",
+      "source_record_id": "FIN-Q041",
+      "source_topic_id": "FIN",
+      "source_type": "recall",
+      "source_difficulty": "basic",
+      "source_subtopic": "Инвестиционные риски",
+      "source_slides": [
+        21
+      ],
+      "knowledge_id": "financial-literacy.fin-c019",
+      "linked_knowledge_ids": [
+        "financial-literacy.fin-c019"
+      ],
+      "type": "understanding",
+      "difficulty": 1,
+      "question": "Назови пять видов инвестиционного риска из лекции.",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "Кредитный, рыночный, инфляционный, валютный и риск ликвидности.",
+      "key_points": [
+        "Кредитный, рыночный, инфляционный, валютный и риск ликвидности."
+      ],
+      "explanation": "Кредитный — риск непогашения долга эмитентом; рыночный — падение цены до продажи; инфляционный — номинальная доходность ниже роста цен; валютный — неблагоприятное изменение курса; ликвидности — невозможность быстро продать без большой скидки.",
+      "source": {
+        "id": "financial-literacy.fin-lecture",
+        "name": "Финграм лекция.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-26",
+        "excerpt": "Назови пять видов инвестиционного риска из лекции."
+      },
+      "source_excerpt": "Назови пять видов инвестиционного риска из лекции."
+    },
+    {
+      "id": "financial-literacy.fin-q042",
+      "source_record_id": "FIN-Q042",
+      "source_topic_id": "FIN",
+      "source_type": "trap",
+      "source_difficulty": "basic",
+      "source_subtopic": "Инвестиционные риски",
+      "source_slides": [
+        20,
+        21
+      ],
+      "knowledge_id": "financial-literacy.fin-c019",
+      "linked_knowledge_ids": [
+        "financial-literacy.fin-c019"
+      ],
+      "type": "common_mistake",
+      "difficulty": 1,
+      "question": "Гарантирует ли фиксированный купон ОФЗ возможность продать её без убытка?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "Нет. Рыночная цена облигации может измениться, в частности при изменении процентных ставок.",
+      "key_points": [
+        "Нет. Рыночная цена облигации может измениться, в частности при изменении процентных ставок."
+      ],
+      "explanation": "Фиксированная величина купона не означает неизменность рыночной цены бумаги. Длинная облигация особенно подвержена процентному риску в примере лекции.",
+      "source": {
+        "id": "financial-literacy.fin-lecture",
+        "name": "Финграм лекция.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-26",
+        "excerpt": "Гарантирует ли фиксированный купон ОФЗ возможность продать её без убытка?"
+      },
+      "source_excerpt": "Гарантирует ли фиксированный купон ОФЗ возможность продать её без убытка?"
+    },
+    {
+      "id": "financial-literacy.fin-q043",
+      "source_record_id": "FIN-Q043",
+      "source_topic_id": "FIN",
+      "source_type": "concept",
+      "source_difficulty": "basic",
+      "source_subtopic": "Налоги на инвестиции",
+      "source_slides": [
+        22
+      ],
+      "knowledge_id": "financial-literacy.fin-c020",
+      "linked_knowledge_ids": [
+        "financial-literacy.fin-c020"
+      ],
+      "type": "understanding",
+      "difficulty": 1,
+      "question": "Что обычно облагается при продаже акций: вся сумма продажи или финансовый результат?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "Обычно финансовый результат, а не вся выручка.",
+      "key_points": [
+        "Обычно финансовый результат, а не вся выручка."
+      ],
+      "explanation": "Лекция отдельно говорит, что рост биржевой цены без продажи сам по себе обычно не создаёт НДФЛ. Конкретные правила зависят от применимого налогового режима.",
+      "source": {
+        "id": "financial-literacy.fin-lecture",
+        "name": "Финграм лекция.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-26",
+        "excerpt": "Что обычно облагается при продаже акций: вся сумма продажи или финансовый результат?"
+      },
+      "source_excerpt": "Что обычно облагается при продаже акций: вся сумма продажи или финансовый результат?"
+    },
+    {
+      "id": "financial-literacy.fin-q044",
+      "source_record_id": "FIN-Q044",
+      "source_topic_id": "FIN",
+      "source_type": "recall",
+      "source_difficulty": "basic",
+      "source_subtopic": "ИИС-3",
+      "source_slides": [
+        23,
+        24
+      ],
+      "knowledge_id": "financial-literacy.fin-c021",
+      "linked_knowledge_ids": [
+        "financial-literacy.fin-c021"
+      ],
+      "type": "understanding",
+      "difficulty": 1,
+      "question": "Какие две налоговые льготы по ИИС-3 перечислены в лекции?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "Вычет на взносы и вычет/освобождение инвестиционного дохода при соблюдении условий.",
+      "key_points": [
+        "Вычет на взносы и вычет/освобождение инвестиционного дохода при соблюдении условий."
+      ],
+      "explanation": "Лекция указывает базу вычета на взносы до 400 тыс. руб. в год и освобождение соответствующего дохода до 30 млн руб. по условиям соответствующих ИИС.",
+      "source": {
+        "id": "financial-literacy.fin-lecture",
+        "name": "Финграм лекция.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-26",
+        "excerpt": "Какие две налоговые льготы по ИИС-3 перечислены в лекции?"
+      },
+      "source_excerpt": "Какие две налоговые льготы по ИИС-3 перечислены в лекции?"
+    },
+    {
+      "id": "financial-literacy.fin-q045",
+      "source_record_id": "FIN-Q045",
+      "source_topic_id": "FIN",
+      "source_type": "calculation",
+      "source_difficulty": "basic",
+      "source_subtopic": "ИИС-3",
+      "source_slides": [
+        24
+      ],
+      "knowledge_id": "financial-literacy.fin-c021",
+      "linked_knowledge_ids": [
+        "financial-literacy.fin-c021"
+      ],
+      "type": "understanding",
+      "difficulty": 1,
+      "question": "При взносе 400 000 рублей и ставке НДФЛ 13% сколько можно вернуть при выполнении условий и достаточном НДФЛ?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "52 000 рублей.",
+      "key_points": [
+        "52 000 рублей."
+      ],
+      "explanation": "400 000 × 13% = 52 000. Возврат ограничен суммой подходящего фактически уплаченного НДФЛ.",
+      "source": {
+        "id": "financial-literacy.fin-lecture",
+        "name": "Финграм лекция.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-26",
+        "excerpt": "При взносе 400 000 рублей и ставке НДФЛ 13% сколько можно вернуть при выполнении условий и достаточном НДФЛ?"
+      },
+      "source_excerpt": "При взносе 400 000 рублей и ставке НДФЛ 13% сколько можно вернуть при выполнении условий и достаточном НДФЛ?"
+    },
+    {
+      "id": "financial-literacy.fin-q046",
+      "source_record_id": "FIN-Q046",
+      "source_topic_id": "FIN",
+      "source_type": "trap",
+      "source_difficulty": "basic",
+      "source_subtopic": "ИИС-3",
+      "source_slides": [
+        24
+      ],
+      "knowledge_id": "financial-literacy.fin-c021",
+      "linked_knowledge_ids": [
+        "financial-literacy.fin-c021"
+      ],
+      "type": "common_mistake",
+      "difficulty": 1,
+      "question": "Если внесено 700 000 рублей, увеличится ли база вычета на взносы сверх лимита 400 000 рублей из лекции?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "Нет. В примере база вычета остаётся 400 000 рублей.",
+      "key_points": [
+        "Нет. В примере база вычета остаётся 400 000 рублей."
+      ],
+      "explanation": "Внесённая сумма и допустимая база вычета — разные величины. Доход от НПД сам по себе не создаёт НДФЛ для возврата этим вычетом.",
+      "source": {
+        "id": "financial-literacy.fin-lecture",
+        "name": "Финграм лекция.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-26",
+        "excerpt": "Если внесено 700 000 рублей, увеличится ли база вычета на взносы сверх лимита 400 000 рублей из лекции?"
+      },
+      "source_excerpt": "Если внесено 700 000 рублей, увеличится ли база вычета на взносы сверх лимита 400 000 рублей из лекции?"
+    }
+  ],
+  "section_description": "Налоги, вклады, кредиты, предпринимательство, инвестиции и цифровой рубль по материалам лекции «Финансовая грамотность»."
+}

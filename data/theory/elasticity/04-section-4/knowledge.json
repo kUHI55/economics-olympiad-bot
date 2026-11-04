@@ -1,0 +1,310 @@
+{
+  "schema_version": 1,
+  "section": "elasticity",
+  "section_title": "Эластичность",
+  "topic": "04-section-4",
+  "topic_title": "Полезные свойства эластичности функций",
+  "knowledge": [
+    {
+      "id": "elasticity.el-c012",
+      "source_record_id": "EL-C012",
+      "source_category": "Свойства функций",
+      "title": "Постоянная эластичность степенной функции",
+      "type": "definition",
+      "definitions": {
+        "Постоянная эластичность степенной функции": "Для y=ax^b при a>0 и x>0 эластичность по x постоянна и равна b."
+      },
+      "explanation": "Для y=ax^b при a>0 и x>0 эластичность по x постоянна и равна b.",
+      "source_slides": [
+        14
+      ],
+      "source": {
+        "id": "elasticity.el-lecture",
+        "name": "эластичность.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-28",
+        "excerpt": "Для y=ax^b при a>0 и x>0 эластичность по x постоянна и равна b."
+      }
+    },
+    {
+      "id": "elasticity.el-c013",
+      "source_record_id": "EL-C013",
+      "source_category": "Свойства функций",
+      "title": "Эластичность произведения",
+      "type": "definition",
+      "definitions": {
+        "Эластичность произведения": "Эластичность произведения равна сумме эластичностей множителей; показатели степеней становятся весами."
+      },
+      "explanation": "Эластичность произведения равна сумме эластичностей множителей; показатели степеней становятся весами.",
+      "source_slides": [
+        15
+      ],
+      "source": {
+        "id": "elasticity.el-lecture",
+        "name": "эластичность.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-28",
+        "excerpt": "Эластичность произведения равна сумме эластичностей множителей; показатели степеней становятся весами."
+      }
+    },
+    {
+      "id": "elasticity.el-c014",
+      "source_record_id": "EL-C014",
+      "source_category": "Выручка",
+      "title": "Эластичность выручки",
+      "type": "definition",
+      "definitions": {
+        "Эластичность выручки": "Эластичность TR=PQ по цене равна 1 плюс ценовая эластичность спроса."
+      },
+      "explanation": "Эластичность TR=PQ по цене равна 1 плюс ценовая эластичность спроса.",
+      "source_slides": [
+        15,
+        17
+      ],
+      "source": {
+        "id": "elasticity.el-lecture",
+        "name": "эластичность.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-28",
+        "excerpt": "Эластичность TR=PQ по цене равна 1 плюс ценовая эластичность спроса."
+      }
+    },
+    {
+      "id": "elasticity.el-c015",
+      "source_record_id": "EL-C015",
+      "source_category": "Свойства функций",
+      "title": "Обратная и сложная функции",
+      "type": "definition",
+      "definitions": {
+        "Обратная и сложная функции": "Эластичность обратной функции равна обратной исходной; в сложной функции эластичности последовательных звеньев перемножаются."
+      },
+      "explanation": "Эластичность обратной функции равна обратной исходной; в сложной функции эластичности последовательных звеньев перемножаются.",
+      "source_slides": [
+        16
+      ],
+      "source": {
+        "id": "elasticity.el-lecture",
+        "name": "эластичность.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-28",
+        "excerpt": "Эластичность обратной функции равна обратной исходной; в сложной функции эластичности последовательных звеньев перемножаются."
+      }
+    },
+    {
+      "id": "elasticity.el-f10",
+      "source_record_id": "EL-F10",
+      "source_category": "EL",
+      "title": "Эластичность степенной функции",
+      "type": "formula",
+      "formula": "y=ax^b\\Rightarrow E_{y,x}=b",
+      "definitions": {
+        "a": "положительный масштабный параметр",
+        "b": "показатель степени и постоянная эластичность",
+        "x": "положительный аргумент"
+      },
+      "economic_meaning": "Для степенной функции эластичность по аргументу равна показателю степени.",
+      "conditions": "В слайде заданы a>0 и x>0.",
+      "notes": "",
+      "explanation": "Для степенной функции эластичность по аргументу равна показателю степени.",
+      "source_slides": [
+        14
+      ],
+      "source": {
+        "id": "elasticity.el-lecture",
+        "name": "эластичность.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-28",
+        "excerpt": "y=ax^b\\Rightarrow E_{y,x}=b"
+      }
+    },
+    {
+      "id": "elasticity.el-f11",
+      "source_record_id": "EL-F11",
+      "source_category": "EL",
+      "title": "Спрос постоянной ценовой эластичности",
+      "type": "formula",
+      "formula": "Q(P)=AP^{-k}\\Rightarrow E_{Q,P}=-k",
+      "definitions": {
+        "A": "положительный параметр масштаба",
+        "k": "показатель степени",
+        "P": "цена",
+        "Q": "спрос"
+      },
+      "economic_meaning": "Эластичность спроса постоянна во всех точках и равна −k.",
+      "conditions": "В лекции k>0; при k=1 выручка постоянна; при k>1 спрос эластичен; при 0<k<1 неэластичен.",
+      "notes": "",
+      "explanation": "Эластичность спроса постоянна во всех точках и равна −k.",
+      "source_slides": [
+        14
+      ],
+      "source": {
+        "id": "elasticity.el-lecture",
+        "name": "эластичность.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-28",
+        "excerpt": "Q(P)=AP^{-k}\\Rightarrow E_{Q,P}=-k"
+      }
+    },
+    {
+      "id": "elasticity.el-f12",
+      "source_record_id": "EL-F12",
+      "source_category": "EL",
+      "title": "Эластичность произведения",
+      "type": "formula",
+      "formula": "z=fg\\Rightarrow E_{z,x}=E_{f,x}+E_{g,x}",
+      "definitions": {
+        "z": "произведение функций",
+        "f,g": "сомножители",
+        "x": "общая переменная"
+      },
+      "economic_meaning": "Эластичность произведения равна сумме эластичностей сомножителей.",
+      "conditions": "Функции должны быть дифференцируемы, а знаменатели в эластичностях ненулевыми.",
+      "notes": "",
+      "explanation": "Эластичность произведения равна сумме эластичностей сомножителей.",
+      "source_slides": [
+        15
+      ],
+      "source": {
+        "id": "elasticity.el-lecture",
+        "name": "эластичность.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-28",
+        "excerpt": "z=fg\\Rightarrow E_{z,x}=E_{f,x}+E_{g,x}"
+      }
+    },
+    {
+      "id": "elasticity.el-f13",
+      "source_record_id": "EL-F13",
+      "source_category": "EL",
+      "title": "Эластичность степенного произведения",
+      "type": "formula",
+      "formula": "z=f^ag^b\\Rightarrow E_{z,x}=aE_{f,x}+bE_{g,x}",
+      "definitions": {
+        "a,b": "показатели степеней",
+        "f,g": "функции от x"
+      },
+      "economic_meaning": "Эластичности факторов складываются с весами, равными показателям степеней.",
+      "conditions": "Требуются условия определённости и дифференцируемости выражения.",
+      "notes": "",
+      "explanation": "Эластичности факторов складываются с весами, равными показателям степеней.",
+      "source_slides": [
+        15
+      ],
+      "source": {
+        "id": "elasticity.el-lecture",
+        "name": "эластичность.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-28",
+        "excerpt": "z=f^ag^b\\Rightarrow E_{z,x}=aE_{f,x}+bE_{g,x}"
+      }
+    },
+    {
+      "id": "elasticity.el-f14",
+      "source_record_id": "EL-F14",
+      "source_category": "EL",
+      "title": "Эластичность выручки",
+      "type": "formula",
+      "formula": "E_{TR,P}=1+E_{Q,P}",
+      "definitions": {
+        "ETR,P": "эластичность выручки по цене",
+        "EQ,P": "ценовая эластичность спроса"
+      },
+      "economic_meaning": "Связывает относительную реакцию выручки с ценовой эластичностью количества спроса.",
+      "conditions": "TR=P×Q; для малых изменений знак определяет направление изменения выручки.",
+      "notes": "",
+      "explanation": "Связывает относительную реакцию выручки с ценовой эластичностью количества спроса.",
+      "source_slides": [
+        15,
+        17
+      ],
+      "source": {
+        "id": "elasticity.el-lecture",
+        "name": "эластичность.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-28",
+        "excerpt": "E_{TR,P}=1+E_{Q,P}"
+      }
+    },
+    {
+      "id": "elasticity.el-f15",
+      "source_record_id": "EL-F15",
+      "source_category": "EL",
+      "title": "Эластичность обратной функции",
+      "type": "formula",
+      "formula": "E_{x,y}=\\frac{1}{E_{y,x}}",
+      "definitions": {
+        "Ex,y": "эластичность x по y",
+        "Ey,x": "эластичность y по x"
+      },
+      "economic_meaning": "При переходе к обратной функции эластичность обращается.",
+      "conditions": "Функция должна быть обратимой, производная ненулевой, соответствующие значения не равны нулю.",
+      "notes": "",
+      "explanation": "При переходе к обратной функции эластичность обращается.",
+      "source_slides": [
+        16
+      ],
+      "source": {
+        "id": "elasticity.el-lecture",
+        "name": "эластичность.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-28",
+        "excerpt": "E_{x,y}=\\frac{1}{E_{y,x}}"
+      }
+    },
+    {
+      "id": "elasticity.el-f16",
+      "source_record_id": "EL-F16",
+      "source_category": "EL",
+      "title": "Эластичность сложной функции",
+      "type": "formula",
+      "formula": "E_{z,x}=E_{z,y}\\cdot E_{y,x}",
+      "definitions": {
+        "Ez,y": "эластичность z по промежуточной переменной y",
+        "Ey,x": "эластичность y по x"
+      },
+      "economic_meaning": "Эластичности последовательных звеньев сложной зависимости перемножаются.",
+      "conditions": "z зависит от x через y; применимо при соответствующей дифференцируемости.",
+      "notes": "",
+      "explanation": "Эластичности последовательных звеньев сложной зависимости перемножаются.",
+      "source_slides": [
+        16
+      ],
+      "source": {
+        "id": "elasticity.el-lecture",
+        "name": "эластичность.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-28",
+        "excerpt": "E_{z,x}=E_{z,y}\\cdot E_{y,x}"
+      }
+    },
+    {
+      "id": "elasticity.el-f17",
+      "source_record_id": "EL-F17",
+      "source_category": "EL",
+      "title": "Выручка",
+      "type": "formula",
+      "formula": "TR=PQ",
+      "definitions": {
+        "TR": "выручка",
+        "P": "цена единицы",
+        "Q": "проданное количество"
+      },
+      "economic_meaning": "Общая выручка равна цене, умноженной на количество.",
+      "conditions": "В задачах лекции цена зависит от количества или количество — от цены.",
+      "notes": "",
+      "explanation": "Общая выручка равна цене, умноженной на количество.",
+      "source_slides": [
+        15,
+        18
+      ],
+      "source": {
+        "id": "elasticity.el-lecture",
+        "name": "эластичность.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-28",
+        "excerpt": "TR=PQ"
+      }
+    }
+  ],
+  "section_description": "Виды эластичности, спрос, выручка, налоговое бремя и монопольное ценообразование по материалам лекции «Эластичность»."
+}

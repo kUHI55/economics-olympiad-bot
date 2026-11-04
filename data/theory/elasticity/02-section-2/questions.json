@@ -1,0 +1,179 @@
+{
+  "schema_version": 1,
+  "section": "elasticity",
+  "section_title": "Эластичность",
+  "topic": "02-section-2",
+  "topic_title": "Ценовая эластичность спроса",
+  "questions": [
+    {
+      "id": "elasticity.el-q012",
+      "source_record_id": "EL-Q012",
+      "source_topic_id": "EL",
+      "source_type": "formula",
+      "source_difficulty": "basic",
+      "source_subtopic": "Ценовая эластичность",
+      "source_slides": [
+        8
+      ],
+      "knowledge_id": "elasticity.el-c006",
+      "linked_knowledge_ids": [
+        "elasticity.el-c006",
+        "elasticity.el-f04"
+      ],
+      "type": "formula",
+      "difficulty": 1,
+      "question": "Запиши формулу ценовой эластичности спроса.",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "E_{Q,P} = Q′P × (P/Q).",
+      "key_points": [
+        "E_{Q,P} = Q′P × (P/Q)."
+      ],
+      "explanation": "Q′P — производная спроса по собственной цене; P — цена; Q — количество спроса. Для обычного нисходящего спроса эластичность отрицательна.",
+      "source": {
+        "id": "elasticity.el-lecture",
+        "name": "эластичность.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-28",
+        "excerpt": "Запиши формулу ценовой эластичности спроса."
+      },
+      "source_excerpt": "Запиши формулу ценовой эластичности спроса."
+    },
+    {
+      "id": "elasticity.el-q013",
+      "source_record_id": "EL-Q013",
+      "source_topic_id": "EL",
+      "source_type": "recall",
+      "source_difficulty": "basic",
+      "source_subtopic": "Ценовая эластичность",
+      "source_slides": [
+        8
+      ],
+      "knowledge_id": "elasticity.el-c006",
+      "linked_knowledge_ids": [
+        "elasticity.el-c006"
+      ],
+      "type": "understanding",
+      "difficulty": 1,
+      "question": "Когда спрос называют эластичным, неэластичным и единичным?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "Эластичный: |E| > 1; неэластичный: |E| < 1; единичный: |E| = 1.",
+      "key_points": [
+        "Эластичный: |E| > 1; неэластичный: |E| < 1; единичный: |E| = 1."
+      ],
+      "explanation": "Классификация проводится по модулю, поскольку ценовая эластичность обычного нисходящего спроса отрицательна.",
+      "source": {
+        "id": "elasticity.el-lecture",
+        "name": "эластичность.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-28",
+        "excerpt": "Когда спрос называют эластичным, неэластичным и единичным?"
+      },
+      "source_excerpt": "Когда спрос называют эластичным, неэластичным и единичным?"
+    },
+    {
+      "id": "elasticity.el-q014",
+      "source_record_id": "EL-Q014",
+      "source_topic_id": "EL",
+      "source_type": "recall",
+      "source_difficulty": "basic",
+      "source_subtopic": "Крайние случаи",
+      "source_slides": [
+        9
+      ],
+      "knowledge_id": "elasticity.el-c007",
+      "linked_knowledge_ids": [
+        "elasticity.el-c007"
+      ],
+      "type": "understanding",
+      "difficulty": 1,
+      "question": "Какова эластичность совершенно неэластичного спроса?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "E = 0.",
+      "key_points": [
+        "E = 0."
+      ],
+      "explanation": "График вертикальный: количество не меняется при изменении цены в идеализированной модели.",
+      "source": {
+        "id": "elasticity.el-lecture",
+        "name": "эластичность.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-28",
+        "excerpt": "Какова эластичность совершенно неэластичного спроса?"
+      },
+      "source_excerpt": "Какова эластичность совершенно неэластичного спроса?"
+    },
+    {
+      "id": "elasticity.el-q015",
+      "source_record_id": "EL-Q015",
+      "source_topic_id": "EL",
+      "source_type": "recall",
+      "source_difficulty": "basic",
+      "source_subtopic": "Крайние случаи",
+      "source_slides": [
+        9
+      ],
+      "knowledge_id": "elasticity.el-c007",
+      "linked_knowledge_ids": [
+        "elasticity.el-c007"
+      ],
+      "type": "understanding",
+      "difficulty": 1,
+      "question": "Какова эластичность совершенно эластичного спроса?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "Модуль эластичности стремится к бесконечности.",
+      "key_points": [
+        "Модуль эластичности стремится к бесконечности."
+      ],
+      "explanation": "График горизонтальный в идеализированной модели. При цене выше указанной спрос исчезает.",
+      "source": {
+        "id": "elasticity.el-lecture",
+        "name": "эластичность.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-28",
+        "excerpt": "Какова эластичность совершенно эластичного спроса?"
+      },
+      "source_excerpt": "Какова эластичность совершенно эластичного спроса?"
+    },
+    {
+      "id": "elasticity.el-q016",
+      "source_record_id": "EL-Q016",
+      "source_topic_id": "EL",
+      "source_type": "formula",
+      "source_difficulty": "basic",
+      "source_subtopic": "Крайние случаи",
+      "source_slides": [
+        9,
+        14
+      ],
+      "knowledge_id": "elasticity.el-c007",
+      "linked_knowledge_ids": [
+        "elasticity.el-c007",
+        "elasticity.el-c010",
+        "elasticity.el-f08"
+      ],
+      "type": "formula",
+      "difficulty": 1,
+      "question": "Какова эластичность спроса Q=A/P?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "−1.",
+      "key_points": [
+        "−1."
+      ],
+      "explanation": "Это гипербола единичной эластичности. Она имеет переменный наклон, но постоянную эластичность −1.",
+      "source": {
+        "id": "elasticity.el-lecture",
+        "name": "эластичность.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-28",
+        "excerpt": "Какова эластичность спроса Q=A/P?"
+      },
+      "source_excerpt": "Какова эластичность спроса Q=A/P?"
+    }
+  ],
+  "section_description": "Виды эластичности, спрос, выручка, налоговое бремя и монопольное ценообразование по материалам лекции «Эластичность»."
+}

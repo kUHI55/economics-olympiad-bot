@@ -1,0 +1,210 @@
+{
+  "schema_version": 1,
+  "section": "financial-literacy",
+  "section_title": "Финансовая грамотность",
+  "topic": "05-section-5",
+  "topic_title": "НДС, акцизы и другие налоги",
+  "questions": [
+    {
+      "id": "financial-literacy.fin-q047",
+      "source_record_id": "FIN-Q047",
+      "source_topic_id": "FIN",
+      "source_type": "recall",
+      "source_difficulty": "basic",
+      "source_subtopic": "НДС",
+      "source_slides": [
+        25
+      ],
+      "knowledge_id": "financial-literacy.fin-c022",
+      "linked_knowledge_ids": [
+        "financial-literacy.fin-c022"
+      ],
+      "type": "understanding",
+      "difficulty": 1,
+      "question": "Какие ставки НДС приведены в лекции для 2026 года?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "22% — основная; 10% — для отдельных установленных категорий; 0% — например, экспорт при выполнении условий.",
+      "key_points": [
+        "22% — основная; 10% — для отдельных установленных категорий; 0% — например, экспорт при выполнении условий."
+      ],
+      "explanation": "Нулевая ставка и освобождение от НДС не тождественны. Значения воспроизводят презентацию.",
+      "source": {
+        "id": "financial-literacy.fin-lecture",
+        "name": "Финграм лекция.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-26",
+        "excerpt": "Какие ставки НДС приведены в лекции для 2026 года?"
+      },
+      "source_excerpt": "Какие ставки НДС приведены в лекции для 2026 года?"
+    },
+    {
+      "id": "financial-literacy.fin-q048",
+      "source_record_id": "FIN-Q048",
+      "source_topic_id": "FIN",
+      "source_type": "comparison",
+      "source_difficulty": "basic",
+      "source_subtopic": "НДС",
+      "source_slides": [
+        25
+      ],
+      "knowledge_id": "financial-literacy.fin-c022",
+      "linked_knowledge_ids": [
+        "financial-literacy.fin-c022",
+        "financial-literacy.fin-c023"
+      ],
+      "type": "comparison",
+      "difficulty": 1,
+      "question": "Чем нулевая ставка НДС отличается от освобождения от НДС по объяснению лекции?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "Нулевая ставка при выполнении требований может сохранять право на вычет входного НДС; при освобождении такое право обычно отсутствует.",
+      "key_points": [
+        "Нулевая ставка при выполнении требований может сохранять право на вычет входного НДС; при освобождении такое право обычно отсутствует."
+      ],
+      "explanation": "Это различие относится к механизму вычета входного НДС. Слово «обычно» из лекции важно.",
+      "source": {
+        "id": "financial-literacy.fin-lecture",
+        "name": "Финграм лекция.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-26",
+        "excerpt": "Чем нулевая ставка НДС отличается от освобождения от НДС по объяснению лекции?"
+      },
+      "source_excerpt": "Чем нулевая ставка НДС отличается от освобождения от НДС по объяснению лекции?"
+    },
+    {
+      "id": "financial-literacy.fin-q049",
+      "source_record_id": "FIN-Q049",
+      "source_topic_id": "FIN",
+      "source_type": "calculation",
+      "source_difficulty": "basic",
+      "source_subtopic": "НДС",
+      "source_slides": [
+        25
+      ],
+      "knowledge_id": "financial-literacy.fin-c022",
+      "linked_knowledge_ids": [
+        "financial-literacy.fin-c022",
+        "financial-literacy.fin-f13"
+      ],
+      "type": "understanding",
+      "difficulty": 1,
+      "question": "Цена товара с НДС 22% равна 122 рублям. Сколько НДС находится внутри цены?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "22 рубля.",
+      "key_points": [
+        "22 рубля."
+      ],
+      "explanation": "Цена без НДС равна 100 руб.; налог — 22. Извлечение: 122 × 22/122 = 22. Нельзя считать 22% от 122, потому что налог уже включён в эту цену.",
+      "source": {
+        "id": "financial-literacy.fin-lecture",
+        "name": "Финграм лекция.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-26",
+        "excerpt": "Цена товара с НДС 22% равна 122 рублям. Сколько НДС находится внутри цены?"
+      },
+      "source_excerpt": "Цена товара с НДС 22% равна 122 рублям. Сколько НДС находится внутри цены?"
+    },
+    {
+      "id": "financial-literacy.fin-q050",
+      "source_record_id": "FIN-Q050",
+      "source_topic_id": "FIN",
+      "source_type": "definition",
+      "source_difficulty": "basic",
+      "source_subtopic": "НДС",
+      "source_slides": [
+        26
+      ],
+      "knowledge_id": "financial-literacy.fin-c023",
+      "linked_knowledge_ids": [
+        "financial-literacy.fin-c023"
+      ],
+      "type": "definition",
+      "difficulty": 1,
+      "question": "Что такое входной НДС в примере лекции?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "НДС, уплаченный магазином при покупке сырья/товара у поставщика и подлежащий вычету при соблюдении правил.",
+      "key_points": [
+        "НДС, уплаченный магазином при покупке сырья/товара у поставщика и подлежащий вычету при соблюдении правил."
+      ],
+      "explanation": "Магазин начисляет НДС с продажи, но вычитает входной НДС с покупки; в числовом примере это 44 − 22 = 22 руб. к уплате магазином.",
+      "source": {
+        "id": "financial-literacy.fin-lecture",
+        "name": "Финграм лекция.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-26",
+        "excerpt": "Что такое входной НДС в примере лекции?"
+      },
+      "source_excerpt": "Что такое входной НДС в примере лекции?"
+    },
+    {
+      "id": "financial-literacy.fin-q051",
+      "source_record_id": "FIN-Q051",
+      "source_topic_id": "FIN",
+      "source_type": "calculation",
+      "source_difficulty": "basic",
+      "source_subtopic": "НДС",
+      "source_slides": [
+        26
+      ],
+      "knowledge_id": "financial-literacy.fin-c023",
+      "linked_knowledge_ids": [
+        "financial-literacy.fin-c023"
+      ],
+      "type": "understanding",
+      "difficulty": 1,
+      "question": "В цепочке производитель продаёт сырьё за 100 руб. без НДС, магазин продаёт товар за 200 руб. без НДС, ставка 22%. Сколько всего перечисляется в бюджет по примеру?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "44 рубля: производитель перечисляет 22 руб., магазин — ещё 22 руб. после вычета входного НДС.",
+      "key_points": [
+        "44 рубля: производитель перечисляет 22 руб., магазин — ещё 22 руб. после вычета входного НДС."
+      ],
+      "explanation": "Производитель начисляет 22; магазин начисляет 44 и вычитает входные 22, поэтому перечисляет 22. Общий итог 44 — 22% конечной цены без НДС (200).",
+      "source": {
+        "id": "financial-literacy.fin-lecture",
+        "name": "Финграм лекция.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-26",
+        "excerpt": "В цепочке производитель продаёт сырьё за 100 руб. без НДС, магазин продаёт товар за 200 руб. без НДС, ставка 22%. Сколько всего перечисляется в бюджет по примеру?"
+      },
+      "source_excerpt": "В цепочке производитель продаёт сырьё за 100 руб. без НДС, магазин продаёт товар за 200 руб. без НДС, ставка 22%. Сколько всего перечисляется в бюджет по примеру?"
+    },
+    {
+      "id": "financial-literacy.fin-q052",
+      "source_record_id": "FIN-Q052",
+      "source_topic_id": "FIN",
+      "source_type": "concept",
+      "source_difficulty": "basic",
+      "source_subtopic": "Акцизы и прибыль",
+      "source_slides": [
+        27
+      ],
+      "knowledge_id": "financial-literacy.fin-c024",
+      "linked_knowledge_ids": [
+        "financial-literacy.fin-c024"
+      ],
+      "type": "understanding",
+      "difficulty": 1,
+      "question": "На что начисляется налог на прибыль организаций по лекции?",
+      "options": [],
+      "correct_answer": null,
+      "reference_answer": "На налогооблагаемую прибыль, а не на всю выручку.",
+      "key_points": [
+        "На налогооблагаемую прибыль, а не на всю выручку."
+      ],
+      "explanation": "Лекция приводит основную ставку 25% на 2026 год. Выручка и прибыль — разные величины.",
+      "source": {
+        "id": "financial-literacy.fin-lecture",
+        "name": "Финграм лекция.pdf",
+        "source_type": "pdf",
+        "source_date": "2026-10-26",
+        "excerpt": "На что начисляется налог на прибыль организаций по лекции?"
+      },
+      "source_excerpt": "На что начисляется налог на прибыль организаций по лекции?"
+    }
+  ],
+  "section_description": "Налоги, вклады, кредиты, предпринимательство, инвестиции и цифровой рубль по материалам лекции «Финансовая грамотность»."
+}
