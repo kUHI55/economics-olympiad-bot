@@ -294,19 +294,13 @@ test("quiz question renders inline formula markdown as safe code markup", async 
   assert.doesNotMatch(harness.content.innerHTML, /\[формула из справочника\]/);
 });
 
-test("source open-answer questions render a text field and accept a cautious local self-check", async () => {
+test("quiz refuses an open-answer question instead of rendering a text field", async () => {
   const harness = createQuizHarness({ questionType: "understanding", questionPrompt: "Объясни связь цены и спроса." });
   await harness.ready;
   await harness.navigate("quizzes");
   await harness.action("start-global-quiz");
-  assert.match(harness.content.innerHTML, /<textarea class="answer"/);
-  assert.match(harness.content.innerHTML, /Открытый ответ не оценивается по совпадению строк/);
-  harness.openAnswer.value = "Пробный свободный ответ";
-  await harness.context.document.querySelector("#answer-form").handlers.submit({ preventDefault() {} });
-  assert.match(harness.content.innerHTML, /Не удалось надёжно оценить автоматически/);
-  assert.match(harness.content.innerHTML, /Правильный ответ:<\/strong> A/);
-  assert.match(harness.content.innerHTML, /Показать итог/);
-  assert.equal(learning.readStore(harness.storage).sessions[0].attempts[0].verdict, "uncertain");
+  assert.doesNotMatch(harness.content.innerHTML, /<textarea|<form id="answer-form"/);
+  assert.match(harness.content.innerHTML, /для квиза нужны четыре варианта ответа/);
 });
 
 test("local review launches saved wrong questions and empty review keeps normal quiz available", async () => {

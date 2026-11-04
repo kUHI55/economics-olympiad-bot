@@ -46,6 +46,34 @@ class TheoryDataValidatorTests(unittest.TestCase):
             with self.assertRaisesRegex(TheoryValidationError, "correct_answer"):
                 validate_theory_repository(root)
 
+    def test_rejects_open_response_questions_in_quiz_data(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary_directory:
+            root = Path(temporary_directory) / "theory"
+            fixture_directory = root / "test-fixture" / "validation-fixture"
+            write_theory_fixture(fixture_directory)
+            questions_path = fixture_directory / "questions.json"
+            payload = json.loads(questions_path.read_text(encoding="utf-8"))
+            payload["questions"][0]["type"] = "understanding"
+            payload["questions"][0]["options"] = []
+            payload["questions"][0]["correct_answer"] = None
+            questions_path.write_text(json.dumps(payload, ensure_ascii=False), encoding="utf-8")
+
+            with self.assertRaisesRegex(TheoryValidationError, "must use the multiple_choice format"):
+                validate_theory_repository(root)
+
+    def test_rejects_quiz_with_fewer_than_four_choices(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary_directory:
+            root = Path(temporary_directory) / "theory"
+            fixture_directory = root / "test-fixture" / "validation-fixture"
+            write_theory_fixture(fixture_directory)
+            questions_path = fixture_directory / "questions.json"
+            payload = json.loads(questions_path.read_text(encoding="utf-8"))
+            payload["questions"][0]["options"].pop()
+            questions_path.write_text(json.dumps(payload, ensure_ascii=False), encoding="utf-8")
+
+            with self.assertRaisesRegex(TheoryValidationError, "exactly four answer options"):
+                validate_theory_repository(root)
+
     def test_same_source_can_have_item_specific_excerpts(self) -> None:
         with tempfile.TemporaryDirectory() as temporary_directory:
             root = Path(temporary_directory) / "theory"

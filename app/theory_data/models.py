@@ -111,13 +111,14 @@ class QuestionItem(TheoryFileModel):
         option_ids = [option.id for option in self.options]
         if len(option_ids) != len(set(option_ids)):
             raise ValueError("Option IDs must be unique")
-        if self.type is QuestionType.MULTIPLE_CHOICE:
-            if not 2 <= len(self.options) <= 6:
-                raise ValueError("Multiple choice needs from 2 to 6 options")
-            if self.correct_answer not in option_ids:
-                raise ValueError("Multiple choice correct_answer must reference one option ID")
-        elif self.options or self.correct_answer is not None:
-            raise ValueError("Only multiple choice questions may have options or correct_answer")
+        if self.type is not QuestionType.MULTIPLE_CHOICE:
+            raise ValueError("Quiz questions must use the multiple_choice format")
+        if len(self.options) != 4:
+            raise ValueError("Quiz questions must have exactly four answer options")
+        if self.correct_answer not in option_ids:
+            raise ValueError("Multiple choice correct_answer must reference one option ID")
+        if len({option.text.strip().casefold() for option in self.options}) != 4:
+            raise ValueError("Quiz answer options must be distinct")
         if self.linked_knowledge_ids:
             if self.knowledge_id not in self.linked_knowledge_ids:
                 raise ValueError("linked_knowledge_ids must include the primary knowledge_id")

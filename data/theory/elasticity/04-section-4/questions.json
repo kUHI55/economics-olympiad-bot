@@ -20,11 +20,28 @@
         "elasticity.el-c012",
         "elasticity.el-f12"
       ],
-      "type": "formula",
+      "type": "multiple_choice",
       "difficulty": 1,
       "question": "Чему равна эластичность функции y=ax^b при a>0 и x>0?",
-      "options": [],
-      "correct_answer": null,
+      "options": [
+        {
+          "id": "A",
+          "text": "E_{x,y}=1/E_{y,x}."
+        },
+        {
+          "id": "B",
+          "text": "b."
+        },
+        {
+          "id": "C",
+          "text": "При k>1 спрос эластичен; при 0<k<1 — неэластичен; при k=1 — единичная эластичность."
+        },
+        {
+          "id": "D",
+          "text": "E_{z,x}=E_{z,y}×E_{y,x}."
+        }
+      ],
+      "correct_answer": "B",
       "reference_answer": "b.",
       "key_points": [
         "b."
@@ -54,11 +71,28 @@
         "elasticity.el-c012",
         "elasticity.el-f13"
       ],
-      "type": "formula",
+      "type": "multiple_choice",
       "difficulty": 1,
       "question": "Если спрос Q(P)=A/P^k, чему равна ценовая эластичность?",
-      "options": [],
-      "correct_answer": null,
+      "options": [
+        {
+          "id": "A",
+          "text": "−k."
+        },
+        {
+          "id": "B",
+          "text": "При k>1 спрос эластичен; при 0<k<1 — неэластичен; при k=1 — единичная эластичность."
+        },
+        {
+          "id": "C",
+          "text": "E_{TR,P}=1+E_{Q,P}."
+        },
+        {
+          "id": "D",
+          "text": "При E_{Q,P}=−1."
+        }
+      ],
+      "correct_answer": "A",
       "reference_answer": "−k.",
       "key_points": [
         "−k."
@@ -87,11 +121,28 @@
       "linked_knowledge_ids": [
         "elasticity.el-c012"
       ],
-      "type": "understanding",
+      "type": "multiple_choice",
       "difficulty": 1,
       "question": "При каком k спрос Q=A/P^k эластичен, а при каком неэластичен?",
-      "options": [],
-      "correct_answer": null,
+      "options": [
+        {
+          "id": "A",
+          "text": "При E_{Q,P}=−1."
+        },
+        {
+          "id": "B",
+          "text": "E_{TR,P}=1+E_{Q,P}."
+        },
+        {
+          "id": "C",
+          "text": "При k>1 спрос эластичен; при 0<k<1 — неэластичен; при k=1 — единичная эластичность."
+        },
+        {
+          "id": "D",
+          "text": "−k."
+        }
+      ],
+      "correct_answer": "C",
       "reference_answer": "При k>1 спрос эластичен; при 0<k<1 — неэластичен; при k=1 — единичная эластичность.",
       "key_points": [
         "При k>1 спрос эластичен; при 0<k<1 — неэластичен; при k=1 — единичная эластичность."
@@ -121,11 +172,28 @@
         "elasticity.el-c013",
         "elasticity.el-f14"
       ],
-      "type": "formula",
+      "type": "multiple_choice",
       "difficulty": 1,
       "question": "Какова эластичность произведения z=f(x)g(x)?",
-      "options": [],
-      "correct_answer": null,
+      "options": [
+        {
+          "id": "A",
+          "text": "E_{z,x}=E_{f,x}+E_{g,x}."
+        },
+        {
+          "id": "B",
+          "text": "E_{x,y}=1/E_{y,x}."
+        },
+        {
+          "id": "C",
+          "text": "E_{z,x}=aE_{f,x}+bE_{g,x}."
+        },
+        {
+          "id": "D",
+          "text": "E_{z,x}=E_{z,y}×E_{y,x}."
+        }
+      ],
+      "correct_answer": "A",
       "reference_answer": "E_{z,x}=E_{f,x}+E_{g,x}.",
       "key_points": [
         "E_{z,x}=E_{f,x}+E_{g,x}."
@@ -155,11 +223,28 @@
         "elasticity.el-c013",
         "elasticity.el-f15"
       ],
-      "type": "formula",
+      "type": "multiple_choice",
       "difficulty": 1,
       "question": "Какова эластичность z=f^a g^b?",
-      "options": [],
-      "correct_answer": null,
+      "options": [
+        {
+          "id": "A",
+          "text": "E_{z,x}=E_{z,y}×E_{y,x}."
+        },
+        {
+          "id": "B",
+          "text": "E_{z,x}=aE_{f,x}+bE_{g,x}."
+        },
+        {
+          "id": "C",
+          "text": "E_{x,y}=1/E_{y,x}."
+        },
+        {
+          "id": "D",
+          "text": "E_{z,x}=E_{f,x}+E_{g,x}."
+        }
+      ],
+      "correct_answer": "B",
       "reference_answer": "E_{z,x}=aE_{f,x}+bE_{g,x}.",
       "key_points": [
         "E_{z,x}=aE_{f,x}+bE_{g,x}."
@@ -190,11 +275,28 @@
         "elasticity.el-c014",
         "elasticity.el-f16"
       ],
-      "type": "formula",
+      "type": "multiple_choice",
       "difficulty": 1,
       "question": "Какова эластичность выручки TR=PQ по цене?",
-      "options": [],
-      "correct_answer": null,
+      "options": [
+        {
+          "id": "A",
+          "text": "E_{x,y}=1/E_{y,x}."
+        },
+        {
+          "id": "B",
+          "text": "E_{TR,P}=1+E_{Q,P}."
+        },
+        {
+          "id": "C",
+          "text": "Снизится примерно на 2%."
+        },
+        {
+          "id": "D",
+          "text": "При E_{Q,P}=−1."
+        }
+      ],
+      "correct_answer": "B",
       "reference_answer": "E_{TR,P}=1+E_{Q,P}.",
       "key_points": [
         "E_{TR,P}=1+E_{Q,P}."
@@ -224,11 +326,28 @@
         "elasticity.el-c015",
         "elasticity.el-f17"
       ],
-      "type": "formula",
+      "type": "multiple_choice",
       "difficulty": 1,
       "question": "Как связаны эластичности взаимно обратных функций?",
-      "options": [],
-      "correct_answer": null,
+      "options": [
+        {
+          "id": "A",
+          "text": "При E_{Q,P}=−1."
+        },
+        {
+          "id": "B",
+          "text": "E_{TR,P}=1+E_{Q,P}."
+        },
+        {
+          "id": "C",
+          "text": "E_{z,x}=E_{z,y}×E_{y,x}."
+        },
+        {
+          "id": "D",
+          "text": "E_{x,y}=1/E_{y,x}."
+        }
+      ],
+      "correct_answer": "D",
       "reference_answer": "E_{x,y}=1/E_{y,x}.",
       "key_points": [
         "E_{x,y}=1/E_{y,x}."
@@ -258,11 +377,28 @@
         "elasticity.el-c015",
         "elasticity.el-f18"
       ],
-      "type": "formula",
+      "type": "multiple_choice",
       "difficulty": 1,
       "question": "Как связаны эластичности в цепочке z=f(y), y=g(x)?",
-      "options": [],
-      "correct_answer": null,
+      "options": [
+        {
+          "id": "A",
+          "text": "E_{z,x}=E_{z,y}×E_{y,x}."
+        },
+        {
+          "id": "B",
+          "text": "E_{z,x}=E_{f,x}+E_{g,x}."
+        },
+        {
+          "id": "C",
+          "text": "E_{x,y}=1/E_{y,x}."
+        },
+        {
+          "id": "D",
+          "text": "E_{z,x}=aE_{f,x}+bE_{g,x}."
+        }
+      ],
+      "correct_answer": "A",
       "reference_answer": "E_{z,x}=E_{z,y}×E_{y,x}.",
       "key_points": [
         "E_{z,x}=E_{z,y}×E_{y,x}."
@@ -292,11 +428,28 @@
       "linked_knowledge_ids": [
         "elasticity.el-c014"
       ],
-      "type": "understanding",
+      "type": "multiple_choice",
       "difficulty": 1,
       "question": "При каком значении ценовой эластичности спроса выручка не меняется в первом приближении при небольшом изменении цены?",
-      "options": [],
-      "correct_answer": null,
+      "options": [
+        {
+          "id": "A",
+          "text": "E_{TR,P}=1+E_{Q,P}."
+        },
+        {
+          "id": "B",
+          "text": "Снизится примерно на 2%."
+        },
+        {
+          "id": "C",
+          "text": "E_{x,y}=1/E_{y,x}."
+        },
+        {
+          "id": "D",
+          "text": "При E_{Q,P}=−1."
+        }
+      ],
+      "correct_answer": "D",
       "reference_answer": "При E_{Q,P}=−1.",
       "key_points": [
         "При E_{Q,P}=−1."

@@ -107,7 +107,7 @@ class TheoryWebRouteTests(unittest.TestCase):
             )
         )
 
-    def test_open_answer_is_checked_locally_and_answer_keys_stay_out_of_catalog(self) -> None:
+    def test_choice_answer_is_checked_locally_and_answer_keys_stay_out_of_catalog(self) -> None:
         catalog_response = request(self.application, "/api/theory")
         catalog = json.loads(catalog_response["body"])
         theme = next(item for item in catalog["themes"] if item["id"] == "elasticity")
@@ -125,6 +125,10 @@ class TheoryWebRouteTests(unittest.TestCase):
             if topic.knowledge.section == "elasticity"
             for question in topic.questions.questions
         )
+        correct_index = next(
+            index for index, option in enumerate(source_question.options)
+            if option.id == source_question.correct_answer
+        )
         result = request(
             self.application,
             "/api/answer",
@@ -133,7 +137,7 @@ class TheoryWebRouteTests(unittest.TestCase):
                 {
                     "mode": "local",
                     "question_id": source_question.id,
-                    "answer": source_question.reference_answer,
+                    "answer": str(correct_index),
                 },
                 ensure_ascii=False,
             ).encode("utf-8"),
@@ -185,7 +189,7 @@ class TheoryWebRouteTests(unittest.TestCase):
         app_script = request(self.application, "/static/app.js")["body"].decode()
         self.assertIn("EcolabLearning is unavailable: /static/learning.js did not initialize before app.js", app_script)
 
-    def test_active_quiz_questions_preserve_choice_and_open_answer_formats(self) -> None:
+    def test_every_active_quiz_question_has_four_distinct_choices_and_one_answer(self) -> None:
         repository = web_module.load_theory_repository(THEORY_ROOT)
         questions = [
             question
@@ -194,35 +198,24 @@ class TheoryWebRouteTests(unittest.TestCase):
             for question in topic.questions.questions
         ]
         self.assertEqual(len(questions), 614)
-        multiple_choice_count = 0
-        open_answer_count = 0
         for question in questions:
             with self.subTest(question_id=question.id):
-                if question.type is QuestionType.MULTIPLE_CHOICE:
-                    multiple_choice_count += 1
-                    self.assertEqual(len(question.options), 4)
-                    texts = [option.text.strip() for option in question.options]
-                    self.assertTrue(all(texts))
-                    self.assertEqual(len({text.casefold() for text in texts}), 4)
-                    correct = [
-                        option for option in question.options
-                        if option.id == question.correct_answer
-                    ]
-                    self.assertEqual(len(correct), 1)
-                    self.assertEqual(correct[0].text, question.reference_answer)
-                else:
-                    open_answer_count += 1
-                    self.assertEqual(question.options, [])
-                    self.assertIsNone(question.correct_answer)
+                self.assertIs(question.type, QuestionType.MULTIPLE_CHOICE)
+                self.assertEqual(len(question.options), 4)
+                texts = [option.text.strip() for option in question.options]
+                self.assertTrue(all(texts))
+                self.assertEqual(len({text.casefold() for text in texts}), 4)
+                correct = [option for option in question.options if option.id == question.correct_answer]
+                self.assertEqual(len(correct), 1)
+                self.assertEqual(correct[0].text, question.reference_answer)
                 self.assertTrue(question.explanation.strip())
-        self.assertEqual(multiple_choice_count, 481)
-        self.assertEqual(open_answer_count, 133)
+        self.assertEqual(len(questions), 614)
 
     def test_quiz_frontend_uses_choices_and_retains_submission_state(self) -> None:
         script = request(self.application, "/static/app.js")["body"].decode()
         self.assertIn('input type="radio" name="answer"', script)
-        self.assertIn('<textarea class="answer"', script)
-        self.assertIn('question.type === "multiple_choice"', script)
+        self.assertNotIn('<textarea class="answer"', script)
+        self.assertIn('question.type !== "multiple_choice"', script)
         self.assertIn("form.addEventListener(\"submit\", submitAnswer)", script)
         self.assertIn("state.selectedAnswer", script)
         self.assertIn('data-action="next-question"', script)
@@ -627,13 +620,13 @@ class LocalAnswerCheckerTests(unittest.TestCase):
         result = check_local_answer(formula, "sqrt(x) + ln(y)")
         self.assertEqual(result["verdict"], "uncertain")
 
-    def test_each_present_question_type_accepts_its_exact_reference(self) -> None:
+    def test_quiz_data_uses_choices_and_checker_still_supports_non_quiz_text_features(self) -> None:
         from app.web.answer_checker import check_local_answer
 
         questions_by_type = {}
         for question in self.questions:
             questions_by_type.setdefault(question.type, question)
-        self.assertGreater(len(questions_by_type), 1)
+        self.assertEqual(set(questions_by_type), {QuestionType.MULTIPLE_CHOICE})
         for question_type, question in questions_by_type.items():
             if question_type is QuestionType.MULTIPLE_CHOICE:
                 answer = str(next(
@@ -644,6 +637,27 @@ class LocalAnswerCheckerTests(unittest.TestCase):
                 answer = question.reference_answer
             with self.subTest(question_type=question_type.value):
                 self.assertEqual(check_local_answer(question, answer)["verdict"], "correct")
+
+    def test_local_checker_accepts_only_the_keyed_choice_for_every_active_question(self) -> None:
+        from app.web.answer_checker import check_local_answer
+
+        for question in self.questions:
+            with self.subTest(question_id=question.id):
+                correct_index = next(
+                    index for index, option in enumerate(question.options)
+                    if option.id == question.correct_answer
+                )
+                self.assertEqual(
+                    check_local_answer(question, str(correct_index))["verdict"],
+                    "correct",
+                )
+                for index in range(len(question.options)):
+                    if index == correct_index:
+                        continue
+                    self.assertEqual(
+                        check_local_answer(question, str(index))["verdict"],
+                        "incorrect",
+                    )
 
 
 class WebsiteProgressPersistenceTests(unittest.IsolatedAsyncioTestCase):

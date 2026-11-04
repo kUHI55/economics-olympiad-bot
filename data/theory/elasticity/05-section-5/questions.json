@@ -20,11 +20,28 @@
         "elasticity.el-c014",
         "elasticity.el-f16"
       ],
-      "type": "understanding",
+      "type": "multiple_choice",
       "difficulty": 1,
       "question": "Если ценовая эластичность спроса равна −3 и цена повышается на 1%, как приблизительно изменится выручка?",
-      "options": [],
-      "correct_answer": null,
+      "options": [
+        {
+          "id": "A",
+          "text": "При E_{Q,P}=−1."
+        },
+        {
+          "id": "B",
+          "text": "Снизится примерно на 2%."
+        },
+        {
+          "id": "C",
+          "text": "TR(Q)=100Q−Q²; максимум достигается при Q=50 и P=50."
+        },
+        {
+          "id": "D",
+          "text": "E_{TR,P}=1+E_{Q,P}."
+        }
+      ],
+      "correct_answer": "B",
       "reference_answer": "Снизится примерно на 2%.",
       "key_points": [
         "Снизится примерно на 2%."
@@ -55,11 +72,28 @@
         "elasticity.el-f19",
         "elasticity.el-f20"
       ],
-      "type": "understanding",
+      "type": "multiple_choice",
       "difficulty": 1,
       "question": "Для P(Q)=100−Q найдите функцию выручки и её максимум.",
-      "options": [],
-      "correct_answer": null,
+      "options": [
+        {
+          "id": "A",
+          "text": "Снизится примерно на 2%."
+        },
+        {
+          "id": "B",
+          "text": "P(Q)=Pmax−bQ, при b>0."
+        },
+        {
+          "id": "C",
+          "text": "TR(Q)=100Q−Q²; максимум достигается при Q=50 и P=50."
+        },
+        {
+          "id": "D",
+          "text": "E_{Q,P}=−(Qmax−Q)/Q."
+        }
+      ],
+      "correct_answer": "C",
       "reference_answer": "TR(Q)=100Q−Q²; максимум достигается при Q=50 и P=50.",
       "key_points": [
         "TR(Q)=100Q−Q²; максимум достигается при Q=50 и P=50."
@@ -89,11 +123,28 @@
       "linked_knowledge_ids": [
         "elasticity.el-c016"
       ],
-      "type": "understanding",
+      "type": "multiple_choice",
       "difficulty": 1,
       "question": "Для линейного спроса что происходит с эластичностью выше и ниже середины отрезка?",
-      "options": [],
-      "correct_answer": null,
+      "options": [
+        {
+          "id": "A",
+          "text": "TR(Q)=100Q−Q²; максимум достигается при Q=50 и P=50."
+        },
+        {
+          "id": "B",
+          "text": "E_{Q,P}=−(Qmax−Q)/Q."
+        },
+        {
+          "id": "C",
+          "text": "P(Q)=Pmax−bQ, при b>0."
+        },
+        {
+          "id": "D",
+          "text": "Выше середины спрос эластичен; в середине единичная эластичность; ниже середины неэластичен."
+        }
+      ],
+      "correct_answer": "D",
       "reference_answer": "Выше середины спрос эластичен; в середине единичная эластичность; ниже середины неэластичен.",
       "key_points": [
         "Выше середины спрос эластичен; в середине единичная эластичность; ниже середины неэластичен."
@@ -123,11 +174,28 @@
         "elasticity.el-c017",
         "elasticity.el-f20"
       ],
-      "type": "formula",
+      "type": "multiple_choice",
       "difficulty": 1,
       "question": "Запиши обратную функцию линейного спроса из слайда 19.",
-      "options": [],
-      "correct_answer": null,
+      "options": [
+        {
+          "id": "A",
+          "text": "Выше середины спрос эластичен; в середине единичная эластичность; ниже середины неэластичен."
+        },
+        {
+          "id": "B",
+          "text": "TR(Q)=100Q−Q²; максимум достигается при Q=50 и P=50."
+        },
+        {
+          "id": "C",
+          "text": "E_{Q,P}=−(Qmax−Q)/Q."
+        },
+        {
+          "id": "D",
+          "text": "P(Q)=Pmax−bQ, при b>0."
+        }
+      ],
+      "correct_answer": "D",
       "reference_answer": "P(Q)=Pmax−bQ, при b>0.",
       "key_points": [
         "P(Q)=Pmax−bQ, при b>0."
@@ -158,11 +226,28 @@
         "elasticity.el-c017",
         "elasticity.el-f22"
       ],
-      "type": "formula",
+      "type": "multiple_choice",
       "difficulty": 1,
       "question": "Как выразить эластичность линейного спроса через максимальное количество и текущее количество?",
-      "options": [],
-      "correct_answer": null,
+      "options": [
+        {
+          "id": "A",
+          "text": "E_{Q,P}=−(Qmax−Q)/Q."
+        },
+        {
+          "id": "B",
+          "text": "TR(Q)=100Q−Q²; максимум достигается при Q=50 и P=50."
+        },
+        {
+          "id": "C",
+          "text": "Выше середины спрос эластичен; в середине единичная эластичность; ниже середины неэластичен."
+        },
+        {
+          "id": "D",
+          "text": "P(Q)=Pmax−bQ, при b>0."
+        }
+      ],
+      "correct_answer": "A",
       "reference_answer": "E_{Q,P}=−(Qmax−Q)/Q.",
       "key_points": [
         "E_{Q,P}=−(Qmax−Q)/Q."

@@ -20,11 +20,28 @@
         "elasticity.el-c021",
         "elasticity.el-f34"
       ],
-      "type": "definition",
+      "type": "multiple_choice",
       "difficulty": 1,
       "question": "Что измеряет индекс Лернера?",
-      "options": [],
-      "correct_answer": null,
+      "options": [
+        {
+          "id": "A",
+          "text": "MR=MC."
+        },
+        {
+          "id": "B",
+          "text": "Относительную наценку монополиста цены над предельными издержками: (P−MC)/P."
+        },
+        {
+          "id": "C",
+          "text": "Потому что MR=MC>0, а MR=P(1+1/E); при E<0 положительная MR требует |E|>1."
+        },
+        {
+          "id": "D",
+          "text": "L=(P−MC)/P=1/|E_{Q,P}|."
+        }
+      ],
+      "correct_answer": "B",
       "reference_answer": "Относительную наценку монополиста цены над предельными издержками: (P−MC)/P.",
       "key_points": [
         "Относительную наценку монополиста цены над предельными издержками: (P−MC)/P."
@@ -54,11 +71,28 @@
         "elasticity.el-c021",
         "elasticity.el-f34"
       ],
-      "type": "formula",
+      "type": "multiple_choice",
       "difficulty": 1,
       "question": "Запиши формулу индекса Лернера через абсолютную ценовую эластичность спроса.",
-      "options": [],
-      "correct_answer": null,
+      "options": [
+        {
+          "id": "A",
+          "text": "P*=k/(k−1)."
+        },
+        {
+          "id": "B",
+          "text": "Относительную наценку монополиста цены над предельными издержками: (P−MC)/P."
+        },
+        {
+          "id": "C",
+          "text": "Потому что MR=MC>0, а MR=P(1+1/E); при E<0 положительная MR требует |E|>1."
+        },
+        {
+          "id": "D",
+          "text": "L=(P−MC)/P=1/|E_{Q,P}|."
+        }
+      ],
+      "correct_answer": "D",
       "reference_answer": "L=(P−MC)/P=1/|E_{Q,P}|.",
       "key_points": [
         "L=(P−MC)/P=1/|E_{Q,P}|."
@@ -89,11 +123,28 @@
         "elasticity.el-f32",
         "elasticity.el-f33"
       ],
-      "type": "formula",
+      "type": "multiple_choice",
       "difficulty": 1,
       "question": "Какое условие первого порядка использует монополист при внутреннем максимуме прибыли?",
-      "options": [],
-      "correct_answer": null,
+      "options": [
+        {
+          "id": "A",
+          "text": "Потому что MR=MC>0, а MR=P(1+1/E); при E<0 положительная MR требует |E|>1."
+        },
+        {
+          "id": "B",
+          "text": "MR=MC."
+        },
+        {
+          "id": "C",
+          "text": "P*=4, Q*=16, π*=16."
+        },
+        {
+          "id": "D",
+          "text": "L=(P−MC)/P=1/|E_{Q,P}|."
+        }
+      ],
+      "correct_answer": "B",
       "reference_answer": "MR=MC.",
       "key_points": [
         "MR=MC."
@@ -125,11 +176,28 @@
         "elasticity.el-f33",
         "elasticity.el-f34"
       ],
-      "type": "understanding",
+      "type": "multiple_choice",
       "difficulty": 1,
       "question": "Почему при MC>0 внутренний оптимум монополиста на обычном нисходящем спросе находится на эластичном участке?",
-      "options": [],
-      "correct_answer": null,
+      "options": [
+        {
+          "id": "A",
+          "text": "L=(P−MC)/P=1/|E_{Q,P}|."
+        },
+        {
+          "id": "B",
+          "text": "P*=4, Q*=16, π*=16."
+        },
+        {
+          "id": "C",
+          "text": "MR=MC."
+        },
+        {
+          "id": "D",
+          "text": "Потому что MR=MC>0, а MR=P(1+1/E); при E<0 положительная MR требует |E|>1."
+        }
+      ],
+      "correct_answer": "D",
       "reference_answer": "Потому что MR=MC>0, а MR=P(1+1/E); при E<0 положительная MR требует |E|>1.",
       "key_points": [
         "Потому что MR=MC>0, а MR=P(1+1/E); при E<0 положительная MR требует |E|>1."
@@ -160,11 +228,28 @@
         "elasticity.el-c022",
         "elasticity.el-f34"
       ],
-      "type": "understanding",
+      "type": "multiple_choice",
       "difficulty": 1,
       "question": "Для Q(P)=4096/P^4 и TC(Q)=3Q найдите оптимальные цену, выпуск и прибыль.",
-      "options": [],
-      "correct_answer": null,
+      "options": [
+        {
+          "id": "A",
+          "text": "Потому что MR=MC>0, а MR=P(1+1/E); при E<0 положительная MR требует |E|>1."
+        },
+        {
+          "id": "B",
+          "text": "MR=MC."
+        },
+        {
+          "id": "C",
+          "text": "P*=4, Q*=16, π*=16."
+        },
+        {
+          "id": "D",
+          "text": "Варианты 1, 2 и 4."
+        }
+      ],
+      "correct_answer": "C",
       "reference_answer": "P*=4, Q*=16, π*=16.",
       "key_points": [
         "P*=4, Q*=16, π*=16."
@@ -194,11 +279,28 @@
         "elasticity.el-c023",
         "elasticity.el-f35"
       ],
-      "type": "formula",
+      "type": "multiple_choice",
       "difficulty": 1,
       "question": "При D(P)=a−bP и MC=1 какую формулу оптимальной цены приводит лекция?",
-      "options": [],
-      "correct_answer": null,
+      "options": [
+        {
+          "id": "A",
+          "text": "Потому что MR=MC>0, а MR=P(1+1/E); при E<0 положительная MR требует |E|>1."
+        },
+        {
+          "id": "B",
+          "text": "Варианты 1, 2 и 4."
+        },
+        {
+          "id": "C",
+          "text": "P*=1/2 × (a/b + 1)."
+        },
+        {
+          "id": "D",
+          "text": "L=(P−MC)/P=1/|E_{Q,P}|."
+        }
+      ],
+      "correct_answer": "C",
       "reference_answer": "P*=1/2 × (a/b + 1).",
       "key_points": [
         "P*=1/2 × (a/b + 1)."
@@ -228,11 +330,28 @@
         "elasticity.el-c023",
         "elasticity.el-f36"
       ],
-      "type": "formula",
+      "type": "multiple_choice",
       "difficulty": 1,
       "question": "При D(P)=A/P^k, MC=1 и k>1 чему равна оптимальная цена?",
-      "options": [],
-      "correct_answer": null,
+      "options": [
+        {
+          "id": "A",
+          "text": "P*=k/(k−1)."
+        },
+        {
+          "id": "B",
+          "text": "Потому что MR=MC>0, а MR=P(1+1/E); при E<0 положительная MR требует |E|>1."
+        },
+        {
+          "id": "C",
+          "text": "P*=1/2 × (a/b + 1)."
+        },
+        {
+          "id": "D",
+          "text": "L=(P−MC)/P=1/|E_{Q,P}|."
+        }
+      ],
+      "correct_answer": "A",
       "reference_answer": "P*=k/(k−1).",
       "key_points": [
         "P*=k/(k−1)."
@@ -263,11 +382,28 @@
       "linked_knowledge_ids": [
         "elasticity.el-c024"
       ],
-      "type": "common_mistake",
+      "type": "multiple_choice",
       "difficulty": 1,
       "question": "Верно ли, что оптимальная цена при среднем спросе всегда равна среднему арифметическому оптимальных цен при двух исходных сценариях?",
-      "options": [],
-      "correct_answer": null,
+      "options": [
+        {
+          "id": "A",
+          "text": "Нет. Средняя функция спроса не обязана давать среднюю оптимальную цену."
+        },
+        {
+          "id": "B",
+          "text": "Относительную наценку монополиста цены над предельными издержками: (P−MC)/P."
+        },
+        {
+          "id": "C",
+          "text": "Потому что MR=MC>0, а MR=P(1+1/E); при E<0 положительная MR требует |E|>1."
+        },
+        {
+          "id": "D",
+          "text": "Варианты 1, 2 и 4."
+        }
+      ],
+      "correct_answer": "A",
       "reference_answer": "Нет. Средняя функция спроса не обязана давать среднюю оптимальную цену.",
       "key_points": [
         "Нет. Средняя функция спроса не обязана давать среднюю оптимальную цену."
@@ -298,11 +434,28 @@
       "linked_knowledge_ids": [
         "elasticity.el-c024"
       ],
-      "type": "understanding",
+      "type": "multiple_choice",
       "difficulty": 1,
       "question": "Какие варианты задачи регионального этапа из лекции удовлетворяют равенству Pm*=(Pg*+Pb*)/2?",
-      "options": [],
-      "correct_answer": null,
+      "options": [
+        {
+          "id": "A",
+          "text": "P*=k/(k−1)."
+        },
+        {
+          "id": "B",
+          "text": "Варианты 1, 2 и 4."
+        },
+        {
+          "id": "C",
+          "text": "Нет. Средняя функция спроса не обязана давать среднюю оптимальную цену."
+        },
+        {
+          "id": "D",
+          "text": "P*=1/2 × (a/b + 1)."
+        }
+      ],
+      "correct_answer": "B",
       "reference_answer": "Варианты 1, 2 и 4.",
       "key_points": [
         "Варианты 1, 2 и 4."

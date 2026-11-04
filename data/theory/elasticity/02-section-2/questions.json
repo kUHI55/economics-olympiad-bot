@@ -20,11 +20,28 @@
         "elasticity.el-c006",
         "elasticity.el-f04"
       ],
-      "type": "formula",
+      "type": "multiple_choice",
       "difficulty": 1,
       "question": "Запиши формулу ценовой эластичности спроса.",
-      "options": [],
-      "correct_answer": null,
+      "options": [
+        {
+          "id": "A",
+          "text": "E_{Q,P} = Q′P × (P/Q)."
+        },
+        {
+          "id": "B",
+          "text": "Эластичный: |E| > 1; неэластичный: |E| < 1; единичный: |E| = 1."
+        },
+        {
+          "id": "C",
+          "text": "E = 0."
+        },
+        {
+          "id": "D",
+          "text": "Модуль эластичности стремится к бесконечности."
+        }
+      ],
+      "correct_answer": "A",
       "reference_answer": "E_{Q,P} = Q′P × (P/Q).",
       "key_points": [
         "E_{Q,P} = Q′P × (P/Q)."
@@ -53,11 +70,28 @@
       "linked_knowledge_ids": [
         "elasticity.el-c006"
       ],
-      "type": "understanding",
+      "type": "multiple_choice",
       "difficulty": 1,
       "question": "Когда спрос называют эластичным, неэластичным и единичным?",
-      "options": [],
-      "correct_answer": null,
+      "options": [
+        {
+          "id": "A",
+          "text": "Эластичный: |E| > 1; неэластичный: |E| < 1; единичный: |E| = 1."
+        },
+        {
+          "id": "B",
+          "text": "E = 0."
+        },
+        {
+          "id": "C",
+          "text": "E_{Q,P} = Q′P × (P/Q)."
+        },
+        {
+          "id": "D",
+          "text": "−1."
+        }
+      ],
+      "correct_answer": "A",
       "reference_answer": "Эластичный: |E| > 1; неэластичный: |E| < 1; единичный: |E| = 1.",
       "key_points": [
         "Эластичный: |E| > 1; неэластичный: |E| < 1; единичный: |E| = 1."
@@ -86,11 +120,28 @@
       "linked_knowledge_ids": [
         "elasticity.el-c007"
       ],
-      "type": "understanding",
+      "type": "multiple_choice",
       "difficulty": 1,
       "question": "Какова эластичность совершенно неэластичного спроса?",
-      "options": [],
-      "correct_answer": null,
+      "options": [
+        {
+          "id": "A",
+          "text": "Модуль эластичности стремится к бесконечности."
+        },
+        {
+          "id": "B",
+          "text": "−1."
+        },
+        {
+          "id": "C",
+          "text": "E_{Q,P} = Q′P × (P/Q)."
+        },
+        {
+          "id": "D",
+          "text": "E = 0."
+        }
+      ],
+      "correct_answer": "D",
       "reference_answer": "E = 0.",
       "key_points": [
         "E = 0."
@@ -119,11 +170,28 @@
       "linked_knowledge_ids": [
         "elasticity.el-c007"
       ],
-      "type": "understanding",
+      "type": "multiple_choice",
       "difficulty": 1,
       "question": "Какова эластичность совершенно эластичного спроса?",
-      "options": [],
-      "correct_answer": null,
+      "options": [
+        {
+          "id": "A",
+          "text": "E = 0."
+        },
+        {
+          "id": "B",
+          "text": "−1."
+        },
+        {
+          "id": "C",
+          "text": "Эластичный: |E| > 1; неэластичный: |E| < 1; единичный: |E| = 1."
+        },
+        {
+          "id": "D",
+          "text": "Модуль эластичности стремится к бесконечности."
+        }
+      ],
+      "correct_answer": "D",
       "reference_answer": "Модуль эластичности стремится к бесконечности.",
       "key_points": [
         "Модуль эластичности стремится к бесконечности."
@@ -155,11 +223,28 @@
         "elasticity.el-c010",
         "elasticity.el-f08"
       ],
-      "type": "formula",
+      "type": "multiple_choice",
       "difficulty": 1,
       "question": "Какова эластичность спроса Q=A/P?",
-      "options": [],
-      "correct_answer": null,
+      "options": [
+        {
+          "id": "A",
+          "text": "E = 0."
+        },
+        {
+          "id": "B",
+          "text": "−1."
+        },
+        {
+          "id": "C",
+          "text": "E_{Q,P} = Q′P × (P/Q)."
+        },
+        {
+          "id": "D",
+          "text": "Модуль эластичности стремится к бесконечности."
+        }
+      ],
+      "correct_answer": "B",
       "reference_answer": "−1.",
       "key_points": [
         "−1."

@@ -12,7 +12,7 @@ class AddedThemesTests(unittest.TestCase):
         cls.repository = load_theory_repository(THEORY_ROOT)
         cls.web = TheoryWebApplication(THEORY_ROOT)
 
-    def test_added_topics_preserve_source_record_counts_and_open_question_formats(self) -> None:
+    def test_added_topics_preserve_source_records_and_use_four_choice_quizzes(self) -> None:
         by_section = {}
         for topic in self.repository.topics:
             by_section.setdefault(topic.knowledge.section, []).append(topic)
@@ -29,7 +29,6 @@ class AddedThemesTests(unittest.TestCase):
                 self.assertEqual(len(questions), expected_questions)
                 self.assertTrue(all(item.source_record_id for item in knowledge))
                 self.assertTrue(all(item.source_record_id for item in questions))
-                self.assertTrue(all(not item.options and item.correct_answer is None for item in questions))
                 self.assertTrue(all(item.source_type for item in questions))
                 self.assertTrue(all(item.source_slides for item in questions))
 
@@ -39,6 +38,12 @@ class AddedThemesTests(unittest.TestCase):
                 self.assertEqual(len(source_ids), len(knowledge))
                 for question in questions:
                     with self.subTest(question=question.source_record_id):
+                        self.assertEqual(question.type.value, "multiple_choice")
+                        self.assertEqual(len(question.options), 4)
+                        self.assertEqual(len({option.text.casefold() for option in question.options}), 4)
+                        correct = [option for option in question.options if option.id == question.correct_answer]
+                        self.assertEqual(len(correct), 1)
+                        self.assertEqual(correct[0].text, question.reference_answer)
                         self.assertTrue(question.linked_knowledge_ids)
                         self.assertIn(question.knowledge_id, question.linked_knowledge_ids)
                         self.assertTrue(set(question.linked_knowledge_ids) <= knowledge_ids)

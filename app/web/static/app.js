@@ -404,10 +404,10 @@ function renderStatistics() {
 
 function renderQuizQuestion() {
   const question = state.questions[state.questionIndex];
-  const isMultipleChoice = question.type === "multiple_choice";
-  const options = isMultipleChoice
-    ? `<div>${question.options.map((option, index) => `<label class="quiz-option"><input type="radio" name="answer" value="${index}" ${state.selectedAnswer === String(index) ? "checked" : ""} ${state.answered ? "disabled" : ""}><span>${escapeHtml(option.text)}</span></label>`).join("")}</div>`
-    : `<label class="answer-label" for="open-answer">Твой ответ</label><textarea class="answer" id="open-answer" name="answer" maxlength="2000" ${state.answered ? "disabled" : ""}>${escapeHtml(state.selectedAnswer || "")}</textarea><p class="progress-note">Открытый ответ не оценивается по совпадению строк. Если оценка будет неопределённой, сравни его с эталоном и объяснением.</p>`;
+  if (question.type !== "multiple_choice" || !Array.isArray(question.options) || question.options.length !== 4) {
+    return `<div class="quiz-card active-quiz"><p class="feedback error">Этот вопрос нельзя запустить: для квиза нужны четыре варианта ответа. Перезапусти квиз или сообщи об ошибке.</p></div>`;
+  }
+  const options = `<div>${question.options.map((option, index) => `<label class="quiz-option"><input type="radio" name="answer" value="${index}" ${state.selectedAnswer === String(index) ? "checked" : ""} ${state.answered ? "disabled" : ""}><span>${escapeHtml(option.text)}</span></label>`).join("")}</div>`;
   const result = state.lastResult;
   const feedback = result ? `<div class="feedback ${result.verdict === "incorrect" ? "error" : ""}"><strong>${result.verdict === "correct" ? "Верно!" : result.verdict === "partial" ? "Частично верно" : result.verdict === "uncertain" ? "Не удалось надёжно оценить автоматически" : "Неверно — разберём ответ"}</strong><p>${inlineMarkdown(result.short_explanation || "")}</p><p><strong>Правильный ответ:</strong> ${inlineMarkdown(result.reference_answer)}</p><p>${inlineMarkdown(result.explanation)}</p><p class="source">Основание: ${inlineMarkdown(result.source_excerpt)}</p>${result.progress_saved === false ? '<p class="progress-note">Попытка и статистика сохранены в этом браузере; синхронизация с PostgreSQL недоступна.</p>' : ""}<button class="text-button" data-action="open-answer-theory">Открыть связанный раздел теории →</button></div>` : "";
   const related = (question.related_knowledge || []).map((item) => `<button class="text-button" type="button" data-action="open-question-knowledge:${escapeHtml(item.id)}">${escapeHtml(item.title)} →</button>`).join(" ");
@@ -653,12 +653,6 @@ function bindActions() {
     saveCurrentQuestionState();
     replaceCurrentRoute();
   }));
-  content.querySelectorAll('textarea[name="answer"]').forEach((input) => input.addEventListener("input", () => {
-    state.selectedAnswer = input.value;
-    state.quizError = null;
-    saveCurrentQuestionState();
-    replaceCurrentRoute();
-  }));
   content.querySelectorAll("[data-view]").forEach((element) => element.addEventListener("click", () => navigateTo(element.dataset.view)));
   const form = document.querySelector("#answer-form");
   if (form) form.addEventListener("submit", submitAnswer);
@@ -669,10 +663,9 @@ async function submitAnswer(event) {
   if (state.answered) return;
   const question = state.questions[state.questionIndex];
   const selected = document.querySelector('input[name="answer"]:checked');
-  const answer = selected ? selected.value : document.querySelector('textarea[name="answer"]')?.value ?? state.selectedAnswer;
-  if (question.type === "multiple_choice" && (!Array.isArray(question.options) || question.options.length < 2)) { showQuizError("Варианты ответа для этого вопроса не загрузились."); return; }
-  if (question.type !== "multiple_choice" && !Array.isArray(question.options)) { showQuizError("Не удалось определить формат ответа. Перезагрузи квиз."); return; }
-  if (answer === null || answer === undefined || answer.trim() === "") { showQuizError(question.type === "multiple_choice" ? "Сначала выбери вариант ответа." : "Сначала введи ответ."); return; }
+  const answer = selected ? selected.value : state.selectedAnswer;
+  if (question.type !== "multiple_choice" || !Array.isArray(question.options) || question.options.length !== 4) { showQuizError("Вопрос нельзя проверить: для квиза нужны четыре варианта ответа."); return; }
+  if (typeof answer !== "string" || answer.trim() === "") { showQuizError("Сначала выбери вариант ответа."); return; }
   const localMode = state.progress.answer_mode === "local" || state.quizSession?.local === true;
   const headers = localMode ? { "Content-Type": "application/json" } : databaseHeaders(true);
   if (!headers) return;

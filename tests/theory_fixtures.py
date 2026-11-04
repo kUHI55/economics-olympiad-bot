@@ -58,6 +58,8 @@ def write_theory_fixture(directory: Path) -> tuple[Path, Path]:
                         "options": [
                             {"id": "A", "text": "Checking theory file handling"},
                             {"id": "B", "text": "Teaching economics"},
+                            {"id": "C", "text": "Reviewing the schema"},
+                            {"id": "D", "text": "Creating a test fixture"},
                         ],
                         "correct_answer": "A",
                         "reference_answer": "Checking theory file handling.",
